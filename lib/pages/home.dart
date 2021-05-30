@@ -15,8 +15,8 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return ScreenTypeLayout.builder(
       mobile: (context) => HomeMobile(),
-      tablet: (context) => HomeTablet(),
-      desktop: (context) => HomeDesktop(),
+      tablet: (context) => HomeMobile(),
+      desktop: (context) => HomeMobile(),
     );
   }
 }
@@ -37,6 +37,7 @@ class HomeMobile extends StatelessWidget {
           var title = listMainMenu[index].title;
           var subMenu = listMainMenu[index].subMenu;
           return ListTile(
+            leading: Icon(Icons.category),
             title: Text(title),
             onTap: () {
               Navigator.push(
@@ -59,7 +60,34 @@ class HomeTablet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      body: SafeArea(
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              width: 240,
+              child: ListView.builder(
+                itemCount: listMainMenu.length,
+                itemBuilder: (context, index) {
+                  var title = listMainMenu[index].title;
+                  //var subMenu = listMainMenu[index].subMenu;
+                  return ListTile(
+                    leading: Icon(Icons.category),
+                    title: Text(title),
+                    onTap: () {},
+                  );
+                },
+              ),
+            ),
+            VerticalDivider(),
+            Container(
+              child: Text("s"),
+            )
+          ],
+        ),
+      ),
+    );
   }
 }
 

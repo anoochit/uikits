@@ -18,10 +18,14 @@ class StartScreen01 extends StatelessWidget {
         body: SafeArea(
           child: Stack(
             children: [
-              Positioned.fill(
-                child: UnDraw(
-                  illustration: UnDrawIllustration.login,
-                  color: Theme.of(context).primaryColor,
+              Positioned(
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height,
+                child: SizedBox(
+                  child: UnDraw(
+                    illustration: UnDrawIllustration.login,
+                    color: Theme.of(context).primaryColor,
+                  ),
                 ),
               ),
               Positioned(
