@@ -66,6 +66,6 @@ var listWalkthroughMenu = [
   SubMenu("Walkthrough screen 1", WalkthroughScreen01()),
   SubMenu("Walkthrough screen 2", WalkthroughScreen02()),
   SubMenu("Walkthrough screen 3", WalkthroughScreen03()),
-  SubMenu("Walkthrough screen 4", SignupScreen04()),
-  SubMenu("Walkthrough screen 5", SignupScreen05()),
+  // SubMenu("Walkthrough screen 4", SignupScreen04()),
+  // SubMenu("Walkthrough screen 5", SignupScreen05()),
 ];

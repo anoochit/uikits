@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:ms_undraw/ms_undraw.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 
 class StartScreen04 extends StatelessWidget {
   const StartScreen04({Key? key}) : super(key: key);
@@ -16,59 +17,113 @@ class StartScreen04 extends StatelessWidget {
       ),
       child: Scaffold(
         body: SafeArea(
-          child: Stack(
-            children: [
-              Positioned.fill(
-                top: (MediaQuery.of(context).size.width * 0.8) * -1,
-                child: UnDraw(
-                  illustration: UnDrawIllustration.login,
-                  color: Theme.of(context).primaryColor,
-                ),
-              ),
-              Positioned.fill(
-                top: (MediaQuery.of(context).size.height * 0.5),
-                child: RichText(
-                  textAlign: TextAlign.center,
-                  text: TextSpan(
-                    text: 'HELLO,\n',
-                    style: TextStyle(fontSize: 24, color: Colors.black),
-                    children: const <TextSpan>[
-                      TextSpan(text: 'User Name'),
-                    ],
-                  ),
-                ),
-              ),
-              Positioned(
-                width: MediaQuery.of(context).size.width,
-                bottom: 64,
-                child: Container(
-                    alignment: Alignment.center,
-                    child: Flex(
-                      direction: Axis.vertical,
-                      children: [
-                        ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            minimumSize: Size(MediaQuery.of(context).size.width * 0.8, 40),
-                          ),
-                          child: Text("Continue"),
-                          onPressed: () {},
-                        ),
-                        ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.white,
-                            onPrimary: Colors.black,
-                            minimumSize: Size(MediaQuery.of(context).size.width * 0.8, 40),
-                          ),
-                          child: Text("Sign in with another Account"),
-                          onPressed: () {},
-                        ),
-                      ],
-                    )),
-              )
-            ],
+          child: ScreenTypeLayout.builder(
+            mobile: (context) => MobileScreen(),
           ),
         ),
       ),
+    );
+  }
+}
+
+class MobileScreen extends StatelessWidget {
+  const MobileScreen({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    var scWidth = MediaQuery.of(context).size.width;
+    var scHeight = MediaQuery.of(context).size.height;
+    return Stack(
+      children: [
+        Positioned.fill(
+          top: (scWidth * 0.8) * -1,
+          child: UndrawImageWidget(),
+        ),
+        Positioned.fill(
+          top: (scHeight * 0.5),
+          child: TitleTextWidget(),
+        ),
+        Positioned(
+          width: scWidth,
+          bottom: 64,
+          child: SignInButtonWidget(scWidth: scWidth),
+        )
+      ],
+    );
+  }
+}
+
+class SignInButtonWidget extends StatelessWidget {
+  const SignInButtonWidget({
+    Key? key,
+    required this.scWidth,
+  }) : super(key: key);
+
+  final double scWidth;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      alignment: Alignment.center,
+      child: Flex(
+        direction: Axis.vertical,
+        children: [
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              minimumSize: Size(scWidth * 0.8, 40),
+            ),
+            child: Text("Continue"),
+            onPressed: () {
+              // TODO : Put your continue function here
+            },
+          ),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              primary: Colors.white,
+              onPrimary: Colors.black,
+              minimumSize: Size(scWidth * 0.8, 40),
+            ),
+            child: Text("Sign in with another Account"),
+            onPressed: () {
+              // TODO : Put your sign in function here
+            },
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class TitleTextWidget extends StatelessWidget {
+  const TitleTextWidget({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return RichText(
+      textAlign: TextAlign.center,
+      text: TextSpan(
+        text: 'HELLO,\n',
+        style: TextStyle(fontSize: 24, color: Colors.black),
+        children: const <TextSpan>[
+          TextSpan(text: 'Display Name'),
+        ],
+      ),
+    );
+  }
+}
+
+class UndrawImageWidget extends StatelessWidget {
+  const UndrawImageWidget({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return UnDraw(
+      illustration: UnDrawIllustration.login,
+      color: Theme.of(context).primaryColor,
     );
   }
 }
