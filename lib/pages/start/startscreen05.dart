@@ -68,14 +68,18 @@ class SignInButtonWidget extends StatelessWidget {
               minimumSize: Size(scWidth * 0.45, 40),
             ),
             child: Text("Sign up"),
-            onPressed: () {},
+            onPressed: () {
+              // TODO : Put your sign up function here
+            },
           ),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
               minimumSize: Size(scWidth * 0.45, 40),
             ),
             child: Text("Sign in"),
-            onPressed: () {},
+            onPressed: () {
+              // TODO : Put your sign in function here
+            },
           ),
         ],
       ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 
 class SignupScreen03 extends StatelessWidget {
   const SignupScreen03({Key? key}) : super(key: key);
@@ -15,73 +16,134 @@ class SignupScreen03 extends StatelessWidget {
       ),
       child: Scaffold(
         body: SafeArea(
-          child: Stack(
-            children: [
-              Positioned.fill(
-                top: MediaQuery.of(context).size.height * 0.2,
-                child: RichText(
-                  textAlign: TextAlign.center,
-                  text: TextSpan(
-                    text: 'Forgot password?\n',
-                    style: TextStyle(fontSize: 24, color: Colors.black),
-                    children: const <TextSpan>[
-                      TextSpan(
-                        text: 'Enter you email to recover account',
-                        style: TextStyle(fontSize: 18, color: Colors.black),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              Positioned.fill(
-                top: MediaQuery.of(context).size.height * 0.35,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                  child: Flex(
-                    direction: Axis.vertical,
-                    children: [
-                      TextFormField(
-                        textAlign: TextAlign.center,
-                        decoration: InputDecoration(
-                          filled: true,
-                          fillColor: Colors.blue.shade50,
-                          border: OutlineInputBorder(),
-                          hintText: "Your Email",
-                        ),
-                        validator: (value) {
-                          if (value!.isEmpty) {
-                            return 'Please enter your email';
-                          }
-                          return null;
-                        },
-                      ),
-                      SizedBox(height: 16),
-                      ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          minimumSize: Size(MediaQuery.of(context).size.width, 50),
-                          //shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(32.0)),
-                        ),
-                        child: Text("Reset password"),
-                        onPressed: () {
-                          // put your singup script here
-                        },
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              Positioned(
-                width: MediaQuery.of(context).size.width,
-                bottom: 32,
-                child: Container(
-                  alignment: Alignment.center,
-                  padding: EdgeInsets.symmetric(horizontal: 16),
-                  child: Text("Don't have an Account? Signup"),
-                ),
-              )
-            ],
+          child: ScreenTypeLayout.builder(
+            mobile: (context) => MobileScreen(),
           ),
         ),
+      ),
+    );
+  }
+}
+
+class MobileScreen extends StatelessWidget {
+  const MobileScreen({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    var scWidth = MediaQuery.of(context).size.width;
+    var scHeight = MediaQuery.of(context).size.height;
+    return Stack(
+      children: [
+        Positioned.fill(
+          top: scHeight * 0.2,
+          child: TextTitleWidget(),
+        ),
+        Positioned(
+          width: scWidth,
+          bottom: 32,
+          child: SignUpTextWidget(),
+        ),
+        Positioned.fill(
+          top: scHeight * 0.35,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: RevoceryFormWidget(scWidth: scWidth),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class SignUpTextWidget extends StatelessWidget {
+  const SignUpTextWidget({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      alignment: Alignment.center,
+      padding: EdgeInsets.symmetric(horizontal: 16),
+      child: Text("Don't have an Account? Signup"),
+    );
+  }
+}
+
+class RevoceryFormWidget extends StatefulWidget {
+  const RevoceryFormWidget({
+    Key? key,
+    required this.scWidth,
+  }) : super(key: key);
+
+  final double scWidth;
+
+  @override
+  _RevoceryFormWidgetState createState() => _RevoceryFormWidgetState();
+}
+
+class _RevoceryFormWidgetState extends State<RevoceryFormWidget> {
+  var formKey = GlobalKey<FormState>();
+
+  @override
+  Widget build(BuildContext context) {
+    return Form(
+      key: formKey,
+      child: Flex(
+        direction: Axis.vertical,
+        children: [
+          TextFormField(
+            textAlign: TextAlign.center,
+            decoration: InputDecoration(
+              filled: true,
+              fillColor: Colors.blue.shade50,
+              border: OutlineInputBorder(),
+              hintText: "Your Email",
+            ),
+            validator: (value) {
+              if (value!.isEmpty) {
+                return 'Please enter your email';
+              }
+              return null;
+            },
+          ),
+          SizedBox(height: 16),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              minimumSize: Size(widget.scWidth, 50),
+              //shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(32.0)),
+            ),
+            child: Text("Reset password"),
+            onPressed: () {
+              // put your singup script here
+            },
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class TextTitleWidget extends StatelessWidget {
+  const TextTitleWidget({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return RichText(
+      textAlign: TextAlign.center,
+      text: TextSpan(
+        text: 'Forgot password?\n',
+        style: TextStyle(fontSize: 24, color: Colors.black),
+        children: const <TextSpan>[
+          TextSpan(
+            text: 'Enter you email to recover account',
+            style: TextStyle(fontSize: 18, color: Colors.black),
+          ),
+        ],
       ),
     );
   }

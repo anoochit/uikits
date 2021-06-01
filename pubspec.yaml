@@ -23,6 +23,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  basic_utils: ^3.1.0
   carousel_slider: ^4.0.0-nullsafety.0
   cupertino_icons: ^1.0.2
   ms_undraw: ^3.0.0+0

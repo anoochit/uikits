@@ -57,9 +57,9 @@ var listStartMenu = [
 var listSignupMenu = [
   SubMenu("Signup & Login screen 1", SignupScreen01()),
   SubMenu("Signup & Login screen 2", SignupScreen02()),
+  SubMenu("Signup & Login screen 3", SignupScreen05()),
   SubMenu("Reset password screen", SignupScreen03()),
   SubMenu("Invitation code screen", SignupScreen04()),
-  SubMenu("Signup & Login screen 3", SignupScreen05()),
 ];
 
 var listWalkthroughMenu = [
