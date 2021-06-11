@@ -100,6 +100,7 @@ class _SignUpFormWidgetState extends State<SignUpFormWidget> {
               border: OutlineInputBorder(),
               hintText: "Password",
             ),
+            obscureText: true,
             validator: (value) {
               if (value!.isEmpty) {
                 return 'Please enter your password';

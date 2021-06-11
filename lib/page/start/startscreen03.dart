@@ -19,6 +19,7 @@ class StartScreen03 extends StatelessWidget {
         body: SafeArea(
             child: ScreenTypeLayout.builder(
           mobile: (context) => MobileScreen(),
+          tablet: (context) => TabletScreen(),
         )),
       ),
     );
@@ -30,26 +31,55 @@ class MobileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var scWidth = MediaQuery.of(context).size.width;
-    var scHeight = MediaQuery.of(context).size.height;
-    return Container(
-        child: Stack(
-      children: [
-        Positioned.fill(
-          top: (scWidth * 0.8) * -1,
-          child: UndrawImageWidget(),
-        ),
-        Positioned.fill(
-          top: (scHeight * 0.5),
-          child: TitleTextWidget(),
-        ),
-        Positioned(
-          width: scWidth,
-          bottom: 64,
-          child: SignUpButtonWidget(scWidth: scWidth),
-        )
-      ],
-    ));
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        return Container(
+            child: Stack(
+          children: [
+            Positioned.fill(
+              top: (constraints.maxWidth * 0.8) * -1,
+              child: UndrawImageWidget(),
+            ),
+            Positioned.fill(
+              top: (constraints.maxHeight * 0.5),
+              child: TitleTextWidget(),
+            ),
+            Positioned(
+              width: constraints.maxWidth,
+              bottom: 64,
+              child: SignUpButtonWidget(scWidth: constraints.maxWidth),
+            )
+          ],
+        ));
+      },
+    );
+  }
+}
+
+class TabletScreen extends StatelessWidget {
+  const TabletScreen({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              width: constraints.maxWidth * 0.5,
+              child: UndrawImageWidget(),
+            ),
+            Container(
+              child: SignUpButtonWidget(
+                scWidth: constraints.maxWidth * 0.5,
+              ),
+            )
+          ],
+        );
+      },
+    );
   }
 }
 

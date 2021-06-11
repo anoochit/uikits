@@ -35,10 +35,6 @@ class _SubMenuPageState extends State<SubMenuPage> {
                 ),
               );
             },
-            // trailing: IconButton(
-            //   icon: Icon(Icons.code),
-            //   onPressed: () {},
-            // ),
           );
         },
       ),

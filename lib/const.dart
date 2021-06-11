@@ -1,17 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:uikits2/pages/signup/signupscreen01.dart';
-import 'package:uikits2/pages/signup/signupscreen02.dart';
-import 'package:uikits2/pages/signup/signupscreen03.dart';
-import 'package:uikits2/pages/signup/signupscreen04.dart';
-import 'package:uikits2/pages/signup/signupscreen05.dart';
-import 'package:uikits2/pages/start/startscreen01.dart';
-import 'package:uikits2/pages/start/startscreen02.dart';
-import 'package:uikits2/pages/start/startscreen03.dart';
-import 'package:uikits2/pages/start/startscreen04.dart';
-import 'package:uikits2/pages/start/startscreen05.dart';
-import 'package:uikits2/pages/walkthrough/walkthrough01.dart';
-import 'package:uikits2/pages/walkthrough/walkthrough02.dart';
-import 'package:uikits2/pages/walkthrough/walkthrough03.dart';
+import 'package:ms_undraw/ms_undraw.dart';
+import 'package:uikits2/page/start/startscreen01.dart';
+import 'package:uikits2/page/start/startscreen02.dart';
+import 'package:uikits2/page/start/startscreen03.dart';
+import 'package:uikits2/page/start/startscreen04.dart';
+import 'package:uikits2/page/start/startscreen05.dart';
 
 class Menu {
   String title;
@@ -26,6 +19,20 @@ class SubMenu {
 
   SubMenu(this.title, this.widget);
 }
+
+var listImageSubMenu = [
+  UnDrawIllustration.start_building,
+  UnDrawIllustration.login,
+  UnDrawIllustration.steps,
+  UnDrawIllustration.loading,
+  UnDrawIllustration.profile,
+];
+
+var listSubMenu = [
+  listStartMenu,
+  listSignupMenu,
+  listWalkthroughMenu,
+];
 
 var listMainMenu = [
   Menu("Start", listStartMenu),
@@ -55,17 +62,17 @@ var listStartMenu = [
 ];
 
 var listSignupMenu = [
-  SubMenu("Signup & Login screen 1", SignupScreen01()),
-  SubMenu("Signup & Login screen 2", SignupScreen02()),
-  SubMenu("Signup & Login screen 3", SignupScreen05()),
-  SubMenu("Reset password screen", SignupScreen03()),
-  SubMenu("Invitation code screen", SignupScreen04()),
+  SubMenu("Signup & Login screen 1", Container()),
+  SubMenu("Signup & Login screen 2", Container()),
+  SubMenu("Signup & Login screen 3", Container()),
+  SubMenu("Reset password screen", Container()),
+  SubMenu("Invitation code screen", Container()),
 ];
 
 var listWalkthroughMenu = [
-  SubMenu("Walkthrough screen 1", WalkthroughScreen01()),
-  SubMenu("Walkthrough screen 2", WalkthroughScreen02()),
-  SubMenu("Walkthrough screen 3", WalkthroughScreen03()),
+  SubMenu("Walkthrough screen 1", Container()),
+  SubMenu("Walkthrough screen 2", Container()),
+  SubMenu("Walkthrough screen 3", Container()),
   // SubMenu("Walkthrough screen 4", SignupScreen04()),
   // SubMenu("Walkthrough screen 5", SignupScreen05()),
 ];

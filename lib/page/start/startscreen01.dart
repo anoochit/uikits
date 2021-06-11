@@ -10,10 +10,10 @@ class StartScreen01 extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle(
-        statusBarColor: Colors.transparent, // transparent status bar
-        systemNavigationBarColor: Colors.black, // navigation bar color
-        statusBarIconBrightness: Brightness.dark, // status bar icons' color
-        systemNavigationBarIconBrightness: Brightness.dark, //navigation bar icons' color
+        statusBarColor: Colors.transparent,
+        systemNavigationBarColor: Colors.black,
+        statusBarIconBrightness: Brightness.dark,
+        systemNavigationBarIconBrightness: Brightness.dark,
       ),
       child: Scaffold(
         body: SafeArea(
@@ -31,22 +31,22 @@ class MobileScreen extends StatelessWidget {
   const MobileScreen({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    var scWidth = MediaQuery.of(context).size.width;
-    var scHeight = MediaQuery.of(context).size.height;
-    return Stack(
-      children: [
-        Positioned(
-          width: scWidth,
-          height: scHeight * 0.8,
-          child: ImageWidget(),
-        ),
-        Positioned(
-          width: scWidth,
-          bottom: 32,
-          child: SignUpButtonWidget(scWidth: scWidth),
-        )
-      ],
-    );
+    return LayoutBuilder(builder: (context, constraints) {
+      return Stack(
+        children: [
+          Positioned(
+            width: constraints.maxWidth,
+            height: constraints.maxHeight * 0.8,
+            child: UndrawImageWidget(),
+          ),
+          Positioned(
+            width: constraints.maxWidth,
+            bottom: 32,
+            child: SignUpButtonWidget(scWidth: constraints.maxWidth),
+          )
+        ],
+      );
+    });
   }
 }
 
@@ -55,7 +55,23 @@ class TabletScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              width: constraints.maxWidth * 0.5,
+              child: UndrawImageWidget(),
+            ),
+            Container(
+              child: SignUpButtonWidget(scWidth: constraints.maxWidth * 0.5),
+            ),
+          ],
+        );
+      },
+    );
   }
 }
 
@@ -84,8 +100,8 @@ class SignUpButtonWidget extends StatelessWidget {
   }
 }
 
-class ImageWidget extends StatelessWidget {
-  const ImageWidget({
+class UndrawImageWidget extends StatelessWidget {
+  const UndrawImageWidget({
     Key? key,
   }) : super(key: key);
 

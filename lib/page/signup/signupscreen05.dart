@@ -3,8 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:ms_undraw/ms_undraw.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
-class SignupScreen02 extends StatelessWidget {
-  const SignupScreen02({Key? key}) : super(key: key);
+class SignupScreen05 extends StatelessWidget {
+  const SignupScreen05({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -46,8 +46,8 @@ class MobileScreen extends StatelessWidget {
           bottom: 32,
           child: Container(
             alignment: Alignment.center,
-            //padding: EdgeInsets.symmetric(horizontal: 16),
-            child: SignUpFormWidget(scWidth: scWidth),
+            padding: EdgeInsets.symmetric(horizontal: 16),
+            child: SignInFormWidget(scHeight: scHeight),
           ),
         )
       ],
@@ -55,19 +55,19 @@ class MobileScreen extends StatelessWidget {
   }
 }
 
-class SignUpFormWidget extends StatefulWidget {
-  const SignUpFormWidget({
+class SignInFormWidget extends StatefulWidget {
+  const SignInFormWidget({
     Key? key,
-    required this.scWidth,
+    required this.scHeight,
   }) : super(key: key);
 
-  final double scWidth;
+  final double scHeight;
 
   @override
-  _SignUpFormWidgetState createState() => _SignUpFormWidgetState();
+  _SignInFormWidgetState createState() => _SignInFormWidgetState();
 }
 
-class _SignUpFormWidgetState extends State<SignUpFormWidget> {
+class _SignInFormWidgetState extends State<SignInFormWidget> {
   var formKey = GlobalKey<FormState>();
 
   @override
@@ -81,8 +81,8 @@ class _SignUpFormWidgetState extends State<SignUpFormWidget> {
             textAlign: TextAlign.center,
             decoration: InputDecoration(
               filled: true,
-              fillColor: Colors.white,
-              //border: OutlineInputBorder(),
+              fillColor: Colors.blue.shade50,
+              border: OutlineInputBorder(),
               hintText: "Your Email",
             ),
             validator: (value) {
@@ -92,14 +92,16 @@ class _SignUpFormWidgetState extends State<SignUpFormWidget> {
               return null;
             },
           ),
+          SizedBox(height: 8),
           TextFormField(
             textAlign: TextAlign.center,
             decoration: InputDecoration(
               filled: true,
-              fillColor: Colors.white,
-              //border: OutlineInputBorder(),
+              fillColor: Colors.blue.shade50,
+              border: OutlineInputBorder(),
               hintText: "Password",
             ),
+            obscureText: true,
             validator: (value) {
               if (value!.isEmpty) {
                 return 'Please enter your password';
@@ -108,18 +110,15 @@ class _SignUpFormWidgetState extends State<SignUpFormWidget> {
             },
           ),
           SizedBox(height: 16),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                minimumSize: Size(widget.scWidth, 50),
-                //shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(32.0)),
-              ),
-              child: Text("Sign up with Email"),
-              onPressed: () {
-                // put your singup script here
-              },
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              minimumSize: Size(widget.scHeight, 50),
+              //shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(32.0)),
             ),
+            child: Text("Sign in"),
+            onPressed: () {
+              // put your singup script here
+            },
           ),
           SizedBox(height: 24),
           Text("Don't have an Account? Signup")

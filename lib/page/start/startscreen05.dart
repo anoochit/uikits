@@ -19,6 +19,7 @@ class StartScreen05 extends StatelessWidget {
         body: SafeArea(
             child: ScreenTypeLayout.builder(
           mobile: (context) => MobileScreen(),
+          tablet: (context) => TabletScreen(),
         )),
       ),
     );
@@ -48,6 +49,37 @@ class MobileScreen extends StatelessWidget {
   }
 }
 
+class TabletScreen extends StatelessWidget {
+  const TabletScreen({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              width: constraints.maxWidth * 0.5,
+              child: UndrawImageWidget(),
+            ),
+            SizedBox(
+              height: 16.0,
+            ),
+            Container(
+              width: constraints.maxWidth,
+              child: SignInButtonWidget(
+                scWidth: constraints.maxWidth,
+              ),
+            )
+          ],
+        );
+      },
+    );
+  }
+}
+
 class SignInButtonWidget extends StatelessWidget {
   const SignInButtonWidget({
     Key? key,
@@ -61,11 +93,11 @@ class SignInButtonWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-              minimumSize: Size(scWidth * 0.45, 40),
+              minimumSize: Size(scWidth * 0.35, 40),
             ),
             child: Text("Sign up"),
             onPressed: () {
@@ -74,7 +106,7 @@ class SignInButtonWidget extends StatelessWidget {
           ),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-              minimumSize: Size(scWidth * 0.45, 40),
+              minimumSize: Size(scWidth * 0.35, 40),
             ),
             child: Text("Sign in"),
             onPressed: () {

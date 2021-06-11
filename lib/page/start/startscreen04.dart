@@ -19,6 +19,7 @@ class StartScreen04 extends StatelessWidget {
         body: SafeArea(
           child: ScreenTypeLayout.builder(
             mobile: (context) => MobileScreen(),
+            tablet: (context) => TabletScreen(),
           ),
         ),
       ),
@@ -49,6 +50,39 @@ class MobileScreen extends StatelessWidget {
           child: SignInButtonWidget(scWidth: scWidth),
         )
       ],
+    );
+  }
+}
+
+class TabletScreen extends StatelessWidget {
+  const TabletScreen({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              width: constraints.maxWidth * 0.5,
+              child: UndrawImageWidget(),
+            ),
+            Container(
+              child: TitleTextWidget(),
+            ),
+            SizedBox(
+              height: 16.0,
+            ),
+            Container(
+              child: SignInButtonWidget(
+                scWidth: constraints.maxWidth * 0.5,
+              ),
+            )
+          ],
+        );
+      },
     );
   }
 }

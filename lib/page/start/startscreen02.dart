@@ -18,6 +18,7 @@ class StartScreen02 extends StatelessWidget {
         body: SafeArea(
             child: ScreenTypeLayout.builder(
           mobile: (context) => MobileScreen(),
+          tablet: (context) => TabletScreen(),
         )),
       ),
     );
@@ -41,6 +42,32 @@ class MobileScreen extends StatelessWidget {
           SignUpAndSignInButtonWidget(scWidth: scWidth),
         ],
       ),
+    );
+  }
+}
+
+class TabletScreen extends StatelessWidget {
+  const TabletScreen({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              width: constraints.maxWidth,
+              child: TextTitleWidget(scWidth: constraints.maxWidth),
+            ),
+            SizedBox(height: 256),
+            Container(
+              child: SignUpAndSignInButtonWidget(scWidth: constraints.maxWidth * 0.5),
+            ),
+          ],
+        );
+      },
     );
   }
 }
@@ -99,11 +126,11 @@ class TextTitleWidget extends StatelessWidget {
         // TODO : Change your text here
         text: TextSpan(
           text: 'Sign Up\n',
-          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.black),
+          style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold, color: Colors.black),
           children: const <TextSpan>[
             TextSpan(
               text: 'for Mobile App',
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal, color: Colors.black),
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.normal, color: Colors.black),
             ),
           ],
         ),
