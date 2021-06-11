@@ -19,6 +19,7 @@ class SignupScreen01 extends StatelessWidget {
         body: SafeArea(
           child: ScreenTypeLayout.builder(
             mobile: (context) => MobileScreen(),
+            tablet: (context) => TabletScreen(),
           ),
         ),
       ),
@@ -31,25 +32,52 @@ class MobileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var scWidth = MediaQuery.of(context).size.width;
-    var scHeight = MediaQuery.of(context).size.height;
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        return Stack(
+          children: [
+            Positioned.fill(
+              top: (constraints.maxHeight * 0.2) * -1,
+              child: UndrawImageWidget(),
+            ),
+            Positioned(
+              width: constraints.maxWidth,
+              bottom: 32,
+              child: Container(
+                alignment: Alignment.center,
+                padding: EdgeInsets.symmetric(horizontal: 16),
+                child: SignUpFormWidget(scWidth: constraints.maxWidth),
+              ),
+            )
+          ],
+        );
+      },
+    );
+  }
+}
 
-    return Stack(
-      children: [
-        Positioned.fill(
-          top: (scHeight * 0.2) * -1,
-          child: UndrawImageWidget(),
-        ),
-        Positioned(
-          width: scWidth,
-          bottom: 32,
-          child: Container(
-            alignment: Alignment.center,
-            padding: EdgeInsets.symmetric(horizontal: 16),
-            child: SignUpFormWidget(scWidth: scWidth),
-          ),
-        )
-      ],
+class TabletScreen extends StatelessWidget {
+  const TabletScreen({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        return Stack(
+          children: [
+            Positioned(width: constraints.maxWidth, top: 8, child: Align(alignment: Alignment.topCenter, child: UndrawImageWidget())),
+            Positioned(
+              width: constraints.maxWidth,
+              bottom: 32,
+              child: Container(
+                alignment: Alignment.center,
+                padding: EdgeInsets.symmetric(horizontal: 16),
+                child: SignUpFormWidget(scWidth: constraints.maxWidth * 0.5),
+              ),
+            )
+          ],
+        );
+      },
     );
   }
 }
@@ -73,40 +101,45 @@ class _SignUpFormWidgetState extends State<SignUpFormWidget> {
   Widget build(BuildContext context) {
     return Form(
       key: formKey,
-      child: Flex(
-        direction: Axis.vertical,
+      child: Column(
         children: [
-          TextFormField(
-            textAlign: TextAlign.center,
-            decoration: InputDecoration(
-              filled: true,
-              fillColor: Colors.blue.shade50,
-              border: OutlineInputBorder(),
-              hintText: "Your Email",
+          Container(
+            width: widget.scWidth,
+            child: TextFormField(
+              textAlign: TextAlign.center,
+              decoration: InputDecoration(
+                filled: true,
+                fillColor: Colors.blue.shade50,
+                border: OutlineInputBorder(),
+                hintText: "Your Email",
+              ),
+              validator: (value) {
+                if (value!.isEmpty) {
+                  return 'Please enter your email';
+                }
+                return null;
+              },
             ),
-            validator: (value) {
-              if (value!.isEmpty) {
-                return 'Please enter your email';
-              }
-              return null;
-            },
           ),
           SizedBox(height: 8),
-          TextFormField(
-            textAlign: TextAlign.center,
-            decoration: InputDecoration(
-              filled: true,
-              fillColor: Colors.blue.shade50,
-              border: OutlineInputBorder(),
-              hintText: "Password",
+          Container(
+            width: widget.scWidth,
+            child: TextFormField(
+              textAlign: TextAlign.center,
+              decoration: InputDecoration(
+                filled: true,
+                fillColor: Colors.blue.shade50,
+                border: OutlineInputBorder(),
+                hintText: "Password",
+              ),
+              obscureText: true,
+              validator: (value) {
+                if (value!.isEmpty) {
+                  return 'Please enter your password';
+                }
+                return null;
+              },
             ),
-            obscureText: true,
-            validator: (value) {
-              if (value!.isEmpty) {
-                return 'Please enter your password';
-              }
-              return null;
-            },
           ),
           SizedBox(height: 16),
           ElevatedButton(

@@ -63,9 +63,9 @@ class _HomeTabletState extends State<HomeTablet> {
               },
             ),
           ),
+          VerticalDivider(),
           Expanded(
-            child: Flex(
-              direction: Axis.vertical,
+            child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [

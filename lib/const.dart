@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ms_undraw/ms_undraw.dart';
+import 'package:uikits2/page/signup/signupscreen01.dart';
+import 'package:uikits2/page/signup/signupscreen02.dart';
 import 'package:uikits2/page/start/startscreen01.dart';
 import 'package:uikits2/page/start/startscreen02.dart';
 import 'package:uikits2/page/start/startscreen03.dart';
@@ -62,8 +64,8 @@ var listStartMenu = [
 ];
 
 var listSignupMenu = [
-  SubMenu("Signup & Login screen 1", Container()),
-  SubMenu("Signup & Login screen 2", Container()),
+  SubMenu("Signup & Login screen 1", SignupScreen01()),
+  SubMenu("Signup & Login screen 2", SignupScreen02()),
   SubMenu("Signup & Login screen 3", Container()),
   SubMenu("Reset password screen", Container()),
   SubMenu("Invitation code screen", Container()),
