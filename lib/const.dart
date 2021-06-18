@@ -19,6 +19,8 @@ import 'package:uikits2/pages/04_loading/loadingscreen01.dart';
 import 'package:uikits2/pages/04_loading/loadingscreen02.dart';
 import 'package:uikits2/pages/04_loading/loadingscreen03.dart';
 import 'package:uikits2/pages/04_loading/loadingscreen04.dart';
+import 'package:uikits2/pages/05_profile/profilescreen01.dart';
+import 'package:uikits2/pages/05_profile/profilescreen02.dart';
 
 class Menu {
   String title;
@@ -47,6 +49,7 @@ var listSubMenu = [
   listSignupMenu,
   listWalkthroughMenu,
   listLoadingMenu,
+  listProfileMenu,
 ];
 
 var listMainMenu = [
@@ -54,7 +57,7 @@ var listMainMenu = [
   Menu("SignUp & Login", listSignupMenu),
   Menu("Walkthrough", listWalkthroughMenu),
   Menu("Loading", listLoadingMenu),
-  Menu("Profiles", listStartMenu),
+  Menu("Profiles", listProfileMenu),
   Menu("Feed", listStartMenu),
   Menu("Article", listStartMenu),
   Menu("Activity", listStartMenu),
@@ -97,4 +100,9 @@ var listLoadingMenu = [
   SubMenu("Loading screen 2", LoadingScreen02()),
   SubMenu("Loading screen 3", LoadingScreen03()),
   SubMenu("Loading screen 4", LoadingScreen04()),
+];
+
+var listProfileMenu = [
+  SubMenu("Profile screen 1", ProfileScreen01()),
+  SubMenu("Profile screen 2", ProfileScreen02()),
 ];
