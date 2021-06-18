@@ -18,7 +18,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
+  sdk: '>=2.12.0 <3.0.0'
 
 dependencies:
   flutter:
@@ -26,7 +26,9 @@ dependencies:
   basic_utils: ^3.1.0
   carousel_slider: ^4.0.0-nullsafety.0
   cupertino_icons: ^1.0.2
+  font_awesome: ^5.10.1
   ms_undraw: ^3.0.0+0
+  percent_indicator: ^3.0.1
   responsive_builder: ^0.4.1
 
 dev_dependencies:
@@ -37,14 +39,13 @@ dev_dependencies:
 # following page: https://dart.dev/tools/pub/pubspec
 # The following section is specific to Flutter.
 flutter:
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
   # To add assets to your application, add an assets section, like this:
-  #assets:
-  #   - lib/pages/start/
+  assets:
+    - assets/images/
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

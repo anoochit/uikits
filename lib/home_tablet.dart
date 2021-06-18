@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 import 'package:ms_undraw/ms_undraw.dart';
 import 'package:uikits2/const.dart';
-import 'package:uikits2/page/start/startscreen05.dart';
 
 class HomeTablet extends StatefulWidget {
   const HomeTablet({Key? key}) : super(key: key);
@@ -31,7 +30,11 @@ class _HomeTabletState extends State<HomeTablet> {
                 var title = listMainMenu[index].title;
                 return ListTile(
                   leading: Icon(Icons.category),
-                  title: Text(title),
+                  title: Text(
+                    title,
+                    style: TextStyle(fontWeight: (index == currentItem) ? FontWeight.bold : FontWeight.normal),
+                  ),
+                  trailing: (index == currentItem) ? Icon(Icons.arrow_forward_ios) : Container(width: 16),
                   onTap: () {
                     setState(() {
                       currentItem = index;

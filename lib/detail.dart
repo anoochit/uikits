@@ -27,6 +27,7 @@ class _SubMenuPageState extends State<SubMenuPage> {
         itemBuilder: (BuildContext context, int index) {
           return ListTile(
             title: Text('${submenu[index].title}'),
+            leading: Icon(Icons.category_outlined),
             onTap: () {
               Navigator.push(
                 context,
