@@ -32,15 +32,7 @@ Mobile Screen
 
 # Start Screen
 
-<img src="https://raw.githubusercontent.com/anoochit/uikits/master/screenshot/screenshot_start01.png" width="200">
-
-<img src="https://raw.githubusercontent.com/anoochit/uikits/master/screenshot/screenshot_start02.png" width="200">
-
-<img src="https://raw.githubusercontent.com/anoochit/uikits/master/screenshot/screenshot_start03.png" width="200">
-
-<img src="https://raw.githubusercontent.com/anoochit/uikits/master/screenshot/screenshot_start04.png" width="200">
-
-<img src="https://raw.githubusercontent.com/anoochit/uikits/master/screenshot/screenshot_start05.png" width="200">
+<img src="https://raw.githubusercontent.com/anoochit/uikits/master/screenshot/screenshot_start01.png" width="200"> <img src="https://raw.githubusercontent.com/anoochit/uikits/master/screenshot/screenshot_start02.png" width="200"> <img src="https://raw.githubusercontent.com/anoochit/uikits/master/screenshot/screenshot_start03.png" width="200"> <img src="https://raw.githubusercontent.com/anoochit/uikits/master/screenshot/screenshot_start04.png" width="200"> <img src="https://raw.githubusercontent.com/anoochit/uikits/master/screenshot/screenshot_start05.png" width="200">
 
 # Signup Screen
 
