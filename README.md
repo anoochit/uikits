@@ -41,3 +41,7 @@ Mobile Screen
 # Walkthrough Screen
 
 <img src="https://raw.githubusercontent.com/anoochit/uikits/master/screenshot/screenshot_walkthrough01.png" width="200"> <img src="https://raw.githubusercontent.com/anoochit/uikits/master/screenshot/screenshot_walkthrough02.png" width="200"> <img src="https://raw.githubusercontent.com/anoochit/uikits/master/screenshot/screenshot_walkthrough03.png" width="200"> <img src="https://raw.githubusercontent.com/anoochit/uikits/master/screenshot/screenshot_walkthrough04.png" width="200"> <img src="https://raw.githubusercontent.com/anoochit/uikits/master/screenshot/screenshot_walkthrough05.png" width="200">
+
+# Loading Screen
+
+<img src="https://raw.githubusercontent.com/anoochit/uikits/master/screenshot/screenshot_loading01.png" width="200"> <img src="https://raw.githubusercontent.com/anoochit/uikits/master/screenshot/screenshot_loading02.png" width="200"> <img src="https://raw.githubusercontent.com/anoochit/uikits/master/screenshot/screenshot_loading03.png" width="200"> <img src="https://raw.githubusercontent.com/anoochit/uikits/master/screenshot/screenshot_loading04.png" width="200">
