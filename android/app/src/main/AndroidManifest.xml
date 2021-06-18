@@ -2,7 +2,7 @@
     package="net.redlinesoft.uikits2">
    <application
         android:label="uikits2"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/launcher_icon">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
