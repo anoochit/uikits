@@ -21,4 +21,10 @@ A complete UIs for mobile and tablet, which include 16 categories.
 
 # Screenshots
 
-<img src="https://raw.githubusercontent.com/anoochit/uikits/master/screenshot/screenshot01.png" width="400">
+<img src="https://raw.githubusercontent.com/anoochit/uikits/master/screenshot/screenshot01.png" width="500">
+
+Tablet Screen
+
+<img src="https://raw.githubusercontent.com/anoochit/uikits/master/screenshot/screenshot02.png" width="500">
+
+Mobile Screen

@@ -29,12 +29,14 @@ class _ProfileScreen02State extends State<ProfileScreen02> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
+                    // replace avatar image here
                     CircleAvatar(
                       radius: 40,
                       backgroundImage: AssetImage('assets/images/placeholder.png'),
                     ),
+                    // place statistic here
                     BlockText(title: "Posts", value: 200),
-                    BlockText(title: "Follower", value: 200),
+                    BlockText(title: "Followers", value: 200),
                     BlockText(title: "Following", value: 200),
                   ],
                 ),
@@ -45,11 +47,14 @@ class _ProfileScreen02State extends State<ProfileScreen02> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Container(
-                        padding: EdgeInsets.all(8.0),
-                        child: Text(
-                          "John Doe",
-                          style: TextStyle(fontSize: 24.0),
-                        )),
+                      padding: EdgeInsets.all(8.0),
+                      // replace display name here
+                      child: Text(
+                        "John Doe",
+                        style: TextStyle(fontSize: 24.0),
+                      ),
+                    ),
+                    // replace profile detail here
                     Container(
                       padding: EdgeInsets.all(8.0),
                       child: Text("Id sint veniam non irure dolore enim ea. Sit sint cillum consectetur voluptate eiusmod. Ad excepteur cillum fugiat id aliquip exercitation. "),
