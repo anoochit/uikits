@@ -22,6 +22,7 @@ import 'package:uikits2/pages/04_loading/loadingscreen04.dart';
 import 'package:uikits2/pages/05_profile/profilescreen01.dart';
 import 'package:uikits2/pages/05_profile/profilescreen02.dart';
 import 'package:uikits2/pages/05_profile/profilescreen03.dart';
+import 'package:uikits2/pages/05_profile/profilescreen04.dart';
 
 class Menu {
   String title;
@@ -107,4 +108,5 @@ var listProfileMenu = [
   SubMenu("Profile screen 1", ProfileScreen01()),
   SubMenu("Profile screen 2", ProfileScreen02()),
   SubMenu("Profile screen 3", ProfileScreen03()),
+  SubMenu("Profile screen 4", ProfileScreen04()),
 ];
