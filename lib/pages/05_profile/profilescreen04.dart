@@ -41,49 +41,12 @@ class _ProfileScreen04State extends State<ProfileScreen04> {
                   child: ListView.builder(
                     itemCount: 15,
                     itemBuilder: (BuildContext context, int index) {
+                      // if index == 0 insert divider with title "Friends"
+                      // if index == 5 indert divider with title "Nearby Friends"
                       if ((index == 0) || (index == 5)) {
-                        return Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Container(
-                              width: constraints.maxWidth,
-                              color: Colors.grey.shade200,
-                              padding: EdgeInsets.only(left: 16.0, top: 8, bottom: 8),
-                              child: Text((index == 0) ? "Friends" : "Nearby Friends"),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Row(
-                                children: [
-                                  CircleAvatar(
-                                    radius: 24,
-                                    backgroundImage: AssetImage('assets/images/placeholder.png'),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Text('item $index'),
-                                  )
-                                ],
-                              ),
-                            )
-                          ],
-                        );
+                        return ListDivider(constraints: constraints, index: index);
                       }
-                      return Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Row(
-                          children: [
-                            CircleAvatar(
-                              radius: 24,
-                              backgroundImage: AssetImage('assets/images/placeholder.png'),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Text('item $index'),
-                            )
-                          ],
-                        ),
-                      );
+                      return ListItem(index: index);
                     },
                   ),
                 ),
@@ -91,6 +54,61 @@ class _ProfileScreen04State extends State<ProfileScreen04> {
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class ListDivider extends StatelessWidget {
+  const ListDivider({
+    Key? key,
+    required this.constraints,
+    required this.index,
+  }) : super(key: key);
+
+  final BoxConstraints constraints;
+  final int index;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Container(
+          width: constraints.maxWidth,
+          color: Colors.grey.shade200,
+          padding: EdgeInsets.only(left: 16.0, top: 8, bottom: 8),
+          child: Text((index == 0) ? "Friends" : "Nearby Friends"),
+        ),
+        ListItem(index: index)
+      ],
+    );
+  }
+}
+
+class ListItem extends StatelessWidget {
+  const ListItem({
+    Key? key,
+    required this.index,
+  }) : super(key: key);
+
+  final int index;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Row(
+        children: [
+          CircleAvatar(
+            radius: 24,
+            backgroundImage: AssetImage('assets/images/placeholder.png'),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text('item $index'),
+          )
+        ],
       ),
     );
   }

@@ -111,7 +111,7 @@ class BlockText extends StatelessWidget {
         children: [
           Text(
             '$value',
-            style: TextStyle(fontWeight: FontWeight.bold),
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
           ),
           Text(title),
         ],

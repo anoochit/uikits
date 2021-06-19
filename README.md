@@ -45,3 +45,7 @@ Mobile Screen
 # Loading Screen
 
 <img src="https://raw.githubusercontent.com/anoochit/uikits/master/screenshot/screenshot_loading01.png" width="200"> <img src="https://raw.githubusercontent.com/anoochit/uikits/master/screenshot/screenshot_loading02.png" width="200"> <img src="https://raw.githubusercontent.com/anoochit/uikits/master/screenshot/screenshot_loading03.png" width="200"> <img src="https://raw.githubusercontent.com/anoochit/uikits/master/screenshot/screenshot_loading04.png" width="200">
+
+# Profile Screen
+
+<img src="https://raw.githubusercontent.com/anoochit/uikits/master/screenshot/screenshot_profile01.png" width="200"> <img src="https://raw.githubusercontent.com/anoochit/uikits/master/screenshot/screenshot_profile02.png" width="200"> <img src="https://raw.githubusercontent.com/anoochit/uikits/master/screenshot/screenshot_profile03.png" width="200"> <img src="https://raw.githubusercontent.com/anoochit/uikits/master/screenshot/screenshot_profile04.png" width="200"> <img src="https://raw.githubusercontent.com/anoochit/uikits/master/screenshot/screenshot_profile05.png" width="200">
