@@ -121,8 +121,8 @@ final listProfileMenu = [
 
 final listFeedMenu = [
   SubMenu("Feed screen 1", FeedScreen01()),
-  SubMenu("Feed screen 1", FeedScreen02()),
-  SubMenu("Feed screen 1", FeedScreen03()),
-  SubMenu("Feed screen 1", FeedScreen04()),
-  SubMenu("Feed screen 1", FeedScreen05()),
+  SubMenu("Feed screen 2", FeedScreen02()),
+  SubMenu("Feed screen 3", FeedScreen03()),
+  SubMenu("Feed screen 4", FeedScreen04()),
+  SubMenu("Feed screen 5", FeedScreen05()),
 ];

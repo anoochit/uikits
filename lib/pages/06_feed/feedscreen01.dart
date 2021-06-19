@@ -72,7 +72,7 @@ class PostItem extends StatelessWidget {
         child: Container(
           decoration: BoxDecoration(
             border: Border.all(color: Colors.grey.shade200),
-            borderRadius: BorderRadius.circular(3),
+            borderRadius: BorderRadius.circular(6),
           ),
           child: Column(
             children: [
