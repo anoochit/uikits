@@ -74,6 +74,7 @@ class _HomeTabletState extends State<HomeTablet> {
               children: [
                 Container(
                   width: 500,
+                  height: 500,
                   child: UnDraw(
                     illustration: listImageSubMenu[currentItem],
                     color: Theme.of(context).primaryColor,

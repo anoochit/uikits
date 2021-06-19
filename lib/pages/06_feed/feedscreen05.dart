@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:timeago/timeago.dart' as timeago;
+import 'package:timelines/timelines.dart';
 
 class FeedScreen05 extends StatefulWidget {
   FeedScreen05({Key? key}) : super(key: key);
@@ -26,83 +27,35 @@ class _FeedScreen05State extends State<FeedScreen05> {
           builder: (context, constraints) => Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 26.0),
+                child: Container(
+                  padding: EdgeInsets.all(16),
+                  child: Text(
+                    "Timeline",
+                    style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
               Expanded(
                 child: MediaQuery.removePadding(
                   context: context,
                   removeTop: true,
-                  child: ListView.builder(
-                    shrinkWrap: true,
-                    itemCount: 10,
-                    itemBuilder: (context, index) {
-                      return PostItem();
-                    },
+                  // see more timeline plugin doc at https://pub.dev/packages/timelines
+                  child: Timeline.tileBuilder(
+                    builder: TimelineTileBuilder.fromStyle(
+                      contentsAlign: ContentsAlign.alternating,
+                      contentsBuilder: (context, index) => Padding(
+                        padding: const EdgeInsets.all(24.0),
+                        child: Text('Timeline Event $index'),
+                      ),
+                      itemCount: 20,
+                    ),
                   ),
                 ),
               ),
             ],
           ),
-        ),
-      ),
-    );
-  }
-}
-
-class PostItem extends StatelessWidget {
-  const PostItem({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    final fifteenAgo = new DateTime.now().subtract(new Duration(minutes: 15));
-
-    return LayoutBuilder(
-      builder: (context, constraints) => Container(
-        padding: EdgeInsets.only(bottom: 32.0),
-        child: Column(
-          children: [
-            Container(
-              height: constraints.maxWidth,
-              // replace image
-              child: Image.asset(
-                'assets/images/placeholder.png',
-                fit: BoxFit.cover,
-              ),
-            ),
-            Row(
-              children: [
-                Flex(
-                  direction: Axis.horizontal,
-                  children: [
-                    IconButton(
-                      icon: Icon(FontAwesomeIcons.thumbsUp),
-                      onPressed: () {
-                        // place link function here
-                      },
-                    ),
-                    Text("Like")
-                  ],
-                ),
-                Flex(
-                  direction: Axis.horizontal,
-                  children: [
-                    IconButton(
-                      icon: Icon(FontAwesomeIcons.comment),
-                      onPressed: () {
-                        // place comment function here
-                      },
-                    ),
-                    Text("Comment")
-                  ],
-                ),
-                Spacer(),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(timeago.format(fifteenAgo)),
-                )
-              ],
-            )
-          ],
         ),
       ),
     );

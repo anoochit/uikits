@@ -23,7 +23,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  basic_utils: ^3.1.0
   carousel_slider: ^4.0.0-nullsafety.0
   cupertino_icons: ^1.0.2
   font_awesome_flutter: ^9.1.0
@@ -31,6 +30,7 @@ dependencies:
   percent_indicator: ^3.0.1
   responsive_builder: ^0.4.1
   timeago: ^3.1.0
+  timelines: ^0.1.0
 
 dev_dependencies:
   flutter_test:
@@ -38,9 +38,9 @@ dev_dependencies:
   flutter_launcher_icons: ^0.9.0
 
 flutter_icons:
-  android: "launcher_icon"
+  android: 'launcher_icon'
   ios: true
-  image_path: "assets/icons/icon.png"
+  image_path: 'assets/icons/icon.png'
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

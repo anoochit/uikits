@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:timeago/timeago.dart' as timeago;
 
 class FeedScreen04 extends StatefulWidget {
   FeedScreen04({Key? key}) : super(key: key);
@@ -26,6 +24,16 @@ class _FeedScreen04State extends State<FeedScreen04> {
           builder: (context, constraints) => Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 32.0),
+                child: Container(
+                  padding: EdgeInsets.all(16),
+                  child: Text(
+                    "Feed",
+                    style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
               Expanded(
                 child: MediaQuery.removePadding(
                   context: context,
@@ -54,54 +62,50 @@ class PostItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final fifteenAgo = new DateTime.now().subtract(new Duration(minutes: 15));
-
     return LayoutBuilder(
       builder: (context, constraints) => Container(
-        padding: EdgeInsets.only(bottom: 32.0),
+        padding: EdgeInsets.only(bottom: 2.0),
         child: Column(
           children: [
-            Container(
-              height: constraints.maxWidth,
-              // replace image
-              child: Image.asset(
-                'assets/images/placeholder.png',
-                fit: BoxFit.cover,
-              ),
-            ),
-            Row(
+            Stack(
               children: [
-                Flex(
-                  direction: Axis.horizontal,
-                  children: [
-                    IconButton(
-                      icon: Icon(FontAwesomeIcons.thumbsUp),
-                      onPressed: () {
-                        // place link function here
-                      },
-                    ),
-                    Text("Like")
-                  ],
+                Container(
+                  height: constraints.maxWidth * 0.8,
+                  // replace image
+                  child: Image.asset(
+                    'assets/images/placeholder.png',
+                    fit: BoxFit.cover,
+                  ),
                 ),
-                Flex(
-                  direction: Axis.horizontal,
-                  children: [
-                    IconButton(
-                      icon: Icon(FontAwesomeIcons.comment),
-                      onPressed: () {
-                        // place comment function here
-                      },
+                Positioned(
+                  bottom: 10,
+                  child: Container(
+                    width: constraints.maxWidth,
+                    padding: EdgeInsets.symmetric(horizontal: 8.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 8.0),
+                          child: Text(
+                            "Esse laboris consectetur commodo do nulla amet eiusmod elit proident reprehenderit culpa dolor. ",
+                            maxLines: 2,
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 8.0),
+                          child: Text(
+                            "By Display Name",
+                            style: TextStyle(fontSize: 12.0),
+                          ),
+                        ),
+                      ],
                     ),
-                    Text("Comment")
-                  ],
-                ),
-                Spacer(),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(timeago.format(fifteenAgo)),
+                  ),
                 )
               ],
-            )
+            ),
           ],
         ),
       ),

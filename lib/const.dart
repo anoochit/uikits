@@ -50,6 +50,8 @@ final listImageSubMenu = [
   UnDrawIllustration.steps,
   UnDrawIllustration.loading,
   UnDrawIllustration.profile,
+  UnDrawIllustration.my_feed,
+  UnDrawIllustration.news,
 ];
 
 final listSubMenu = [
