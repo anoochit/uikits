@@ -30,7 +30,7 @@ class _ProfileScreen04State extends State<ProfileScreen04> {
                   padding: EdgeInsets.all(16),
                   child: Text(
                     "Profile",
-                    style: TextStyle(fontSize: 32),
+                    style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
                   ),
                 ),
               ),

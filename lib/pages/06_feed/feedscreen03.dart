@@ -3,14 +3,14 @@ import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:timeago/timeago.dart' as timeago;
 
-class ProfileScreen05 extends StatefulWidget {
-  ProfileScreen05({Key? key}) : super(key: key);
+class FeedScreen03 extends StatefulWidget {
+  FeedScreen03({Key? key}) : super(key: key);
 
   @override
-  _ProfileScreen05State createState() => _ProfileScreen05State();
+  _FeedScreen03State createState() => _FeedScreen03State();
 }
 
-class _ProfileScreen05State extends State<ProfileScreen05> {
+class _FeedScreen03State extends State<FeedScreen03> {
   @override
   Widget build(BuildContext context) {
     return AnnotatedRegion<SystemUiOverlayStyle>(
@@ -26,59 +26,6 @@ class _ProfileScreen05State extends State<ProfileScreen05> {
           builder: (context, constraints) => Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Stack(
-                children: [
-                  Container(
-                    width: constraints.maxWidth,
-                    height: 220,
-                    child: Image.asset(
-                      'assets/images/placeholder.png',
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                  Container(
-                    padding: EdgeInsets.only(top: 48.0),
-                    width: constraints.maxWidth,
-                    child: Column(
-                      children: [
-                        // replace avatar image here
-                        CircleAvatar(
-                          radius: 42,
-                          backgroundImage: AssetImage('assets/images/placeholder.png'),
-                        ),
-                        Container(
-                          padding: EdgeInsets.all(8.0),
-                          // replace display name here
-                          child: Text(
-                            "John Doe",
-                            style: TextStyle(fontSize: 24.0),
-                          ),
-                        ),
-                        Container(
-                          padding: EdgeInsets.all(8.0),
-                          // replace display name here
-                          child: Text(
-                            "@johndoe",
-                            style: TextStyle(fontSize: 16.0),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-              Container(
-                padding: EdgeInsets.all(8.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    // place statistic here
-                    BlockText(title: "Posts", value: 200),
-                    BlockText(title: "Followers", value: 200),
-                    BlockText(title: "Following", value: 200),
-                  ],
-                ),
-              ),
               Expanded(
                 child: MediaQuery.removePadding(
                   context: context,
@@ -157,34 +104,6 @@ class PostItem extends StatelessWidget {
             )
           ],
         ),
-      ),
-    );
-  }
-}
-
-class BlockText extends StatelessWidget {
-  const BlockText({
-    Key? key,
-    required this.title,
-    required this.value,
-  }) : super(key: key);
-
-  final String title;
-  final int value;
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Text(
-            '$value',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-          ),
-          Text(title),
-        ],
       ),
     );
   }

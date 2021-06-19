@@ -24,6 +24,11 @@ import 'package:uikits2/pages/05_profile/profilescreen02.dart';
 import 'package:uikits2/pages/05_profile/profilescreen03.dart';
 import 'package:uikits2/pages/05_profile/profilescreen04.dart';
 import 'package:uikits2/pages/05_profile/profilescreen05.dart';
+import 'package:uikits2/pages/06_feed/feedscreen01.dart';
+import 'package:uikits2/pages/06_feed/feedscreen02.dart';
+import 'package:uikits2/pages/06_feed/feedscreen03.dart';
+import 'package:uikits2/pages/06_feed/feedscreen04.dart';
+import 'package:uikits2/pages/06_feed/feedscreen05.dart';
 
 class Menu {
   String title;
@@ -39,7 +44,7 @@ class SubMenu {
   SubMenu(this.title, this.widget);
 }
 
-var listImageSubMenu = [
+final listImageSubMenu = [
   UnDrawIllustration.start_building,
   UnDrawIllustration.login,
   UnDrawIllustration.steps,
@@ -47,21 +52,22 @@ var listImageSubMenu = [
   UnDrawIllustration.profile,
 ];
 
-var listSubMenu = [
+final listSubMenu = [
   listStartMenu,
   listSignupMenu,
   listWalkthroughMenu,
   listLoadingMenu,
   listProfileMenu,
+  listFeedMenu,
 ];
 
-var listMainMenu = [
+final listMainMenu = [
   Menu("Start", listStartMenu),
   Menu("SignUp & Login", listSignupMenu),
   Menu("Walkthrough", listWalkthroughMenu),
   Menu("Loading", listLoadingMenu),
   Menu("Profiles", listProfileMenu),
-  Menu("Feed", listStartMenu),
+  Menu("Feed", listFeedMenu),
   Menu("Article", listStartMenu),
   Menu("Activity", listStartMenu),
   Menu("Create", listStartMenu),
@@ -74,7 +80,7 @@ var listMainMenu = [
   Menu("Dashboard", listStartMenu),
 ];
 
-var listStartMenu = [
+final listStartMenu = [
   SubMenu("Start screen 1", StartScreen01()),
   SubMenu("Start screen 2", StartScreen02()),
   SubMenu("Start screen 3", StartScreen03()),
@@ -82,7 +88,7 @@ var listStartMenu = [
   SubMenu("Start screen 5", StartScreen05()),
 ];
 
-var listSignupMenu = [
+final listSignupMenu = [
   SubMenu("Signup screen 1", SignUpScreen01()),
   SubMenu("Signup screen 2", SignUpScreen02()),
   SubMenu("Signup screen 3", SignUpScreen03()),
@@ -90,7 +96,7 @@ var listSignupMenu = [
   SubMenu("Signup screen 5", SignUpScreen05()),
 ];
 
-var listWalkthroughMenu = [
+final listWalkthroughMenu = [
   SubMenu("Walkthrough screen 1", WalkthroughScreen01()),
   SubMenu("Walkthrough screen 2", WalkthroughScreen02()),
   SubMenu("Walkthrough screen 3", WalkthroughScreen03()),
@@ -98,17 +104,25 @@ var listWalkthroughMenu = [
   SubMenu("Walkthrough screen 5", WalkthroughScreen05()),
 ];
 
-var listLoadingMenu = [
+final listLoadingMenu = [
   SubMenu("Loading screen 1", LoadingScreen01()),
   SubMenu("Loading screen 2", LoadingScreen02()),
   SubMenu("Loading screen 3", LoadingScreen03()),
   SubMenu("Loading screen 4", LoadingScreen04()),
 ];
 
-var listProfileMenu = [
+final listProfileMenu = [
   SubMenu("Profile screen 1", ProfileScreen01()),
   SubMenu("Profile screen 2", ProfileScreen02()),
   SubMenu("Profile screen 3", ProfileScreen03()),
   SubMenu("Profile screen 4", ProfileScreen04()),
   SubMenu("Profile screen 5", ProfileScreen05()),
+];
+
+final listFeedMenu = [
+  SubMenu("Feed screen 1", FeedScreen01()),
+  SubMenu("Feed screen 1", FeedScreen02()),
+  SubMenu("Feed screen 1", FeedScreen03()),
+  SubMenu("Feed screen 1", FeedScreen04()),
+  SubMenu("Feed screen 1", FeedScreen05()),
 ];
