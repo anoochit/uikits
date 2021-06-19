@@ -29,6 +29,11 @@ import 'package:uikits2/pages/06_feed/feedscreen02.dart';
 import 'package:uikits2/pages/06_feed/feedscreen03.dart';
 import 'package:uikits2/pages/06_feed/feedscreen04.dart';
 import 'package:uikits2/pages/06_feed/feedscreen05.dart';
+import 'package:uikits2/pages/07_article/articlescreen01.dart';
+import 'package:uikits2/pages/07_article/articlescreen02.dart';
+import 'package:uikits2/pages/07_article/articlescreen03.dart';
+import 'package:uikits2/pages/07_article/articlescreen04.dart';
+import 'package:uikits2/pages/07_article/articlescreen05.dart';
 
 class Menu {
   String title;
@@ -61,6 +66,7 @@ final listSubMenu = [
   listLoadingMenu,
   listProfileMenu,
   listFeedMenu,
+  listArticleMenu,
 ];
 
 final listMainMenu = [
@@ -70,7 +76,7 @@ final listMainMenu = [
   Menu("Loading", listLoadingMenu),
   Menu("Profiles", listProfileMenu),
   Menu("Feed", listFeedMenu),
-  Menu("Article", listStartMenu),
+  Menu("Article", listArticleMenu),
   Menu("Activity", listStartMenu),
   Menu("Create", listStartMenu),
   Menu("Chat", listStartMenu),
@@ -127,4 +133,12 @@ final listFeedMenu = [
   SubMenu("Feed screen 3", FeedScreen03()),
   SubMenu("Feed screen 4", FeedScreen04()),
   SubMenu("Feed screen 5", FeedScreen05()),
+];
+
+final listArticleMenu = [
+  SubMenu("Article screen 1", ArticleScreen01()),
+  SubMenu("Article screen 2", ArticleScreen02()),
+  SubMenu("Article screen 3", ArticleScreen03()),
+  SubMenu("Article screen 4", ArticleScreen04()),
+  SubMenu("Article screen 5", ArticleScreen05()),
 ];
