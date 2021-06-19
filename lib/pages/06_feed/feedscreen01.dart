@@ -99,7 +99,7 @@ class PostItem extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.only(left: 16.0, top: 2.0),
                           child: Text(timeago.format(fifteenAgo), style: TextStyle(fontSize: 12.0)),
-                        )
+                        ),
                       ],
                     ),
                   ],
