@@ -34,11 +34,16 @@ import 'package:uikits2/pages/07_article/articlescreen02.dart';
 import 'package:uikits2/pages/07_article/articlescreen03.dart';
 import 'package:uikits2/pages/07_article/articlescreen04.dart';
 import 'package:uikits2/pages/07_article/articlescreen05.dart';
-import 'package:uikits2/pages/08_activity/activitycreen01.dart';
-import 'package:uikits2/pages/08_activity/activitycreen02.dart';
-import 'package:uikits2/pages/08_activity/activitycreen03.dart';
-import 'package:uikits2/pages/08_activity/activitycreen04.dart';
-import 'package:uikits2/pages/08_activity/activitycreen05.dart';
+import 'package:uikits2/pages/08_activity/activityscreen01.dart';
+import 'package:uikits2/pages/08_activity/activityscreen02.dart';
+import 'package:uikits2/pages/08_activity/activityscreen03.dart';
+import 'package:uikits2/pages/08_activity/activityscreen04.dart';
+import 'package:uikits2/pages/08_activity/activityscreen05.dart';
+import 'package:uikits2/pages/09_create/createscreen01.dart';
+import 'package:uikits2/pages/09_create/createscreen02.dart';
+import 'package:uikits2/pages/09_create/createscreen03.dart';
+import 'package:uikits2/pages/09_create/createscreen04.dart';
+import 'package:uikits2/pages/09_create/createscreen05.dart';
 
 class Menu {
   String title;
@@ -73,6 +78,7 @@ final listSubMenu = [
   listFeedMenu,
   listArticleMenu,
   listActivityMenu,
+  listCreateMenu,
 ];
 
 final listMainMenu = [
@@ -84,7 +90,7 @@ final listMainMenu = [
   Menu("Feed", listFeedMenu),
   Menu("Article", listArticleMenu),
   Menu("Activity", listActivityMenu),
-  Menu("Create", listStartMenu),
+  Menu("Create", listCreateMenu),
   Menu("Chat", listStartMenu),
   Menu("Contact", listStartMenu),
   Menu("Store & Shop", listStartMenu),
@@ -155,4 +161,11 @@ final listActivityMenu = [
   SubMenu("Activity screen 3", ActivityScreen03()),
   SubMenu("Activity screen 4", ActivityScreen04()),
   SubMenu("Activity screen 5", ActivityScreen05()),
+];
+
+final listCreateMenu = [
+  SubMenu("Create screen 1", CreateScreen01()),
+  SubMenu("Create screen 2", CreateScreen02()),
+  SubMenu("Create screen 3", CreateScreen03()),
+  SubMenu("Create screen 4", CreateScreen04()),
 ];
