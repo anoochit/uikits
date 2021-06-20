@@ -32,7 +32,7 @@ class _ProfileScreen02State extends State<ProfileScreen02> {
                     // replace avatar image here
                     CircleAvatar(
                       radius: 40,
-                      backgroundImage: AssetImage('assets/images/placeholder.png'),
+                      backgroundImage: AssetImage('assets/images/avatar.png'),
                     ),
                     // place statistic here
                     BlockText(title: "Posts", value: 200),

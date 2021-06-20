@@ -70,7 +70,7 @@ class _ProfileScreen01State extends State<ProfileScreen01> {
                         height: 100,
                         // replace avatar image here
                         child: CircleAvatar(
-                          backgroundImage: AssetImage('assets/images/placeholder.png'),
+                          backgroundImage: AssetImage('assets/images/avatar.png'),
                         ),
                       ),
                     ),

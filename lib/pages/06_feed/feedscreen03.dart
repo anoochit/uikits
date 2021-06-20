@@ -83,7 +83,7 @@ class PostItem extends StatelessWidget {
                     // replace avatar image here
                     CircleAvatar(
                       radius: 20,
-                      backgroundImage: AssetImage('assets/images/placeholder.png'),
+                      backgroundImage: AssetImage('assets/images/avatar.png'),
                     ),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,

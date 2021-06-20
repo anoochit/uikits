@@ -44,7 +44,7 @@ class _ProfileScreen05State extends State<ProfileScreen05> {
                         // replace avatar image here
                         CircleAvatar(
                           radius: 42,
-                          backgroundImage: AssetImage('assets/images/placeholder.png'),
+                          backgroundImage: AssetImage('assets/images/avatar.png'),
                         ),
                         Container(
                           padding: EdgeInsets.all(8.0),

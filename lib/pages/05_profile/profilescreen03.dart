@@ -32,7 +32,7 @@ class _ProfileScreen03State extends State<ProfileScreen03> {
                   children: [
                     CircleAvatar(
                       radius: 60,
-                      backgroundImage: AssetImage('assets/images/placeholder.png'),
+                      backgroundImage: AssetImage('assets/images/avatar.png'),
                     ),
                     Container(
                       padding: EdgeInsets.all(8.0),

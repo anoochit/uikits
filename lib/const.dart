@@ -44,6 +44,9 @@ import 'package:uikits2/pages/09_create/createscreen02.dart';
 import 'package:uikits2/pages/09_create/createscreen03.dart';
 import 'package:uikits2/pages/09_create/createscreen04.dart';
 import 'package:uikits2/pages/09_create/createscreen05.dart';
+import 'package:uikits2/pages/10_chat/chatscreen01.dart';
+import 'package:uikits2/pages/10_chat/chatscreen02.dart';
+import 'package:uikits2/pages/10_chat/chatscreen03.dart';
 
 class Menu {
   String title;
@@ -79,6 +82,7 @@ final listSubMenu = [
   listArticleMenu,
   listActivityMenu,
   listCreateMenu,
+  listChatMenu,
 ];
 
 final listMainMenu = [
@@ -91,7 +95,7 @@ final listMainMenu = [
   Menu("Article", listArticleMenu),
   Menu("Activity", listActivityMenu),
   Menu("Create", listCreateMenu),
-  Menu("Chat", listStartMenu),
+  Menu("Chat", listChatMenu),
   Menu("Contact", listStartMenu),
   Menu("Store & Shop", listStartMenu),
   Menu("Shopping Carts & Checkout", listStartMenu),
@@ -168,4 +172,10 @@ final listCreateMenu = [
   SubMenu("Create screen 2", CreateScreen02()),
   SubMenu("Create screen 3", CreateScreen03()),
   SubMenu("Create screen 4", CreateScreen04()),
+];
+
+final listChatMenu = [
+  SubMenu("Chat screen 1", ChatScreen01()),
+  SubMenu("Chat screen 2", ChatScreen02()),
+  SubMenu("Chat screen 3", ChatScreen03()),
 ];

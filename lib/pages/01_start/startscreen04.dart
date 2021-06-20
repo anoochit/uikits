@@ -33,7 +33,7 @@ class _StartScreen04State extends State<StartScreen04> {
                       height: 160,
                       decoration: BoxDecoration(borderRadius: BorderRadius.circular(60)),
                       // place background image here
-                      child: ClipOval(child: Image.asset('assets/images/placeholder.png', fit: BoxFit.cover)),
+                      child: ClipOval(child: Image.asset('assets/images/avatar.png', fit: BoxFit.cover)),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(16.0),

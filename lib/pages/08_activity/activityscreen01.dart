@@ -130,7 +130,7 @@ class UserImage {
 final listActivity = [
   Avticity(
     "John Doe",
-    "assets/images/placeholder.png",
+    "assets/images/avatar.png",
     "liked your photo",
     new DateTime.now().subtract(new Duration(minutes: 5)),
     [
@@ -140,7 +140,7 @@ final listActivity = [
   ),
   Avticity(
     "Nancy Joe",
-    "assets/images/placeholder.png",
+    "assets/images/avatar.png",
     "liked your photo",
     new DateTime.now().subtract(new Duration(minutes: 10)),
     [
@@ -153,7 +153,7 @@ final listActivity = [
   ),
   Avticity(
     "July Dun",
-    "assets/images/placeholder.png",
+    "assets/images/avatar.png",
     "liked your photo",
     new DateTime.now().subtract(new Duration(minutes: 15)),
     [
@@ -164,7 +164,7 @@ final listActivity = [
   ),
   Avticity(
     "Jelly Bun",
-    "assets/images/placeholder.png",
+    "assets/images/avatar.png",
     "liked your photo",
     new DateTime.now().subtract(new Duration(minutes: 15)),
     [

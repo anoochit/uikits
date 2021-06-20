@@ -102,7 +102,7 @@ class ListItem extends StatelessWidget {
         children: [
           CircleAvatar(
             radius: 24,
-            backgroundImage: AssetImage('assets/images/placeholder.png'),
+            backgroundImage: AssetImage('assets/images/avatar.png'),
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
