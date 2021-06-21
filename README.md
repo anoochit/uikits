@@ -78,7 +78,7 @@ Mobile Screen
 
 # Store & Shop Screen
 
-<img src="https://raw.githubusercontent.com/anoochit/uikits/master/screenshot/screenshot_store01.png" width="300"> <img src="https://raw.githubusercontent.com/anoochit/uikits/master/screenshot/screenshot_store02.png" width="300"> <img src="https://raw.githubusercontent.com/anoochit/uikits/master/screenshot/screenshot_store03.png" width="300"> <img src="https://raw.githubusercontent.com/anoochit/uikits/master/screenshot/screenshot_store04.png" width="300"> 
+<img src="https://raw.githubusercontent.com/anoochit/uikits/master/screenshot/screenshot_shop01.png" width="300"> <img src="https://raw.githubusercontent.com/anoochit/uikits/master/screenshot/screenshot_shop02.png" width="300"> <img src="https://raw.githubusercontent.com/anoochit/uikits/master/screenshot/screenshot_shop03.png" width="300"> <img src="https://raw.githubusercontent.com/anoochit/uikits/master/screenshot/screenshot_shop04.png" width="300"> 
 
 # 3rd party plugins
 
