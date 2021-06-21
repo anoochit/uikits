@@ -130,7 +130,7 @@ class _ChatScreen02State extends State<ChatScreen02> {
             padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
             alignment: (owner) ? Alignment.bottomRight : Alignment.bottomLeft,
             child: Container(
-              width: constraints.maxWidth * 0.7,
+              width: constraints.maxWidth * 0.6,
               padding: EdgeInsets.all(16.0),
               decoration: BoxDecoration(color: (owner) ? Colors.blue : Colors.blue.shade50, borderRadius: BorderRadiusDirectional.circular(10)),
               child: Text(content),

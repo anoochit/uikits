@@ -151,7 +151,7 @@ class _ChatScreen03State extends State<ChatScreen03> {
                   crossAxisAlignment: (owner) ? CrossAxisAlignment.end : CrossAxisAlignment.start,
                   children: [
                     Container(
-                      width: constraints.maxWidth * 0.7,
+                      width: constraints.maxWidth * 0.6,
                       padding: EdgeInsets.all(16.0),
                       decoration: BoxDecoration(color: (owner) ? Colors.blue : Colors.blue.shade50, borderRadius: BorderRadiusDirectional.circular(10)),
                       child: Text(content),

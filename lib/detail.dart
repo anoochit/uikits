@@ -21,6 +21,7 @@ class _SubMenuPageState extends State<SubMenuPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('${this.title}'),
+        titleSpacing: 0,
       ),
       body: ListView.builder(
         itemCount: submenu.length,
