@@ -14,7 +14,7 @@ A complete UIs for mobile and tablet, which include 16 categories.
  * [Chat](#chat-screen)
  * [Contact](#contact-screen)
  * [Store & Shop](#store--shop-screen)
- * Shopping Carts & Checkout
+ * [Shopping Carts & Checkout](#shopping-card-screen)
  * Navigation
  * Photos
  * Dashboard
