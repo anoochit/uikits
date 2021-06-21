@@ -21,26 +21,18 @@ class _ActivityScreen02State extends State<ActivityScreen02> {
       ),
       child: Scaffold(
         backgroundColor: Colors.white,
-        // appBar: AppBar(
-        //   title: Text("Activity", style: TextStyle(color: Colors.black)),
-        //   titleSpacing: 0,
-        //   backgroundColor: Colors.white,
-        //   iconTheme: IconThemeData(color: Colors.black),
-        // ),
+        appBar: AppBar(
+          title: Text("Activity", style: TextStyle(color: Colors.black)),
+          titleSpacing: 0,
+          backgroundColor: Colors.white,
+          iconTheme: IconThemeData(color: Colors.black),
+          elevation: 0,
+        ),
         body: SafeArea(
           child: LayoutBuilder(
             builder: (context, constraints) => Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Padding(
-                  padding: const EdgeInsets.all(8),
-                  child: Container(
-                    child: Text(
-                      "Activity",
-                      style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                ),
                 Expanded(
                   child: MediaQuery.removePadding(
                     context: context,
@@ -111,7 +103,7 @@ class UserImage {
 final listActivity = [
   Avticity(
     "John Doe",
-    "assets/images/placeholder.png",
+    "assets/images/avatar.png",
     "liked your photo",
     new DateTime.now().subtract(new Duration(minutes: 5)),
     [
@@ -121,7 +113,7 @@ final listActivity = [
   ),
   Avticity(
     "Nancy Joe",
-    "assets/images/placeholder.png",
+    "assets/images/avatar.png",
     "liked your photo",
     new DateTime.now().subtract(new Duration(minutes: 10)),
     [
@@ -134,7 +126,7 @@ final listActivity = [
   ),
   Avticity(
     "July Dun",
-    "assets/images/placeholder.png",
+    "assets/images/avatar.png",
     "liked your photo",
     new DateTime.now().subtract(new Duration(minutes: 15)),
     [
@@ -145,7 +137,7 @@ final listActivity = [
   ),
   Avticity(
     "Jelly Bun",
-    "assets/images/placeholder.png",
+    "assets/images/avatar.png",
     "liked your photo",
     new DateTime.now().subtract(new Duration(minutes: 15)),
     [

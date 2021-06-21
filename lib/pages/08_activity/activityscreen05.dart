@@ -23,26 +23,18 @@ class _ActivityScreen05State extends State<ActivityScreen05> {
       ),
       child: Scaffold(
         backgroundColor: Colors.white,
-        // appBar: AppBar(
-        //   title: Text("Activity", style: TextStyle(color: Colors.black)),
-        //   titleSpacing: 0,
-        //   backgroundColor: Colors.white,
-        //   iconTheme: IconThemeData(color: Colors.black),
-        // ),
+        appBar: AppBar(
+          title: Text("Activity", style: TextStyle(color: Colors.black)),
+          titleSpacing: 0,
+          backgroundColor: Colors.white,
+          iconTheme: IconThemeData(color: Colors.black),
+          elevation: 0,
+        ),
         body: SafeArea(
           child: LayoutBuilder(
             builder: (context, constraints) => Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Padding(
-                  padding: const EdgeInsets.all(8),
-                  child: Container(
-                    child: Text(
-                      "Activity",
-                      style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                ),
                 Expanded(
                   child: Timeline.builder(
                     itemCount: 10,

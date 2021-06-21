@@ -22,26 +22,18 @@ class _ActivityScreen03State extends State<ActivityScreen03> {
       ),
       child: Scaffold(
         backgroundColor: Colors.white,
-        // appBar: AppBar(
-        //   title: Text("Activity", style: TextStyle(color: Colors.black)),
-        //   titleSpacing: 0,
-        //   backgroundColor: Colors.white,
-        //   iconTheme: IconThemeData(color: Colors.black),
-        // ),
+        appBar: AppBar(
+          title: Text("Activity", style: TextStyle(color: Colors.black)),
+          titleSpacing: 0,
+          backgroundColor: Colors.white,
+          iconTheme: IconThemeData(color: Colors.black),
+          elevation: 0,
+        ),
         body: SafeArea(
           child: LayoutBuilder(
             builder: (context, constraints) => Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Padding(
-                  padding: const EdgeInsets.all(8),
-                  child: Container(
-                    child: Text(
-                      "Activity",
-                      style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                ),
                 Expanded(
                   child: MediaQuery.removePadding(
                     context: context,
@@ -57,7 +49,7 @@ class _ActivityScreen03State extends State<ActivityScreen03> {
                                   Container(
                                     padding: EdgeInsets.all(8.0),
                                     child: CircleAvatar(
-                                      backgroundImage: AssetImage("assets/images/placeholder.png"),
+                                      backgroundImage: AssetImage("assets/images/avatar.png"),
                                     ),
                                   ),
                                   Container(

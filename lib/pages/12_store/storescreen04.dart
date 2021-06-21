@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:uikits2/pages/12_store/sample_data.dart';
 
 class StoreScreen04 extends StatefulWidget {
   StoreScreen04({Key? key}) : super(key: key);
@@ -24,13 +25,14 @@ class _StoreScreen04State extends State<StoreScreen04> {
         systemNavigationBarIconBrightness: Brightness.dark, //navigation bar icons' color
       ),
       child: Scaffold(
-        backgroundColor: Colors.white,
-        // appBar: AppBar(
-        //   title: Text("Product", style: TextStyle(color: Colors.black)),
-        //   titleSpacing: 0,
-        //   backgroundColor: Colors.white,
-        //   iconTheme: IconThemeData(color: Colors.black),
-        // ),
+        extendBodyBehindAppBar: true,
+        appBar: AppBar(
+          //title: Text("Product", style: TextStyle(color: Colors.black)),
+          titleSpacing: 0,
+          backgroundColor: Colors.transparent,
+          iconTheme: IconThemeData(color: Colors.black),
+          elevation: 0,
+        ),
         body: SafeArea(
           child: LayoutBuilder(
             builder: (context, constraints) => Stack(
@@ -108,7 +110,7 @@ class _StoreScreen04State extends State<StoreScreen04> {
                   child: Container(
                       width: constraints.maxWidth,
                       padding: EdgeInsets.all(8.0),
-                      color: Colors.blue,
+                      color: Theme.of(context).primaryColor,
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -184,33 +186,3 @@ class _StoreScreen04State extends State<StoreScreen04> {
     );
   }
 }
-
-// sample data
-
-class Product {
-  final int id;
-  final String name;
-  final double price;
-  final double salePrice;
-  final String description;
-  final List<String> productImage;
-
-  Product(this.id, this.name, this.price, this.salePrice, this.description, this.productImage);
-}
-
-final productItem = Product(
-    1,
-    "Sample Product",
-    12.0,
-    5.0,
-    "Duis aliqua eiusmod nostrud quis excepteur ea et do enim cupidatat. Aute ipsum nulla eiusmod consectetur enim adipisicing et Lorem. Eu sit minim excepteur cillum sunt labore duis. Ad irure id dolor nisi in laboris excepteur cupidatat. Dolor consequat qui elit velit. Velit exercitation consectetur irure consectetur culpa cillum magna commodo.\n\nEx consequat ea dolor quis adipisicing nostrud. Proident eiusmod id eu reprehenderit anim non fugiat aliquip adipisicing. Nulla aliquip ipsum labore sit consectetur. Laborum consequat quis minim ex exercitation non id consequat anim id Lorem. Culpa reprehenderit ut aute ex sit exercitation amet pariatur do consectetur exercitation fugiat occaecat. Quis deserunt ea velit reprehenderit ex incididunt adipisicing. Labore magna culpa mollit proident id sint laboris irure mollit id anim laborum quis enim.\n\nTempor consectetur duis fugiat eiusmod duis. Aute minim do velit id do pariatur. Aliqua Lorem cillum in ipsum cupidatat excepteur labore dolore reprehenderit. Culpa exercitation veniam qui magna ipsum aute ex irure ipsum non eiusmod ipsum. Adipisicing qui quis deserunt commodo aliquip.\n\nDuis aliqua eiusmod nostrud quis excepteur ea et do enim cupidatat. Aute ipsum nulla eiusmod consectetur enim adipisicing et Lorem. Eu sit minim excepteur cillum sunt labore duis. Ad irure id dolor nisi in laboris excepteur cupidatat. Dolor consequat qui elit velit. Velit exercitation consectetur irure consectetur culpa cillum magna commodo.",
-    [
-      "assets/images/placeholder.png",
-      "assets/images/placeholder.png",
-      "assets/images/placeholder.png",
-      "assets/images/placeholder.png",
-      "assets/images/placeholder.png",
-      "assets/images/placeholder.png",
-      "assets/images/placeholder.png",
-      "assets/images/placeholder.png"
-    ]);

@@ -25,35 +25,30 @@ class _ChatScreen02State extends State<ChatScreen02> {
       ),
       child: Scaffold(
         backgroundColor: Colors.white,
-        // appBar: AppBar(
-        //   title: Text("Create", style: TextStyle(color: Colors.black)),
-        //   titleSpacing: 0,
-        //   backgroundColor: Colors.white,
-        //   iconTheme: IconThemeData(color: Colors.black),
-        // ),
+        appBar: AppBar(
+          title: Row(
+            children: [
+              Text("John Doe", style: TextStyle(color: Colors.black)),
+              Spacer(),
+              Container(
+                padding: EdgeInsets.all(8),
+                child: CircleAvatar(
+                  radius: 20,
+                  backgroundImage: AssetImage('assets/images/avatar.png'),
+                ),
+              )
+            ],
+          ),
+          titleSpacing: 0,
+          backgroundColor: Colors.white,
+          iconTheme: IconThemeData(color: Colors.black),
+          elevation: 0,
+        ),
         body: SafeArea(
           child: LayoutBuilder(
             builder: (context, constraints) => Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Container(
-                  padding: const EdgeInsets.all(8),
-                  child: Row(
-                    children: [
-                      Container(
-                        child: Text(
-                          "John Doe",
-                          style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                      Spacer(),
-                      CircleAvatar(
-                        radius: 20,
-                        backgroundImage: AssetImage('assets/images/avatar.png'),
-                      )
-                    ],
-                  ),
-                ),
                 // chat messages
                 Expanded(
                   child: MediaQuery.removePadding(

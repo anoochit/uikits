@@ -22,20 +22,17 @@ class _FeedScreen03State extends State<FeedScreen03> {
       ),
       child: Scaffold(
         backgroundColor: Colors.white,
+        appBar: AppBar(
+          title: Text("Feed", style: TextStyle(color: Colors.black)),
+          titleSpacing: 0,
+          backgroundColor: Colors.white,
+          iconTheme: IconThemeData(color: Colors.black),
+          elevation: 0,
+        ),
         body: LayoutBuilder(
           builder: (context, constraints) => Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Padding(
-                padding: const EdgeInsets.only(top: 32.0),
-                child: Container(
-                  padding: EdgeInsets.all(16),
-                  child: Text(
-                    "Feed",
-                    style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
-                  ),
-                ),
-              ),
               Expanded(
                 child: MediaQuery.removePadding(
                   context: context,

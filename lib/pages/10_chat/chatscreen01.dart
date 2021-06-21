@@ -24,39 +24,28 @@ class _ChatScreen01State extends State<ChatScreen01> {
       ),
       child: Scaffold(
         backgroundColor: Colors.white,
-        // appBar: AppBar(
-        //   title: Text("Create", style: TextStyle(color: Colors.black)),
-        //   titleSpacing: 0,
-        //   backgroundColor: Colors.white,
-        //   iconTheme: IconThemeData(color: Colors.black),
-        // ),
+        appBar: AppBar(
+          title: Text("Create", style: TextStyle(color: Colors.black)),
+          titleSpacing: 0,
+          backgroundColor: Colors.white,
+          iconTheme: IconThemeData(color: Colors.black),
+          elevation: 0,
+          actions: [
+            IconButton(
+              icon: Icon(Icons.add_box),
+              onPressed: () {
+                // place save function here
+              },
+            ),
+          ],
+        ),
         body: SafeArea(
           child: LayoutBuilder(
             builder: (context, constraints) => Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8),
-                  child: Row(
-                    children: [
-                      Container(
-                        child: Text(
-                          "Create",
-                          style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                      Spacer(),
-                      IconButton(
-                        icon: Icon(Icons.add_box),
-                        onPressed: () {
-                          // place save function here
-                        },
-                      ),
-                    ],
-                  ),
-                ),
                 Container(
-                  padding: const EdgeInsets.only(left: 8, right: 8, bottom: 8),
+                  padding: const EdgeInsets.all(8),
                   child: Container(
                     height: 38,
                     decoration: BoxDecoration(
