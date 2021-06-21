@@ -49,6 +49,10 @@ import 'package:uikits2/pages/10_chat/chatscreen03.dart';
 import 'package:uikits2/pages/11_contact/contactscreen01.dart';
 import 'package:uikits2/pages/11_contact/contactscreen02.dart';
 import 'package:uikits2/pages/11_contact/contactscreen03.dart';
+import 'package:uikits2/pages/12_store/storescreen01.dart';
+import 'package:uikits2/pages/12_store/storescreen02.dart';
+import 'package:uikits2/pages/12_store/storescreen03.dart';
+import 'package:uikits2/pages/12_store/storescreen04.dart';
 
 class Menu {
   String title;
@@ -86,6 +90,7 @@ final listSubMenu = [
   listCreateMenu,
   listChatMenu,
   listContactMenu,
+  listStoreMenu,
 ];
 
 final listMainMenu = [
@@ -100,7 +105,7 @@ final listMainMenu = [
   Menu("Create", listCreateMenu),
   Menu("Chat", listChatMenu),
   Menu("Contact", listContactMenu),
-  Menu("Store & Shop", listStartMenu),
+  Menu("Store & Shop", listStoreMenu),
   Menu("Shopping Carts & Checkout", listStartMenu),
   Menu("Navigation", listStartMenu),
   Menu("Photos", listStartMenu),
@@ -187,4 +192,11 @@ final listContactMenu = [
   SubMenu("Contact screen 1", ContactScreen01()),
   SubMenu("Contact screen 2", ContactScreen02()),
   SubMenu("Contact screen 3", ContactScreen03()),
+];
+
+final listStoreMenu = [
+  SubMenu("Store screen 1", StoreScreen01()),
+  SubMenu("Store screen 2", StoreScreen02()),
+  SubMenu("Store screen 3", StoreScreen03()),
+  SubMenu("Store screen 4", StoreScreen04()),
 ];
