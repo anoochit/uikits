@@ -63,6 +63,10 @@ import 'package:uikits2/pages/14_navigation/navigationscreen03.dart';
 import 'package:uikits2/pages/15_photos/photoscreen01.dart';
 import 'package:uikits2/pages/15_photos/photoscreen02.dart';
 import 'package:uikits2/pages/15_photos/photoscreen03.dart';
+import 'package:uikits2/pages/16_dashboard/dashboardscreen01.dart';
+import 'package:uikits2/pages/16_dashboard/dashboardscreen02.dart';
+import 'package:uikits2/pages/16_dashboard/dashboardscreen03.dart';
+import 'package:uikits2/pages/16_dashboard/dashboardscreen04.dart';
 
 class Menu {
   String title;
@@ -86,6 +90,15 @@ final listImageSubMenu = [
   UnDrawIllustration.profile,
   UnDrawIllustration.my_feed,
   UnDrawIllustration.news,
+  UnDrawIllustration.feedback,
+  UnDrawIllustration.post,
+  UnDrawIllustration.chat_bot,
+  UnDrawIllustration.content_team,
+  UnDrawIllustration.shopping,
+  UnDrawIllustration.card_postal,
+  UnDrawIllustration.navigation,
+  UnDrawIllustration.photo_album,
+  UnDrawIllustration.dashboard,
 ];
 
 final listSubMenu = [
@@ -101,8 +114,10 @@ final listSubMenu = [
   listChatMenu,
   listContactMenu,
   listStoreMenu,
+  listShoppingCartMenu,
   listNavigationMenu,
   listPhotoMenu,
+  listDashboardMenu,
 ];
 
 final listMainMenu = [
@@ -121,7 +136,7 @@ final listMainMenu = [
   Menu("Shopping Carts & Checkout", listShoppingCartMenu),
   Menu("Navigation", listNavigationMenu),
   Menu("Photos", listPhotoMenu),
-  Menu("Dashboard", listStartMenu),
+  Menu("Dashboard", listDashboardMenu),
 ];
 
 final listStartMenu = [
@@ -230,4 +245,11 @@ final listPhotoMenu = [
   SubMenu("Photo screen 1", PhotoScreen01()),
   SubMenu("Photo screen 2", PhotoScreen02()),
   SubMenu("Photo screen 3", PhotoScreen03()),
+];
+
+final listDashboardMenu = [
+  SubMenu("Dashboard screen 1", DashboardScreen01()),
+  SubMenu("Dashboard screen 2", DashboardScreen02()),
+  SubMenu("Dashboard screen 3", DashboardScreen03()),
+  SubMenu("Dashboard screen 4", DashboardScreen04()),
 ];
