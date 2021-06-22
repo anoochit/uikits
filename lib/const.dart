@@ -60,6 +60,9 @@ import 'package:uikits2/pages/13_shoppingcart/shoppingcart04.dart';
 import 'package:uikits2/pages/14_navigation/navigationscreen01.dart';
 import 'package:uikits2/pages/14_navigation/navigationscreen02.dart';
 import 'package:uikits2/pages/14_navigation/navigationscreen03.dart';
+import 'package:uikits2/pages/15_photos/photoscreen01.dart';
+import 'package:uikits2/pages/15_photos/photoscreen02.dart';
+import 'package:uikits2/pages/15_photos/photoscreen03.dart';
 
 class Menu {
   String title;
@@ -99,6 +102,7 @@ final listSubMenu = [
   listContactMenu,
   listStoreMenu,
   listNavigationMenu,
+  listPhotoMenu,
 ];
 
 final listMainMenu = [
@@ -116,7 +120,7 @@ final listMainMenu = [
   Menu("Store & Shop", listStoreMenu),
   Menu("Shopping Carts & Checkout", listShoppingCartMenu),
   Menu("Navigation", listNavigationMenu),
-  Menu("Photos", listStartMenu),
+  Menu("Photos", listPhotoMenu),
   Menu("Dashboard", listStartMenu),
 ];
 
@@ -220,4 +224,10 @@ final listNavigationMenu = [
   SubMenu("Navigation screen 1", NavigationScreen01()),
   SubMenu("Navigation screen 2", NavigationScreen02()),
   SubMenu("Navigation screen 3", NavigationScreen03()),
+];
+
+final listPhotoMenu = [
+  SubMenu("Photo screen 1", PhotoScreen01()),
+  SubMenu("Photo screen 2", PhotoScreen02()),
+  SubMenu("Photo screen 3", PhotoScreen03()),
 ];
