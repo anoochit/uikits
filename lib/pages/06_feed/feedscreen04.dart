@@ -28,23 +28,27 @@ class _FeedScreen04State extends State<FeedScreen04> {
           elevation: 0,
         ),
         body: LayoutBuilder(
-          builder: (context, constraints) => Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Expanded(
-                child: MediaQuery.removePadding(
-                  context: context,
-                  removeTop: true,
-                  child: ListView.builder(
-                    shrinkWrap: true,
-                    itemCount: 10,
-                    itemBuilder: (context, index) {
-                      return PostItem();
-                    },
+          builder: (context, constraints) => Center(
+            child: Column(
+              children: [
+                Expanded(
+                  child: MediaQuery.removePadding(
+                    context: context,
+                    removeTop: true,
+                    child: Container(
+                      width: (constraints.maxWidth > 412) ? (constraints.maxWidth * 0.5) : constraints.maxWidth,
+                      child: ListView.builder(
+                        shrinkWrap: true,
+                        itemCount: 10,
+                        itemBuilder: (context, index) {
+                          return PostItem();
+                        },
+                      ),
+                    ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

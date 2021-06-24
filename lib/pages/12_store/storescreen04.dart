@@ -44,21 +44,23 @@ class _StoreScreen04State extends State<StoreScreen04> {
                       children: [
                         Stack(
                           children: [
-                            Container(
-                              width: constraints.maxWidth,
-                              height: constraints.maxWidth,
-                              child: CarouselSlider(
-                                items: productItem.productImage.map((item) => Image.asset(item, fit: BoxFit.cover)).toList(),
-                                options: CarouselOptions(
-                                  height: constraints.maxHeight,
-                                  viewportFraction: 1.0,
-                                  scrollDirection: Axis.horizontal,
-                                  enableInfiniteScroll: false,
-                                  onPageChanged: (index, reason) {
-                                    setState(() {
-                                      _current = index;
-                                    });
-                                  },
+                            Center(
+                              child: Container(
+                                width: (constraints.maxWidth > 412) ? 500 : constraints.maxWidth,
+                                height: (constraints.maxWidth > 412) ? 500 : constraints.maxWidth,
+                                child: CarouselSlider(
+                                  items: productItem.productImage.map((item) => Image.asset(item, fit: BoxFit.cover)).toList(),
+                                  options: CarouselOptions(
+                                    height: constraints.maxHeight,
+                                    viewportFraction: 1.0,
+                                    scrollDirection: Axis.horizontal,
+                                    enableInfiniteScroll: false,
+                                    onPageChanged: (index, reason) {
+                                      setState(() {
+                                        _current = index;
+                                      });
+                                    },
+                                  ),
                                 ),
                               ),
                             ),
@@ -98,6 +100,7 @@ class _StoreScreen04State extends State<StoreScreen04> {
                           padding: EdgeInsets.all(8),
                           child: Text(
                             '${productItem.description}',
+                            style: TextStyle(fontSize: 18),
                           ),
                         ),
                         SizedBox(height: 80)

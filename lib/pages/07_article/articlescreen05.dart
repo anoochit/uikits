@@ -103,19 +103,15 @@ class _ArticleScreen05State extends State<ArticleScreen05> {
                         Container(
                           padding: EdgeInsets.all(8.0),
                           child: Text(
-                            "Tempor exercitation mollit voluptate sunt proident ut consequat fugiat ullamco magna duis do. Magna enim cupidatat esse fugiat id aliqua esse. Anim occaecat amet eu consequat elit qui qui ipsum nisi nostrud.",
+                            "Ea minim quis eu enim fugiat do fugiat non quis incididunt. Velit duis consequat cupidatat quis quis occaecat ad do aliqua tempor reprehenderit. Nostrud elit proident deserunt consequat et anim. Laboris nisi ex voluptate enim magna labore nostrud magna sunt eu eiusmod nostrud. Fugiat laboris reprehenderit dolore non in ullamco. Consectetur consequat dolor est aliquip ullamco nisi voluptate. Ut reprehenderit elit cupidatat nostrud anim laboris culpa enim officia reprehenderit proident duis culpa. Consequat magna anim amet do amet labore laboris ea cupidatat anim et ea. Non reprehenderit et cupidatat eiusmod mollit laboris deserunt consectetur ullamco. Cupidatat deserunt duis eu cillum enim sit sint exercitation ad. Quis eu nostrud commodo reprehenderit fugiat proident tempor. Quis labore cupidatat voluptate amet reprehenderit nostrud do cupidatat laborum velit. Aliqua ipsum quis in adipisicing. Aliqua occaecat sit pariatur anim est nostrud deserunt nulla irure cupidatat. Cupidatat sint Lorem ipsum cillum qui dolore laboris minim deserunt enim aute occaecat magna. Aliquip sunt aliquip ad cillum velit. Aliquip officia non sunt dolor deserunt nostrud aute est voluptate nostrud. Eu sint sit quis commodo nulla nulla proident esse enim eiusmod voluptate nulla sunt.",
+                            style: TextStyle(fontSize: 18),
                           ),
                         ),
                         Container(
                           padding: EdgeInsets.all(8.0),
                           child: Text(
-                            "Sit exercitation labore cupidatat ut. Cillum quis sit occaecat ea deserunt fugiat et. Occaecat ut ea sunt labore consequat ipsum anim dolor culpa ipsum.",
-                          ),
-                        ),
-                        Container(
-                          padding: EdgeInsets.all(8.0),
-                          child: Text(
-                            "Sit exercitation labore cupidatat ut. Cillum quis sit occaecat ea deserunt fugiat et. Occaecat ut ea sunt labore consequat ipsum anim dolor culpa ipsum.",
+                            "Ea minim quis eu enim fugiat do fugiat non quis incididunt. Velit duis consequat cupidatat quis quis occaecat ad do aliqua tempor reprehenderit. Nostrud elit proident deserunt consequat et anim. Laboris nisi ex voluptate enim magna labore nostrud magna sunt eu eiusmod nostrud. Fugiat laboris reprehenderit dolore non in ullamco. Consectetur consequat dolor est aliquip ullamco nisi voluptate. Ut reprehenderit elit cupidatat nostrud anim laboris culpa enim officia reprehenderit proident duis culpa. Consequat magna anim amet do amet labore laboris ea cupidatat anim et ea. Non reprehenderit et cupidatat eiusmod mollit laboris deserunt consectetur ullamco. Cupidatat deserunt duis eu cillum enim sit sint exercitation ad. Quis eu nostrud commodo reprehenderit fugiat proident tempor. Quis labore cupidatat voluptate amet reprehenderit nostrud do cupidatat laborum velit. Aliqua ipsum quis in adipisicing. Aliqua occaecat sit pariatur anim est nostrud deserunt nulla irure cupidatat. Cupidatat sint Lorem ipsum cillum qui dolore laboris minim deserunt enim aute occaecat magna. Aliquip sunt aliquip ad cillum velit. Aliquip officia non sunt dolor deserunt nostrud aute est voluptate nostrud. Eu sint sit quis commodo nulla nulla proident esse enim eiusmod voluptate nulla sunt.",
+                            style: TextStyle(fontSize: 18),
                           ),
                         ),
                       ],
@@ -123,14 +119,15 @@ class _ArticleScreen05State extends State<ArticleScreen05> {
                     Positioned(
                       bottom: 0,
                       child: Container(
-                          padding: EdgeInsets.all(32),
-                          width: constraints.maxWidth,
-                          color: Colors.white.withOpacity(0.8),
-                          child: ElevatedButton(
-                            child: Text("Read More"),
-                            onPressed: () {},
-                          )),
-                    )
+                        padding: EdgeInsets.all(32),
+                        width: constraints.maxWidth,
+                        color: Colors.white.withOpacity(0.8),
+                        child: ElevatedButton(
+                          child: Text("Read More"),
+                          onPressed: () {},
+                        ),
+                      ),
+                    ),
                   ],
                 )
               ],

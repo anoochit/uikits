@@ -23,74 +23,79 @@ class _ProfileScreen01State extends State<ProfileScreen01> {
       child: Scaffold(
         backgroundColor: Colors.white,
         body: LayoutBuilder(
-          builder: (context, constraints) => Column(
-            children: [
-              Container(
-                child: Stack(
-                  children: [
-                    // replace background image here
-                    Container(
-                      width: constraints.maxWidth,
-                      height: 210,
-                      child: Image.asset(
-                        'assets/images/placeholder.png',
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    Positioned(
-                      bottom: 0,
-                      child: Container(
+          builder: (context, constraints) => Container(
+            child: Column(
+              children: [
+                Container(
+                  child: Stack(
+                    children: [
+                      // replace background image here
+                      Container(
                         width: constraints.maxWidth,
-                        height: 80,
-                        color: Colors.white.withOpacity(0.5),
-                        child: Row(
-                          children: [
-                            SizedBox(width: 120),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Spacer(),
-                                Text(
-                                  "John Doe",
-                                  style: TextStyle(fontSize: 20),
-                                ),
-                                Text("@johndoe"),
-                                Spacer(),
-                              ],
-                            )
-                          ],
+                        height: 220,
+                        child: Image.asset(
+                          'assets/images/placeholder.png',
+                          fit: BoxFit.cover,
                         ),
                       ),
-                    ),
-                    Positioned(
-                      top: 100,
-                      left: 10,
-                      child: Container(
-                        width: 100,
-                        height: 100,
-                        // replace avatar image here
-                        child: CircleAvatar(
-                          backgroundImage: AssetImage('assets/images/avatar.png'),
+                      Positioned(
+                        bottom: 0,
+                        child: Container(
+                          width: constraints.maxWidth,
+                          height: 80,
+                          color: Colors.white.withOpacity(0.5),
+                          child: Row(
+                            children: [
+                              SizedBox(width: 120),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Spacer(),
+                                  Text(
+                                    "John Doe",
+                                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                                  ),
+                                  Text("@johndoe"),
+                                  Spacer(),
+                                ],
+                              )
+                            ],
+                          ),
                         ),
                       ),
-                    ),
-                  ],
-                ),
-              ),
-              Expanded(
-                child: MediaQuery.removePadding(
-                  context: context,
-                  removeTop: true,
-                  child: ListView.builder(
-                    shrinkWrap: true,
-                    itemCount: 10,
-                    itemBuilder: (context, index) {
-                      return PostItem();
-                    },
+                      Positioned(
+                        top: 100,
+                        left: 10,
+                        child: Container(
+                          width: 100,
+                          height: 100,
+                          // replace avatar image here
+                          child: CircleAvatar(
+                            backgroundImage: AssetImage('assets/images/avatar.png'),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-              ),
-            ],
+                Expanded(
+                  child: MediaQuery.removePadding(
+                    context: context,
+                    removeTop: true,
+                    child: Container(
+                      width: (constraints.maxWidth > 412) ? (constraints.maxWidth * 0.5) : constraints.maxWidth,
+                      child: ListView.builder(
+                        shrinkWrap: true,
+                        itemCount: 10,
+                        itemBuilder: (context, index) {
+                          return PostItem();
+                        },
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
@@ -108,52 +113,61 @@ class PostItem extends StatelessWidget {
     final fifteenAgo = new DateTime.now().subtract(new Duration(minutes: 15));
 
     return LayoutBuilder(
-      builder: (context, constraints) => Container(
-        padding: EdgeInsets.only(bottom: 32.0),
-        child: Column(
-          children: [
-            Container(
-              height: constraints.maxWidth,
-              // replace image
-              child: Image.asset(
-                'assets/images/placeholder.png',
-                fit: BoxFit.cover,
+      builder: (context, constraints) => Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Container(
+          decoration: BoxDecoration(
+            border: Border.all(color: Colors.grey.shade200),
+            borderRadius: BorderRadius.circular(12),
+          ),
+          clipBehavior: Clip.antiAliasWithSaveLayer,
+          child: Column(
+            children: [
+              Container(
+                width: constraints.maxWidth,
+                height: constraints.maxWidth,
+
+                // replace image
+                child: Image.asset(
+                  'assets/images/placeholder.png',
+                  fit: BoxFit.cover,
+                ),
               ),
-            ),
-            Row(
-              children: [
-                Flex(
-                  direction: Axis.horizontal,
-                  children: [
-                    IconButton(
-                      icon: Icon(FontAwesomeIcons.thumbsUp),
-                      onPressed: () {
-                        // place link function here
-                      },
-                    ),
-                    Text("Like")
-                  ],
-                ),
-                Flex(
-                  direction: Axis.horizontal,
-                  children: [
-                    IconButton(
-                      icon: Icon(FontAwesomeIcons.comment),
-                      onPressed: () {
-                        // place comment function here
-                      },
-                    ),
-                    Text("Comment")
-                  ],
-                ),
-                Spacer(),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(timeago.format(fifteenAgo)),
-                )
-              ],
-            )
-          ],
+              Row(
+                children: [
+                  Flex(
+                    direction: Axis.horizontal,
+                    children: [
+                      IconButton(
+                        icon: Icon(FontAwesomeIcons.thumbsUp),
+                        onPressed: () {
+                          // place link function here
+                        },
+                      ),
+                      Text("Like")
+                    ],
+                  ),
+                  Flex(
+                    direction: Axis.horizontal,
+                    children: [
+                      IconButton(
+                        icon: Icon(FontAwesomeIcons.comment),
+                        onPressed: () {
+                          // place comment function here
+                        },
+                      ),
+                      Text("Comment")
+                    ],
+                  ),
+                  Spacer(),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(timeago.format(fifteenAgo)),
+                  )
+                ],
+              )
+            ],
+          ),
         ),
       ),
     );

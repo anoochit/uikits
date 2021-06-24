@@ -111,7 +111,11 @@ class CarouselPage extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, constraints) => Stack(
         children: [
-          Container(width: constraints.maxWidth, height: constraints.maxHeight * 0.6, child: image),
+          Container(
+            width: constraints.maxWidth,
+            height: constraints.maxHeight,
+            child: image,
+          ),
           Container(
             width: constraints.maxWidth,
             height: constraints.maxHeight,

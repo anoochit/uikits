@@ -31,7 +31,7 @@ class _ProfileScreen03State extends State<ProfileScreen03> {
                     Column(
                   children: [
                     CircleAvatar(
-                      radius: 60,
+                      radius: 50,
                       backgroundImage: AssetImage('assets/images/avatar.png'),
                     ),
                     Container(
@@ -54,6 +54,7 @@ class _ProfileScreen03State extends State<ProfileScreen03> {
                 ),
               ),
               Container(
+                width: (constraints.maxWidth > 412) ? (constraints.maxWidth * 0.6) : constraints.maxWidth,
                 padding: EdgeInsets.all(8.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -70,8 +71,8 @@ class _ProfileScreen03State extends State<ProfileScreen03> {
                   context: context,
                   removeTop: true,
                   child: GridView.builder(
-                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 3,
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: (constraints.maxWidth > 412) ? 4 : 3,
                       mainAxisSpacing: 1,
                       crossAxisSpacing: 1,
                     ),

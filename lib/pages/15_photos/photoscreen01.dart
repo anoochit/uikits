@@ -35,8 +35,8 @@ class _PhotoScreen01State extends State<PhotoScreen01> {
                   context: context,
                   removeTop: true,
                   child: GridView.builder(
-                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 3,
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: (constraints.maxWidth > 412) ? 4 : 3,
                       mainAxisSpacing: 1,
                       crossAxisSpacing: 1,
                     ),

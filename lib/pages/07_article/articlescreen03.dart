@@ -101,43 +101,15 @@ class _ArticleScreen03State extends State<ArticleScreen03> {
                   Container(
                     padding: EdgeInsets.all(8.0),
                     child: Text(
-                      "Tempor exercitation mollit voluptate sunt proident ut consequat fugiat ullamco magna duis do. Magna enim cupidatat esse fugiat id aliqua esse. Anim occaecat amet eu consequat elit qui qui ipsum nisi nostrud.",
+                      "Ea minim quis eu enim fugiat do fugiat non quis incididunt. Velit duis consequat cupidatat quis quis occaecat ad do aliqua tempor reprehenderit. Nostrud elit proident deserunt consequat et anim. Laboris nisi ex voluptate enim magna labore nostrud magna sunt eu eiusmod nostrud. Fugiat laboris reprehenderit dolore non in ullamco. Consectetur consequat dolor est aliquip ullamco nisi voluptate. Ut reprehenderit elit cupidatat nostrud anim laboris culpa enim officia reprehenderit proident duis culpa. Consequat magna anim amet do amet labore laboris ea cupidatat anim et ea. Non reprehenderit et cupidatat eiusmod mollit laboris deserunt consectetur ullamco. Cupidatat deserunt duis eu cillum enim sit sint exercitation ad. Quis eu nostrud commodo reprehenderit fugiat proident tempor. Quis labore cupidatat voluptate amet reprehenderit nostrud do cupidatat laborum velit. Aliqua ipsum quis in adipisicing. Aliqua occaecat sit pariatur anim est nostrud deserunt nulla irure cupidatat. Cupidatat sint Lorem ipsum cillum qui dolore laboris minim deserunt enim aute occaecat magna. Aliquip sunt aliquip ad cillum velit. Aliquip officia non sunt dolor deserunt nostrud aute est voluptate nostrud. Eu sint sit quis commodo nulla nulla proident esse enim eiusmod voluptate nulla sunt.",
+                      style: TextStyle(fontSize: 18),
                     ),
                   ),
                   Container(
                     padding: EdgeInsets.all(8.0),
                     child: Text(
-                      "Ullamco labore incididunt sunt sunt eiusmod esse anim. Laborum est exercitation elit duis aute aliqua id irure. Irure do quis in ea sint tempor eiusmod reprehenderit. Commodo ex elit voluptate ut culpa anim Lorem duis consectetur qui. Fugiat non excepteur sit sunt mollit nulla in qui do.",
-                    ),
-                  ),
-                  Container(
-                    padding: EdgeInsets.all(8.0),
-                    child: Text(
-                      "Sit irure consequat incididunt non occaecat laborum. Minim tempor aliqua qui et ex. Fugiat quis et aliqua esse exercitation enim cillum laborum enim enim consequat. Proident eu commodo laborum ad do cillum est. Officia ullamco reprehenderit non quis ea ea sit esse exercitation nostrud laborum aute dolor. Sunt veniam esse laboris excepteur.",
-                    ),
-                  ),
-                  Container(
-                    padding: EdgeInsets.all(8.0),
-                    child: Text(
-                      "Sit exercitation labore cupidatat ut. Cillum quis sit occaecat ea deserunt fugiat et. Occaecat ut ea sunt labore consequat ipsum anim dolor culpa ipsum.",
-                    ),
-                  ),
-                  Container(
-                    padding: EdgeInsets.all(8.0),
-                    child: Text(
-                      "Sit exercitation labore cupidatat ut. Cillum quis sit occaecat ea deserunt fugiat et. Occaecat ut ea sunt labore consequat ipsum anim dolor culpa ipsum.",
-                    ),
-                  ),
-                  Container(
-                    padding: EdgeInsets.all(8.0),
-                    child: Text(
-                      "Sit exercitation labore cupidatat ut. Cillum quis sit occaecat ea deserunt fugiat et. Occaecat ut ea sunt labore consequat ipsum anim dolor culpa ipsum.",
-                    ),
-                  ),
-                  Container(
-                    padding: EdgeInsets.all(8.0),
-                    child: Text(
-                      "Eiusmod veniam nulla ea occaecat cupidatat. Elit aliqua voluptate ut minim est Lorem nisi do. Aute id laborum do fugiat non ea reprehenderit non ea minim aute ipsum minim. Irure dolore aute eu ad do et deserunt elit adipisicing.",
+                      "Ea minim quis eu enim fugiat do fugiat non quis incididunt. Velit duis consequat cupidatat quis quis occaecat ad do aliqua tempor reprehenderit. Nostrud elit proident deserunt consequat et anim. Laboris nisi ex voluptate enim magna labore nostrud magna sunt eu eiusmod nostrud. Fugiat laboris reprehenderit dolore non in ullamco. Consectetur consequat dolor est aliquip ullamco nisi voluptate. Ut reprehenderit elit cupidatat nostrud anim laboris culpa enim officia reprehenderit proident duis culpa. Consequat magna anim amet do amet labore laboris ea cupidatat anim et ea. Non reprehenderit et cupidatat eiusmod mollit laboris deserunt consectetur ullamco. Cupidatat deserunt duis eu cillum enim sit sint exercitation ad. Quis eu nostrud commodo reprehenderit fugiat proident tempor. Quis labore cupidatat voluptate amet reprehenderit nostrud do cupidatat laborum velit. Aliqua ipsum quis in adipisicing. Aliqua occaecat sit pariatur anim est nostrud deserunt nulla irure cupidatat. Cupidatat sint Lorem ipsum cillum qui dolore laboris minim deserunt enim aute occaecat magna. Aliquip sunt aliquip ad cillum velit. Aliquip officia non sunt dolor deserunt nostrud aute est voluptate nostrud. Eu sint sit quis commodo nulla nulla proident esse enim eiusmod voluptate nulla sunt.",
+                      style: TextStyle(fontSize: 18),
                     ),
                   ),
                 ],

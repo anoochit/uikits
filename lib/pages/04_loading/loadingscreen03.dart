@@ -26,8 +26,8 @@ class _LoadingScreen03State extends State<LoadingScreen03> {
               children: [
                 Spacer(),
                 Container(
-                  width: constraints.maxWidth * 0.8,
-                  height: constraints.maxWidth * 0.8,
+                  width: (constraints.maxWidth > 412) ? 400 : (constraints.maxWidth * 0.8),
+                  height: (constraints.maxWidth > 412) ? 400 : (constraints.maxWidth * 0.8),
                   child: Image.asset(
                     'assets/images/placeholder.png',
                     fit: BoxFit.cover,

@@ -37,15 +37,18 @@ class _ActivityScreen05State extends State<ActivityScreen05> {
               children: [
                 Expanded(
                   child: Timeline.builder(
-                    itemCount: 10,
+                    itemCount: 20,
                     itemBuilder: (context, index) {
                       return TimelineTile(
                         nodePosition: 0.05,
                         contents: Card(
                           child: Container(
-                            padding: EdgeInsets.all(8.0),
+                            width: constraints.maxWidth * 0.8,
+                            padding: EdgeInsets.all(16.0),
                             child: Text(
-                                'Nulla tempor cillum deserunt id ipsum consectetur nulla elit dolor occaecat esse. Veniam veniam duis velit dolor fugiat. Amet enim sit aliquip ea deserunt magna velit est ipsum quis Lorem deserunt.'),
+                              'Nulla tempor cillum deserunt id ipsum consectetur nulla elit dolor occaecat esse. Veniam veniam duis velit dolor fugiat. Amet enim sit aliquip ea deserunt magna velit est ipsum quis Lorem deserunt.',
+                              style: TextStyle(fontSize: 16),
+                            ),
                           ),
                         ),
                         node: TimelineNode(

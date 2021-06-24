@@ -2,8 +2,6 @@ import 'package:awesome_card/credit_card.dart';
 import 'package:awesome_card/style/card_background.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:timeago/timeago.dart' as timeago;
 
 class ShoppingCartScreen04 extends StatefulWidget {
   ShoppingCartScreen04({Key? key}) : super(key: key);
@@ -61,7 +59,7 @@ class _ShoppingCartScreen04State extends State<ShoppingCartScreen04> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: 10),
+                SizedBox(height: 40),
                 CreditCard(
                   cardNumber: cardNumber,
                   cardExpiry: expiryDate,
@@ -72,9 +70,7 @@ class _ShoppingCartScreen04State extends State<ShoppingCartScreen04> {
                   backBackground: CardBackgrounds.white,
                   showShadow: true,
                 ),
-                SizedBox(
-                  height: 40,
-                ),
+                SizedBox(height: 40),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,

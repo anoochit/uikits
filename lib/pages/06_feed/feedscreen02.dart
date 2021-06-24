@@ -95,13 +95,13 @@ class PostItem extends StatelessWidget {
           children: [
             Container(
               padding: EdgeInsets.symmetric(
-                horizontal: 8.0,
+                horizontal: 16.0,
               ),
               child: Text(
                   "Culpa laborum aliquip labore amet. Quis aliqua minim enim ipsum cupidatat sunt minim. Consectetur laboris exercitation ullamco cillum nostrud ullamco dolore sunt id sint officia do. Minim aliquip laboris non laborum laborum laborum est mollit do adipisicing irure proident. Amet nostrud non sint incididunt eiusmod occaecat do ad culpa. Reprehenderit id sit fugiat adipisicing velit veniam proident irure eiusmod consequat aute eu."),
             ),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 8.0),
+              padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
               child: Text(
                 "By Display Name",
                 style: TextStyle(fontSize: 12.0),

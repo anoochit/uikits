@@ -118,21 +118,21 @@ class CarouselPage extends StatelessWidget {
       builder: (context, constraints) => Stack(
         children: [
           Container(
-              width: constraints.maxWidth,
-              height: constraints.maxHeight * 0.5,
+              width: (constraints.maxWidth > 412) ? (constraints.maxWidth * 0.8) : constraints.maxWidth,
+              height: (constraints.maxWidth > 412) ? (constraints.maxWidth * 0.5) : constraints.maxWidth,
               child: Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: image,
               )),
           Container(
-            width: constraints.maxWidth,
+            width: (constraints.maxWidth > 412) ? (constraints.maxWidth * 0.8) : constraints.maxWidth,
             height: constraints.maxHeight,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(
-                  height: constraints.maxHeight * 0.1,
+                  height: constraints.maxHeight * 0.2,
                 ),
                 Text(
                   title,

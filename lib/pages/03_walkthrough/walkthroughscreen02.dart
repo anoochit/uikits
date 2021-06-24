@@ -114,7 +114,11 @@ class CarouselPage extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, constraints) => Stack(
         children: [
-          Container(width: constraints.maxWidth, height: constraints.maxHeight * 0.6, child: image),
+          Container(
+            width: constraints.maxWidth,
+            height: constraints.maxHeight * 0.8,
+            child: image,
+          ),
           Container(
             width: constraints.maxWidth,
             height: constraints.maxHeight,
@@ -123,7 +127,7 @@ class CarouselPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(
-                  height: constraints.maxHeight * 0.35,
+                  height: constraints.maxHeight * 0.4,
                 ),
                 Text(
                   title,

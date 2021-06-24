@@ -25,7 +25,7 @@ dependencies:
     sdk: flutter
   awesome_card: ^1.1.5
   carousel_slider: ^4.0.0-nullsafety.0
-  cupertino_icons: ^1.0.2
+  cupertino_icons: ^1.0.2  
   font_awesome_flutter: ^9.1.0
   fzregex: ^2.0.0
   ms_undraw: ^3.0.0+0

@@ -21,46 +21,55 @@ class _StartScreen03State extends State<StartScreen03> {
       child: Scaffold(
         backgroundColor: Colors.white,
         body: LayoutBuilder(
-          builder: (context, constraints) => Stack(
+          builder: (context, constraints) => Column(
             children: [
               Container(
-                width: constraints.maxWidth,
-                height: constraints.maxHeight * 0.5,
-                // place background image here
+                width: (constraints.maxWidth > 412) ? (constraints.maxWidth * 0.5) : constraints.maxWidth,
+                height: constraints.maxHeight * 0.6,
                 child: Image.asset('assets/images/placeholder.png', fit: BoxFit.cover),
               ),
+              Spacer(),
               Container(
-                alignment: Alignment.bottomCenter,
+                alignment: Alignment.center,
+                padding: EdgeInsets.symmetric(vertical: 8.0),
                 child: Column(
                   children: [
-                    Spacer(),
-                    Container(
-                      padding: EdgeInsets.symmetric(horizontal: 32.0, vertical: 8.0),
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          minimumSize: Size((constraints.maxWidth > 412) ? (constraints.maxWidth * 0.5) : constraints.maxWidth, 50),
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        minimumSize: Size(
+                          (constraints.maxWidth > 412) ? (constraints.maxWidth * 0.5) : constraints.maxWidth * 0.9,
+                          50,
                         ),
-                        child: Text("Sign up with Facebook"),
-                        onPressed: () {
-                          // place sign up function here
-                        },
                       ),
-                    ),
-                    Container(
-                      padding: EdgeInsets.only(left: 32.0, right: 32, top: 8.0, bottom: 32),
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          minimumSize: Size((constraints.maxWidth > 412) ? (constraints.maxWidth * 0.5) : constraints.maxWidth, 50),
-                        ),
-                        child: Text("Sign up with Email"),
-                        onPressed: () {
-                          // place sign up function here
-                        },
-                      ),
+                      child: Text("Sign up with Facebook"),
+                      onPressed: () {
+                        // place sign up function here
+                      },
                     ),
                   ],
                 ),
-              )
+              ),
+              Container(
+                alignment: Alignment.center,
+                padding: EdgeInsets.symmetric(vertical: 8.0),
+                child: Column(
+                  children: [
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        minimumSize: Size(
+                          (constraints.maxWidth > 412) ? (constraints.maxWidth * 0.5) : constraints.maxWidth * 0.9,
+                          50,
+                        ),
+                      ),
+                      child: Text("Sign up with Email"),
+                      onPressed: () {
+                        // place sign up function here
+                      },
+                    ),
+                  ],
+                ),
+              ),
+              Spacer()
             ],
           ),
         ),
