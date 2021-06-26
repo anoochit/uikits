@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:timeago/timeago.dart' as timeago;
 
 class StoreScreen02 extends StatefulWidget {
   StoreScreen02({Key? key}) : super(key: key);
@@ -68,7 +67,7 @@ class _StoreScreen02State extends State<StoreScreen02> {
                     removeTop: true,
                     child: GridView.builder(
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: (constraints.maxWidth > 412) ? 4 : 3,
+                        crossAxisCount: (constraints.maxWidth > 412) ? 4 : 2,
                         mainAxisSpacing: 2,
                         crossAxisSpacing: 2,
                       ),

@@ -68,7 +68,7 @@ class _StoreScreen01State extends State<StoreScreen01> {
                     removeTop: true,
                     child: GridView.builder(
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: (constraints.maxWidth > 412) ? 4 : 3,
+                        crossAxisCount: (constraints.maxWidth > 412) ? 4 : 2,
                         childAspectRatio: 0.75,
                       ),
                       itemCount: 10,

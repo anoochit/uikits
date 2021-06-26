@@ -128,6 +128,7 @@ class _ShoppingCartScreen02State extends State<ShoppingCartScreen02> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
+                  width: constraints.maxWidth - 200,
                   padding: EdgeInsets.all(8),
                   child: Text(
                     productItem[0].name,
