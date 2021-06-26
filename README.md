@@ -17,7 +17,7 @@ A complete UIs for mobile and tablet, which include 16 categories.
  * [Shopping Carts & Checkout](#shopping-card-screen)
  * [Navigation](#navigation)
  * [Photos](#photos)
- * Dashboard
+ * [Dashboard](#dashboard)
 
 # Screenshots
 
@@ -92,6 +92,9 @@ Mobile Screen
 
 <img src="https://raw.githubusercontent.com/anoochit/uikits/master/screenshot/screenshot_photo01.png" width="300"> <img src="https://raw.githubusercontent.com/anoochit/uikits/master/screenshot/screenshot_photo02.png" width="300"> <img src="https://raw.githubusercontent.com/anoochit/uikits/master/screenshot/screenshot_photo03.png" width="300"> 
 
+# Dashboard
+
+<img src="https://raw.githubusercontent.com/anoochit/uikits/master/screenshot/screenshot_dash01_1.png" width="300">
 
 # 3rd party plugins
 
