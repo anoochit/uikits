@@ -65,8 +65,6 @@ import 'package:uikits2/pages/15_photos/photoscreen02.dart';
 import 'package:uikits2/pages/15_photos/photoscreen03.dart';
 import 'package:uikits2/pages/16_dashboard/dashboardscreen01.dart';
 import 'package:uikits2/pages/16_dashboard/dashboardscreen02.dart';
-import 'package:uikits2/pages/16_dashboard/dashboardscreen03.dart';
-import 'package:uikits2/pages/16_dashboard/dashboardscreen04.dart';
 
 class Menu {
   String title;
@@ -249,7 +247,4 @@ final listPhotoMenu = [
 
 final listDashboardMenu = [
   SubMenu("Dashboard screen 1", DashboardScreen01()),
-  SubMenu("Dashboard screen 2", DashboardScreen02()),
-  SubMenu("Dashboard screen 3", DashboardScreen03()),
-  SubMenu("Dashboard screen 4", DashboardScreen04()),
 ];
