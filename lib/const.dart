@@ -247,4 +247,5 @@ final listPhotoMenu = [
 
 final listDashboardMenu = [
   SubMenu("Dashboard screen 1", DashboardScreen01()),
+  SubMenu("Dashboard screen 2", DashboardScreen02()),
 ];

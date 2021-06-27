@@ -94,7 +94,7 @@ Mobile Screen
 
 # Dashboard
 
-<img src="https://raw.githubusercontent.com/anoochit/uikits/master/screenshot/screenshot_dash01_1.png" width="300">
+<img src="https://raw.githubusercontent.com/anoochit/uikits/master/screenshot/screenshot_dash01_1.png" width="600"> <img src="https://raw.githubusercontent.com/anoochit/uikits/master/screenshot/screenshot_dash02_1.png" width="600">
 
 # 3rd party plugins
 
