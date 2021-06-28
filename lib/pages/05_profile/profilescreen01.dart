@@ -32,7 +32,7 @@ class _ProfileScreen01State extends State<ProfileScreen01> {
                       // replace background image here
                       Container(
                         width: constraints.maxWidth,
-                        height: 220,
+                        height: 175,
                         child: Image.asset(
                           'assets/images/placeholder.png',
                           fit: BoxFit.cover,
@@ -42,7 +42,7 @@ class _ProfileScreen01State extends State<ProfileScreen01> {
                         bottom: 0,
                         child: Container(
                           width: constraints.maxWidth,
-                          height: 80,
+                          height: 90,
                           color: Colors.white.withOpacity(0.5),
                           child: Row(
                             children: [
@@ -64,11 +64,11 @@ class _ProfileScreen01State extends State<ProfileScreen01> {
                         ),
                       ),
                       Positioned(
-                        top: 100,
-                        left: 10,
+                        top: 90,
+                        left: 16,
                         child: Container(
-                          width: 100,
-                          height: 100,
+                          width: 80,
+                          height: 80,
                           // replace avatar image here
                           child: CircleAvatar(
                             backgroundImage: AssetImage('assets/images/avatar.png'),
@@ -83,7 +83,7 @@ class _ProfileScreen01State extends State<ProfileScreen01> {
                     context: context,
                     removeTop: true,
                     child: Container(
-                      width: (constraints.maxWidth > 412) ? (constraints.maxWidth * 0.5) : constraints.maxWidth,
+                      width: (constraints.maxWidth > 412) ? (constraints.maxWidth * 0.7) : constraints.maxWidth,
                       child: ListView.builder(
                         shrinkWrap: true,
                         itemCount: 10,

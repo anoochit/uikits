@@ -84,7 +84,7 @@ class _ProfileScreen05State extends State<ProfileScreen05> {
                   context: context,
                   removeTop: true,
                   child: Container(
-                    width: (constraints.maxWidth > 412) ? (constraints.maxWidth * 0.6) : constraints.maxWidth,
+                    width: (constraints.maxWidth > 412) ? (constraints.maxWidth * 0.7) : constraints.maxWidth,
                     child: ListView.builder(
                       shrinkWrap: true,
                       itemCount: 10,

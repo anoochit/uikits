@@ -15,6 +15,8 @@ class _HomeTabletState extends State<HomeTablet> {
 
   @override
   Widget build(BuildContext context) {
+    var scWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       appBar: AppBar(
         title: Text("UI Kits"),
@@ -23,7 +25,7 @@ class _HomeTabletState extends State<HomeTablet> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            width: 280,
+            width: 240,
             child: ListView.builder(
               itemCount: listMainMenu.length,
               itemBuilder: (context, index) {
@@ -46,7 +48,7 @@ class _HomeTabletState extends State<HomeTablet> {
           ),
           VerticalDivider(),
           Container(
-            width: 280,
+            width: 240,
             child: ListView.builder(
               itemCount: listSubMenu[currentItem].length,
               itemBuilder: (context, index) {
@@ -67,22 +69,24 @@ class _HomeTabletState extends State<HomeTablet> {
             ),
           ),
           VerticalDivider(),
-          Expanded(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Container(
-                  width: 500,
-                  height: 500,
-                  child: UnDraw(
-                    illustration: listImageSubMenu[currentItem],
-                    color: Theme.of(context).primaryColor,
+          (scWidth > 960)
+              ? Expanded(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Container(
+                        width: scWidth * 0.4,
+                        height: scWidth * 0.4,
+                        child: UnDraw(
+                          illustration: listImageSubMenu[currentItem],
+                          color: Theme.of(context).primaryColor,
+                        ),
+                      ),
+                    ],
                   ),
-                ),
-              ],
-            ),
-          )
+                )
+              : Container()
         ],
       ),
     );

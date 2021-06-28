@@ -138,9 +138,9 @@ class RadialGauge extends StatelessWidget {
             ],
             annotations: <GaugeAnnotation>[
               GaugeAnnotation(
-                widget: Container(child: Text('$gaugeValue', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold))),
+                widget: Container(child: Text('$gaugeValue', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold))),
                 angle: 90,
-                positionFactor: 0.5,
+                positionFactor: 0.75,
               )
             ],
           )
