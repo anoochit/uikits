@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:uikits2/home.dart';
+import 'package:uikits2/pages/18_dualscreen/two_pane.dart';
 
 void main() {
   runApp(MyApp());
