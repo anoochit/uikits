@@ -67,6 +67,7 @@ import 'package:uikits2/pages/16_dashboard/dashboardscreen01.dart';
 import 'package:uikits2/pages/16_dashboard/dashboardscreen02.dart';
 import 'package:uikits2/pages/17_m3/material_u01.dart';
 import 'package:uikits2/pages/17_m3/material_u02.dart';
+import 'package:uikits2/pages/18_dualscreen/two_pane.dart';
 
 class Menu {
   String title;
@@ -100,6 +101,7 @@ final listImageSubMenu = [
   UnDrawIllustration.photo_album,
   UnDrawIllustration.dashboard,
   UnDrawIllustration.mobile_application,
+  UnDrawIllustration.mobile_application,
 ];
 
 final listSubMenu = [
@@ -120,6 +122,7 @@ final listSubMenu = [
   listPhotoMenu,
   listDashboardMenu,
   listM3Menu,
+  listTwoPaneMenu,
 ];
 
 final listMainMenu = [
@@ -258,4 +261,8 @@ final listDashboardMenu = [
 final listM3Menu = [
   SubMenu("Navigation Rails", MaterialUScreen01()),
   SubMenu("Silver AppBar", MaterialUScreen02()),
+];
+
+final listTwoPaneMenu = [
+  SubMenu("TwoPane 1", TwoPaneScreen()),
 ];
