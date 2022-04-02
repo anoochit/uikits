@@ -143,6 +143,7 @@ final listMainMenu = [
   Menu("Photos", listPhotoMenu),
   Menu("Dashboard", listDashboardMenu),
   Menu("Material U", listM3Menu),
+  Menu("Two Pane", listTwoPaneMenu),
 ];
 
 final listStartMenu = [
