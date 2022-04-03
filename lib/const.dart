@@ -67,7 +67,8 @@ import 'package:uikits2/pages/16_dashboard/dashboardscreen01.dart';
 import 'package:uikits2/pages/16_dashboard/dashboardscreen02.dart';
 import 'package:uikits2/pages/17_m3/material_u01.dart';
 import 'package:uikits2/pages/17_m3/material_u02.dart';
-import 'package:uikits2/pages/18_dualscreen/two_pane.dart';
+import 'package:uikits2/pages/18_dualscreen/twopane_screen01.dart';
+import 'package:uikits2/pages/18_dualscreen/twopane_screen02.dart';
 
 class Menu {
   String title;
@@ -265,5 +266,6 @@ final listM3Menu = [
 ];
 
 final listTwoPaneMenu = [
-  SubMenu("TwoPane 1", TwoPaneScreen()),
+  SubMenu("Two Pane", TwoPaneScreen()),
+  SubMenu("Two Pane Split", TwoPaneSlitScreen()),
 ];
