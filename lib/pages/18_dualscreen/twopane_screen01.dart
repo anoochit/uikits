@@ -2,8 +2,8 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:uikits2/pages/18_dualscreen/blank_screen.dart';
-import 'package:uikits2/pages/18_dualscreen/twopane_controller.dart';
-import 'package:uikits2/pages/18_dualscreen/twopane_widget.dart';
+import 'package:uikits2/pages/18_dualscreen/controller/twopane_controller.dart';
+import 'package:uikits2/pages/18_dualscreen/widgets/twopane_widget.dart';
 
 class TwoPaneScreen extends StatefulWidget {
   TwoPaneScreen({Key? key}) : super(key: key);

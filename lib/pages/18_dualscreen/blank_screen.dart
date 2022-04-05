@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:uikits2/pages/18_dualscreen/twopane_controller.dart';
+import 'package:uikits2/pages/18_dualscreen/controller/twopane_controller.dart';
 
 class BlankScreen extends StatelessWidget {
   final String title;

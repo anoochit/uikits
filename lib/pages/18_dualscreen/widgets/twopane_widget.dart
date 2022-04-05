@@ -2,10 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class TwoPaneWidget extends StatelessWidget {
-  Widget pane1;
-  Widget? pane2;
+  final Widget pane1;
+  final Widget? pane2;
 
-  TwoPaneWidget({Key? key, required this.pane1, this.pane2}) : super(key: key);
+  TwoPaneWidget({
+    Key? key,
+    required this.pane1,
+    this.pane2,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
