@@ -39,45 +39,42 @@ class _ContactScreen02State extends State<ContactScreen02> {
         ),
         body: SafeArea(
           child: LayoutBuilder(
-            builder: (context, constraints) => Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  width: constraints.maxWidth,
-                  padding: EdgeInsets.all(4.0),
-                  color: Colors.grey.shade200,
-                  child: Text("Groups"),
-                ),
-                Container(
-                  height: 110,
-                  child: ListView.builder(
-                    itemCount: 10,
-                    scrollDirection: Axis.horizontal,
-                    itemBuilder: (context, index) {
-                      return ListGroupItem();
-                    },
-                  ),
-                ),
-                Container(
-                  width: constraints.maxWidth,
-                  padding: EdgeInsets.all(4.0),
-                  color: Colors.grey.shade200,
-                  child: Text("All Friends"),
-                ),
-                Expanded(
-                  child: MediaQuery.removePadding(
-                    context: context,
-                    removeTop: true,
-                    child: ListView.builder(
-                      itemCount: 15,
-                      itemBuilder: (BuildContext context, int index) {
-                        return ListItem();
-                      },
+            builder: (context, constraints) {
+              return SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      width: constraints.maxWidth,
+                      padding: EdgeInsets.all(4.0),
+                      color: Colors.grey.shade200,
+                      child: Text("Groups"),
                     ),
-                  ),
+                    Container(
+                      height: 110,
+                      child: ListView.builder(
+                        itemCount: 10,
+                        scrollDirection: Axis.horizontal,
+                        itemBuilder: (context, index) {
+                          return ListGroupItem();
+                        },
+                      ),
+                    ),
+                    Container(
+                      width: constraints.maxWidth,
+                      padding: EdgeInsets.all(4.0),
+                      color: Colors.grey.shade200,
+                      child: Text("All Friends"),
+                    ),
+                    Column(
+                      children: List.generate(10, (index) {
+                        return ListItem();
+                      }),
+                    )
+                  ],
                 ),
-              ],
-            ),
+              );
+            },
           ),
         ),
       ),

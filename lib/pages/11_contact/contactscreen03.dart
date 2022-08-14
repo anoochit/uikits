@@ -39,43 +39,38 @@ class _ContactScreen03State extends State<ContactScreen03> {
         ),
         body: SafeArea(
           child: LayoutBuilder(
-            builder: (context, constraints) => Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  padding: const EdgeInsets.all(8),
-                  child: Container(
-                    height: 38,
-                    decoration: BoxDecoration(
-                      color: Colors.grey.shade100,
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: TextFormField(
-                      decoration: InputDecoration(
-                        hintText: 'Search',
-                        prefixIcon: Icon(FontAwesomeIcons.search, size: 20),
-                        border: InputBorder.none,
+            builder: (context, constraints) {
+              return SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.all(8),
+                      child: Container(
+                        height: 38,
+                        decoration: BoxDecoration(
+                          color: Colors.grey.shade100,
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: TextFormField(
+                          decoration: InputDecoration(
+                            hintText: 'Search',
+                            prefixIcon: Icon(FontAwesomeIcons.search, size: 20),
+                            border: InputBorder.none,
+                          ),
+                          onFieldSubmitted: (value) {
+                            // place submit function here
+                          },
+                        ),
                       ),
-                      onFieldSubmitted: (value) {
-                        // place submit function here
-                      },
                     ),
-                  ),
+                    Column(
+                      children: List.generate(20, (index) => ListItem()),
+                    )
+                  ],
                 ),
-                Expanded(
-                  child: MediaQuery.removePadding(
-                    context: context,
-                    removeTop: true,
-                    child: ListView.builder(
-                      itemCount: 15,
-                      itemBuilder: (BuildContext context, int index) {
-                        return ListItem();
-                      },
-                    ),
-                  ),
-                ),
-              ],
-            ),
+              );
+            },
           ),
         ),
       ),
