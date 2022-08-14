@@ -33,8 +33,8 @@ class _ShoppingCartScreen01State extends State<ShoppingCartScreen01> {
           elevation: 0,
         ),
         body: SafeArea(
-          child: LayoutBuilder(
-            builder: (context, constraints) => Column(
+          child: LayoutBuilder(builder: (context, constraints) {
+            return Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
@@ -43,17 +43,13 @@ class _ShoppingCartScreen01State extends State<ShoppingCartScreen01> {
                   color: Colors.grey.shade200,
                   child: Text("Your Cart"),
                 ),
-                Expanded(
-                  child: MediaQuery.removePadding(
-                    context: context,
-                    removeTop: true,
-                    child: ListView.builder(
-                      itemCount: listshoppingCartItem.length,
-                      itemBuilder: (context, index) {
-                        return shoppingCartItem(items: listshoppingCartItem, index: index);
-                      },
-                    ),
-                  ),
+                ListView.builder(
+                  shrinkWrap: true,
+                  physics: ScrollPhysics(),
+                  itemCount: listshoppingCartItem.length,
+                  itemBuilder: (context, index) {
+                    return shoppingCartItem(items: listshoppingCartItem, index: index);
+                  },
                 ),
                 Container(
                   width: constraints.maxWidth,
@@ -102,8 +98,8 @@ class _ShoppingCartScreen01State extends State<ShoppingCartScreen01> {
                       onPressed: () {},
                     )),
               ],
-            ),
-          ),
+            );
+          }),
         ),
       ),
     );
