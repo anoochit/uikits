@@ -22,82 +22,70 @@ class _ProfileScreen01State extends State<ProfileScreen01> {
       ),
       child: Scaffold(
         backgroundColor: Colors.white,
-        body: LayoutBuilder(
-          builder: (context, constraints) => Container(
-            child: Column(
-              children: [
-                Container(
-                  child: Stack(
-                    children: [
-                      // replace background image here
-                      Container(
-                        width: constraints.maxWidth,
-                        height: 175,
-                        child: Image.asset(
-                          'assets/images/placeholder.png',
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                      Positioned(
-                        bottom: 0,
-                        child: Container(
+        body: LayoutBuilder(builder: (context, constraints) {
+          return SingleChildScrollView(
+            child: Container(
+              child: Column(
+                children: [
+                  Container(
+                    child: Stack(
+                      children: [
+                        // replace background image here
+                        Container(
                           width: constraints.maxWidth,
-                          height: 90,
-                          color: Colors.white.withOpacity(0.5),
+                          height: 175,
+                          child: Image.asset(
+                            'assets/images/placeholder.png',
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        Positioned(
+                          left: 16,
+                          bottom: 16,
                           child: Row(
                             children: [
-                              SizedBox(width: 120),
+                              // avatar
+                              Container(
+                                width: 80,
+                                height: 80,
+                                // replace avatar image here
+                                child: CircleAvatar(
+                                  backgroundImage: AssetImage('assets/images/avatar.png'),
+                                ),
+                              ),
+
+                              // name
+                              SizedBox(width: 16),
                               Column(
+                                mainAxisSize: MainAxisSize.min,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Spacer(),
                                   Text(
                                     "John Doe",
                                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                                   ),
                                   Text("@johndoe"),
-                                  Spacer(),
                                 ],
                               )
                             ],
                           ),
-                        ),
-                      ),
-                      Positioned(
-                        top: 90,
-                        left: 16,
-                        child: Container(
-                          width: 80,
-                          height: 80,
-                          // replace avatar image here
-                          child: CircleAvatar(
-                            backgroundImage: AssetImage('assets/images/avatar.png'),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Expanded(
-                  child: MediaQuery.removePadding(
-                    context: context,
-                    removeTop: true,
-                    child: Container(
-                      width: (constraints.maxWidth > 412) ? (constraints.maxWidth * 0.7) : constraints.maxWidth,
-                      child: ListView.builder(
-                        shrinkWrap: true,
-                        itemCount: 10,
-                        itemBuilder: (context, index) {
-                          return PostItem();
-                        },
-                      ),
+                        )
+                      ],
                     ),
                   ),
-                ),
-              ],
+                  Column(
+                    children: List.generate(
+                      10,
+                      (index) {
+                        return PostItem();
+                      },
+                    ),
+                  )
+                ],
+              ),
             ),
-          ),
-        ),
+          );
+        }),
       ),
     );
   }
