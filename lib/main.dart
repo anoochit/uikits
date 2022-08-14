@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:uikits2/home.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(MyApp());
 }
 
