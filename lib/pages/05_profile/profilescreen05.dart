@@ -23,80 +23,76 @@ class _ProfileScreen05State extends State<ProfileScreen05> {
       child: Scaffold(
         backgroundColor: Colors.white,
         body: LayoutBuilder(
-          builder: (context, constraints) => Column(
-            children: [
-              Stack(
+          builder: (context, constraints) {
+            return SingleChildScrollView(
+              child: Column(
                 children: [
-                  Container(
-                    width: constraints.maxWidth,
-                    height: 220,
-                    child: Image.asset(
-                      'assets/images/placeholder.png',
-                      fit: BoxFit.cover,
-                    ),
+                  Stack(
+                    children: [
+                      Container(
+                        width: constraints.maxWidth,
+                        height: 220,
+                        child: Image.asset(
+                          'assets/images/placeholder.png',
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      Container(
+                        padding: EdgeInsets.only(top: 48.0),
+                        width: constraints.maxWidth,
+                        child: Column(
+                          children: [
+                            // replace avatar image here
+                            CircleAvatar(
+                              radius: 42,
+                              backgroundImage: AssetImage('assets/images/avatar.png'),
+                            ),
+                            Container(
+                              padding: EdgeInsets.all(8.0),
+                              // replace display name here
+                              child: Text(
+                                "John Doe",
+                                style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                            Container(
+                              padding: EdgeInsets.all(4.0),
+                              // replace display name here
+                              child: Text(
+                                "@johndoe",
+                                style: TextStyle(fontSize: 16.0),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
                   Container(
-                    padding: EdgeInsets.only(top: 48.0),
-                    width: constraints.maxWidth,
-                    child: Column(
+                    padding: EdgeInsets.all(8.0),
+                    width: (constraints.maxWidth > 412) ? (constraints.maxWidth * 0.6) : constraints.maxWidth,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        // replace avatar image here
-                        CircleAvatar(
-                          radius: 42,
-                          backgroundImage: AssetImage('assets/images/avatar.png'),
-                        ),
-                        Container(
-                          padding: EdgeInsets.all(8.0),
-                          // replace display name here
-                          child: Text(
-                            "John Doe",
-                            style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                        Container(
-                          padding: EdgeInsets.all(4.0),
-                          // replace display name here
-                          child: Text(
-                            "@johndoe",
-                            style: TextStyle(fontSize: 16.0),
-                          ),
-                        ),
+                        // place statistic here
+                        BlockText(title: "Posts", value: 200),
+                        BlockText(title: "Followers", value: 200),
+                        BlockText(title: "Following", value: 200),
                       ],
                     ),
                   ),
+                  ListView.builder(
+                    physics: ScrollPhysics(),
+                    shrinkWrap: true,
+                    itemCount: 20,
+                    itemBuilder: (context, index) {
+                      return PostItem();
+                    },
+                  )
                 ],
               ),
-              Container(
-                padding: EdgeInsets.all(8.0),
-                width: (constraints.maxWidth > 412) ? (constraints.maxWidth * 0.6) : constraints.maxWidth,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    // place statistic here
-                    BlockText(title: "Posts", value: 200),
-                    BlockText(title: "Followers", value: 200),
-                    BlockText(title: "Following", value: 200),
-                  ],
-                ),
-              ),
-              Expanded(
-                child: MediaQuery.removePadding(
-                  context: context,
-                  removeTop: true,
-                  child: Container(
-                    width: (constraints.maxWidth > 412) ? (constraints.maxWidth * 0.7) : constraints.maxWidth,
-                    child: ListView.builder(
-                      shrinkWrap: true,
-                      itemCount: 10,
-                      itemBuilder: (context, index) {
-                        return PostItem();
-                      },
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
+            );
+          },
         ),
       ),
     );

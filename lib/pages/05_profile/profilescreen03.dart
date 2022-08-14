@@ -21,72 +21,68 @@ class _ProfileScreen03State extends State<ProfileScreen03> {
       child: Scaffold(
         backgroundColor: Colors.white,
         body: LayoutBuilder(
-          builder: (context, constraints) => Column(
-            children: [
-              Container(
-                padding: EdgeInsets.only(top: 48.0),
-                width: constraints.maxWidth,
-                child:
-                    // replace avatar image here
-                    Column(
-                  children: [
-                    CircleAvatar(
-                      radius: 50,
-                      backgroundImage: AssetImage('assets/images/avatar.png'),
+          builder: (context, constraints) {
+            return SingleChildScrollView(
+              child: Column(
+                children: [
+                  Container(
+                    padding: EdgeInsets.only(top: 48.0),
+                    width: constraints.maxWidth,
+                    child:
+                        // replace avatar image here
+                        Column(
+                      children: [
+                        CircleAvatar(
+                          radius: 50,
+                          backgroundImage: AssetImage('assets/images/avatar.png'),
+                        ),
+                        Container(
+                          padding: EdgeInsets.all(8.0),
+                          // replace display name here
+                          child: Text(
+                            "John Doe",
+                            style: TextStyle(fontSize: 24.0),
+                          ),
+                        ),
+                        Container(
+                          padding: EdgeInsets.all(8.0),
+                          // replace display name here
+                          child: Text(
+                            "@johndoe",
+                            style: TextStyle(fontSize: 16.0),
+                          ),
+                        ),
+                      ],
                     ),
-                    Container(
-                      padding: EdgeInsets.all(8.0),
-                      // replace display name here
-                      child: Text(
-                        "John Doe",
-                        style: TextStyle(fontSize: 24.0),
-                      ),
+                  ),
+                  Container(
+                    width: (constraints.maxWidth > 412) ? (constraints.maxWidth * 0.6) : constraints.maxWidth,
+                    padding: EdgeInsets.all(8.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        // place statistic here
+                        BlockText(title: "Posts", value: 200),
+                        BlockText(title: "Followers", value: 200),
+                        BlockText(title: "Following", value: 200),
+                      ],
                     ),
-                    Container(
-                      padding: EdgeInsets.all(8.0),
-                      // replace display name here
-                      child: Text(
-                        "@johndoe",
-                        style: TextStyle(fontSize: 16.0),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Container(
-                width: (constraints.maxWidth > 412) ? (constraints.maxWidth * 0.6) : constraints.maxWidth,
-                padding: EdgeInsets.all(8.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    // place statistic here
-                    BlockText(title: "Posts", value: 200),
-                    BlockText(title: "Followers", value: 200),
-                    BlockText(title: "Following", value: 200),
-                  ],
-                ),
-              ),
-              Expanded(
-                child: MediaQuery.removePadding(
-                  context: context,
-                  removeTop: true,
-                  child: GridView.builder(
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: (constraints.maxWidth > 412) ? 4 : 3,
-                      mainAxisSpacing: 1,
-                      crossAxisSpacing: 1,
-                    ),
-                    itemCount: 20,
-                    itemBuilder: (context, index) {
-                      return Container(
+                  ),
+                  GridView.count(
+                    physics: ScrollPhysics(),
+                    shrinkWrap: true,
+                    crossAxisCount: (constraints.maxWidth > 412) ? 4 : 3,
+                    children: List.generate(20, (index) {
+                      return Card(
+                        clipBehavior: Clip.antiAliasWithSaveLayer,
                         child: Image.asset('assets/images/placeholder.png', fit: BoxFit.cover),
                       );
-                    },
-                  ),
-                ),
+                    }),
+                  )
+                ],
               ),
-            ],
-          ),
+            );
+          },
         ),
       ),
     );
