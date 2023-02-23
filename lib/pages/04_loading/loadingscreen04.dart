@@ -12,7 +12,6 @@ class _LoadingScreen04State extends State<LoadingScreen04> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       body: LayoutBuilder(
         builder: (context, constraints) => Center(
           child: Stack(

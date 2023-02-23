@@ -14,11 +14,7 @@ class _FeedScreen02State extends State<FeedScreen02> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text("News", style: TextStyle(color: Colors.black)),
-        titleSpacing: 0,
-        backgroundColor: Colors.white,
-        iconTheme: IconThemeData(color: Colors.black),
-        elevation: 0,
+        title: Text("News"),
         actions: [
           IconButton(
             icon: Icon(FontAwesomeIcons.circlePlus),

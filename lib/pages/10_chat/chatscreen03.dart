@@ -1,7 +1,6 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:timeago/timeago.dart' as timeago;
 import 'package:uikits2/pages/10_chat/sample_data.dart';
@@ -16,107 +15,102 @@ class ChatScreen03 extends StatefulWidget {
 class _ChatScreen03State extends State<ChatScreen03> {
   @override
   Widget build(BuildContext context) {
-    return AnnotatedRegion<SystemUiOverlayStyle>(
-      value: SystemUiOverlayStyle(
-        statusBarColor: Colors.transparent, // transparent status bar
-        systemNavigationBarColor: Colors.black, // navigation bar color
-        statusBarIconBrightness: Brightness.dark, // status bar icons' color
-        systemNavigationBarIconBrightness: Brightness.dark, //navigation bar icons' color
-      ),
-      child: Scaffold(
+    return Scaffold(
+      appBar: AppBar(
+        title: Row(
+          children: [
+            Text("John Doe", style: TextStyle(color: Colors.black)),
+            Spacer(),
+            Container(
+              padding: EdgeInsets.all(8),
+              child: CircleAvatar(
+                radius: 20,
+                backgroundImage: AssetImage('assets/images/avatar.png'),
+              ),
+            )
+          ],
+        ),
+        titleSpacing: 0,
         backgroundColor: Colors.white,
-        appBar: AppBar(
-          title: Row(
+        iconTheme: IconThemeData(color: Colors.black),
+        elevation: 0,
+      ),
+      body: SafeArea(
+        child: LayoutBuilder(
+          builder: (context, constraints) => Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text("John Doe", style: TextStyle(color: Colors.black)),
-              Spacer(),
+              // chat messages
+              Expanded(
+                child: MediaQuery.removePadding(
+                  context: context,
+                  removeTop: true,
+                  child: ListView.builder(
+                    reverse: true,
+                    itemCount: reversedListMessage.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      return chatMessageItem(
+                          id: reversedListMessage[index].id,
+                          content: reversedListMessage[index].content,
+                          type: reversedListMessage[index].type,
+                          timestamp: reversedListMessage[index].timestamp,
+                          avatar: reversedListMessage[index].avatar,
+                          displayName: reversedListMessage[index].displayName,
+                          owner: reversedListMessage[index].owner);
+                    },
+                  ),
+                ),
+              ),
+              // toolbar
               Container(
-                padding: EdgeInsets.all(8),
-                child: CircleAvatar(
-                  radius: 20,
-                  backgroundImage: AssetImage('assets/images/avatar.png'),
+                child: Column(
+                  children: [
+                    Divider(height: 1, thickness: 1),
+                    Row(
+                      children: [
+                        IconButton(
+                          icon: Icon(FontAwesomeIcons.plus),
+                          onPressed: () {
+                            // add function show toolbar
+                          },
+                        ),
+                        IconButton(
+                          icon: Icon(FontAwesomeIcons.image),
+                          onPressed: () {
+                            // add function show image picker
+                          },
+                        ),
+                        IconButton(
+                          icon: Icon(FontAwesomeIcons.stickyNote),
+                          onPressed: () {
+                            // add function show sticker
+                          },
+                        ),
+                        Container(
+                          height: 40,
+                          width: constraints.maxWidth - (200),
+                          padding: EdgeInsets.symmetric(horizontal: 16.0),
+                          decoration: BoxDecoration(
+                              border: Border.all(color: Colors.grey.shade200),
+                              borderRadius: BorderRadius.circular(16)),
+                          child: TextFormField(
+                            decoration: InputDecoration(
+                                border: InputBorder.none,
+                                hintText: 'Type your message here'),
+                          ),
+                        ),
+                        IconButton(
+                          icon: Icon(FontAwesomeIcons.paperPlane),
+                          onPressed: () {
+                            // add function send message
+                          },
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
               )
             ],
-          ),
-          titleSpacing: 0,
-          backgroundColor: Colors.white,
-          iconTheme: IconThemeData(color: Colors.black),
-          elevation: 0,
-        ),
-        body: SafeArea(
-          child: LayoutBuilder(
-            builder: (context, constraints) => Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                // chat messages
-                Expanded(
-                  child: MediaQuery.removePadding(
-                    context: context,
-                    removeTop: true,
-                    child: ListView.builder(
-                      reverse: true,
-                      itemCount: reversedListMessage.length,
-                      itemBuilder: (BuildContext context, int index) {
-                        return chatMessageItem(
-                            id: reversedListMessage[index].id,
-                            content: reversedListMessage[index].content,
-                            type: reversedListMessage[index].type,
-                            timestamp: reversedListMessage[index].timestamp,
-                            avatar: reversedListMessage[index].avatar,
-                            displayName: reversedListMessage[index].displayName,
-                            owner: reversedListMessage[index].owner);
-                      },
-                    ),
-                  ),
-                ),
-                // toolbar
-                Container(
-                  child: Column(
-                    children: [
-                      Divider(height: 1, thickness: 1),
-                      Row(
-                        children: [
-                          IconButton(
-                            icon: Icon(FontAwesomeIcons.plus),
-                            onPressed: () {
-                              // add function show toolbar
-                            },
-                          ),
-                          IconButton(
-                            icon: Icon(FontAwesomeIcons.image),
-                            onPressed: () {
-                              // add function show image picker
-                            },
-                          ),
-                          IconButton(
-                            icon: Icon(FontAwesomeIcons.stickyNote),
-                            onPressed: () {
-                              // add function show sticker
-                            },
-                          ),
-                          Container(
-                            height: 40,
-                            width: constraints.maxWidth - (200),
-                            padding: EdgeInsets.symmetric(horizontal: 16.0),
-                            decoration: BoxDecoration(border: Border.all(color: Colors.grey.shade200), borderRadius: BorderRadius.circular(30)),
-                            child: TextFormField(
-                              decoration: InputDecoration(border: InputBorder.none, hintText: 'Type your message here'),
-                            ),
-                          ),
-                          IconButton(
-                            icon: Icon(FontAwesomeIcons.paperPlane),
-                            onPressed: () {
-                              // add function send message
-                            },
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                )
-              ],
-            ),
           ),
         ),
       ),
@@ -124,7 +118,14 @@ class _ChatScreen03State extends State<ChatScreen03> {
   }
 
   // message widget
-  Widget chatMessageItem({required int id, required String content, required int type, required DateTime timestamp, required String avatar, required String displayName, required bool owner}) {
+  Widget chatMessageItem(
+      {required int id,
+      required String content,
+      required int type,
+      required DateTime timestamp,
+      required String avatar,
+      required String displayName,
+      required bool owner}) {
     return LayoutBuilder(
       builder: (context, constraints) {
         if (type == 0) {
@@ -143,12 +144,18 @@ class _ChatScreen03State extends State<ChatScreen03> {
                       )
                     : Spacer(),
                 Column(
-                  crossAxisAlignment: (owner) ? CrossAxisAlignment.end : CrossAxisAlignment.start,
+                  crossAxisAlignment: (owner)
+                      ? CrossAxisAlignment.end
+                      : CrossAxisAlignment.start,
                   children: [
                     Container(
                       width: constraints.maxWidth * 0.6,
                       padding: EdgeInsets.all(16.0),
-                      decoration: BoxDecoration(color: (owner) ? Colors.blue : Colors.blue.shade50, borderRadius: BorderRadiusDirectional.circular(10)),
+                      decoration: BoxDecoration(
+                          color: (owner)
+                              ? Theme.of(context).primaryColor
+                              : Theme.of(context).primaryColorLight,
+                          borderRadius: BorderRadiusDirectional.circular(16)),
                       child: Text(content),
                     ),
                     Container(
@@ -178,14 +185,20 @@ class _ChatScreen03State extends State<ChatScreen03> {
                       )
                     : Spacer(),
                 Column(
-                  crossAxisAlignment: (owner) ? CrossAxisAlignment.end : CrossAxisAlignment.start,
+                  crossAxisAlignment: (owner)
+                      ? CrossAxisAlignment.end
+                      : CrossAxisAlignment.start,
                   children: [
                     InkWell(
                       child: Container(
                         width: 200,
                         height: 200,
                         clipBehavior: Clip.antiAliasWithSaveLayer,
-                        decoration: BoxDecoration(color: (owner) ? Colors.blue : Colors.blue.shade50, borderRadius: BorderRadiusDirectional.circular(10)),
+                        decoration: BoxDecoration(
+                            color: (owner)
+                                ? Theme.of(context).primaryColor
+                                : Theme.of(context).primaryColorLight,
+                            borderRadius: BorderRadiusDirectional.circular(16)),
                         child: Image.asset(content, fit: BoxFit.cover),
                       ),
                       onTap: () {
@@ -220,7 +233,9 @@ class _ChatScreen03State extends State<ChatScreen03> {
                       )
                     : Spacer(),
                 Column(
-                  crossAxisAlignment: (owner) ? CrossAxisAlignment.end : CrossAxisAlignment.start,
+                  crossAxisAlignment: (owner)
+                      ? CrossAxisAlignment.end
+                      : CrossAxisAlignment.start,
                   children: [
                     Container(
                       width: 200,
@@ -254,7 +269,9 @@ class _ChatScreen03State extends State<ChatScreen03> {
                       )
                     : Spacer(),
                 Column(
-                  crossAxisAlignment: (owner) ? CrossAxisAlignment.end : CrossAxisAlignment.start,
+                  crossAxisAlignment: (owner)
+                      ? CrossAxisAlignment.end
+                      : CrossAxisAlignment.start,
                   children: [
                     InkWell(
                       child: Container(
@@ -262,7 +279,10 @@ class _ChatScreen03State extends State<ChatScreen03> {
                         height: 200,
                         child: Container(
                           clipBehavior: Clip.antiAliasWithSaveLayer,
-                          decoration: BoxDecoration(color: Colors.grey.shade200, borderRadius: BorderRadiusDirectional.circular(10)),
+                          decoration: BoxDecoration(
+                              color: Colors.grey.shade200,
+                              borderRadius:
+                                  BorderRadiusDirectional.circular(16)),
                           child: Stack(
                             children: [
                               Positioned.fill(
@@ -308,7 +328,9 @@ class _ChatScreen03State extends State<ChatScreen03> {
                       )
                     : Spacer(),
                 Column(
-                  crossAxisAlignment: (owner) ? CrossAxisAlignment.end : CrossAxisAlignment.start,
+                  crossAxisAlignment: (owner)
+                      ? CrossAxisAlignment.end
+                      : CrossAxisAlignment.start,
                   children: [
                     InkWell(
                       child: Container(
@@ -316,7 +338,10 @@ class _ChatScreen03State extends State<ChatScreen03> {
                         height: 200,
                         child: Container(
                           clipBehavior: Clip.antiAliasWithSaveLayer,
-                          decoration: BoxDecoration(color: Colors.grey.shade200, borderRadius: BorderRadiusDirectional.circular(10)),
+                          decoration: BoxDecoration(
+                              color: Colors.grey.shade200,
+                              borderRadius:
+                                  BorderRadiusDirectional.circular(16)),
                           child: Stack(
                             children: [
                               Positioned.fill(

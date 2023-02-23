@@ -42,7 +42,6 @@ class _WalkthroughScreen02State extends State<WalkthroughScreen02> {
     var listCarouselPage = listCarousel(context);
 
     return Scaffold(
-      backgroundColor: Colors.white,
       body: LayoutBuilder(
         builder: (context, constraints) => Stack(
           children: [

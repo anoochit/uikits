@@ -11,7 +11,6 @@ class _ProfileScreen02State extends State<ProfileScreen02> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       body: LayoutBuilder(
         builder: (context, constraints) {
           return SingleChildScrollView(

@@ -1,7 +1,4 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:timeago/timeago.dart' as timeago;
 
@@ -15,75 +12,62 @@ class ChatScreen01 extends StatefulWidget {
 class _ChatScreen01State extends State<ChatScreen01> {
   @override
   Widget build(BuildContext context) {
-    return AnnotatedRegion<SystemUiOverlayStyle>(
-      value: SystemUiOverlayStyle(
-        statusBarColor: Colors.transparent, // transparent status bar
-        systemNavigationBarColor: Colors.black, // navigation bar color
-        statusBarIconBrightness: Brightness.dark, // status bar icons' color
-        systemNavigationBarIconBrightness: Brightness.dark, //navigation bar icons' color
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Create"),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.add_box),
+            onPressed: () {
+              // place save function here
+            },
+          ),
+        ],
       ),
-      child: Scaffold(
-        backgroundColor: Colors.white,
-        appBar: AppBar(
-          title: Text("Create", style: TextStyle(color: Colors.black)),
-          titleSpacing: 0,
-          backgroundColor: Colors.white,
-          iconTheme: IconThemeData(color: Colors.black),
-          elevation: 0,
-          actions: [
-            IconButton(
-              icon: Icon(Icons.add_box),
-              onPressed: () {
-                // place save function here
-              },
+      body: LayoutBuilder(
+        builder: (context, constraints) => Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              padding: const EdgeInsets.all(8),
+              child: Container(
+                height: 48,
+                decoration: BoxDecoration(
+                  color: Colors.grey.shade100,
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: TextFormField(
+                  decoration: InputDecoration(
+                    hintText: 'Search...',
+                    hintStyle: Theme.of(context).textTheme.bodyMedium,
+                    prefixIcon: Icon(FontAwesomeIcons.magnifyingGlass),
+                    border: InputBorder.none,
+                  ),
+                  onFieldSubmitted: (value) {
+                    // place submit function here
+                  },
+                ),
+              ),
+            ),
+            Expanded(
+              child: MediaQuery.removePadding(
+                context: context,
+                removeTop: true,
+                child: ListView.builder(
+                  itemCount: 15,
+                  itemBuilder: (BuildContext context, int index) {
+                    // if index == 0 insert divider with title "Unread messages"
+                    // if index == 5 indert divider with title "All messages"
+                    if ((index == 0) || (index == 5)) {
+                      return ListDivider(
+                          constraints: constraints, index: index);
+                    }
+                    return ListItem(index: index);
+                  },
+                ),
+              ),
             ),
           ],
-        ),
-        body: SafeArea(
-          child: LayoutBuilder(
-            builder: (context, constraints) => Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  padding: const EdgeInsets.all(8),
-                  child: Container(
-                    height: 38,
-                    decoration: BoxDecoration(
-                      color: Colors.grey.shade100,
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: TextFormField(
-                      decoration: InputDecoration(
-                        hintText: 'Search',
-                        prefixIcon: Icon(FontAwesomeIcons.search, size: 20),
-                        border: InputBorder.none,
-                      ),
-                      onFieldSubmitted: (value) {
-                        // place submit function here
-                      },
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: MediaQuery.removePadding(
-                    context: context,
-                    removeTop: true,
-                    child: ListView.builder(
-                      itemCount: 15,
-                      itemBuilder: (BuildContext context, int index) {
-                        // if index == 0 insert divider with title "Unread messages"
-                        // if index == 5 indert divider with title "All messages"
-                        if ((index == 0) || (index == 5)) {
-                          return ListDivider(constraints: constraints, index: index);
-                        }
-                        return ListItem(index: index);
-                      },
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
         ),
       ),
     );
@@ -148,7 +132,8 @@ class ListItem extends StatelessWidget {
                 children: [
                   Container(
                     padding: const EdgeInsets.all(4.0),
-                    child: Text("Veniam elit nisi est elit sint", style: TextStyle(fontWeight: FontWeight.bold)),
+                    child: Text("Veniam elit nisi est elit sint",
+                        style: TextStyle(fontWeight: FontWeight.bold)),
                   ),
                   Container(
                     padding: const EdgeInsets.all(4.0),

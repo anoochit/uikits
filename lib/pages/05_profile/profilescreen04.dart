@@ -11,13 +11,8 @@ class _ProfileScreen04State extends State<ProfileScreen04> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text("Profile", style: TextStyle(color: Colors.black)),
-        titleSpacing: 0,
-        backgroundColor: Colors.white,
-        iconTheme: IconThemeData(color: Colors.black),
-        elevation: 0,
+        title: Text("Profile"),
       ),
       body: LayoutBuilder(
         builder: (context, constraints) => Column(

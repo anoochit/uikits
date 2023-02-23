@@ -11,7 +11,6 @@ class _StartScreen02State extends State<StartScreen02> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       body: LayoutBuilder(
         builder: (context, constraints) => Center(
           child: Column(
