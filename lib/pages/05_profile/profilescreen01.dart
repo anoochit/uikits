@@ -118,29 +118,19 @@ class PostItem extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 8.0),
                 child: Row(
                   children: [
-                    Flex(
-                      direction: Axis.horizontal,
-                      children: [
-                        TextButton.icon(
-                          icon: Icon(FontAwesomeIcons.thumbsUp),
-                          onPressed: () {
-                            // place link function here
-                          },
-                          label: Text("Like"),
-                        ),
-                      ],
+                    TextButton.icon(
+                      icon: Icon(FontAwesomeIcons.thumbsUp),
+                      onPressed: () {
+                        // place link function here
+                      },
+                      label: Text("Like"),
                     ),
-                    Flex(
-                      direction: Axis.horizontal,
-                      children: [
-                        TextButton.icon(
-                          icon: Icon(FontAwesomeIcons.comment),
-                          onPressed: () {
-                            // place comment function here
-                          },
-                          label: Text("Comment"),
-                        ),
-                      ],
+                    TextButton.icon(
+                      icon: Icon(FontAwesomeIcons.comment),
+                      onPressed: () {
+                        // place comment function here
+                      },
+                      label: Text("Comment"),
                     ),
                     Spacer(),
                     Padding(

@@ -62,17 +62,8 @@ class ListDivider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Container(
-          width: constraints.maxWidth,
-          color: Colors.grey.shade200,
-          padding: EdgeInsets.only(left: 16.0, top: 8, bottom: 8),
-          child: Text((index == 0) ? "Friends" : "Nearby Friends"),
-        ),
-        ListItem(index: index)
-      ],
+    return ListTile(
+      title: Text((index == 0) ? "Friends" : "Nearby Friends"),
     );
   }
 }
@@ -87,20 +78,12 @@ class ListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Row(
-        children: [
-          CircleAvatar(
-            radius: 24,
-            backgroundImage: AssetImage('assets/images/avatar.png'),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Text('item $index'),
-          )
-        ],
+    return ListTile(
+      leading: CircleAvatar(
+        radius: 24,
+        backgroundImage: AssetImage('assets/images/avatar.png'),
       ),
+      title: Text('item $index'),
     );
   }
 }
