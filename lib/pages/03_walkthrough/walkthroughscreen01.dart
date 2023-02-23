@@ -1,6 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 class WalkthroughScreen01 extends StatefulWidget {
   WalkthroughScreen01({Key? key}) : super(key: key);
@@ -13,10 +12,26 @@ class _WalkthroughScreen01State extends State<WalkthroughScreen01> {
   // list carousel
   List<Widget> listCarousel(BuildContext context) {
     return [
-      CarouselPage(image: Image.asset('assets/images/placeholder.png', fit: BoxFit.cover), title: "Instruction Page 1", subtitle: "Instruction 1 Description"),
-      CarouselPage(image: Image.asset('assets/images/placeholder.png', fit: BoxFit.cover), title: "Instruction Page 2", subtitle: "Instruction 2 Description"),
-      CarouselPage(image: Image.asset('assets/images/placeholder.png', fit: BoxFit.cover), title: "Instruction Page 3", subtitle: "Instruction 3 Description"),
-      CarouselPage(image: Image.asset('assets/images/placeholder.png', fit: BoxFit.cover), title: "Instruction Page 4", subtitle: "Instruction 4 Description"),
+      CarouselPage(
+          image:
+              Image.asset('assets/images/placeholder.png', fit: BoxFit.cover),
+          title: "Instruction Page 1",
+          subtitle: "Instruction 1 Description"),
+      CarouselPage(
+          image:
+              Image.asset('assets/images/placeholder.png', fit: BoxFit.cover),
+          title: "Instruction Page 2",
+          subtitle: "Instruction 2 Description"),
+      CarouselPage(
+          image:
+              Image.asset('assets/images/placeholder.png', fit: BoxFit.cover),
+          title: "Instruction Page 3",
+          subtitle: "Instruction 3 Description"),
+      CarouselPage(
+          image:
+              Image.asset('assets/images/placeholder.png', fit: BoxFit.cover),
+          title: "Instruction Page 4",
+          subtitle: "Instruction 4 Description"),
     ];
   }
 
@@ -26,68 +41,61 @@ class _WalkthroughScreen01State extends State<WalkthroughScreen01> {
   Widget build(BuildContext context) {
     var listCarouselPage = listCarousel(context);
 
-    return AnnotatedRegion<SystemUiOverlayStyle>(
-      value: SystemUiOverlayStyle(
-        statusBarColor: Colors.transparent, // transparent status bar
-        systemNavigationBarColor: Colors.black, // navigation bar color
-        statusBarIconBrightness: Brightness.dark, // status bar icons' color
-        systemNavigationBarIconBrightness: Brightness.dark, //navigation bar icons' color
-      ),
-      child: Scaffold(
-        backgroundColor: Colors.white,
-        body: LayoutBuilder(
-          builder: (context, constraints) => Stack(
-            children: [
-              Container(
-                width: constraints.maxWidth,
-                height: constraints.maxHeight,
-                child: CarouselSlider(
-                  items: listCarouselPage,
-                  options: CarouselOptions(
-                    height: constraints.maxHeight,
-                    viewportFraction: 1.0,
-                    //enlargeCenterPage: true,
-                    scrollDirection: Axis.horizontal,
-                    enableInfiniteScroll: false,
-                    onPageChanged: (index, reason) {
-                      setState(() {
-                        _current = index;
-                      });
-                    },
-                  ),
-                ),
-              ),
-              Container(
-                alignment: Alignment.bottomCenter,
-                padding: EdgeInsets.only(bottom: 32.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: listCarouselPage.map((item) {
-                    int index = listCarouselPage.indexOf(item);
-                    return Container(
-                      width: _current == index ? 12.0 : 8.0,
-                      height: _current == index ? 12.0 : 8.0,
-                      margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 2.0),
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: _current == index ? Colors.grey : Colors.grey[300],
-                      ),
-                    );
-                  }).toList(),
-                ),
-              ),
-              Container(
-                alignment: Alignment.bottomRight,
-                padding: EdgeInsets.only(bottom: 24.0, right: 16.0),
-                child: TextButton(
-                  child: Text("Skip"),
-                  onPressed: () {
-                    // place skip function
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: LayoutBuilder(
+        builder: (context, constraints) => Stack(
+          children: [
+            Container(
+              width: constraints.maxWidth,
+              height: constraints.maxHeight,
+              child: CarouselSlider(
+                items: listCarouselPage,
+                options: CarouselOptions(
+                  height: constraints.maxHeight,
+                  viewportFraction: 1.0,
+                  //enlargeCenterPage: true,
+                  scrollDirection: Axis.horizontal,
+                  enableInfiniteScroll: false,
+                  onPageChanged: (index, reason) {
+                    setState(() {
+                      _current = index;
+                    });
                   },
                 ),
-              )
-            ],
-          ),
+              ),
+            ),
+            Container(
+              alignment: Alignment.bottomCenter,
+              padding: EdgeInsets.only(bottom: 32.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: listCarouselPage.map((item) {
+                  int index = listCarouselPage.indexOf(item);
+                  return Container(
+                    width: _current == index ? 12.0 : 8.0,
+                    height: _current == index ? 12.0 : 8.0,
+                    margin:
+                        EdgeInsets.symmetric(vertical: 10.0, horizontal: 2.0),
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: _current == index ? Colors.grey : Colors.grey[300],
+                    ),
+                  );
+                }).toList(),
+              ),
+            ),
+            Container(
+              alignment: Alignment.bottomRight,
+              padding: EdgeInsets.only(bottom: 24.0, right: 16.0),
+              child: TextButton(
+                child: Text("Skip"),
+                onPressed: () {
+                  // place skip function
+                },
+              ),
+            )
+          ],
         ),
       ),
     );
@@ -111,7 +119,10 @@ class CarouselPage extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, constraints) => Stack(
         children: [
-          Container(width: constraints.maxWidth, height: constraints.maxHeight, child: image),
+          Container(
+              width: constraints.maxWidth,
+              height: constraints.maxHeight,
+              child: image),
           Container(
             width: constraints.maxWidth,
             height: constraints.maxHeight,
@@ -121,7 +132,7 @@ class CarouselPage extends StatelessWidget {
               children: [
                 Text(
                   title,
-                  style: TextStyle(fontSize: 32.0),
+                  style: Theme.of(context).textTheme.headlineLarge,
                 ),
                 Text(subtitle),
               ],
