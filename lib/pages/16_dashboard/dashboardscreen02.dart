@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
 
 class DashboardScreen02 extends StatefulWidget {
@@ -12,35 +11,69 @@ class DashboardScreen02 extends StatefulWidget {
 class _DashboardScreen02State extends State<DashboardScreen02> {
   @override
   Widget build(BuildContext context) {
-    return AnnotatedRegion<SystemUiOverlayStyle>(
-      value: SystemUiOverlayStyle(
-        statusBarColor: Colors.transparent, // transparent status bar
-        systemNavigationBarColor: Colors.black, // navigation bar color
-        statusBarIconBrightness: Brightness.dark, // status bar icons' color
-        systemNavigationBarIconBrightness: Brightness.dark, //navigation bar icons' color
-      ),
-      child: Scaffold(
-        backgroundColor: Colors.white,
-        appBar: AppBar(
-          title: Text("Dashboard", style: TextStyle(color: Colors.black)),
-          titleSpacing: 0,
-          backgroundColor: Colors.white,
-          iconTheme: IconThemeData(color: Colors.black),
-          elevation: 0,
-          actions: [IconButton(onPressed: () {}, icon: Icon(Icons.add))],
-        ),
-        body: SingleChildScrollView(
-          child: Wrap(
-            direction: Axis.horizontal,
-            children: [
-              RadialGauge(width: 2, height: 2, offset: 0, gaugeTitle: 'Gauge 1', gaugeMin: 0, gaugeMax: 100, gaugeValue: 90),
-              RadialGauge(width: 2, height: 2, offset: 0, gaugeTitle: 'Gauge 2', gaugeMin: 0, gaugeMax: 100, gaugeValue: 50),
-              RadialGauge(width: 1, height: 1, offset: 0, gaugeTitle: 'Gauge 3', gaugeMin: 0, gaugeMax: 100, gaugeValue: 40),
-              RadialGauge(width: 1, height: 1, offset: 0, gaugeTitle: 'Gauge 4', gaugeMin: 0, gaugeMax: 100, gaugeValue: 70),
-              RadialGauge(width: 1, height: 1, offset: 0, gaugeTitle: 'Gauge 5', gaugeMin: 0, gaugeMax: 100, gaugeValue: 55),
-              RadialGauge(width: 1, height: 1, offset: 0, gaugeTitle: 'Gauge 6', gaugeMin: 0, gaugeMax: 100, gaugeValue: 22),
-            ],
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Dashboard"),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.add),
           ),
+        ],
+      ),
+      body: SingleChildScrollView(
+        child: Wrap(
+          direction: Axis.horizontal,
+          children: [
+            RadialGauge(
+                width: 2,
+                height: 2,
+                offset: 0,
+                gaugeTitle: 'Gauge 1',
+                gaugeMin: 0,
+                gaugeMax: 100,
+                gaugeValue: 90),
+            RadialGauge(
+                width: 2,
+                height: 2,
+                offset: 0,
+                gaugeTitle: 'Gauge 2',
+                gaugeMin: 0,
+                gaugeMax: 100,
+                gaugeValue: 50),
+            RadialGauge(
+                width: 1,
+                height: 1,
+                offset: 0,
+                gaugeTitle: 'Gauge 3',
+                gaugeMin: 0,
+                gaugeMax: 100,
+                gaugeValue: 40),
+            RadialGauge(
+                width: 1,
+                height: 1,
+                offset: 0,
+                gaugeTitle: 'Gauge 4',
+                gaugeMin: 0,
+                gaugeMax: 100,
+                gaugeValue: 70),
+            RadialGauge(
+                width: 1,
+                height: 1,
+                offset: 0,
+                gaugeTitle: 'Gauge 5',
+                gaugeMin: 0,
+                gaugeMax: 100,
+                gaugeValue: 55),
+            RadialGauge(
+                width: 1,
+                height: 1,
+                offset: 0,
+                gaugeTitle: 'Gauge 6',
+                gaugeMin: 0,
+                gaugeMax: 100,
+                gaugeValue: 22),
+          ],
         ),
       ),
     );
@@ -128,17 +161,26 @@ class RadialGauge extends StatelessWidget {
       clipBehavior: Clip.antiAliasWithSaveLayer,
       child: SfRadialGauge(
         enableLoadingAnimation: true,
-        title: GaugeTitle(text: gaugeTitle, textStyle: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold)),
+        title: GaugeTitle(
+            text: gaugeTitle,
+            textStyle: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold)),
         axes: <RadialAxis>[
           RadialAxis(
             minimum: gaugeMin,
             maximum: gaugeMax,
             pointers: <GaugePointer>[
-              NeedlePointer(needleLength: 0.7, needleEndWidth: 4, needleStartWidth: 1, value: gaugeValue),
+              NeedlePointer(
+                  needleLength: 0.7,
+                  needleEndWidth: 4,
+                  needleStartWidth: 1,
+                  value: gaugeValue),
             ],
             annotations: <GaugeAnnotation>[
               GaugeAnnotation(
-                widget: Container(child: Text('$gaugeValue', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold))),
+                widget: Container(
+                    child: Text('$gaugeValue',
+                        style: TextStyle(
+                            fontSize: 16, fontWeight: FontWeight.bold))),
                 angle: 90,
                 positionFactor: 0.75,
               )

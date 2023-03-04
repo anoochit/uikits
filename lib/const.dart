@@ -261,8 +261,8 @@ final listDashboardMenu = [
 ];
 
 final listM3Menu = [
-  SubMenu("Navigation Rails", MaterialUScreen01()),
-  SubMenu("Silver AppBar", MaterialUScreen02()),
+  SubMenu("Navigation Rails", const MaterialUScreen01()),
+  SubMenu("Silver AppBar", const MaterialUScreen02()),
 ];
 
 final listTwoPaneMenu = [

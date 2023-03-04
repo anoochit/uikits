@@ -81,7 +81,7 @@ class _ChatScreen03State extends State<ChatScreen03> {
                           },
                         ),
                         IconButton(
-                          icon: Icon(FontAwesomeIcons.stickyNote),
+                          icon: Icon(FontAwesomeIcons.noteSticky),
                           onPressed: () {
                             // add function show sticker
                           },

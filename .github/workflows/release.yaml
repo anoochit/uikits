@@ -1,0 +1,57 @@
+on:
+  pull_request:
+    branches:
+      - master
+  push:
+    branches:
+      - master
+env:
+  PROPERTIES_PATH: "./android/key.properties"
+
+name: "Build & Release"
+jobs:
+  build:
+    name: Build & Release
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-java@v2
+        with:
+          distribution: "zulu"
+          java-version: "11"
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: "stable"
+
+      # Creating the key.properties file
+      - run: |
+          echo keyPassword=\${{ secrets.KEY_STORE }} > ${{env.PROPERTIES_PATH}}
+          echo storePassword=\${{ secrets.KEY_PASSWORD }} >> ${{env.PROPERTIES_PATH}}
+          echo keyAlias=\${{ secrets.KEY_ALIAS }} >> ${{env.PROPERTIES_PATH}}
+      # Decoding base64 key into a file
+      - run: echo "${{ secrets.KEYSTORE2 }}" | base64 --decode > android/app/key.jks
+
+      # # Get dependencies and make assigned appbundle
+      - run: |
+          flutter pub get
+          flutter build appbundle
+
+      # build apk
+      - run: flutter build apk --split-per-abi
+
+      # # Build no-codesign for ios
+      # - run: |
+      #     flutter build ios --no-codesign
+      #     cd build/ios/iphoneos
+      #     mkdir Payload
+      #     cd Payload
+      #     ln -s ../Runner.app
+      #     cd ..
+      #     zip -r app.ipa Payload
+
+      - name: Push to Releases
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: "build/app/outputs/bundle/release/*,build/app/outputs/flutter-apk/*"
+          tag: v1.0.0+${{ github.run_number }}
+          token: ${{ secrets.TOKEN }}

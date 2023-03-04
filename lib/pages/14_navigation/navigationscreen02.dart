@@ -15,11 +15,7 @@ class _NavigationScreen02State extends State<NavigationScreen02> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Main", style: TextStyle(color: Colors.black)),
-        titleSpacing: 0,
-        backgroundColor: Colors.white,
-        iconTheme: IconThemeData(color: Colors.black),
-        elevation: 0,
+        title: Text("Main"),
       ),
       body: SafeArea(
         child: IndexedStack(

@@ -1,6 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 class WalkthroughScreen05 extends StatefulWidget {
   WalkthroughScreen05({Key? key}) : super(key: key);

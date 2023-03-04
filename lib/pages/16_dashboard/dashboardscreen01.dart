@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 class DashboardScreen01 extends StatefulWidget {
   DashboardScreen01({Key? key}) : super(key: key);
@@ -11,41 +10,33 @@ class DashboardScreen01 extends StatefulWidget {
 class _DashboardScreen01State extends State<DashboardScreen01> {
   @override
   Widget build(BuildContext context) {
-    return AnnotatedRegion<SystemUiOverlayStyle>(
-      value: SystemUiOverlayStyle(
-        statusBarColor: Colors.transparent, // transparent status bar
-        systemNavigationBarColor: Colors.black, // navigation bar color
-        statusBarIconBrightness: Brightness.dark, // status bar icons' color
-        systemNavigationBarIconBrightness: Brightness.dark, //navigation bar icons' color
-      ),
-      child: Scaffold(
-        backgroundColor: Colors.white,
-        appBar: AppBar(
-          title: Text("Dashboard", style: TextStyle(color: Colors.black)),
-          titleSpacing: 0,
-          backgroundColor: Colors.white,
-          iconTheme: IconThemeData(color: Colors.black),
-          elevation: 0,
-          actions: [IconButton(onPressed: () {}, icon: Icon(Icons.add))],
-        ),
-        body: SingleChildScrollView(
-          child: Wrap(
-            direction: Axis.horizontal,
-            children: [
-              GridItem(width: 1, height: 1, offset: 0),
-              GridItem(width: 1, height: 1, offset: 0),
-              GridItem(width: 1, height: 1, offset: 0),
-              GridItem(width: 1, height: 1, offset: 0),
-              GridItem(width: 2, height: 1, offset: 0),
-              GridItem(width: 2, height: 1, offset: 0),
-              GridItem(width: 1, height: 1, offset: 0),
-              GridItem(width: 1, height: 1, offset: 0),
-              GridItem(width: 2, height: 1, offset: 0),
-              // GridItem(width: 1, height: 1, offset: 0),
-              // GridItem(width: 3, height: 1, offset: 0),
-              // GridItem(width: 4, height: 1, offset: 0),
-            ],
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Dashboard"),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.add),
           ),
+        ],
+      ),
+      body: SingleChildScrollView(
+        child: Wrap(
+          direction: Axis.horizontal,
+          children: [
+            GridItem(width: 1, height: 1, offset: 0),
+            GridItem(width: 1, height: 1, offset: 0),
+            GridItem(width: 1, height: 1, offset: 0),
+            GridItem(width: 1, height: 1, offset: 0),
+            GridItem(width: 2, height: 1, offset: 0),
+            GridItem(width: 2, height: 1, offset: 0),
+            GridItem(width: 1, height: 1, offset: 0),
+            GridItem(width: 1, height: 1, offset: 0),
+            GridItem(width: 2, height: 1, offset: 0),
+            // GridItem(width: 1, height: 1, offset: 0),
+            // GridItem(width: 3, height: 1, offset: 0),
+            // GridItem(width: 4, height: 1, offset: 0),
+          ],
         ),
       ),
     );

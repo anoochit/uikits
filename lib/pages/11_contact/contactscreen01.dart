@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:timeago/timeago.dart' as timeago;
 
@@ -13,67 +12,53 @@ class ContactScreen01 extends StatefulWidget {
 class _ContactScreen01State extends State<ContactScreen01> {
   @override
   Widget build(BuildContext context) {
-    return AnnotatedRegion<SystemUiOverlayStyle>(
-      value: SystemUiOverlayStyle(
-        statusBarColor: Colors.transparent, // transparent status bar
-        systemNavigationBarColor: Colors.black, // navigation bar color
-        statusBarIconBrightness: Brightness.dark, // status bar icons' color
-        systemNavigationBarIconBrightness: Brightness.dark, //navigation bar icons' color
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Contact"),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.add_box),
+            onPressed: () {
+              // place save function here
+            },
+          ),
+        ],
       ),
-      child: Scaffold(
-        backgroundColor: Colors.white,
-        appBar: AppBar(
-          title: Text("Contact", style: TextStyle(color: Colors.black)),
-          titleSpacing: 0,
-          backgroundColor: Colors.white,
-          iconTheme: IconThemeData(color: Colors.black),
-          elevation: 0,
-          actions: [
-            IconButton(
-              icon: Icon(Icons.add_box),
-              onPressed: () {
-                // place save function here
-              },
-            ),
-          ],
-        ),
-        body: SafeArea(
-          child: LayoutBuilder(builder: (context, constraints) {
-            return SingleChildScrollView(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    padding: const EdgeInsets.all(8),
-                    child: Container(
-                      height: 38,
-                      decoration: BoxDecoration(
-                        color: Colors.grey.shade100,
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      child: TextFormField(
-                        decoration: InputDecoration(
-                          hintText: 'Search',
-                          prefixIcon: Icon(FontAwesomeIcons.search, size: 20),
-                          border: InputBorder.none,
-                        ),
-                        onFieldSubmitted: (value) {
-                          // place submit function here
-                        },
-                      ),
-                    ),
+      body: LayoutBuilder(builder: (context, constraints) {
+        return SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                padding: const EdgeInsets.all(8),
+                child: Container(
+                  height: 48,
+                  decoration: BoxDecoration(
+                    color: Colors.transparent,
+                    borderRadius: BorderRadius.circular(20),
                   ),
-                  Column(
-                    children: List.generate(20, (index) {
-                      return ListItem();
-                    }),
-                  )
-                ],
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                      hintText: 'Search',
+                      prefixIcon:
+                          Icon(FontAwesomeIcons.magnifyingGlass, size: 20),
+                      border: InputBorder.none,
+                    ),
+                    onFieldSubmitted: (value) {
+                      // place submit function here
+                    },
+                  ),
+                ),
               ),
-            );
-          }),
-        ),
-      ),
+              Column(
+                children: List.generate(20, (index) {
+                  return ListItem();
+                }),
+              )
+            ],
+          ),
+        );
+      }),
     );
   }
 }

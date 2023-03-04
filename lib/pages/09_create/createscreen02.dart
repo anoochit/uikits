@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:timeago/timeago.dart' as timeago;
 
 class CreateScreen02 extends StatefulWidget {
   CreateScreen02({Key? key}) : super(key: key);

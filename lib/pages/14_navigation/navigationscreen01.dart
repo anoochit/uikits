@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:uikits2/pages/14_navigation/sample_page.dart';
 
@@ -17,22 +15,16 @@ class _NavigationScreen01State extends State<NavigationScreen01> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Main", style: TextStyle(color: Colors.black)),
-        titleSpacing: 0,
-        backgroundColor: Colors.white,
-        iconTheme: IconThemeData(color: Colors.black),
-        elevation: 0,
+        title: Text("Main"),
       ),
-      body: SafeArea(
-        child: IndexedStack(
-          index: _currentIndex,
-          children: [
-            Page1(),
-            Page2(),
-            Page3(),
-            Page4(),
-          ],
-        ),
+      body: IndexedStack(
+        index: _currentIndex,
+        children: [
+          Page1(),
+          Page2(),
+          Page3(),
+          Page4(),
+        ],
       ),
       drawer: Drawer(
         child: Column(
@@ -60,7 +52,8 @@ class _NavigationScreen01State extends State<NavigationScreen01> {
                         padding: EdgeInsets.all(8.0),
                         child: Text(
                           "John Doe",
-                          style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500),
+                          style: TextStyle(
+                              fontSize: 22, fontWeight: FontWeight.w500),
                         ),
                       ),
                     ],
@@ -75,7 +68,10 @@ class _NavigationScreen01State extends State<NavigationScreen01> {
                   leading: Icon(Icons.book),
                   title: Text(
                     'Menu ${index + 1}',
-                    style: TextStyle(fontWeight: (_currentIndex == index) ? FontWeight.bold : FontWeight.normal),
+                    style: TextStyle(
+                        fontWeight: (_currentIndex == index)
+                            ? FontWeight.bold
+                            : FontWeight.normal),
                   ),
                   onTap: () {
                     // place menu action here

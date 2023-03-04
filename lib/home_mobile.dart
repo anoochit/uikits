@@ -24,7 +24,10 @@ class HomeMobile extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => SubMenuPage(title: title, submenu: subMenu),
+                  builder: (context) => SubMenuPage(
+                    title: title,
+                    submenu: subMenu,
+                  ),
                 ),
               );
             },

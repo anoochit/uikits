@@ -23,7 +23,12 @@ class _LandscapeScreenState extends State<LandscapeScreen> {
           NavigationRail(
             extended: _extened,
             destinations: navMenuList
-                .map((item) => NavigationRailDestination(icon: Icon(item.icon), label: Text(item.title)))
+                .map(
+                  (item) => NavigationRailDestination(
+                    icon: Icon(item.icon),
+                    label: Text(item.title),
+                  ),
+                )
                 .toList(),
             selectedIndex: _currentIndex,
             onDestinationSelected: (value) {
@@ -37,7 +42,9 @@ class _LandscapeScreenState extends State<LandscapeScreen> {
                   _extened = !_extened;
                 });
               },
-              icon: (_extened) ? Icon(Icons.arrow_circle_left_outlined) : Icon(Icons.arrow_circle_right_outlined),
+              icon: (_extened)
+                  ? Icon(Icons.arrow_circle_left_outlined)
+                  : Icon(Icons.arrow_circle_right_outlined),
             ),
           ),
           VerticalDivider(
@@ -46,7 +53,8 @@ class _LandscapeScreenState extends State<LandscapeScreen> {
           Expanded(
             child: IndexedStack(
               index: _currentIndex,
-              children: navMenuList.map((e) => BlankScreen(text: e.title)).toList(),
+              children:
+                  navMenuList.map((e) => BlankScreen(text: e.title)).toList(),
             ),
           )
         ],

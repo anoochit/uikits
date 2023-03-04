@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class NavMenu {
@@ -17,7 +16,7 @@ final navMenuList = [
 ];
 
 class BlankScreen extends StatelessWidget {
-  String text;
+  final String text;
 
   BlankScreen({
     Key? key,
@@ -32,7 +31,8 @@ class BlankScreen extends StatelessWidget {
         itemBuilder: (BuildContext context, int index) {
           return ListTile(
             leading: CircleAvatar(
-              child: Text('${text.substring(0, 1)[0].toString().toUpperCase()}'),
+              child:
+                  Text('${text.substring(0, 1)[0].toString().toUpperCase()}'),
             ),
             title: Text('${text} ${index + 1}'),
           );

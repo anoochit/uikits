@@ -12,7 +12,7 @@ class BlankScreen extends StatelessWidget {
     required this.isMainScreen,
   }) : super(key: key);
 
-  TwoPaneController controller = Get.find<TwoPaneController>();
+  final TwoPaneController controller = Get.find<TwoPaneController>();
 
   @override
   Widget build(BuildContext context) {
