@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
 class LoadingScreen01 extends StatefulWidget {
-  LoadingScreen01({Key? key}) : super(key: key);
+  const LoadingScreen01({super.key});
 
   @override
-  _LoadingScreen01State createState() => _LoadingScreen01State();
+  State<LoadingScreen01> createState() => _LoadingScreen01State();
 }
 
 class _LoadingScreen01State extends State<LoadingScreen01> {
@@ -15,18 +15,14 @@ class _LoadingScreen01State extends State<LoadingScreen01> {
       body: LayoutBuilder(
         builder: (context, constraints) => Column(
           children: [
-            Spacer(),
-            Container(
-              child: Text(
-                "Downloading",
-                style: Theme.of(context).textTheme.headlineLarge,
-              ),
+            const Spacer(),
+            Text(
+              "Downloading",
+              style: Theme.of(context).textTheme.headlineLarge,
             ),
+            const Text("100mb of 200mb"),
             Container(
-              child: Text("100mb of 200mb"),
-            ),
-            Container(
-              padding: EdgeInsets.all(32.0),
+              padding: const EdgeInsets.all(32.0),
               child: LinearPercentIndicator(
                 animation: true,
                 animationDuration: 1000,
@@ -34,10 +30,10 @@ class _LoadingScreen01State extends State<LoadingScreen01> {
                 percent: 0.5,
               ),
             ),
-            Spacer(),
+            const Spacer(),
             Container(
               alignment: Alignment.bottomCenter,
-              padding: EdgeInsets.all(32.0),
+              padding: const EdgeInsets.all(32.0),
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   minimumSize: Size(
@@ -46,7 +42,7 @@ class _LoadingScreen01State extends State<LoadingScreen01> {
                           : constraints.maxWidth,
                       50),
                 ),
-                child: Text("Go Back"),
+                child: const Text("Go Back"),
                 onPressed: () {
                   // place sign up function here
                 },

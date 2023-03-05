@@ -2,10 +2,10 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 
 class CreateScreen04 extends StatefulWidget {
-  CreateScreen04({Key? key}) : super(key: key);
+  const CreateScreen04({super.key});
 
   @override
-  _CreateScreen04State createState() => _CreateScreen04State();
+  State<CreateScreen04> createState() => _CreateScreen04State();
 }
 
 class _CreateScreen04State extends State<CreateScreen04> {
@@ -15,10 +15,10 @@ class _CreateScreen04State extends State<CreateScreen04> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Create"),
+        title: const Text("Create"),
         actions: [
           IconButton(
-            icon: Icon(Icons.save_outlined),
+            icon: const Icon(Icons.save_outlined),
             onPressed: () {
               // place save function here
             },
@@ -30,49 +30,49 @@ class _CreateScreen04State extends State<CreateScreen04> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 8.0),
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
               child: Column(
                 children: [
                   Container(
-                    padding: EdgeInsets.symmetric(horizontal: 8),
+                    padding: const EdgeInsets.symmetric(horizontal: 8),
                     decoration: BoxDecoration(
                       border: Border.all(color: Colors.grey.shade300),
-                      borderRadius: BorderRadius.circular(6),
+                      borderRadius: BorderRadius.circular(16),
                     ),
                     child: TextFormField(
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         border: InputBorder.none,
                         hintText: 'Title',
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 8.0,
                   ),
                   Container(
-                    padding: EdgeInsets.symmetric(horizontal: 8),
+                    padding: const EdgeInsets.symmetric(horizontal: 8),
                     decoration: BoxDecoration(
                       border: Border.all(color: Colors.grey.shade300),
-                      borderRadius: BorderRadius.circular(6),
+                      borderRadius: BorderRadius.circular(16),
                     ),
                     child: TextFormField(
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         border: InputBorder.none,
                         hintText: 'Description',
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 8.0,
                   ),
                   Container(
-                    padding: EdgeInsets.symmetric(horizontal: 8),
+                    padding: const EdgeInsets.symmetric(horizontal: 8),
                     decoration: BoxDecoration(
                       border: Border.all(color: Colors.grey.shade300),
-                      borderRadius: BorderRadius.circular(6),
+                      borderRadius: BorderRadius.circular(16),
                     ),
                     child: DropdownButtonFormField(
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         border: InputBorder.none,
                         hintText: "Select City",
                       ),
@@ -95,10 +95,10 @@ class _CreateScreen04State extends State<CreateScreen04> {
                       },
                     ),
                   ),
-                  Container(
+                  SizedBox(
                     width: constraints.maxWidth,
                     child: ElevatedButton(
-                      child: Text("Publish"),
+                      child: const Text("Publish"),
                       onPressed: () {
                         // place publish function here
                       },

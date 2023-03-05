@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class SignUpScreen02 extends StatefulWidget {
-  SignUpScreen02({Key? key}) : super(key: key);
+  const SignUpScreen02({super.key});
 
   @override
-  _SignUpScreen02State createState() => _SignUpScreen02State();
+  State<SignUpScreen02> createState() => _SignUpScreen02State();
 }
 
 class _SignUpScreen02State extends State<SignUpScreen02> {
@@ -14,7 +14,7 @@ class _SignUpScreen02State extends State<SignUpScreen02> {
       body: LayoutBuilder(
         builder: (context, constraints) => Stack(
           children: [
-            Container(
+            SizedBox(
               width: constraints.maxWidth,
               height: constraints.maxHeight,
               child: Image.asset(
@@ -24,15 +24,15 @@ class _SignUpScreen02State extends State<SignUpScreen02> {
             ),
             Center(
               child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 32.0),
+                padding: const EdgeInsets.symmetric(horizontal: 32.0),
                 child: Column(
                   children: [
-                    Spacer(),
+                    const Spacer(),
                     Container(
                       width: (constraints.maxWidth > 412)
                           ? (constraints.maxWidth * 0.5)
                           : (constraints.maxWidth),
-                      padding: EdgeInsets.symmetric(horizontal: 16),
+                      padding: const EdgeInsets.symmetric(horizontal: 16),
                       decoration: BoxDecoration(
                         border: Border.all(color: Colors.grey.shade200),
                         color: Colors.white,
@@ -40,18 +40,18 @@ class _SignUpScreen02State extends State<SignUpScreen02> {
                       ),
                       child: TextFormField(
                         textAlign: TextAlign.center,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           border: InputBorder.none,
                           hintText: 'Your Email',
                         ),
                       ),
                     ),
-                    SizedBox(height: 8.0),
+                    const SizedBox(height: 8.0),
                     Container(
                       width: (constraints.maxWidth > 412)
                           ? (constraints.maxWidth * 0.5)
                           : (constraints.maxWidth),
-                      padding: EdgeInsets.symmetric(horizontal: 16),
+                      padding: const EdgeInsets.symmetric(horizontal: 16),
                       decoration: BoxDecoration(
                         border: Border.all(color: Colors.grey.shade200),
                         color: Colors.white,
@@ -60,14 +60,14 @@ class _SignUpScreen02State extends State<SignUpScreen02> {
                       child: TextFormField(
                         textAlign: TextAlign.center,
                         obscureText: true,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           border: InputBorder.none,
                           hintText: 'Your Password',
                         ),
                       ),
                     ),
                     Container(
-                      padding: EdgeInsets.symmetric(vertical: 16.0),
+                      padding: const EdgeInsets.symmetric(vertical: 16.0),
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
                           minimumSize: Size(
@@ -76,22 +76,22 @@ class _SignUpScreen02State extends State<SignUpScreen02> {
                                   : (constraints.maxWidth),
                               50),
                         ),
-                        child: Text("Sign in"),
+                        child: const Text("Sign in"),
                         onPressed: () {
                           // place sign in function here
                         },
                       ),
                     ),
                     Container(
-                      padding: EdgeInsets.all(16.0),
+                      padding: const EdgeInsets.all(16.0),
                       child: GestureDetector(
-                        child: Text("Don't have an account ? Signup"),
+                        child: const Text("Don't have an account ? Signup"),
                         onTap: () {
                           // place signup function here
                         },
                       ),
                     ),
-                    SizedBox(height: 16.0),
+                    const SizedBox(height: 16.0),
                   ],
                 ),
               ),

@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class ContactScreen03 extends StatefulWidget {
-  ContactScreen03({Key? key}) : super(key: key);
+  const ContactScreen03({super.key});
 
   @override
-  _ContactScreen03State createState() => _ContactScreen03State();
+  State<ContactScreen03> createState() => _ContactScreen03State();
 }
 
 class _ContactScreen03State extends State<ContactScreen03> {
@@ -13,10 +13,10 @@ class _ContactScreen03State extends State<ContactScreen03> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Contact"),
+        title: const Text("Contact"),
         actions: [
           IconButton(
-            icon: Icon(Icons.add_box),
+            icon: const Icon(Icons.add_box),
             onPressed: () {
               // place save function here
             },
@@ -38,7 +38,7 @@ class _ContactScreen03State extends State<ContactScreen03> {
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: TextFormField(
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         hintText: 'Search',
                         prefixIcon:
                             Icon(FontAwesomeIcons.magnifyingGlass, size: 20),
@@ -51,7 +51,7 @@ class _ContactScreen03State extends State<ContactScreen03> {
                   ),
                 ),
                 Column(
-                  children: List.generate(20, (index) => ListItem()),
+                  children: List.generate(20, (index) => const ListItem()),
                 )
               ],
             ),
@@ -70,12 +70,12 @@ class ListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(8),
+      padding: const EdgeInsets.all(8),
       child: Row(
         children: [
           Container(
-            padding: EdgeInsets.all(4.0),
-            child: CircleAvatar(
+            padding: const EdgeInsets.all(4.0),
+            child: const CircleAvatar(
               backgroundImage: AssetImage('assets/images/avatar.png'),
             ),
           ),
@@ -83,26 +83,28 @@ class ListItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 4.0, vertical: 2.0),
-                child: Text(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 4.0, vertical: 2.0),
+                child: const Text(
                   "Display Name",
                   style: TextStyle(fontWeight: FontWeight.w500),
                 ),
               ),
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 4.0, vertical: 2.0),
-                child: Text(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 4.0, vertical: 2.0),
+                child: const Text(
                   "Information",
                   style: TextStyle(fontSize: 12),
                 ),
               ),
             ],
           ),
-          Spacer(),
-          Container(
+          const Spacer(),
+          SizedBox(
             height: 28,
             child: ElevatedButton(
-              child: Text("Follow"),
+              child: const Text("Follow"),
               onPressed: () {
                 // add follow function
               },

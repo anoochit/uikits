@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class StartScreen01 extends StatefulWidget {
-  StartScreen01({Key? key}) : super(key: key);
+  const StartScreen01({super.key});
 
   @override
-  _StartScreen01State createState() => _StartScreen01State();
+  State<StartScreen01> createState() => _StartScreen01State();
 }
 
 class _StartScreen01State extends State<StartScreen01> {
@@ -15,7 +15,7 @@ class _StartScreen01State extends State<StartScreen01> {
         builder: (context, constraints) => Center(
           child: Stack(
             children: [
-              Container(
+              SizedBox(
                 height: constraints.maxHeight,
                 width: constraints.maxWidth,
                 // place background image here
@@ -26,7 +26,7 @@ class _StartScreen01State extends State<StartScreen01> {
               ),
               Container(
                 alignment: Alignment.bottomCenter,
-                padding: EdgeInsets.all(32.0),
+                padding: const EdgeInsets.all(32.0),
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     minimumSize: Size(
@@ -35,7 +35,7 @@ class _StartScreen01State extends State<StartScreen01> {
                             : constraints.maxWidth,
                         50),
                   ),
-                  child: Text("Sign up with Email"),
+                  child: const Text("Sign up with Email"),
                   onPressed: () {
                     // place sign up function here
                   },

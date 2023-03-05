@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:uikits2/pages/14_navigation/sample_page.dart';
 
 class NavigationScreen02 extends StatefulWidget {
-  NavigationScreen02({Key? key}) : super(key: key);
+  const NavigationScreen02({super.key});
 
   @override
-  _NavigationScreen02State createState() => _NavigationScreen02State();
+  State<NavigationScreen02> createState() => _NavigationScreen02State();
 }
 
 class _NavigationScreen02State extends State<NavigationScreen02> {
@@ -15,12 +15,12 @@ class _NavigationScreen02State extends State<NavigationScreen02> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Main"),
+        title: const Text("Main"),
       ),
       body: SafeArea(
         child: IndexedStack(
           index: _currentIndex,
-          children: [
+          children: const [
             Page1(),
             Page2(),
             Page3(),
@@ -29,7 +29,7 @@ class _NavigationScreen02State extends State<NavigationScreen02> {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        items: [
+        items: const [
           BottomNavigationBarItem(icon: Icon(Icons.book), label: 'Page 1'),
           BottomNavigationBarItem(icon: Icon(Icons.book), label: 'Page 2'),
           BottomNavigationBarItem(icon: Icon(Icons.book), label: 'Page 3'),

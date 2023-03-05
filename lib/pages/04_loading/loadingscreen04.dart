@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
 class LoadingScreen04 extends StatefulWidget {
-  LoadingScreen04({Key? key}) : super(key: key);
+  const LoadingScreen04({super.key});
 
   @override
-  _LoadingScreen04State createState() => _LoadingScreen04State();
+  State<LoadingScreen04> createState() => _LoadingScreen04State();
 }
 
 class _LoadingScreen04State extends State<LoadingScreen04> {
@@ -31,16 +31,14 @@ class _LoadingScreen04State extends State<LoadingScreen04> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Container(
-                        padding: EdgeInsets.all(32.0),
+                        padding: const EdgeInsets.all(32.0),
                         child: Text(
                           "Please Wait",
                           style: Theme.of(context).textTheme.headlineLarge,
                         ),
                       ),
-                      Container(
-                        child: Text(
-                          "We are working on your task",
-                        ),
+                      const Text(
+                        "We are working on your task",
                       ),
                     ],
                   ),

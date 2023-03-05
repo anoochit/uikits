@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class FeedScreen04 extends StatefulWidget {
-  FeedScreen04({Key? key}) : super(key: key);
+  const FeedScreen04({super.key});
 
   @override
-  _FeedScreen04State createState() => _FeedScreen04State();
+  State<FeedScreen04> createState() => _FeedScreen04State();
 }
 
 class _FeedScreen04State extends State<FeedScreen04> {
@@ -13,7 +13,7 @@ class _FeedScreen04State extends State<FeedScreen04> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text("Feed"),
+        title: const Text("Feed"),
       ),
       body: LayoutBuilder(
         builder: (context, constraints) => Center(
@@ -23,7 +23,7 @@ class _FeedScreen04State extends State<FeedScreen04> {
                 child: MediaQuery.removePadding(
                   context: context,
                   removeTop: true,
-                  child: Container(
+                  child: SizedBox(
                     width: (constraints.maxWidth > 412)
                         ? (constraints.maxWidth * 0.5)
                         : constraints.maxWidth,
@@ -31,7 +31,7 @@ class _FeedScreen04State extends State<FeedScreen04> {
                       shrinkWrap: true,
                       itemCount: 10,
                       itemBuilder: (context, index) {
-                        return PostItem();
+                        return const PostItem();
                       },
                     ),
                   ),
@@ -54,12 +54,12 @@ class PostItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) => Container(
-        padding: EdgeInsets.only(bottom: 2.0),
+        padding: const EdgeInsets.only(bottom: 2.0),
         child: Column(
           children: [
             Stack(
               children: [
-                Container(
+                SizedBox(
                   height: constraints.maxWidth * 0.8,
                   // replace image
                   child: Image.asset(
@@ -71,7 +71,7 @@ class PostItem extends StatelessWidget {
                   bottom: 10,
                   child: Container(
                     width: constraints.maxWidth,
-                    padding: EdgeInsets.symmetric(horizontal: 8.0),
+                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [

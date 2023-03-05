@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class ProfileScreen04 extends StatefulWidget {
-  ProfileScreen04({Key? key}) : super(key: key);
+  const ProfileScreen04({super.key});
 
   @override
-  _ProfileScreen04State createState() => _ProfileScreen04State();
+  State<ProfileScreen04> createState() => _ProfileScreen04State();
 }
 
 class _ProfileScreen04State extends State<ProfileScreen04> {
@@ -12,7 +12,7 @@ class _ProfileScreen04State extends State<ProfileScreen04> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Profile"),
+        title: const Text("Profile"),
       ),
       body: LayoutBuilder(
         builder: (context, constraints) => Column(
@@ -74,7 +74,7 @@ class ListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: CircleAvatar(
+      leading: const CircleAvatar(
         radius: 24,
         backgroundImage: AssetImage('assets/images/avatar.png'),
       ),

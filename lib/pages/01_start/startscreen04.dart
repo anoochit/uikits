@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class StartScreen04 extends StatefulWidget {
-  StartScreen04({Key? key}) : super(key: key);
+  const StartScreen04({super.key});
 
   @override
-  _StartScreen04State createState() => _StartScreen04State();
+  State<StartScreen04> createState() => _StartScreen04State();
 }
 
 class _StartScreen04State extends State<StartScreen04> {
@@ -29,8 +29,8 @@ class _StartScreen04State extends State<StartScreen04> {
                         child: Image.asset('assets/images/avatar.png',
                             fit: BoxFit.cover)),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(16.0),
+                  const Padding(
+                    padding: EdgeInsets.all(16.0),
                     // replace username here
                     child: Text(
                       "John Doe",
@@ -44,10 +44,10 @@ class _StartScreen04State extends State<StartScreen04> {
               alignment: Alignment.bottomCenter,
               child: Column(
                 children: [
-                  Spacer(),
+                  const Spacer(),
                   Container(
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 32.0, vertical: 8.0),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 32.0, vertical: 8.0),
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         minimumSize: Size(
@@ -56,14 +56,14 @@ class _StartScreen04State extends State<StartScreen04> {
                                 : constraints.maxWidth,
                             50),
                       ),
-                      child: Text("Continue"),
+                      child: const Text("Continue"),
                       onPressed: () {
                         // place sign up function here
                       },
                     ),
                   ),
                   Container(
-                    padding: EdgeInsets.only(
+                    padding: const EdgeInsets.only(
                         left: 32.0, right: 32, top: 8.0, bottom: 32),
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
@@ -73,7 +73,7 @@ class _StartScreen04State extends State<StartScreen04> {
                                 : constraints.maxWidth,
                             50),
                       ),
-                      child: Text("Sign in with another account"),
+                      child: const Text("Sign in with another account"),
                       onPressed: () {
                         // place sign up function here
                       },

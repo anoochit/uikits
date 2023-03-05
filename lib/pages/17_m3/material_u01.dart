@@ -15,9 +15,9 @@ class _MaterialUScreen01State extends State<MaterialUScreen01> {
     return OrientationBuilder(
       builder: (context, orientation) {
         if (orientation == Orientation.portrait) {
-          return PortraitScreen();
+          return const PortraitScreen();
         } else {
-          return LandscapeScreen();
+          return const LandscapeScreen();
         }
       },
     );

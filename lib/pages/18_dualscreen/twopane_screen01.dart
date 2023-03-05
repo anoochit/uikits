@@ -6,7 +6,7 @@ import 'package:uikits2/pages/18_dualscreen/controller/twopane_controller.dart';
 import 'package:uikits2/pages/18_dualscreen/widgets/twopane_widget.dart';
 
 class TwoPaneScreen extends StatefulWidget {
-  TwoPaneScreen({Key? key}) : super(key: key);
+  const TwoPaneScreen({Key? key}) : super(key: key);
 
   @override
   State<TwoPaneScreen> createState() => _TwoPaneScreenState();
@@ -23,9 +23,10 @@ class _TwoPaneScreenState extends State<TwoPaneScreen> {
   @override
   Widget build(BuildContext context) {
     // if no screen in list load main screen
-    if (controller.listScreen.length == 0) {
+    if (controller.listScreen.isEmpty) {
       // load main screen
-      controller.push(widget: BlankScreen(title: "Main Screen", isMainScreen: true));
+      controller.push(
+          widget: BlankScreen(title: "Main Screen", isMainScreen: true));
       controller.update();
     }
     // load screen into pane, use indexed stack to switch between screen
@@ -38,9 +39,9 @@ class _TwoPaneScreenState extends State<TwoPaneScreen> {
         log("back pressed");
         if (controller.listScreen.length > 1) {
           controller.pop();
-          return await (false);
+          return (false);
         } else {
-          return await (true);
+          return (true);
         }
       },
       // show screen in two pane

@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class StoreScreen01 extends StatefulWidget {
-  StoreScreen01({Key? key}) : super(key: key);
+  const StoreScreen01({super.key});
 
   @override
-  _StoreScreen01State createState() => _StoreScreen01State();
+  State<StoreScreen01> createState() => _StoreScreen01State();
 }
 
 class _StoreScreen01State extends State<StoreScreen01> {
@@ -13,10 +13,10 @@ class _StoreScreen01State extends State<StoreScreen01> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Store"),
+        title: const Text("Store"),
         actions: [
           IconButton(
-            icon: Icon(Icons.shopping_cart),
+            icon: const Icon(Icons.shopping_cart),
             onPressed: () {
               // place save function here
             },
@@ -37,7 +37,7 @@ class _StoreScreen01State extends State<StoreScreen01> {
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: TextFormField(
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     hintText: 'Search',
                     prefixIcon:
                         Icon(FontAwesomeIcons.magnifyingGlass, size: 20),
@@ -51,14 +51,14 @@ class _StoreScreen01State extends State<StoreScreen01> {
             ),
             GridView.builder(
               shrinkWrap: true,
-              physics: ScrollPhysics(),
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              physics: const ScrollPhysics(),
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 childAspectRatio: 2 / 3,
               ),
               itemCount: 10,
               itemBuilder: (BuildContext context, int index) {
-                return GridItem();
+                return const GridItem();
               },
             ),
           ],
@@ -77,39 +77,37 @@ class GridItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       clipBehavior: Clip.antiAliasWithSaveLayer,
-      child: Container(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              width: 200,
-              height: 200,
-              child: Image.asset(
-                'assets/images/placeholder.png',
-                fit: BoxFit.cover,
-              ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SizedBox(
+            width: 200,
+            height: 200,
+            child: Image.asset(
+              'assets/images/placeholder.png',
+              fit: BoxFit.cover,
             ),
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 4.0, vertical: 4.0),
-              child: Text(
-                "Product Name",
-                style: TextStyle(fontWeight: FontWeight.w500),
-              ),
+          ),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 4.0, vertical: 4.0),
+            child: const Text(
+              "Product Name",
+              style: TextStyle(fontWeight: FontWeight.w500),
             ),
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 4.0, vertical: 2.0),
-              child: Text(
-                "Short Description",
-              ),
+          ),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 4.0, vertical: 2.0),
+            child: const Text(
+              "Short Description",
             ),
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 4.0, vertical: 2.0),
-              child: Text(
-                "\$100.00",
-              ),
+          ),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 4.0, vertical: 2.0),
+            child: const Text(
+              "\$100.00",
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

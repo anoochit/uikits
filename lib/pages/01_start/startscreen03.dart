@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class StartScreen03 extends StatefulWidget {
-  StartScreen03({Key? key}) : super(key: key);
+  const StartScreen03({super.key});
 
   @override
-  _StartScreen03State createState() => _StartScreen03State();
+  State<StartScreen03> createState() => _StartScreen03State();
 }
 
 class _StartScreen03State extends State<StartScreen03> {
@@ -14,7 +14,7 @@ class _StartScreen03State extends State<StartScreen03> {
       body: LayoutBuilder(
         builder: (context, constraints) => Column(
           children: [
-            Container(
+            SizedBox(
               width: (constraints.maxWidth > 412)
                   ? (constraints.maxWidth * 0.5)
                   : constraints.maxWidth,
@@ -22,10 +22,10 @@ class _StartScreen03State extends State<StartScreen03> {
               child: Image.asset('assets/images/placeholder.png',
                   fit: BoxFit.cover),
             ),
-            Spacer(),
+            const Spacer(),
             Container(
               alignment: Alignment.center,
-              padding: EdgeInsets.symmetric(vertical: 8.0),
+              padding: const EdgeInsets.symmetric(vertical: 8.0),
               child: Column(
                 children: [
                   ElevatedButton(
@@ -37,7 +37,7 @@ class _StartScreen03State extends State<StartScreen03> {
                         50,
                       ),
                     ),
-                    child: Text("Sign up with Facebook"),
+                    child: const Text("Sign up with Facebook"),
                     onPressed: () {
                       // place sign up function here
                     },
@@ -47,7 +47,7 @@ class _StartScreen03State extends State<StartScreen03> {
             ),
             Container(
               alignment: Alignment.center,
-              padding: EdgeInsets.symmetric(vertical: 8.0),
+              padding: const EdgeInsets.symmetric(vertical: 8.0),
               child: Column(
                 children: [
                   ElevatedButton(
@@ -59,7 +59,7 @@ class _StartScreen03State extends State<StartScreen03> {
                         50,
                       ),
                     ),
-                    child: Text("Sign up with Email"),
+                    child: const Text("Sign up with Email"),
                     onPressed: () {
                       // place sign up function here
                     },
@@ -67,7 +67,7 @@ class _StartScreen03State extends State<StartScreen03> {
                 ],
               ),
             ),
-            Spacer()
+            const Spacer()
           ],
         ),
       ),

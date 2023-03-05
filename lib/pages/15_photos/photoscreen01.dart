@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class PhotoScreen01 extends StatefulWidget {
-  PhotoScreen01({Key? key}) : super(key: key);
+  const PhotoScreen01({super.key});
 
   @override
-  _PhotoScreen01State createState() => _PhotoScreen01State();
+  State<PhotoScreen01> createState() => _PhotoScreen01State();
 }
 
 class _PhotoScreen01State extends State<PhotoScreen01> {
@@ -12,7 +12,7 @@ class _PhotoScreen01State extends State<PhotoScreen01> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Photos"),
+        title: const Text("Photos"),
       ),
       body: LayoutBuilder(
         builder: (context, constraints) => Column(
@@ -29,10 +29,8 @@ class _PhotoScreen01State extends State<PhotoScreen01> {
                   ),
                   itemCount: 20,
                   itemBuilder: (context, index) {
-                    return Container(
-                      child: Image.asset('assets/images/placeholder.png',
-                          fit: BoxFit.cover),
-                    );
+                    return Image.asset('assets/images/placeholder.png',
+                        fit: BoxFit.cover);
                   },
                 ),
               ),

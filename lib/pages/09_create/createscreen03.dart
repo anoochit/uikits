@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class CreateScreen03 extends StatefulWidget {
-  CreateScreen03({Key? key}) : super(key: key);
+  const CreateScreen03({super.key});
 
   @override
-  _CreateScreen03State createState() => _CreateScreen03State();
+  State<CreateScreen03> createState() => _CreateScreen03State();
 }
 
 class _CreateScreen03State extends State<CreateScreen03> {
@@ -12,10 +12,10 @@ class _CreateScreen03State extends State<CreateScreen03> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Create"),
+        title: const Text("Create"),
         actions: [
           IconButton(
-            icon: Icon(Icons.send),
+            icon: const Icon(Icons.send),
             onPressed: () {
               // place save function here
             },
@@ -27,43 +27,43 @@ class _CreateScreen03State extends State<CreateScreen03> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 8.0),
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
               child: Column(
                 children: [
                   Container(
-                    padding: EdgeInsets.symmetric(horizontal: 8),
+                    padding: const EdgeInsets.symmetric(horizontal: 8),
                     decoration: BoxDecoration(
                       border: Border.all(color: Colors.grey.shade300),
                       borderRadius: BorderRadius.circular(16.0),
                     ),
                     child: TextFormField(
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         border: InputBorder.none,
                         hintText: 'Title',
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 8.0,
                   ),
                   Container(
-                    padding: EdgeInsets.symmetric(horizontal: 8),
+                    padding: const EdgeInsets.symmetric(horizontal: 8),
                     decoration: BoxDecoration(
                       border: Border.all(color: Colors.grey.shade300),
                       borderRadius: BorderRadius.circular(16.0),
                     ),
                     child: TextFormField(
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         border: InputBorder.none,
                         hintText: 'Description',
                       ),
                       maxLines: 10,
                     ),
                   ),
-                  Container(
+                  SizedBox(
                     width: constraints.maxWidth,
                     child: ElevatedButton(
-                      child: Text("Publish"),
+                      child: const Text("Publish"),
                       onPressed: () {
                         // place publish function here
                       },

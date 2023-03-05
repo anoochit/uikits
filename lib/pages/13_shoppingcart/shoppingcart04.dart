@@ -3,10 +3,10 @@ import 'package:awesome_card/style/card_background.dart';
 import 'package:flutter/material.dart';
 
 class ShoppingCartScreen04 extends StatefulWidget {
-  ShoppingCartScreen04({Key? key}) : super(key: key);
+  const ShoppingCartScreen04({super.key});
 
   @override
-  _ShoppingCartScreen04State createState() => _ShoppingCartScreen04State();
+  State<ShoppingCartScreen04> createState() => _ShoppingCartScreen04State();
 }
 
 class _ShoppingCartScreen04State extends State<ShoppingCartScreen04> {
@@ -39,13 +39,13 @@ class _ShoppingCartScreen04State extends State<ShoppingCartScreen04> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Card Detail"),
+        title: const Text("Card Detail"),
       ),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 40),
+            const SizedBox(height: 40),
             CreditCard(
               cardNumber: cardNumber,
               cardExpiry: expiryDate,
@@ -56,17 +56,17 @@ class _ShoppingCartScreen04State extends State<ShoppingCartScreen04> {
               backBackground: CardBackgrounds.white,
               showShadow: true,
             ),
-            SizedBox(height: 40),
+            const SizedBox(height: 40),
             Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Container(
-                  margin: EdgeInsets.symmetric(
+                  margin: const EdgeInsets.symmetric(
                     horizontal: 20,
                   ),
                   child: TextFormField(
-                    decoration: InputDecoration(hintText: 'Card Number'),
+                    decoration: const InputDecoration(hintText: 'Card Number'),
                     maxLength: 19,
                     onChanged: (value) {
                       setState(() {
@@ -76,11 +76,11 @@ class _ShoppingCartScreen04State extends State<ShoppingCartScreen04> {
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.symmetric(
+                  margin: const EdgeInsets.symmetric(
                     horizontal: 20,
                   ),
                   child: TextFormField(
-                    decoration: InputDecoration(hintText: 'Card Expiry'),
+                    decoration: const InputDecoration(hintText: 'Card Expiry'),
                     maxLength: 5,
                     onChanged: (value) {
                       setState(() {
@@ -90,11 +90,12 @@ class _ShoppingCartScreen04State extends State<ShoppingCartScreen04> {
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.symmetric(
+                  margin: const EdgeInsets.symmetric(
                     horizontal: 20,
                   ),
                   child: TextFormField(
-                    decoration: InputDecoration(hintText: 'Card Holder Name'),
+                    decoration:
+                        const InputDecoration(hintText: 'Card Holder Name'),
                     onChanged: (value) {
                       setState(() {
                         cardHolderName = value;
@@ -103,9 +104,10 @@ class _ShoppingCartScreen04State extends State<ShoppingCartScreen04> {
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.symmetric(horizontal: 20, vertical: 25),
+                  margin:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 25),
                   child: TextFormField(
-                    decoration: InputDecoration(hintText: 'CVV'),
+                    decoration: const InputDecoration(hintText: 'CVV'),
                     maxLength: 3,
                     onChanged: (value) {
                       setState(() {
@@ -117,9 +119,9 @@ class _ShoppingCartScreen04State extends State<ShoppingCartScreen04> {
                 ),
                 Container(
                     width: MediaQuery.of(context).size.width,
-                    padding: EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(8.0),
                     child: ElevatedButton(
-                      child: Text("Checkout"),
+                      child: const Text("Checkout"),
                       onPressed: () {},
                     )),
               ],

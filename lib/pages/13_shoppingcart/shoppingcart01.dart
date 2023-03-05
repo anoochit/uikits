@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:uikits2/pages/13_shoppingcart/sample_data.dart';
 
 class ShoppingCartScreen01 extends StatefulWidget {
-  ShoppingCartScreen01({Key? key}) : super(key: key);
+  const ShoppingCartScreen01({super.key});
 
   @override
-  _ShoppingCartScreen01State createState() => _ShoppingCartScreen01State();
+  State<ShoppingCartScreen01> createState() => _ShoppingCartScreen01State();
 }
 
 class _ShoppingCartScreen01State extends State<ShoppingCartScreen01> {
@@ -13,7 +13,7 @@ class _ShoppingCartScreen01State extends State<ShoppingCartScreen01> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Cart"),
+        title: const Text("Cart"),
       ),
       body: LayoutBuilder(builder: (context, constraints) {
         return Column(
@@ -21,13 +21,13 @@ class _ShoppingCartScreen01State extends State<ShoppingCartScreen01> {
           children: [
             Container(
               width: constraints.maxWidth,
-              padding: EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(8.0),
               color: Colors.grey.shade200,
-              child: Text("Your Cart"),
+              child: const Text("Your Cart"),
             ),
             ListView.builder(
               shrinkWrap: true,
-              physics: ScrollPhysics(),
+              physics: const ScrollPhysics(),
               itemCount: listshoppingCartItem.length,
               itemBuilder: (context, index) {
                 return shoppingCartItem(
@@ -36,28 +36,28 @@ class _ShoppingCartScreen01State extends State<ShoppingCartScreen01> {
             ),
             Container(
               width: constraints.maxWidth,
-              padding: EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(8.0),
               color: Colors.grey.shade200,
-              child: Text("Note"),
+              child: const Text("Note"),
             ),
             Container(
-              padding: EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(8.0),
               child: TextFormField(
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                     border: InputBorder.none, hintText: 'Enter your note here'),
                 maxLines: 3,
               ),
             ),
             Container(
               width: constraints.maxWidth,
-              padding: EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(8.0),
               color: Colors.grey.shade200,
-              child: Text("Price"),
+              child: const Text("Price"),
             ),
             Container(
-              padding: EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(8.0),
               child: Row(
-                children: [
+                children: const [
                   Text("Shippping"),
                   Spacer(),
                   Text("Free"),
@@ -65,20 +65,20 @@ class _ShoppingCartScreen01State extends State<ShoppingCartScreen01> {
               ),
             ),
             Container(
-              padding: EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(8.0),
               child: Row(
                 children: [
-                  Text("Total"),
-                  Spacer(),
+                  const Text("Total"),
+                  const Spacer(),
                   Text('${getTotal(items: listshoppingCartItem)}'),
                 ],
               ),
             ),
             Container(
                 width: constraints.maxWidth,
-                padding: EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(8.0),
                 child: ElevatedButton(
-                  child: Text("Checkout"),
+                  child: const Text("Checkout"),
                   onPressed: () {},
                 )),
           ],
@@ -92,10 +92,10 @@ class _ShoppingCartScreen01State extends State<ShoppingCartScreen01> {
     List<Product> productItem = getProductById(items[index].productId);
     return LayoutBuilder(
       builder: (context, constraints) => Container(
-        padding: EdgeInsets.only(bottom: 4),
+        padding: const EdgeInsets.only(bottom: 4),
         child: Row(
           children: [
-            Container(
+            SizedBox(
               width: 80,
               height: 80,
               child: Image.asset(
@@ -107,20 +107,20 @@ class _ShoppingCartScreen01State extends State<ShoppingCartScreen01> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
-                  padding: EdgeInsets.all(8),
+                  padding: const EdgeInsets.all(8),
                   child: Text(
                     productItem[0].name,
-                    style: TextStyle(fontWeight: FontWeight.w500),
+                    style: const TextStyle(fontWeight: FontWeight.w500),
                   ),
                 ),
                 Container(
-                  padding: EdgeInsets.all(8),
+                  padding: const EdgeInsets.all(8),
                   child: Text('\$${items[index].total}'),
                 ),
               ],
             ),
-            Spacer(),
-            IconButton(onPressed: () {}, icon: Icon(Icons.close))
+            const Spacer(),
+            IconButton(onPressed: () {}, icon: const Icon(Icons.close))
           ],
         ),
       ),
@@ -133,9 +133,9 @@ class _ShoppingCartScreen01State extends State<ShoppingCartScreen01> {
 
   getTotal({required List<ShoppingCartItem> items}) {
     var total = 0.0;
-    items.forEach((element) {
+    for (var element in items) {
       total = total + element.total;
-    });
+    }
     return total;
   }
 }

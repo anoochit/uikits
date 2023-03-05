@@ -3,10 +3,10 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:timeago/timeago.dart' as timeago;
 
 class ContactScreen01 extends StatefulWidget {
-  ContactScreen01({Key? key}) : super(key: key);
+  const ContactScreen01({super.key});
 
   @override
-  _ContactScreen01State createState() => _ContactScreen01State();
+  State<ContactScreen01> createState() => _ContactScreen01State();
 }
 
 class _ContactScreen01State extends State<ContactScreen01> {
@@ -14,10 +14,10 @@ class _ContactScreen01State extends State<ContactScreen01> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Contact"),
+        title: const Text("Contact"),
         actions: [
           IconButton(
-            icon: Icon(Icons.add_box),
+            icon: const Icon(Icons.add_box),
             onPressed: () {
               // place save function here
             },
@@ -38,7 +38,7 @@ class _ContactScreen01State extends State<ContactScreen01> {
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: TextFormField(
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       hintText: 'Search',
                       prefixIcon:
                           Icon(FontAwesomeIcons.magnifyingGlass, size: 20),
@@ -52,7 +52,7 @@ class _ContactScreen01State extends State<ContactScreen01> {
               ),
               Column(
                 children: List.generate(20, (index) {
-                  return ListItem();
+                  return const ListItem();
                 }),
               )
             ],
@@ -70,14 +70,14 @@ class ListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var time = new DateTime.now().subtract(new Duration(minutes: 9));
+    var time = DateTime.now().subtract(const Duration(minutes: 9));
     return Container(
-      padding: EdgeInsets.all(8),
+      padding: const EdgeInsets.all(8),
       child: Row(
         children: [
           Container(
-            padding: EdgeInsets.all(4.0),
-            child: CircleAvatar(
+            padding: const EdgeInsets.all(4.0),
+            child: const CircleAvatar(
               backgroundImage: AssetImage('assets/images/avatar.png'),
             ),
           ),
@@ -85,17 +85,19 @@ class ListItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 4.0, vertical: 2.0),
-                child: Text(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 4.0, vertical: 2.0),
+                child: const Text(
                   "Display Name",
                   style: TextStyle(fontWeight: FontWeight.w500),
                 ),
               ),
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 4.0, vertical: 2.0),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 4.0, vertical: 2.0),
                 child: Text(
-                  "Last seen " + timeago.format(time),
-                  style: TextStyle(fontSize: 12),
+                  "Last seen ${timeago.format(time)}",
+                  style: const TextStyle(fontSize: 12),
                 ),
               ),
             ],

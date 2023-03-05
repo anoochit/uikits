@@ -6,10 +6,10 @@ import 'package:timeago/timeago.dart' as timeago;
 import 'package:uikits2/pages/10_chat/sample_data.dart';
 
 class ChatScreen03 extends StatefulWidget {
-  ChatScreen03({Key? key}) : super(key: key);
+  const ChatScreen03({super.key});
 
   @override
-  _ChatScreen03State createState() => _ChatScreen03State();
+  State<ChatScreen03> createState() => _ChatScreen03State();
 }
 
 class _ChatScreen03State extends State<ChatScreen03> {
@@ -19,11 +19,14 @@ class _ChatScreen03State extends State<ChatScreen03> {
       appBar: AppBar(
         title: Row(
           children: [
-            Text("John Doe", style: TextStyle(color: Colors.black)),
-            Spacer(),
+            const Text(
+              "John Doe",
+              style: TextStyle(color: Colors.black),
+            ),
+            const Spacer(),
             Container(
-              padding: EdgeInsets.all(8),
-              child: CircleAvatar(
+              padding: const EdgeInsets.all(8),
+              child: const CircleAvatar(
                 radius: 20,
                 backgroundImage: AssetImage('assets/images/avatar.png'),
               ),
@@ -32,7 +35,7 @@ class _ChatScreen03State extends State<ChatScreen03> {
         ),
         titleSpacing: 0,
         backgroundColor: Colors.white,
-        iconTheme: IconThemeData(color: Colors.black),
+        iconTheme: const IconThemeData(color: Colors.black),
         elevation: 0,
       ),
       body: SafeArea(
@@ -50,65 +53,64 @@ class _ChatScreen03State extends State<ChatScreen03> {
                     itemCount: reversedListMessage.length,
                     itemBuilder: (BuildContext context, int index) {
                       return chatMessageItem(
-                          id: reversedListMessage[index].id,
-                          content: reversedListMessage[index].content,
-                          type: reversedListMessage[index].type,
-                          timestamp: reversedListMessage[index].timestamp,
-                          avatar: reversedListMessage[index].avatar,
-                          displayName: reversedListMessage[index].displayName,
-                          owner: reversedListMessage[index].owner);
+                        id: reversedListMessage[index].id,
+                        content: reversedListMessage[index].content,
+                        type: reversedListMessage[index].type,
+                        timestamp: reversedListMessage[index].timestamp,
+                        avatar: reversedListMessage[index].avatar,
+                        displayName: reversedListMessage[index].displayName,
+                        owner: reversedListMessage[index].owner,
+                      );
                     },
                   ),
                 ),
               ),
               // toolbar
-              Container(
-                child: Column(
-                  children: [
-                    Divider(height: 1, thickness: 1),
-                    Row(
-                      children: [
-                        IconButton(
-                          icon: Icon(FontAwesomeIcons.plus),
-                          onPressed: () {
-                            // add function show toolbar
-                          },
+              Column(
+                children: [
+                  const Divider(height: 1, thickness: 1),
+                  Row(
+                    children: [
+                      IconButton(
+                        icon: const Icon(FontAwesomeIcons.plus),
+                        onPressed: () {
+                          // add function show toolbar
+                        },
+                      ),
+                      IconButton(
+                        icon: const Icon(FontAwesomeIcons.image),
+                        onPressed: () {
+                          // add function show image picker
+                        },
+                      ),
+                      IconButton(
+                        icon: const Icon(FontAwesomeIcons.noteSticky),
+                        onPressed: () {
+                          // add function show sticker
+                        },
+                      ),
+                      Container(
+                        height: 40,
+                        width: constraints.maxWidth - (200),
+                        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                        decoration: BoxDecoration(
+                            border: Border.all(color: Colors.grey.shade200),
+                            borderRadius: BorderRadius.circular(16)),
+                        child: TextFormField(
+                          decoration: const InputDecoration(
+                              border: InputBorder.none,
+                              hintText: 'Type your message here'),
                         ),
-                        IconButton(
-                          icon: Icon(FontAwesomeIcons.image),
-                          onPressed: () {
-                            // add function show image picker
-                          },
-                        ),
-                        IconButton(
-                          icon: Icon(FontAwesomeIcons.noteSticky),
-                          onPressed: () {
-                            // add function show sticker
-                          },
-                        ),
-                        Container(
-                          height: 40,
-                          width: constraints.maxWidth - (200),
-                          padding: EdgeInsets.symmetric(horizontal: 16.0),
-                          decoration: BoxDecoration(
-                              border: Border.all(color: Colors.grey.shade200),
-                              borderRadius: BorderRadius.circular(16)),
-                          child: TextFormField(
-                            decoration: InputDecoration(
-                                border: InputBorder.none,
-                                hintText: 'Type your message here'),
-                          ),
-                        ),
-                        IconButton(
-                          icon: Icon(FontAwesomeIcons.paperPlane),
-                          onPressed: () {
-                            // add function send message
-                          },
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
+                      ),
+                      IconButton(
+                        icon: const Icon(FontAwesomeIcons.paperPlane),
+                        onPressed: () {
+                          // add function send message
+                        },
+                      ),
+                    ],
+                  ),
+                ],
               )
             ],
           ),
@@ -131,18 +133,18 @@ class _ChatScreen03State extends State<ChatScreen03> {
         if (type == 0) {
           // text
           return Container(
-            padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
+            padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
             alignment: (owner) ? Alignment.bottomRight : Alignment.bottomLeft,
             child: Row(
               children: [
                 (!owner)
                     ? Container(
-                        padding: EdgeInsets.only(right: 8.0),
+                        padding: const EdgeInsets.only(right: 8.0),
                         child: CircleAvatar(
                           backgroundImage: AssetImage(avatar),
                         ),
                       )
-                    : Spacer(),
+                    : const Spacer(),
                 Column(
                   crossAxisAlignment: (owner)
                       ? CrossAxisAlignment.end
@@ -150,7 +152,7 @@ class _ChatScreen03State extends State<ChatScreen03> {
                   children: [
                     Container(
                       width: constraints.maxWidth * 0.6,
-                      padding: EdgeInsets.all(16.0),
+                      padding: const EdgeInsets.all(16.0),
                       decoration: BoxDecoration(
                           color: (owner)
                               ? Theme.of(context).primaryColor
@@ -158,11 +160,9 @@ class _ChatScreen03State extends State<ChatScreen03> {
                           borderRadius: BorderRadiusDirectional.circular(16)),
                       child: Text(content),
                     ),
-                    Container(
-                      child: Text(
-                        timeago.format(timestamp),
-                        style: TextStyle(fontSize: 10.0),
-                      ),
+                    Text(
+                      timeago.format(timestamp),
+                      style: const TextStyle(fontSize: 10.0),
                     )
                   ],
                 ),
@@ -172,18 +172,18 @@ class _ChatScreen03State extends State<ChatScreen03> {
         } else if (type == 1) {
           // image
           return Container(
-            padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
+            padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
             alignment: (owner) ? Alignment.bottomRight : Alignment.bottomLeft,
             child: Row(
               children: [
                 (!owner)
                     ? Container(
-                        padding: EdgeInsets.only(right: 8.0),
+                        padding: const EdgeInsets.only(right: 8.0),
                         child: CircleAvatar(
                           backgroundImage: AssetImage(avatar),
                         ),
                       )
-                    : Spacer(),
+                    : const Spacer(),
                 Column(
                   crossAxisAlignment: (owner)
                       ? CrossAxisAlignment.end
@@ -203,14 +203,12 @@ class _ChatScreen03State extends State<ChatScreen03> {
                       ),
                       onTap: () {
                         // show image
-                        log("show image = " + content);
+                        log("show image = $content");
                       },
                     ),
-                    Container(
-                      child: Text(
-                        timeago.format(timestamp),
-                        style: TextStyle(fontSize: 10.0),
-                      ),
+                    Text(
+                      timeago.format(timestamp),
+                      style: const TextStyle(fontSize: 10.0),
                     )
                   ],
                 ),
@@ -220,33 +218,31 @@ class _ChatScreen03State extends State<ChatScreen03> {
         } else if (type == 2) {
           // sticker
           return Container(
-            padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
+            padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
             alignment: (owner) ? Alignment.bottomRight : Alignment.bottomLeft,
             child: Row(
               children: [
                 (!owner)
                     ? Container(
-                        padding: EdgeInsets.only(right: 8.0),
+                        padding: const EdgeInsets.only(right: 8.0),
                         child: CircleAvatar(
                           backgroundImage: AssetImage(avatar),
                         ),
                       )
-                    : Spacer(),
+                    : const Spacer(),
                 Column(
                   crossAxisAlignment: (owner)
                       ? CrossAxisAlignment.end
                       : CrossAxisAlignment.start,
                   children: [
-                    Container(
+                    SizedBox(
                       width: 200,
                       height: 200,
                       child: Image.asset(content),
                     ),
-                    Container(
-                      child: Text(
-                        timeago.format(timestamp),
-                        style: TextStyle(fontSize: 10.0),
-                      ),
+                    Text(
+                      timeago.format(timestamp),
+                      style: const TextStyle(fontSize: 10.0),
                     )
                   ],
                 ),
@@ -256,25 +252,25 @@ class _ChatScreen03State extends State<ChatScreen03> {
         } else if (type == 3) {
           // audio
           return Container(
-            padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
+            padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
             alignment: (owner) ? Alignment.bottomRight : Alignment.bottomLeft,
             child: Row(
               children: [
                 (!owner)
                     ? Container(
-                        padding: EdgeInsets.only(right: 8.0),
+                        padding: const EdgeInsets.only(right: 8.0),
                         child: CircleAvatar(
                           backgroundImage: AssetImage(avatar),
                         ),
                       )
-                    : Spacer(),
+                    : const Spacer(),
                 Column(
                   crossAxisAlignment: (owner)
                       ? CrossAxisAlignment.end
                       : CrossAxisAlignment.start,
                   children: [
                     InkWell(
-                      child: Container(
+                      child: SizedBox(
                         width: 200,
                         height: 200,
                         child: Container(
@@ -298,14 +294,12 @@ class _ChatScreen03State extends State<ChatScreen03> {
                       ),
                       onTap: () {
                         // play audio
-                        log("play audio = " + content);
+                        log("play audio = $content");
                       },
                     ),
-                    Container(
-                      child: Text(
-                        timeago.format(timestamp),
-                        style: TextStyle(fontSize: 10.0),
-                      ),
+                    Text(
+                      timeago.format(timestamp),
+                      style: const TextStyle(fontSize: 10.0),
                     )
                   ],
                 ),
@@ -315,25 +309,25 @@ class _ChatScreen03State extends State<ChatScreen03> {
         } else if (type == 4) {
           // video
           return Container(
-            padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
+            padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
             alignment: (owner) ? Alignment.bottomRight : Alignment.bottomLeft,
             child: Row(
               children: [
                 (!owner)
                     ? Container(
-                        padding: EdgeInsets.only(right: 8.0),
+                        padding: const EdgeInsets.only(right: 8.0),
                         child: CircleAvatar(
                           backgroundImage: AssetImage(avatar),
                         ),
                       )
-                    : Spacer(),
+                    : const Spacer(),
                 Column(
                   crossAxisAlignment: (owner)
                       ? CrossAxisAlignment.end
                       : CrossAxisAlignment.start,
                   children: [
                     InkWell(
-                      child: Container(
+                      child: SizedBox(
                         width: 200,
                         height: 200,
                         child: Container(
@@ -357,14 +351,12 @@ class _ChatScreen03State extends State<ChatScreen03> {
                       ),
                       onTap: () {
                         // play video
-                        log("play video = " + content);
+                        log("play video = $content");
                       },
                     ),
-                    Container(
-                      child: Text(
-                        timeago.format(timestamp),
-                        style: TextStyle(fontSize: 10.0),
-                      ),
+                    Text(
+                      timeago.format(timestamp),
+                      style: const TextStyle(fontSize: 10.0),
                     )
                   ],
                 ),
@@ -372,7 +364,7 @@ class _ChatScreen03State extends State<ChatScreen03> {
             ),
           );
         } else {
-          return Text("not support message type");
+          return const Text("not support message type");
         }
       },
     );

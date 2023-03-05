@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class StoreScreen03 extends StatefulWidget {
-  StoreScreen03({Key? key}) : super(key: key);
+  const StoreScreen03({super.key});
 
   @override
-  _StoreScreen03State createState() => _StoreScreen03State();
+  State<StoreScreen03> createState() => _StoreScreen03State();
 }
 
 class _StoreScreen03State extends State<StoreScreen03> {
@@ -12,10 +12,10 @@ class _StoreScreen03State extends State<StoreScreen03> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Store"),
+        title: const Text("Store"),
         actions: [
           IconButton(
-            icon: Icon(Icons.shopping_cart),
+            icon: const Icon(Icons.shopping_cart),
             onPressed: () {
               // place save function here
             },
@@ -38,7 +38,7 @@ class _StoreScreen03State extends State<StoreScreen03> {
                   ),
                   itemCount: 10,
                   itemBuilder: (BuildContext context, int index) {
-                    return GridItem();
+                    return const GridItem();
                   },
                 ),
               ),
@@ -58,51 +58,56 @@ class GridItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
-      builder: (context, constraints) => Container(
-        child: Stack(
-          children: [
-            Container(
-              width: constraints.maxWidth,
-              height: constraints.maxWidth,
-              child: Image.asset(
-                'assets/images/placeholder.png',
-                fit: BoxFit.cover,
+      builder: (context, constraints) => Card(
+        clipBehavior: Clip.antiAliasWithSaveLayer,
+        child: GridTile(
+          child: Stack(
+            children: [
+              SizedBox(
+                width: constraints.maxWidth,
+                height: constraints.maxWidth,
+                child: Image.asset(
+                  'assets/images/placeholder.png',
+                  fit: BoxFit.cover,
+                ),
               ),
-            ),
-            Positioned(
-              bottom: 4,
-              width: constraints.maxWidth,
-              child: Column(
-                children: [
-                  Container(
-                    padding: EdgeInsets.all(4.0),
-                    decoration: BoxDecoration(
-                        color: Theme.of(context).primaryColor,
-                        borderRadius: BorderRadius.circular(20)),
-                    child: Text(
-                      "\$12.00",
-                      style: TextStyle(
-                          fontWeight: FontWeight.w500, color: Colors.white),
+              Positioned(
+                bottom: 4,
+                width: constraints.maxWidth,
+                child: Column(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.all(4.0),
+                      decoration: BoxDecoration(
+                          color: Theme.of(context).primaryColor,
+                          borderRadius: BorderRadius.circular(20)),
+                      child: const Text(
+                        "\$12.00",
+                        style: TextStyle(
+                          fontWeight: FontWeight.w500,
+                          color: Colors.white,
+                        ),
+                      ),
                     ),
-                  ),
-                  Container(
-                    padding: EdgeInsets.symmetric(vertical: 4.0),
-                    child: Text(
-                      "Product Name",
-                      style: TextStyle(
-                          fontWeight: FontWeight.w500, fontSize: 16.0),
+                    Container(
+                      padding: const EdgeInsets.symmetric(vertical: 4.0),
+                      child: const Text(
+                        "Product Name",
+                        style: TextStyle(
+                            fontWeight: FontWeight.w500, fontSize: 16.0),
+                      ),
                     ),
-                  ),
-                  Container(
-                    padding: EdgeInsets.symmetric(vertical: 4.0),
-                    child: Text(
-                      "Short Description",
+                    Container(
+                      padding: const EdgeInsets.symmetric(vertical: 4.0),
+                      child: const Text(
+                        "Short Description",
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

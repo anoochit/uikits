@@ -4,18 +4,18 @@ import 'package:uikits2/home_mobile.dart';
 import 'package:uikits2/home_tablet.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
-  _HomePageState createState() => _HomePageState();
+  State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return ScreenTypeLayout.builder(
-      mobile: (context) => HomeMobile(),
-      tablet: (context) => HomeTablet(),
+      mobile: (context) => const HomeMobile(),
+      tablet: (context) => const HomeTablet(),
     );
   }
 }

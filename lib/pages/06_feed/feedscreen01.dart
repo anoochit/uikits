@@ -3,10 +3,10 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:timeago/timeago.dart' as timeago;
 
 class FeedScreen01 extends StatefulWidget {
-  FeedScreen01({Key? key}) : super(key: key);
+  const FeedScreen01({super.key});
 
   @override
-  _FeedScreen01State createState() => _FeedScreen01State();
+  State<FeedScreen01> createState() => _FeedScreen01State();
 }
 
 class _FeedScreen01State extends State<FeedScreen01> {
@@ -14,7 +14,7 @@ class _FeedScreen01State extends State<FeedScreen01> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Feed"),
+        title: const Text("Feed"),
       ),
       body: LayoutBuilder(
         builder: (context, constraints) => Center(
@@ -24,7 +24,7 @@ class _FeedScreen01State extends State<FeedScreen01> {
                 child: MediaQuery.removePadding(
                   context: context,
                   removeTop: true,
-                  child: Container(
+                  child: SizedBox(
                     width: (constraints.maxWidth > 412)
                         ? (constraints.maxWidth * 0.5)
                         : constraints.maxWidth,
@@ -32,7 +32,7 @@ class _FeedScreen01State extends State<FeedScreen01> {
                       shrinkWrap: true,
                       itemCount: 10,
                       itemBuilder: (context, index) {
-                        return PostItem();
+                        return const PostItem();
                       },
                     ),
                   ),
@@ -53,7 +53,7 @@ class PostItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final fifteenAgo = new DateTime.now().subtract(new Duration(minutes: 15));
+    final fifteenAgo = DateTime.now().subtract(const Duration(minutes: 15));
 
     return LayoutBuilder(
       builder: (context, constraints) => Padding(
@@ -68,28 +68,25 @@ class PostItem extends StatelessWidget {
             child: Column(
               children: [
                 Container(
-                  padding: EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(8.0),
                   child: Row(
                     children: [
                       // replace avatar image here
-                      CircleAvatar(
+                      const CircleAvatar(
                         radius: 24,
                         backgroundImage: AssetImage('assets/images/avatar.png'),
                       ),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Container(
-                            // replace display name here
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 8.0,
-                                vertical: 2.0,
-                              ),
-                              child: Text(
-                                "John Doe",
-                                style: Theme.of(context).textTheme.titleMedium,
-                              ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 8.0,
+                              vertical: 2.0,
+                            ),
+                            child: Text(
+                              "John Doe",
+                              style: Theme.of(context).textTheme.titleMedium,
                             ),
                           ),
                           Padding(
@@ -105,7 +102,7 @@ class PostItem extends StatelessWidget {
                     ],
                   ),
                 ),
-                Container(
+                SizedBox(
                   height: constraints.maxWidth,
                   // replace image
                   child: Image.asset(
@@ -120,26 +117,26 @@ class PostItem extends StatelessWidget {
                   child: Row(
                     children: [
                       TextButton.icon(
-                        icon: Icon(FontAwesomeIcons.thumbsUp),
+                        icon: const Icon(FontAwesomeIcons.thumbsUp),
                         onPressed: () {
                           // place link function here
                         },
-                        label: Text("Like"),
+                        label: const Text("Like"),
                       ),
                       TextButton.icon(
-                        icon: Icon(FontAwesomeIcons.comment),
+                        icon: const Icon(FontAwesomeIcons.comment),
                         onPressed: () {
                           // place comment function here
                         },
-                        label: Text("Comment"),
+                        label: const Text("Comment"),
                       ),
-                      Spacer(),
+                      const Spacer(),
                       TextButton.icon(
-                        icon: Icon(FontAwesomeIcons.share),
+                        icon: const Icon(FontAwesomeIcons.share),
                         onPressed: () {
                           // place comment function here
                         },
-                        label: Text("Share"),
+                        label: const Text("Share"),
                       ),
                     ],
                   ),

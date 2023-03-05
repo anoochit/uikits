@@ -1,26 +1,21 @@
 import 'package:flutter/material.dart';
 
 class ContactScreen02 extends StatefulWidget {
-  ContactScreen02({Key? key}) : super(key: key);
+  const ContactScreen02({super.key});
 
   @override
-  _ContactScreen02State createState() => _ContactScreen02State();
+  State<ContactScreen02> createState() => _ContactScreen02State();
 }
 
 class _ContactScreen02State extends State<ContactScreen02> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text("Contact", style: TextStyle(color: Colors.black)),
-        titleSpacing: 0,
-        backgroundColor: Colors.white,
-        iconTheme: IconThemeData(color: Colors.black),
-        elevation: 0,
+        title: const Text("Contact"),
         actions: [
           IconButton(
-            icon: Icon(Icons.add_box),
+            icon: const Icon(Icons.add_box),
             onPressed: () {
               // place save function here
             },
@@ -35,29 +30,29 @@ class _ContactScreen02State extends State<ContactScreen02> {
               children: [
                 Container(
                   width: constraints.maxWidth,
-                  padding: EdgeInsets.all(4.0),
+                  padding: const EdgeInsets.all(4.0),
                   color: Colors.grey.shade200,
-                  child: Text("Groups"),
+                  child: const Text("Groups"),
                 ),
-                Container(
+                SizedBox(
                   height: 110,
                   child: ListView.builder(
                     itemCount: 10,
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index) {
-                      return ListGroupItem();
+                      return const ListGroupItem();
                     },
                   ),
                 ),
                 Container(
                   width: constraints.maxWidth,
-                  padding: EdgeInsets.all(4.0),
+                  padding: const EdgeInsets.all(4.0),
                   color: Colors.grey.shade200,
-                  child: Text("All Friends"),
+                  child: const Text("All Friends"),
                 ),
                 Column(
                   children: List.generate(10, (index) {
-                    return ListItem();
+                    return const ListItem();
                   }),
                 )
               ],
@@ -77,25 +72,25 @@ class ListGroupItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(8.0),
       child: Column(
         children: [
           Container(
-            padding: EdgeInsets.all(4.0),
-            child: CircleAvatar(
+            padding: const EdgeInsets.all(4.0),
+            child: const CircleAvatar(
               backgroundImage: AssetImage('assets/images/avatar.png'),
             ),
           ),
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 4.0, vertical: 2.0),
-            child: Text(
+            padding: const EdgeInsets.symmetric(horizontal: 4.0, vertical: 2.0),
+            child: const Text(
               "Group Name",
               style: TextStyle(fontWeight: FontWeight.w500),
             ),
           ),
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 4.0, vertical: 2.0),
-            child: Text(
+            padding: const EdgeInsets.symmetric(horizontal: 4.0, vertical: 2.0),
+            child: const Text(
               "Information",
               style: TextStyle(fontSize: 12),
             ),
@@ -114,12 +109,12 @@ class ListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(8),
+      padding: const EdgeInsets.all(8),
       child: Row(
         children: [
           Container(
-            padding: EdgeInsets.all(4.0),
-            child: CircleAvatar(
+            padding: const EdgeInsets.all(4.0),
+            child: const CircleAvatar(
               backgroundImage: AssetImage('assets/images/avatar.png'),
             ),
           ),
@@ -127,15 +122,17 @@ class ListItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 4.0, vertical: 2.0),
-                child: Text(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 4.0, vertical: 2.0),
+                child: const Text(
                   "Display Name",
                   style: TextStyle(fontWeight: FontWeight.w500),
                 ),
               ),
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 4.0, vertical: 2.0),
-                child: Text(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 4.0, vertical: 2.0),
+                child: const Text(
                   "Information",
                   style: TextStyle(fontSize: 12),
                 ),

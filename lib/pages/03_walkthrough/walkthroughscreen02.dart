@@ -2,10 +2,10 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 class WalkthroughScreen02 extends StatefulWidget {
-  WalkthroughScreen02({Key? key}) : super(key: key);
+  const WalkthroughScreen02({super.key});
 
   @override
-  _WalkthroughScreen02State createState() => _WalkthroughScreen02State();
+  State<WalkthroughScreen02> createState() => _WalkthroughScreen02State();
 }
 
 class _WalkthroughScreen02State extends State<WalkthroughScreen02> {
@@ -13,25 +13,37 @@ class _WalkthroughScreen02State extends State<WalkthroughScreen02> {
   List<Widget> listCarousel(BuildContext context) {
     return [
       CarouselPage(
-          image:
-              Image.asset('assets/images/placeholder.png', fit: BoxFit.cover),
-          title: "Instruction Page 1",
-          subtitle: "Instruction 1 Description"),
+        image: Image.asset(
+          'assets/images/placeholder.png',
+          fit: BoxFit.cover,
+        ),
+        title: "Instruction Page 1",
+        subtitle: "Instruction 1 Description",
+      ),
       CarouselPage(
-          image:
-              Image.asset('assets/images/placeholder.png', fit: BoxFit.cover),
-          title: "Instruction Page 2",
-          subtitle: "Instruction 2 Description"),
+        image: Image.asset(
+          'assets/images/placeholder.png',
+          fit: BoxFit.cover,
+        ),
+        title: "Instruction Page 2",
+        subtitle: "Instruction 2 Description",
+      ),
       CarouselPage(
-          image:
-              Image.asset('assets/images/placeholder.png', fit: BoxFit.cover),
-          title: "Instruction Page 3",
-          subtitle: "Instruction 3 Description"),
+        image: Image.asset(
+          'assets/images/placeholder.png',
+          fit: BoxFit.cover,
+        ),
+        title: "Instruction Page 3",
+        subtitle: "Instruction 3 Description",
+      ),
       CarouselPage(
-          image:
-              Image.asset('assets/images/placeholder.png', fit: BoxFit.cover),
-          title: "Instruction Page 4",
-          subtitle: "Instruction 4 Description"),
+        image: Image.asset(
+          'assets/images/placeholder.png',
+          fit: BoxFit.cover,
+        ),
+        title: "Instruction Page 4",
+        subtitle: "Instruction 4 Description",
+      ),
     ];
   }
 
@@ -45,7 +57,7 @@ class _WalkthroughScreen02State extends State<WalkthroughScreen02> {
       body: LayoutBuilder(
         builder: (context, constraints) => Stack(
           children: [
-            Container(
+            SizedBox(
               width: constraints.maxWidth,
               height: constraints.maxHeight,
               child: CarouselSlider(
@@ -66,7 +78,7 @@ class _WalkthroughScreen02State extends State<WalkthroughScreen02> {
             ),
             Container(
               alignment: Alignment.bottomCenter,
-              padding: EdgeInsets.only(bottom: 120.0),
+              padding: const EdgeInsets.only(bottom: 120.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: listCarouselPage.map((item) {
@@ -74,8 +86,8 @@ class _WalkthroughScreen02State extends State<WalkthroughScreen02> {
                   return Container(
                     width: _current == index ? 12.0 : 8.0,
                     height: _current == index ? 12.0 : 8.0,
-                    margin:
-                        EdgeInsets.symmetric(vertical: 10.0, horizontal: 2.0),
+                    margin: const EdgeInsets.symmetric(
+                        vertical: 10.0, horizontal: 2.0),
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       color: _current == index ? Colors.grey : Colors.grey[300],
@@ -86,7 +98,7 @@ class _WalkthroughScreen02State extends State<WalkthroughScreen02> {
             ),
             Container(
               alignment: Alignment.bottomCenter,
-              padding: EdgeInsets.all(32.0),
+              padding: const EdgeInsets.all(32.0),
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   minimumSize: Size(
@@ -95,7 +107,7 @@ class _WalkthroughScreen02State extends State<WalkthroughScreen02> {
                           : constraints.maxWidth,
                       50),
                 ),
-                child: Text("Continue"),
+                child: const Text("Continue"),
                 onPressed: () {
                   // place sign up function here
                 },
@@ -125,12 +137,12 @@ class CarouselPage extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, constraints) => Stack(
         children: [
-          Container(
+          SizedBox(
             width: constraints.maxWidth,
             height: constraints.maxHeight * 0.8,
             child: image,
           ),
-          Container(
+          SizedBox(
             width: constraints.maxWidth,
             height: constraints.maxHeight,
             child: Column(

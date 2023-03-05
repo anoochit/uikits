@@ -3,10 +3,10 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:timeago/timeago.dart' as timeago;
 
 class ChatScreen01 extends StatefulWidget {
-  ChatScreen01({Key? key}) : super(key: key);
+  const ChatScreen01({super.key});
 
   @override
-  _ChatScreen01State createState() => _ChatScreen01State();
+  State<ChatScreen01> createState() => _ChatScreen01State();
 }
 
 class _ChatScreen01State extends State<ChatScreen01> {
@@ -14,46 +14,48 @@ class _ChatScreen01State extends State<ChatScreen01> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Create"),
+        title: const Text("Create"),
         actions: [
           IconButton(
-            icon: Icon(Icons.add_box),
+            icon: const Icon(Icons.add_box),
             onPressed: () {
               // place save function here
             },
           ),
         ],
       ),
-      body: LayoutBuilder(
-        builder: (context, constraints) => Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              padding: const EdgeInsets.all(8),
-              child: Container(
-                height: 48,
-                decoration: BoxDecoration(
-                  color: Colors.grey.shade100,
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: TextFormField(
-                  decoration: InputDecoration(
-                    hintText: 'Search...',
-                    hintStyle: Theme.of(context).textTheme.bodyMedium,
-                    prefixIcon: Icon(FontAwesomeIcons.magnifyingGlass),
-                    border: InputBorder.none,
+      body: SingleChildScrollView(
+        child: LayoutBuilder(
+          builder: (context, constraints) => Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                padding: const EdgeInsets.all(8),
+                child: Container(
+                  height: 48,
+                  decoration: BoxDecoration(
+                    color: Colors.grey.shade100,
+                    borderRadius: BorderRadius.circular(20),
                   ),
-                  onFieldSubmitted: (value) {
-                    // place submit function here
-                  },
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                      hintText: 'Search...',
+                      hintStyle: Theme.of(context).textTheme.bodyMedium,
+                      prefixIcon: const Icon(FontAwesomeIcons.magnifyingGlass),
+                      border: InputBorder.none,
+                    ),
+                    onFieldSubmitted: (value) {
+                      // place submit function here
+                    },
+                  ),
                 ),
               ),
-            ),
-            Expanded(
-              child: MediaQuery.removePadding(
+              MediaQuery.removePadding(
                 context: context,
                 removeTop: true,
                 child: ListView.builder(
+                  physics: const ScrollPhysics(),
+                  shrinkWrap: true,
                   itemCount: 15,
                   itemBuilder: (BuildContext context, int index) {
                     // if index == 0 insert divider with title "Unread messages"
@@ -66,8 +68,8 @@ class _ChatScreen01State extends State<ChatScreen01> {
                   },
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
@@ -92,12 +94,12 @@ class ListDivider extends StatelessWidget {
         Container(
           width: constraints.maxWidth,
           color: Colors.grey.shade200,
-          padding: EdgeInsets.only(left: 16.0, top: 8, bottom: 8),
+          padding: const EdgeInsets.only(left: 16.0, top: 8, bottom: 8),
           // if index == 0 insert divider with title "Unread messages"
           // if index == 5 indert divider with title "All messages"
           child: Text(
             (index == 0) ? "Unread messages" : "All messages",
-            style: TextStyle(fontWeight: FontWeight.bold),
+            style: const TextStyle(fontWeight: FontWeight.bold),
           ),
         ),
         ListItem(index: index)
@@ -116,46 +118,19 @@ class ListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final fifteenAgo = new DateTime.now().subtract(new Duration(minutes: 15));
-    return Column(
-      children: [
-        Container(
-          padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 12.0),
-          child: Row(
-            children: [
-              CircleAvatar(
-                radius: 24,
-                backgroundImage: AssetImage('assets/images/avatar.png'),
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    padding: const EdgeInsets.all(4.0),
-                    child: Text("Veniam elit nisi est elit sint",
-                        style: TextStyle(fontWeight: FontWeight.bold)),
-                  ),
-                  Container(
-                    padding: const EdgeInsets.all(4.0),
-                    child: Text("Display Name"),
-                  ),
-                ],
-              ),
-              Spacer(),
-              Container(
-                child: Text(
-                  timeago.format(fifteenAgo),
-                  style: TextStyle(fontSize: 12.0),
-                ),
-              )
-            ],
-          ),
-        ),
-        Divider(
-          height: 1,
-          thickness: 1,
-        )
-      ],
+    final fifteenAgo = DateTime.now().subtract(const Duration(minutes: 15));
+
+    return ListTile(
+      leading: const CircleAvatar(
+        radius: 24,
+        backgroundImage: AssetImage('assets/images/avatar.png'),
+      ),
+      title: const Text("Veniam elit nisi est elit sint"),
+      subtitle: const Text("Display Name"),
+      trailing: Text(
+        timeago.format(fifteenAgo),
+        style: const TextStyle(fontSize: 12.0),
+      ),
     );
   }
 }

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:uikits2/pages/17_m3/consts.dart';
 
 class LandscapeScreen extends StatefulWidget {
-  LandscapeScreen({Key? key}) : super(key: key);
+  const LandscapeScreen({super.key});
 
   @override
   State<LandscapeScreen> createState() => _LandscapeScreenState();
@@ -16,7 +16,7 @@ class _LandscapeScreenState extends State<LandscapeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Landscape Screen"),
+        title: const Text("Landscape Screen"),
       ),
       body: Row(
         children: [
@@ -43,11 +43,11 @@ class _LandscapeScreenState extends State<LandscapeScreen> {
                 });
               },
               icon: (_extened)
-                  ? Icon(Icons.arrow_circle_left_outlined)
-                  : Icon(Icons.arrow_circle_right_outlined),
+                  ? const Icon(Icons.arrow_circle_left_outlined)
+                  : const Icon(Icons.arrow_circle_right_outlined),
             ),
           ),
-          VerticalDivider(
+          const VerticalDivider(
             width: 0.0,
           ),
           Expanded(

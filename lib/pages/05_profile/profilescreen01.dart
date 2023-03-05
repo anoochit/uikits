@@ -3,10 +3,10 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:timeago/timeago.dart' as timeago;
 
 class ProfileScreen01 extends StatefulWidget {
-  ProfileScreen01({Key? key}) : super(key: key);
+  const ProfileScreen01({super.key});
 
   @override
-  _ProfileScreen01State createState() => _ProfileScreen01State();
+  State<ProfileScreen01> createState() => _ProfileScreen01State();
 }
 
 class _ProfileScreen01State extends State<ProfileScreen01> {
@@ -15,68 +15,63 @@ class _ProfileScreen01State extends State<ProfileScreen01> {
     return Scaffold(
       body: LayoutBuilder(builder: (context, constraints) {
         return SingleChildScrollView(
-          child: Container(
-            child: Column(
-              children: [
-                Container(
-                  child: Stack(
-                    children: [
-                      // replace background image here
-                      Container(
-                        width: constraints.maxWidth,
-                        height: constraints.maxWidth * 0.5,
-                        child: Image.asset(
-                          'assets/images/placeholder.png',
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                      Positioned.fill(
-                        child: Padding(
-                          padding: const EdgeInsets.all(16.0),
-                          child: Align(
-                            alignment: Alignment.bottomCenter,
-                            child: Row(
-                              children: [
-                                // avatar
-                                CircleAvatar(
-                                  radius: 32,
-                                  backgroundImage:
-                                      AssetImage('assets/images/avatar.png'),
-                                ),
-
-                                // name
-                                SizedBox(width: 16),
-                                Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      "John Doe",
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .headlineSmall,
-                                    ),
-                                    Text("@johndoe"),
-                                  ],
-                                )
-                              ],
+          child: Column(
+            children: [
+              Stack(
+                children: [
+                  // replace background image here
+                  SizedBox(
+                    width: constraints.maxWidth,
+                    height: constraints.maxWidth * 0.5,
+                    child: Image.asset(
+                      'assets/images/placeholder.png',
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  Positioned.fill(
+                    child: Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Align(
+                        alignment: Alignment.bottomCenter,
+                        child: Row(
+                          children: [
+                            // avatar
+                            const CircleAvatar(
+                              radius: 32,
+                              backgroundImage:
+                                  AssetImage('assets/images/avatar.png'),
                             ),
-                          ),
+
+                            // name
+                            const SizedBox(width: 16),
+                            Column(
+                              mainAxisSize: MainAxisSize.min,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "John Doe",
+                                  style:
+                                      Theme.of(context).textTheme.headlineSmall,
+                                ),
+                                const Text("@johndoe"),
+                              ],
+                            )
+                          ],
                         ),
                       ),
-                    ],
+                    ),
                   ),
+                ],
+              ),
+              Column(
+                children: List.generate(
+                  10,
+                  (index) {
+                    return const PostItem();
+                  },
                 ),
-                Column(
-                  children: List.generate(
-                    10,
-                    (index) {
-                      return PostItem();
-                    },
-                  ),
-                )
-              ],
-            ),
+              )
+            ],
           ),
         );
       }),
@@ -91,7 +86,7 @@ class PostItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final fifteenAgo = new DateTime.now().subtract(new Duration(minutes: 15));
+    final fifteenAgo = DateTime.now().subtract(const Duration(minutes: 15));
 
     return LayoutBuilder(
       builder: (context, constraints) => Padding(
@@ -104,7 +99,7 @@ class PostItem extends StatelessWidget {
           clipBehavior: Clip.antiAliasWithSaveLayer,
           child: Column(
             children: [
-              Container(
+              SizedBox(
                 width: constraints.maxWidth,
                 height: constraints.maxWidth,
 
@@ -119,20 +114,20 @@ class PostItem extends StatelessWidget {
                 child: Row(
                   children: [
                     TextButton.icon(
-                      icon: Icon(FontAwesomeIcons.thumbsUp),
+                      icon: const Icon(FontAwesomeIcons.thumbsUp),
                       onPressed: () {
                         // place link function here
                       },
-                      label: Text("Like"),
+                      label: const Text("Like"),
                     ),
                     TextButton.icon(
-                      icon: Icon(FontAwesomeIcons.comment),
+                      icon: const Icon(FontAwesomeIcons.comment),
                       onPressed: () {
                         // place comment function here
                       },
-                      label: Text("Comment"),
+                      label: const Text("Comment"),
                     ),
-                    Spacer(),
+                    const Spacer(),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(timeago.format(fifteenAgo)),

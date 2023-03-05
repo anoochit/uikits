@@ -10,7 +10,7 @@ class HomeMobile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("UI Kits"),
+        title: const Text("UI Kits"),
       ),
       body: ListView.builder(
         itemCount: listMainMenu.length,
@@ -18,7 +18,7 @@ class HomeMobile extends StatelessWidget {
           var title = listMainMenu[index].title;
           var subMenu = listMainMenu[index].subMenu;
           return ListTile(
-            leading: Icon(Icons.category),
+            leading: const Icon(Icons.category),
             title: Text(title),
             onTap: () {
               Navigator.push(

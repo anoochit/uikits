@@ -5,10 +5,10 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:uikits2/pages/10_chat/sample_data.dart';
 
 class ChatScreen02 extends StatefulWidget {
-  ChatScreen02({Key? key}) : super(key: key);
+  const ChatScreen02({super.key});
 
   @override
-  _ChatScreen02State createState() => _ChatScreen02State();
+  State<ChatScreen02> createState() => _ChatScreen02State();
 }
 
 class _ChatScreen02State extends State<ChatScreen02> {
@@ -19,11 +19,16 @@ class _ChatScreen02State extends State<ChatScreen02> {
       appBar: AppBar(
         title: Row(
           children: [
-            Text("John Doe", style: TextStyle(color: Colors.black)),
-            Spacer(),
+            const Text(
+              "John Doe",
+              style: TextStyle(
+                color: Colors.black,
+              ),
+            ),
+            const Spacer(),
             Container(
-              padding: EdgeInsets.all(8),
-              child: CircleAvatar(
+              padding: const EdgeInsets.all(8),
+              child: const CircleAvatar(
                 radius: 20,
                 backgroundImage: AssetImage('assets/images/avatar.png'),
               ),
@@ -32,7 +37,7 @@ class _ChatScreen02State extends State<ChatScreen02> {
         ),
         titleSpacing: 0,
         backgroundColor: Colors.white,
-        iconTheme: IconThemeData(color: Colors.black),
+        iconTheme: const IconThemeData(color: Colors.black),
         elevation: 0,
       ),
       body: SafeArea(
@@ -62,46 +67,45 @@ class _ChatScreen02State extends State<ChatScreen02> {
                 ),
               ),
               // toolbar
-              Container(
-                child: Column(
-                  children: [
-                    Divider(height: 1, thickness: 1),
-                    Row(
-                      children: [
-                        IconButton(
-                          icon: Icon(FontAwesomeIcons.plus),
-                          onPressed: () {},
+              Column(
+                children: [
+                  const Divider(height: 1, thickness: 1),
+                  Row(
+                    children: [
+                      IconButton(
+                        icon: const Icon(FontAwesomeIcons.plus),
+                        onPressed: () {},
+                      ),
+                      IconButton(
+                        icon: const Icon(FontAwesomeIcons.image),
+                        onPressed: () {},
+                      ),
+                      IconButton(
+                        icon: const Icon(FontAwesomeIcons.noteSticky),
+                        onPressed: () {},
+                      ),
+                      Container(
+                        height: 40,
+                        width: constraints.maxWidth - (200),
+                        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.grey.shade200),
+                          borderRadius: BorderRadius.circular(30),
                         ),
-                        IconButton(
-                          icon: Icon(FontAwesomeIcons.image),
-                          onPressed: () {},
-                        ),
-                        IconButton(
-                          icon: Icon(FontAwesomeIcons.noteSticky),
-                          onPressed: () {},
-                        ),
-                        Container(
-                          height: 40,
-                          width: constraints.maxWidth - (200),
-                          padding: EdgeInsets.symmetric(horizontal: 16.0),
-                          decoration: BoxDecoration(
-                              border: Border.all(color: Colors.grey.shade200),
-                              borderRadius: BorderRadius.circular(30)),
-                          child: TextFormField(
-                            decoration: InputDecoration(
-                              border: InputBorder.none,
-                              hintText: 'Type your message here',
-                            ),
+                        child: TextFormField(
+                          decoration: const InputDecoration(
+                            border: InputBorder.none,
+                            hintText: 'Type your message here',
                           ),
                         ),
-                        IconButton(
-                          icon: Icon(FontAwesomeIcons.paperPlane),
-                          onPressed: () {},
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
+                      ),
+                      IconButton(
+                        icon: const Icon(FontAwesomeIcons.paperPlane),
+                        onPressed: () {},
+                      ),
+                    ],
+                  ),
+                ],
               )
             ],
           ),
@@ -124,11 +128,11 @@ class _ChatScreen02State extends State<ChatScreen02> {
         if (type == 0) {
           // text
           return Container(
-            padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
+            padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
             alignment: (owner) ? Alignment.bottomRight : Alignment.bottomLeft,
             child: Container(
               width: constraints.maxWidth * 0.6,
-              padding: EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(16.0),
               decoration: BoxDecoration(
                   color: (owner)
                       ? Theme.of(context).primaryColor
@@ -140,7 +144,7 @@ class _ChatScreen02State extends State<ChatScreen02> {
         } else if (type == 1) {
           // image
           return Container(
-            padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
+            padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
             alignment: (owner) ? Alignment.bottomRight : Alignment.bottomLeft,
             child: InkWell(
               child: Container(
@@ -156,16 +160,16 @@ class _ChatScreen02State extends State<ChatScreen02> {
               ),
               onTap: () {
                 // show image
-                log("show image = " + content);
+                log("show image = $content");
               },
             ),
           );
         } else if (type == 2) {
           // sticker
           return Container(
-            padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
+            padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
             alignment: (owner) ? Alignment.bottomRight : Alignment.bottomLeft,
-            child: Container(
+            child: SizedBox(
               width: 200,
               height: 200,
               child: Image.asset(content),
@@ -174,10 +178,10 @@ class _ChatScreen02State extends State<ChatScreen02> {
         } else if (type == 3) {
           // audio
           return Container(
-            padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
+            padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
             alignment: (owner) ? Alignment.bottomRight : Alignment.bottomLeft,
             child: InkWell(
-              child: Container(
+              child: SizedBox(
                 width: 200,
                 height: 200,
                 child: Container(
@@ -200,17 +204,17 @@ class _ChatScreen02State extends State<ChatScreen02> {
               ),
               onTap: () {
                 // play audio
-                log("play audio = " + content);
+                log("play audio = $content");
               },
             ),
           );
         } else if (type == 4) {
           // video
           return Container(
-            padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
+            padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
             alignment: (owner) ? Alignment.bottomRight : Alignment.bottomLeft,
             child: InkWell(
-              child: Container(
+              child: SizedBox(
                 width: 200,
                 height: 200,
                 child: Container(
@@ -233,12 +237,12 @@ class _ChatScreen02State extends State<ChatScreen02> {
               ),
               onTap: () {
                 // play video
-                log("play video = " + content);
+                log("play video = $content");
               },
             ),
           );
         } else {
-          return Text("not support message type");
+          return const Text("not support message type");
         }
       },
     );

@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:photo_view/photo_view.dart';
 
 class PhotoScreen03 extends StatefulWidget {
-  PhotoScreen03({Key? key}) : super(key: key);
+  const PhotoScreen03({super.key});
 
   @override
-  _PhotoScreen03State createState() => _PhotoScreen03State();
+  State<PhotoScreen03> createState() => _PhotoScreen03State();
 }
 
 class _PhotoScreen03State extends State<PhotoScreen03> {
@@ -13,10 +13,10 @@ class _PhotoScreen03State extends State<PhotoScreen03> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Photos"),
+        title: const Text("Photos"),
       ),
       body: PhotoView(
-        imageProvider: AssetImage("assets/images/placeholder.png"),
+        imageProvider: const AssetImage("assets/images/placeholder.png"),
         enableRotation: true,
       ),
     );

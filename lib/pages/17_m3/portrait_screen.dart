@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:uikits2/pages/17_m3/consts.dart';
 
 class PortraitScreen extends StatefulWidget {
-  PortraitScreen({Key? key}) : super(key: key);
+  const PortraitScreen({Key? key}) : super(key: key);
 
   @override
   State<PortraitScreen> createState() => _PortraitScreenState();
@@ -17,7 +17,7 @@ class _PortraitScreenState extends State<PortraitScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Portrait Screen"),
+        title: const Text("Portrait Screen"),
       ),
       // indexed stack
       body: IndexedStack(
@@ -35,7 +35,7 @@ class _PortraitScreenState extends State<PortraitScreen> {
             .map(
               (item) => NavigationDestination(
                 icon: Icon(item.icon),
-                selectedIcon: Icon(item.selected_icon),
+                selectedIcon: Icon(item.selectedIcon),
                 label: item.title,
                 tooltip: item.title,
               ),

@@ -2,10 +2,10 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 class WalkthroughScreen01 extends StatefulWidget {
-  WalkthroughScreen01({Key? key}) : super(key: key);
+  const WalkthroughScreen01({super.key});
 
   @override
-  _WalkthroughScreen01State createState() => _WalkthroughScreen01State();
+  State<WalkthroughScreen01> createState() => _WalkthroughScreen01State();
 }
 
 class _WalkthroughScreen01State extends State<WalkthroughScreen01> {
@@ -13,25 +13,37 @@ class _WalkthroughScreen01State extends State<WalkthroughScreen01> {
   List<Widget> listCarousel(BuildContext context) {
     return [
       CarouselPage(
-          image:
-              Image.asset('assets/images/placeholder.png', fit: BoxFit.cover),
-          title: "Instruction Page 1",
-          subtitle: "Instruction 1 Description"),
+        image: Image.asset(
+          'assets/images/placeholder.png',
+          fit: BoxFit.cover,
+        ),
+        title: "Instruction Page 1",
+        subtitle: "Instruction 1 Description",
+      ),
       CarouselPage(
-          image:
-              Image.asset('assets/images/placeholder.png', fit: BoxFit.cover),
-          title: "Instruction Page 2",
-          subtitle: "Instruction 2 Description"),
+        image: Image.asset(
+          'assets/images/placeholder.png',
+          fit: BoxFit.cover,
+        ),
+        title: "Instruction Page 2",
+        subtitle: "Instruction 2 Description",
+      ),
       CarouselPage(
-          image:
-              Image.asset('assets/images/placeholder.png', fit: BoxFit.cover),
-          title: "Instruction Page 3",
-          subtitle: "Instruction 3 Description"),
+        image: Image.asset(
+          'assets/images/placeholder.png',
+          fit: BoxFit.cover,
+        ),
+        title: "Instruction Page 3",
+        subtitle: "Instruction 3 Description",
+      ),
       CarouselPage(
-          image:
-              Image.asset('assets/images/placeholder.png', fit: BoxFit.cover),
-          title: "Instruction Page 4",
-          subtitle: "Instruction 4 Description"),
+        image: Image.asset(
+          'assets/images/placeholder.png',
+          fit: BoxFit.cover,
+        ),
+        title: "Instruction Page 4",
+        subtitle: "Instruction 4 Description",
+      ),
     ];
   }
 
@@ -45,7 +57,7 @@ class _WalkthroughScreen01State extends State<WalkthroughScreen01> {
       body: LayoutBuilder(
         builder: (context, constraints) => Stack(
           children: [
-            Container(
+            SizedBox(
               width: constraints.maxWidth,
               height: constraints.maxHeight,
               child: CarouselSlider(
@@ -66,7 +78,7 @@ class _WalkthroughScreen01State extends State<WalkthroughScreen01> {
             ),
             Container(
               alignment: Alignment.bottomCenter,
-              padding: EdgeInsets.only(bottom: 32.0),
+              padding: const EdgeInsets.only(bottom: 32.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: listCarouselPage.map((item) {
@@ -74,8 +86,8 @@ class _WalkthroughScreen01State extends State<WalkthroughScreen01> {
                   return Container(
                     width: _current == index ? 12.0 : 8.0,
                     height: _current == index ? 12.0 : 8.0,
-                    margin:
-                        EdgeInsets.symmetric(vertical: 10.0, horizontal: 2.0),
+                    margin: const EdgeInsets.symmetric(
+                        vertical: 10.0, horizontal: 2.0),
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       color: _current == index ? Colors.grey : Colors.grey[300],
@@ -86,9 +98,9 @@ class _WalkthroughScreen01State extends State<WalkthroughScreen01> {
             ),
             Container(
               alignment: Alignment.bottomRight,
-              padding: EdgeInsets.only(bottom: 24.0, right: 16.0),
+              padding: const EdgeInsets.only(bottom: 24.0, right: 16.0),
               child: TextButton(
-                child: Text("Skip"),
+                child: const Text("Skip"),
                 onPressed: () {
                   // place skip function
                 },
@@ -118,11 +130,11 @@ class CarouselPage extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, constraints) => Stack(
         children: [
-          Container(
+          SizedBox(
               width: constraints.maxWidth,
               height: constraints.maxHeight,
               child: image),
-          Container(
+          SizedBox(
             width: constraints.maxWidth,
             height: constraints.maxHeight,
             child: Column(

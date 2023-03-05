@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:timelines/timelines.dart';
 
 class ActivityScreen05 extends StatefulWidget {
-  ActivityScreen05({Key? key}) : super(key: key);
+  const ActivityScreen05({super.key});
 
   @override
-  _ActivityScreen05State createState() => _ActivityScreen05State();
+  State<ActivityScreen05> createState() => _ActivityScreen05State();
 }
 
 class _ActivityScreen05State extends State<ActivityScreen05> {
@@ -13,7 +13,7 @@ class _ActivityScreen05State extends State<ActivityScreen05> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Activity"),
+        title: const Text("Activity"),
       ),
       body: LayoutBuilder(
         builder: (context, constraints) => Column(
@@ -28,13 +28,13 @@ class _ActivityScreen05State extends State<ActivityScreen05> {
                     contents: Card(
                       child: Container(
                         width: constraints.maxWidth * 0.8,
-                        padding: EdgeInsets.all(16.0),
-                        child: Text(
+                        padding: const EdgeInsets.all(16.0),
+                        child: const Text(
                           'Nulla tempor cillum deserunt id ipsum consectetur nulla elit dolor occaecat esse. Veniam veniam duis velit dolor fugiat. Amet enim sit aliquip ea deserunt magna velit est ipsum quis Lorem deserunt.',
                         ),
                       ),
                     ),
-                    node: TimelineNode(
+                    node: const TimelineNode(
                       indicator: DotIndicator(),
                       startConnector: SolidLineConnector(),
                       endConnector: SolidLineConnector(),

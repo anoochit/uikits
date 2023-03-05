@@ -2,10 +2,10 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 class WalkthroughScreen04 extends StatefulWidget {
-  WalkthroughScreen04({Key? key}) : super(key: key);
+  const WalkthroughScreen04({super.key});
 
   @override
-  _WalkthroughScreen04State createState() => _WalkthroughScreen04State();
+  State<WalkthroughScreen04> createState() => _WalkthroughScreen04State();
 }
 
 class _WalkthroughScreen04State extends State<WalkthroughScreen04> {
@@ -47,7 +47,7 @@ class _WalkthroughScreen04State extends State<WalkthroughScreen04> {
           children: [
             Positioned(
               top: 64,
-              child: Container(
+              child: SizedBox(
                 width: constraints.maxWidth,
                 height: constraints.maxHeight,
                 child: CarouselSlider(
@@ -69,7 +69,7 @@ class _WalkthroughScreen04State extends State<WalkthroughScreen04> {
             ),
             Container(
               alignment: Alignment.bottomCenter,
-              padding: EdgeInsets.only(bottom: 120.0),
+              padding: const EdgeInsets.only(bottom: 120.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: listCarouselPage.map((item) {
@@ -77,8 +77,8 @@ class _WalkthroughScreen04State extends State<WalkthroughScreen04> {
                   return Container(
                     width: _current == index ? 12.0 : 8.0,
                     height: _current == index ? 12.0 : 8.0,
-                    margin:
-                        EdgeInsets.symmetric(vertical: 10.0, horizontal: 2.0),
+                    margin: const EdgeInsets.symmetric(
+                        vertical: 10.0, horizontal: 2.0),
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       color: _current == index ? Colors.grey : Colors.grey[300],
@@ -89,7 +89,7 @@ class _WalkthroughScreen04State extends State<WalkthroughScreen04> {
             ),
             Container(
               alignment: Alignment.bottomCenter,
-              padding: EdgeInsets.all(32.0),
+              padding: const EdgeInsets.all(32.0),
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   minimumSize: Size(
@@ -98,7 +98,7 @@ class _WalkthroughScreen04State extends State<WalkthroughScreen04> {
                           : constraints.maxWidth,
                       50),
                 ),
-                child: Text("Continue"),
+                child: const Text("Continue"),
                 onPressed: () {
                   // place sign up function here
                 },
@@ -128,7 +128,7 @@ class CarouselPage extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, constraints) => Stack(
         children: [
-          Container(
+          SizedBox(
             width: (constraints.maxWidth > 412)
                 ? (constraints.maxWidth * 0.3)
                 : constraints.maxWidth,
@@ -137,7 +137,7 @@ class CarouselPage extends StatelessWidget {
                 : constraints.maxWidth,
             child: ClipOval(child: image),
           ),
-          Container(
+          SizedBox(
             width: (constraints.maxWidth > 412)
                 ? (constraints.maxWidth * 0.3)
                 : constraints.maxWidth,

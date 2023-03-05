@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class LoadingScreen03 extends StatefulWidget {
-  LoadingScreen03({Key? key}) : super(key: key);
+  const LoadingScreen03({super.key});
 
   @override
-  _LoadingScreen03State createState() => _LoadingScreen03State();
+  State<LoadingScreen03> createState() => _LoadingScreen03State();
 }
 
 class _LoadingScreen03State extends State<LoadingScreen03> {
@@ -15,8 +15,8 @@ class _LoadingScreen03State extends State<LoadingScreen03> {
         builder: (context, constraints) => Center(
           child: Column(
             children: [
-              Spacer(),
-              Container(
+              const Spacer(),
+              SizedBox(
                 width: (constraints.maxWidth > 412)
                     ? 400
                     : (constraints.maxWidth * 0.8),
@@ -28,19 +28,17 @@ class _LoadingScreen03State extends State<LoadingScreen03> {
                   fit: BoxFit.cover,
                 ),
               ),
-              Container(
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: Text("Title", style: TextStyle(fontSize: 32)),
-                    ),
-                    Text("Sub Title", style: TextStyle(fontSize: 16)),
-                  ],
-                ),
+              Column(
+                children: const [
+                  Padding(
+                    padding: EdgeInsets.all(16.0),
+                    child: Text("Title", style: TextStyle(fontSize: 32)),
+                  ),
+                  Text("Sub Title", style: TextStyle(fontSize: 16)),
+                ],
               ),
-              Spacer(),
-              Container(
+              const Spacer(),
+              SizedBox(
                 width: 40,
                 height: 40,
                 child: CircularProgressIndicator(
@@ -49,8 +47,8 @@ class _LoadingScreen03State extends State<LoadingScreen03> {
                 ),
               ),
               Container(
-                padding: EdgeInsets.all(32.0),
-                child: Text(
+                padding: const EdgeInsets.all(32.0),
+                child: const Text(
                   "Please Wait",
                   style: TextStyle(fontSize: 16),
                 ),

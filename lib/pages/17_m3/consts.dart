@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 class NavMenu {
   final String title;
   final IconData icon;
-  final IconData selected_icon;
+  final IconData selectedIcon;
 
-  NavMenu(this.title, this.icon, this.selected_icon);
+  NavMenu(this.title, this.icon, this.selectedIcon);
 }
 
 final navMenuList = [
@@ -18,7 +18,7 @@ final navMenuList = [
 class BlankScreen extends StatelessWidget {
   final String text;
 
-  BlankScreen({
+  const BlankScreen({
     Key? key,
     required this.text,
   }) : super(key: key);
@@ -31,10 +31,9 @@ class BlankScreen extends StatelessWidget {
         itemBuilder: (BuildContext context, int index) {
           return ListTile(
             leading: CircleAvatar(
-              child:
-                  Text('${text.substring(0, 1)[0].toString().toUpperCase()}'),
+              child: Text(text.substring(0, 1)[0].toString().toUpperCase()),
             ),
-            title: Text('${text} ${index + 1}'),
+            title: Text('$text ${index + 1}'),
           );
         },
       ),

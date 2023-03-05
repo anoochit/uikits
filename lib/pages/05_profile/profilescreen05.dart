@@ -3,10 +3,10 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:timeago/timeago.dart' as timeago;
 
 class ProfileScreen05 extends StatefulWidget {
-  ProfileScreen05({Key? key}) : super(key: key);
+  const ProfileScreen05({super.key});
 
   @override
-  _ProfileScreen05State createState() => _ProfileScreen05State();
+  State<ProfileScreen05> createState() => _ProfileScreen05State();
 }
 
 class _ProfileScreen05State extends State<ProfileScreen05> {
@@ -20,7 +20,7 @@ class _ProfileScreen05State extends State<ProfileScreen05> {
               children: [
                 Stack(
                   children: [
-                    Container(
+                    SizedBox(
                       width: constraints.maxWidth,
                       height: 220,
                       child: Image.asset(
@@ -34,13 +34,13 @@ class _ProfileScreen05State extends State<ProfileScreen05> {
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             // replace avatar image here
-                            CircleAvatar(
+                            const CircleAvatar(
                               radius: 48,
                               backgroundImage:
                                   AssetImage('assets/images/avatar.png'),
                             ),
                             Container(
-                              padding: EdgeInsets.all(8.0),
+                              padding: const EdgeInsets.all(8.0),
                               // replace display name here
                               child: Text(
                                 "John Doe",
@@ -49,7 +49,7 @@ class _ProfileScreen05State extends State<ProfileScreen05> {
                               ),
                             ),
                             Container(
-                              padding: EdgeInsets.all(4.0),
+                              padding: const EdgeInsets.all(4.0),
                               // replace display name here
                               child: Text(
                                 "@johndoe",
@@ -63,13 +63,13 @@ class _ProfileScreen05State extends State<ProfileScreen05> {
                   ],
                 ),
                 Container(
-                  padding: EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(8.0),
                   width: (constraints.maxWidth > 412)
                       ? (constraints.maxWidth * 0.6)
                       : constraints.maxWidth,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
+                    children: const [
                       // place statistic here
                       BlockText(title: "Posts", value: 200),
                       BlockText(title: "Followers", value: 200),
@@ -78,11 +78,11 @@ class _ProfileScreen05State extends State<ProfileScreen05> {
                   ),
                 ),
                 ListView.builder(
-                  physics: ScrollPhysics(),
+                  physics: const ScrollPhysics(),
                   shrinkWrap: true,
                   itemCount: 20,
                   itemBuilder: (context, index) {
-                    return PostItem();
+                    return const PostItem();
                   },
                 )
               ],
@@ -101,7 +101,7 @@ class PostItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final fifteenAgo = new DateTime.now().subtract(new Duration(minutes: 15));
+    final fifteenAgo = DateTime.now().subtract(const Duration(minutes: 15));
 
     return LayoutBuilder(
       builder: (context, constraints) => Padding(
@@ -114,7 +114,7 @@ class PostItem extends StatelessWidget {
           clipBehavior: Clip.antiAliasWithSaveLayer,
           child: Column(
             children: [
-              Container(
+              SizedBox(
                 width: constraints.maxWidth,
                 height: constraints.maxWidth,
                 // replace image
@@ -128,20 +128,20 @@ class PostItem extends StatelessWidget {
                 child: Row(
                   children: [
                     TextButton.icon(
-                      icon: Icon(FontAwesomeIcons.thumbsUp),
+                      icon: const Icon(FontAwesomeIcons.thumbsUp),
                       onPressed: () {
                         // place link function here
                       },
-                      label: Text("Like"),
+                      label: const Text("Like"),
                     ),
                     TextButton.icon(
-                      icon: Icon(FontAwesomeIcons.comment),
+                      icon: const Icon(FontAwesomeIcons.comment),
                       onPressed: () {
                         // place comment function here
                       },
-                      label: Text("Comment"),
+                      label: const Text("Comment"),
                     ),
-                    Spacer(),
+                    const Spacer(),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(timeago.format(fifteenAgo)),
@@ -176,7 +176,7 @@ class BlockText extends StatelessWidget {
         children: [
           Text(
             '$value',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
           ),
           Text(title),
         ],

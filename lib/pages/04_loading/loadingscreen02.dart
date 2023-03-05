@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class LoadingScreen02 extends StatefulWidget {
-  LoadingScreen02({Key? key}) : super(key: key);
+  const LoadingScreen02({super.key});
 
   @override
-  _LoadingScreen02State createState() => _LoadingScreen02State();
+  State<LoadingScreen02> createState() => _LoadingScreen02State();
 }
 
 class _LoadingScreen02State extends State<LoadingScreen02> {
@@ -15,8 +15,8 @@ class _LoadingScreen02State extends State<LoadingScreen02> {
         builder: (context, constraints) => Center(
           child: Column(
             children: [
-              Spacer(),
-              Container(
+              const Spacer(),
+              SizedBox(
                 width: 100,
                 height: 100,
                 child: CircularProgressIndicator(
@@ -24,18 +24,16 @@ class _LoadingScreen02State extends State<LoadingScreen02> {
                 ),
               ),
               Container(
-                padding: EdgeInsets.all(32.0),
+                padding: const EdgeInsets.all(32.0),
                 child: Text(
                   "Please Wait",
                   style: Theme.of(context).textTheme.headlineLarge,
                 ),
               ),
-              Container(
-                child: Text(
-                  "We are working on your task",
-                ),
+              const Text(
+                "We are working on your task",
               ),
-              Spacer(),
+              const Spacer(),
             ],
           ),
         ),

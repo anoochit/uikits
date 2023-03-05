@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:timelines/timelines.dart';
 
 class FeedScreen05 extends StatefulWidget {
-  FeedScreen05({Key? key}) : super(key: key);
+  const FeedScreen05({super.key});
 
   @override
-  _FeedScreen05State createState() => _FeedScreen05State();
+  State<FeedScreen05> createState() => _FeedScreen05State();
 }
 
 class _FeedScreen05State extends State<FeedScreen05> {
@@ -13,7 +13,7 @@ class _FeedScreen05State extends State<FeedScreen05> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Timeline"),
+        title: const Text("Timeline"),
       ),
       body: LayoutBuilder(
         builder: (context, constraints) => Column(

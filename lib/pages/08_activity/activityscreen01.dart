@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:timeago/timeago.dart' as timeago;
 
 class ActivityScreen01 extends StatefulWidget {
-  ActivityScreen01({Key? key}) : super(key: key);
+  const ActivityScreen01({super.key});
 
   @override
-  _ActivityScreen01State createState() => _ActivityScreen01State();
+  State<ActivityScreen01> createState() => _ActivityScreen01State();
 }
 
 class _ActivityScreen01State extends State<ActivityScreen01> {
@@ -13,7 +13,7 @@ class _ActivityScreen01State extends State<ActivityScreen01> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Activity"),
+        title: const Text("Activity"),
       ),
       body: LayoutBuilder(
         builder: (context, constraints) => Column(
@@ -26,60 +26,55 @@ class _ActivityScreen01State extends State<ActivityScreen01> {
                 child: ListView.builder(
                   itemCount: listActivity.length,
                   itemBuilder: (context, index) {
-                    return Container(
-                      child: Column(
-                        children: [
-                          Row(
-                            children: [
-                              Container(
-                                padding: EdgeInsets.all(8.0),
-                                child: CircleAvatar(
-                                  backgroundImage:
-                                      AssetImage(listActivity[index].avatar),
-                                ),
+                    return Column(
+                      children: [
+                        Row(
+                          children: [
+                            Container(
+                              padding: const EdgeInsets.all(8.0),
+                              child: CircleAvatar(
+                                backgroundImage:
+                                    AssetImage(listActivity[index].avatar),
                               ),
-                              Container(
-                                child: Text(
-                                  listActivity[index].displeName,
-                                  style: TextStyle(fontWeight: FontWeight.bold),
-                                ),
-                              ),
-                              Container(
-                                padding: EdgeInsets.only(left: 8.0),
-                                child: Text(listActivity[index].action),
-                              ),
-                              Spacer(),
-                              Container(
-                                padding: EdgeInsets.all(8.0),
-                                child: Text(
-                                  timeago.format(listActivity[index].timestamp),
-                                ),
-                              ),
-                            ],
-                          ),
-                          Container(
-                            width: constraints.maxWidth,
-                            height: 200,
-                            child: ListView.builder(
-                              scrollDirection: Axis.horizontal,
-                              itemCount: listActivity[index].imageList.length,
-                              itemBuilder: (context, imageIndex) {
-                                return Container(
-                                  width: 200,
-                                  height: 200,
-                                  padding: EdgeInsets.all(1),
-                                  child: Image.asset(
-                                    listActivity[index]
-                                        .imageList[imageIndex]
-                                        .url,
-                                    fit: BoxFit.cover,
-                                  ),
-                                );
-                              },
                             ),
+                            Text(
+                              listActivity[index].displeName,
+                              style:
+                                  const TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            Container(
+                              padding: const EdgeInsets.only(left: 8.0),
+                              child: Text(listActivity[index].action),
+                            ),
+                            const Spacer(),
+                            Container(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                timeago.format(listActivity[index].timestamp),
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          width: constraints.maxWidth,
+                          height: 200,
+                          child: ListView.builder(
+                            scrollDirection: Axis.horizontal,
+                            itemCount: listActivity[index].imageList.length,
+                            itemBuilder: (context, imageIndex) {
+                              return Container(
+                                width: 200,
+                                height: 200,
+                                padding: const EdgeInsets.all(1),
+                                child: Image.asset(
+                                  listActivity[index].imageList[imageIndex].url,
+                                  fit: BoxFit.cover,
+                                ),
+                              );
+                            },
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     );
                   },
                 ),
@@ -114,7 +109,7 @@ final listActivity = [
     "John Doe",
     "assets/images/avatar.png",
     "liked your photo",
-    new DateTime.now().subtract(new Duration(minutes: 5)),
+    DateTime.now().subtract(const Duration(minutes: 5)),
     [
       UserImage("assets/images/placeholder.png"),
       UserImage("assets/images/placeholder.png"),
@@ -124,7 +119,7 @@ final listActivity = [
     "Nancy Joe",
     "assets/images/avatar.png",
     "liked your photo",
-    new DateTime.now().subtract(new Duration(minutes: 10)),
+    DateTime.now().subtract(const Duration(minutes: 10)),
     [
       UserImage("assets/images/placeholder.png"),
       UserImage("assets/images/placeholder.png"),
@@ -137,7 +132,7 @@ final listActivity = [
     "July Dun",
     "assets/images/avatar.png",
     "liked your photo",
-    new DateTime.now().subtract(new Duration(minutes: 15)),
+    DateTime.now().subtract(const Duration(minutes: 15)),
     [
       UserImage("assets/images/placeholder.png"),
       UserImage("assets/images/placeholder.png"),
@@ -148,7 +143,7 @@ final listActivity = [
     "Jelly Bun",
     "assets/images/avatar.png",
     "liked your photo",
-    new DateTime.now().subtract(new Duration(minutes: 15)),
+    DateTime.now().subtract(const Duration(minutes: 20)),
     [
       UserImage("assets/images/placeholder.png"),
       UserImage("assets/images/placeholder.png"),

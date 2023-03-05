@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class StartScreen05 extends StatefulWidget {
-  StartScreen05({Key? key}) : super(key: key);
+  const StartScreen05({super.key});
 
   @override
-  _StartScreen05State createState() => _StartScreen05State();
+  State<StartScreen05> createState() => _StartScreen05State();
 }
 
 class _StartScreen05State extends State<StartScreen05> {
@@ -27,12 +27,16 @@ class _StartScreen05State extends State<StartScreen05> {
             ),
             Container(
               alignment: Alignment.bottomCenter,
-              padding: EdgeInsets.only(left: 16.0, right: 16.0, bottom: 32),
+              padding: const EdgeInsets.only(
+                left: 16.0,
+                right: 16.0,
+                bottom: 32,
+              ),
               child: Row(
                 children: [
-                  Spacer(),
+                  const Spacer(),
                   Container(
-                    padding: EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(8.0),
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         minimumSize: Size(
@@ -41,14 +45,14 @@ class _StartScreen05State extends State<StartScreen05> {
                                 : (constraints.maxWidth * 0.40),
                             50),
                       ),
-                      child: Text("Sign up"),
+                      child: const Text("Sign up"),
                       onPressed: () {
                         // place sign up function here
                       },
                     ),
                   ),
                   Container(
-                    padding: EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(8.0),
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         minimumSize: Size(
@@ -57,13 +61,13 @@ class _StartScreen05State extends State<StartScreen05> {
                                 : (constraints.maxWidth * 0.40),
                             50),
                       ),
-                      child: Text("Sign in"),
+                      child: const Text("Sign in"),
                       onPressed: () {
                         // place sign in function here
                       },
                     ),
                   ),
-                  Spacer(),
+                  const Spacer(),
                 ],
               ),
             )

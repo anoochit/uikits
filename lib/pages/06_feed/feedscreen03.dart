@@ -3,10 +3,10 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:timeago/timeago.dart' as timeago;
 
 class FeedScreen03 extends StatefulWidget {
-  FeedScreen03({Key? key}) : super(key: key);
+  const FeedScreen03({super.key});
 
   @override
-  _FeedScreen03State createState() => _FeedScreen03State();
+  State<FeedScreen03> createState() => _FeedScreen03State();
 }
 
 class _FeedScreen03State extends State<FeedScreen03> {
@@ -14,7 +14,7 @@ class _FeedScreen03State extends State<FeedScreen03> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Feed"),
+        title: const Text("Feed"),
       ),
       body: LayoutBuilder(
         builder: (context, constraints) => Center(
@@ -25,7 +25,7 @@ class _FeedScreen03State extends State<FeedScreen03> {
                 child: MediaQuery.removePadding(
                   context: context,
                   removeTop: true,
-                  child: Container(
+                  child: SizedBox(
                     width: (constraints.maxWidth > 412)
                         ? (constraints.maxWidth * 0.5)
                         : constraints.maxWidth,
@@ -33,7 +33,7 @@ class _FeedScreen03State extends State<FeedScreen03> {
                       shrinkWrap: true,
                       itemCount: 10,
                       itemBuilder: (context, index) {
-                        return PostItem();
+                        return const PostItem();
                       },
                     ),
                   ),
@@ -54,7 +54,7 @@ class PostItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final fifteenAgo = new DateTime.now().subtract(new Duration(minutes: 15));
+    final fifteenAgo = DateTime.now().subtract(const Duration(minutes: 15));
 
     return LayoutBuilder(
       builder: (context, constraints) => Padding(
@@ -69,11 +69,11 @@ class PostItem extends StatelessWidget {
             child: Column(
               children: [
                 Container(
-                  padding: EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(8.0),
                   child: Row(
                     children: [
                       // replace avatar image here
-                      CircleAvatar(
+                      const CircleAvatar(
                         radius: 24,
                         backgroundImage: AssetImage('assets/images/avatar.png'),
                       ),
@@ -92,14 +92,14 @@ class PostItem extends StatelessWidget {
                             padding:
                                 const EdgeInsets.symmetric(horizontal: 8.0),
                             child: Text(timeago.format(fifteenAgo),
-                                style: TextStyle(fontSize: 12.0)),
+                                style: const TextStyle(fontSize: 12.0)),
                           )
                         ],
                       ),
                     ],
                   ),
                 ),
-                Container(
+                SizedBox(
                   height: constraints.maxWidth,
                   // replace image
                   child: Image.asset(
@@ -108,9 +108,9 @@ class PostItem extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  padding: EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(8.0),
                   // replace post description
-                  child: Text(
+                  child: const Text(
                     "Amet anim aliquip cillum pariatur non non dolor velit non esse mollit ut veniam nostrud. Ullamco ex eu culpa voluptate ea consectetur quis in. Ex aliquip culpa dolore duis officia nostrud culpa magna minim cupidatat amet tempor aliquip nulla.",
                     maxLines: 3,
                     overflow: TextOverflow.ellipsis,
@@ -128,26 +128,26 @@ class PostItem extends StatelessWidget {
                   child: Row(
                     children: [
                       TextButton.icon(
-                        icon: Icon(FontAwesomeIcons.thumbsUp),
+                        icon: const Icon(FontAwesomeIcons.thumbsUp),
                         onPressed: () {
                           // place link function here
                         },
-                        label: Text("Like"),
+                        label: const Text("Like"),
                       ),
                       TextButton.icon(
-                        icon: Icon(FontAwesomeIcons.comment),
+                        icon: const Icon(FontAwesomeIcons.comment),
                         onPressed: () {
                           // place comment function here
                         },
-                        label: Text("Comment"),
+                        label: const Text("Comment"),
                       ),
-                      Spacer(),
+                      const Spacer(),
                       TextButton.icon(
-                        icon: Icon(FontAwesomeIcons.share),
+                        icon: const Icon(FontAwesomeIcons.share),
                         onPressed: () {
                           // place comment function here
                         },
-                        label: Text("Share"),
+                        label: const Text("Share"),
                       ),
                     ],
                   ),

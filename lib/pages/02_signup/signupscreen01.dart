@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class SignUpScreen01 extends StatefulWidget {
-  SignUpScreen01({Key? key}) : super(key: key);
+  const SignUpScreen01({super.key});
 
   @override
-  _SignUpScreen01State createState() => _SignUpScreen01State();
+  State<SignUpScreen01> createState() => _SignUpScreen01State();
 }
 
 class _SignUpScreen01State extends State<SignUpScreen01> {
@@ -14,7 +14,7 @@ class _SignUpScreen01State extends State<SignUpScreen01> {
       body: LayoutBuilder(
         builder: (context, constraints) => Stack(
           children: [
-            Container(
+            SizedBox(
               width: constraints.maxWidth,
               height: constraints.maxHeight,
               child: Image.asset(
@@ -24,14 +24,14 @@ class _SignUpScreen01State extends State<SignUpScreen01> {
             ),
             Center(
               child: Container(
-                padding: EdgeInsets.symmetric(
+                padding: const EdgeInsets.symmetric(
                   horizontal: 32.0,
                 ),
                 child: Column(
                   children: [
-                    Spacer(),
+                    const Spacer(),
                     Container(
-                      padding: EdgeInsets.symmetric(
+                      padding: const EdgeInsets.symmetric(
                         horizontal: 16,
                         vertical: 8.0,
                       ),
@@ -41,34 +41,36 @@ class _SignUpScreen01State extends State<SignUpScreen01> {
                       ),
                     ),
                     Container(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 16, vertical: 8.0),
-                      child: Text("Please enter your Email and password"),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 16,
+                        vertical: 8.0,
+                      ),
+                      child: const Text("Please enter your Email and password"),
                     ),
-                    SizedBox(height: 64.0),
+                    const SizedBox(height: 64.0),
                     Container(
                       width: (constraints.maxWidth > 412)
                           ? (constraints.maxWidth * 0.5)
                           : (constraints.maxWidth),
-                      padding: EdgeInsets.symmetric(horizontal: 16),
+                      padding: const EdgeInsets.symmetric(horizontal: 16),
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(32.0),
                       ),
                       child: TextFormField(
                         textAlign: TextAlign.center,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           border: InputBorder.none,
                           hintText: 'Your Email',
                         ),
                       ),
                     ),
-                    SizedBox(height: 8.0),
+                    const SizedBox(height: 8.0),
                     Container(
                       width: (constraints.maxWidth > 412)
                           ? (constraints.maxWidth * 0.5)
                           : (constraints.maxWidth),
-                      padding: EdgeInsets.symmetric(horizontal: 16),
+                      padding: const EdgeInsets.symmetric(horizontal: 16),
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(32.0),
@@ -76,14 +78,14 @@ class _SignUpScreen01State extends State<SignUpScreen01> {
                       child: TextFormField(
                         textAlign: TextAlign.center,
                         obscureText: true,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           border: InputBorder.none,
                           hintText: 'Your Password',
                         ),
                       ),
                     ),
                     Container(
-                      padding: EdgeInsets.symmetric(vertical: 16.0),
+                      padding: const EdgeInsets.symmetric(vertical: 16.0),
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
                           minimumSize: Size(
@@ -92,22 +94,22 @@ class _SignUpScreen01State extends State<SignUpScreen01> {
                                   : (constraints.maxWidth),
                               50),
                         ),
-                        child: Text("Sign in"),
+                        child: const Text("Sign in"),
                         onPressed: () {
                           // place sign in function here
                         },
                       ),
                     ),
                     Container(
-                      padding: EdgeInsets.all(16.0),
+                      padding: const EdgeInsets.all(16.0),
                       child: GestureDetector(
-                        child: Text("Don't have an account ? Signup"),
+                        child: const Text("Don't have an account ? Signup"),
                         onTap: () {
                           // place signup function here
                         },
                       ),
                     ),
-                    SizedBox(height: 16.0),
+                    const SizedBox(height: 16.0),
                   ],
                 ),
               ),

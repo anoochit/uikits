@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class FeedScreen02 extends StatefulWidget {
-  FeedScreen02({Key? key}) : super(key: key);
+  const FeedScreen02({super.key});
 
   @override
-  _FeedScreen02State createState() => _FeedScreen02State();
+  State<FeedScreen02> createState() => _FeedScreen02State();
 }
 
 class _FeedScreen02State extends State<FeedScreen02> {
@@ -14,50 +14,58 @@ class _FeedScreen02State extends State<FeedScreen02> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text("News"),
+        title: const Text("News"),
         actions: [
           IconButton(
-            icon: Icon(FontAwesomeIcons.circlePlus),
+            icon: const Icon(FontAwesomeIcons.circlePlus),
             onPressed: () {
               // place add function here
             },
           )
         ],
       ),
-      body: LayoutBuilder(
-        builder: (context, constraints) => Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 8.0, vertical: 8.0),
-              child: TextFormField(
-                decoration: InputDecoration(
-                  hintText: 'Search...',
-                  prefixIcon: Icon(FontAwesomeIcons.magnifyingGlass),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(32.0),
+      body: SingleChildScrollView(
+        child: LayoutBuilder(
+          builder: (context, constraints) => Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                padding: const EdgeInsets.all(4),
+                child: Container(
+                  height: 48,
+                  decoration: BoxDecoration(
+                    color: Colors.grey.shade200,
+                    border: Border.all(
+                      color: Colors.grey.shade100,
+                    ),
+                    borderRadius: BorderRadius.circular(64),
+                  ),
+                  child: TextFormField(
+                    decoration: const InputDecoration(
+                      hintText: 'Search',
+                      prefixIcon: Icon(FontAwesomeIcons.magnifyingGlass),
+                      border: InputBorder.none,
+                    ),
+                    onFieldSubmitted: (value) {
+                      // place submit function here
+                    },
                   ),
                 ),
-                onFieldSubmitted: (value) {
-                  // place submit function here
-                },
               ),
-            ),
-            Expanded(
-              child: MediaQuery.removePadding(
+              MediaQuery.removePadding(
                 context: context,
                 removeTop: true,
                 child: ListView.builder(
+                  physics: const ScrollPhysics(),
                   shrinkWrap: true,
                   itemCount: 10,
                   itemBuilder: (context, index) {
-                    return PostItem();
+                    return const PostItem();
                   },
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
@@ -72,33 +80,31 @@ class PostItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
-      builder: (context, constraints) => Container(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              padding: EdgeInsets.symmetric(
-                horizontal: 16.0,
-                vertical: 16.0,
-              ),
-              child: Text(
-                  "Culpa laborum aliquip labore amet. Quis aliqua minim enim ipsum cupidatat sunt minim. Consectetur laboris exercitation ullamco cillum nostrud ullamco dolore sunt id sint officia do. Minim aliquip laboris non laborum laborum laborum est mollit do adipisicing irure proident. Amet nostrud non sint incididunt eiusmod occaecat do ad culpa. Reprehenderit id sit fugiat adipisicing velit veniam proident irure eiusmod consequat aute eu."),
+      builder: (context, constraints) => Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 16.0,
+              vertical: 16.0,
             ),
-            Container(
-              padding: EdgeInsets.symmetric(
-                horizontal: 16.0,
-                vertical: 8.0,
-              ),
-              child: Text(
-                "By Display Name",
-                style: TextStyle(fontSize: 12.0),
-              ),
+            child: const Text(
+                "Culpa laborum aliquip labore amet. Quis aliqua minim enim ipsum cupidatat sunt minim. Consectetur laboris exercitation ullamco cillum nostrud ullamco dolore sunt id sint officia do. Minim aliquip laboris non laborum laborum laborum est mollit do adipisicing irure proident. Amet nostrud non sint incididunt eiusmod occaecat do ad culpa. Reprehenderit id sit fugiat adipisicing velit veniam proident irure eiusmod consequat aute eu."),
+          ),
+          Container(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 16.0,
+              vertical: 8.0,
             ),
-            Divider(
-              thickness: 1,
-            )
-          ],
-        ),
+            child: const Text(
+              "By Display Name",
+              style: TextStyle(fontSize: 12.0),
+            ),
+          ),
+          const Divider(
+            thickness: 1,
+          )
+        ],
       ),
     );
   }

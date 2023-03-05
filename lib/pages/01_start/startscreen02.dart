@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class StartScreen02 extends StatefulWidget {
-  StartScreen02({Key? key}) : super(key: key);
+  const StartScreen02({super.key});
 
   @override
-  _StartScreen02State createState() => _StartScreen02State();
+  State<StartScreen02> createState() => _StartScreen02State();
 }
 
 class _StartScreen02State extends State<StartScreen02> {
@@ -15,21 +15,23 @@ class _StartScreen02State extends State<StartScreen02> {
         builder: (context, constraints) => Center(
           child: Column(
             children: [
-              Spacer(),
+              const Spacer(),
               Container(
-                padding: EdgeInsets.all(8.0),
-                child: Text(
+                padding: const EdgeInsets.all(8.0),
+                child: const Text(
                   "Sign Up",
                   style: TextStyle(fontSize: 32),
                 ),
               ),
               Container(
-                padding: EdgeInsets.all(8.0),
-                child: Text("Use you Email address to signup new account"),
+                padding: const EdgeInsets.all(8.0),
+                child:
+                    const Text("Use you Email address to signup new account"),
               ),
-              Spacer(),
+              const Spacer(),
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 32.0, vertical: 8.0),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 32.0, vertical: 8.0),
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     minimumSize: Size(
@@ -38,14 +40,15 @@ class _StartScreen02State extends State<StartScreen02> {
                             : constraints.maxWidth,
                         50),
                   ),
-                  child: Text("Sign up with Email"),
+                  child: const Text("Sign up with Email"),
                   onPressed: () {
                     // place sign up function here
                   },
                 ),
               ),
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 32.0, vertical: 8.0),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 32.0, vertical: 8.0),
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     minimumSize: Size(
@@ -54,13 +57,13 @@ class _StartScreen02State extends State<StartScreen02> {
                             : constraints.maxWidth,
                         50),
                   ),
-                  child: Text("Sign In"),
+                  child: const Text("Sign In"),
                   onPressed: () {
                     // place sign up function here
                   },
                 ),
               ),
-              Spacer(),
+              const Spacer(),
             ],
           ),
         ),

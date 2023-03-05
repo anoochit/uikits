@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
 
 class DashboardScreen02 extends StatefulWidget {
-  DashboardScreen02({Key? key}) : super(key: key);
+  const DashboardScreen02({super.key});
 
   @override
-  _DashboardScreen02State createState() => _DashboardScreen02State();
+  State<DashboardScreen02> createState() => _DashboardScreen02State();
 }
 
 class _DashboardScreen02State extends State<DashboardScreen02> {
@@ -13,66 +13,72 @@ class _DashboardScreen02State extends State<DashboardScreen02> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Dashboard"),
+        title: const Text("Dashboard"),
         actions: [
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.add),
+            icon: const Icon(Icons.add),
           ),
         ],
       ),
       body: SingleChildScrollView(
         child: Wrap(
           direction: Axis.horizontal,
-          children: [
+          children: const [
             RadialGauge(
-                width: 2,
-                height: 2,
-                offset: 0,
-                gaugeTitle: 'Gauge 1',
-                gaugeMin: 0,
-                gaugeMax: 100,
-                gaugeValue: 90),
+              width: 2,
+              height: 2,
+              offset: 0,
+              gaugeTitle: 'Gauge 1',
+              gaugeMin: 0,
+              gaugeMax: 100,
+              gaugeValue: 90,
+            ),
             RadialGauge(
-                width: 2,
-                height: 2,
-                offset: 0,
-                gaugeTitle: 'Gauge 2',
-                gaugeMin: 0,
-                gaugeMax: 100,
-                gaugeValue: 50),
+              width: 2,
+              height: 2,
+              offset: 0,
+              gaugeTitle: 'Gauge 2',
+              gaugeMin: 0,
+              gaugeMax: 100,
+              gaugeValue: 50,
+            ),
             RadialGauge(
-                width: 1,
-                height: 1,
-                offset: 0,
-                gaugeTitle: 'Gauge 3',
-                gaugeMin: 0,
-                gaugeMax: 100,
-                gaugeValue: 40),
+              width: 1,
+              height: 1,
+              offset: 0,
+              gaugeTitle: 'Gauge 3',
+              gaugeMin: 0,
+              gaugeMax: 100,
+              gaugeValue: 40,
+            ),
             RadialGauge(
-                width: 1,
-                height: 1,
-                offset: 0,
-                gaugeTitle: 'Gauge 4',
-                gaugeMin: 0,
-                gaugeMax: 100,
-                gaugeValue: 70),
+              width: 1,
+              height: 1,
+              offset: 0,
+              gaugeTitle: 'Gauge 4',
+              gaugeMin: 0,
+              gaugeMax: 100,
+              gaugeValue: 70,
+            ),
             RadialGauge(
-                width: 1,
-                height: 1,
-                offset: 0,
-                gaugeTitle: 'Gauge 5',
-                gaugeMin: 0,
-                gaugeMax: 100,
-                gaugeValue: 55),
+              width: 1,
+              height: 1,
+              offset: 0,
+              gaugeTitle: 'Gauge 5',
+              gaugeMin: 0,
+              gaugeMax: 100,
+              gaugeValue: 55,
+            ),
             RadialGauge(
-                width: 1,
-                height: 1,
-                offset: 0,
-                gaugeTitle: 'Gauge 6',
-                gaugeMin: 0,
-                gaugeMax: 100,
-                gaugeValue: 22),
+              width: 1,
+              height: 1,
+              offset: 0,
+              gaugeTitle: 'Gauge 6',
+              gaugeMin: 0,
+              gaugeMax: 100,
+              gaugeValue: 22,
+            ),
           ],
         ),
       ),
@@ -93,26 +99,26 @@ class GridItem extends StatelessWidget {
   final double offset;
   @override
   Widget build(BuildContext context) {
-    var _width = MediaQuery.of(context).size.width - offset;
-    var _height = MediaQuery.of(context).size.height;
-    var _constrainWidth = width;
+    var width = MediaQuery.of(context).size.width - offset;
+    var height = MediaQuery.of(context).size.height;
+    var constrainWidth = width;
 
     // if mobile overide width to 4 grid
     if ((MediaQuery.of(context).size.width < 412)) {
-      _constrainWidth = 4;
+      constrainWidth = 4;
     }
 
     // Put something in this container
     return Container(
-      width: ((_width * (0.25 * _constrainWidth))),
-      height: ((_height * (0.25 * height))),
+      width: ((width * (0.25 * constrainWidth))),
+      height: ((height * (0.25 * height))),
       decoration: BoxDecoration(
         color: Colors.grey.shade50,
         border: Border.all(color: Colors.grey.shade200),
         borderRadius: BorderRadius.circular(6),
       ),
       clipBehavior: Clip.antiAliasWithSaveLayer,
-      child: Text("Put widget here"),
+      child: const Text("Put widget here"),
     );
   }
 }
@@ -142,18 +148,18 @@ class RadialGauge extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var _width = MediaQuery.of(context).size.width - offset;
-    var _height = MediaQuery.of(context).size.height;
-    var _constrainWidth = width;
+    var width = MediaQuery.of(context).size.width - offset;
+    var height = MediaQuery.of(context).size.height;
+    var constrainWidth = width;
 
     // if mobile overide width to 4 grid
     if ((MediaQuery.of(context).size.width < 412)) {
-      _constrainWidth = 4;
+      constrainWidth = 4;
     }
 
     return Container(
-      width: ((_width * (0.25 * _constrainWidth))),
-      height: ((_height * (0.25 * height))),
+      width: ((width * (0.25 * constrainWidth))),
+      height: ((height * (0.25 * height))),
       decoration: BoxDecoration(
         border: Border.all(color: Colors.grey.shade200),
         borderRadius: BorderRadius.circular(6),
@@ -163,7 +169,8 @@ class RadialGauge extends StatelessWidget {
         enableLoadingAnimation: true,
         title: GaugeTitle(
             text: gaugeTitle,
-            textStyle: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold)),
+            textStyle:
+                const TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold)),
         axes: <RadialAxis>[
           RadialAxis(
             minimum: gaugeMin,
@@ -177,10 +184,9 @@ class RadialGauge extends StatelessWidget {
             ],
             annotations: <GaugeAnnotation>[
               GaugeAnnotation(
-                widget: Container(
-                    child: Text('$gaugeValue',
-                        style: TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.bold))),
+                widget: Text('$gaugeValue',
+                    style: const TextStyle(
+                        fontSize: 16, fontWeight: FontWeight.bold)),
                 angle: 90,
                 positionFactor: 0.75,
               )

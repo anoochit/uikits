@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class CreateScreen01 extends StatefulWidget {
-  CreateScreen01({Key? key}) : super(key: key);
+  const CreateScreen01({super.key});
 
   @override
-  _CreateScreen01State createState() => _CreateScreen01State();
+  State<CreateScreen01> createState() => _CreateScreen01State();
 }
 
 class _CreateScreen01State extends State<CreateScreen01> {
@@ -12,10 +12,10 @@ class _CreateScreen01State extends State<CreateScreen01> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Create"),
+        title: const Text("Create"),
         actions: [
           IconButton(
-            icon: Icon(Icons.send),
+            icon: const Icon(Icons.send),
             onPressed: () {
               // place save function here
             },
@@ -42,10 +42,10 @@ class _CreateScreen01State extends State<CreateScreen01> {
               ),
             ),
             Container(
-              padding: EdgeInsets.all(8),
+              padding: const EdgeInsets.all(8),
               width: constraints.maxWidth,
               child: ElevatedButton(
-                child: Text("Publish"),
+                child: const Text("Publish"),
                 onPressed: () {},
               ),
             ),

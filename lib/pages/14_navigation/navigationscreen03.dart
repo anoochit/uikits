@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:uikits2/pages/14_navigation/sample_page.dart';
 
 class NavigationScreen03 extends StatefulWidget {
-  NavigationScreen03({Key? key}) : super(key: key);
+  const NavigationScreen03({super.key});
 
   @override
-  _NavigationScreen03State createState() => _NavigationScreen03State();
+  State<NavigationScreen03> createState() => _NavigationScreen03State();
 }
 
 class _NavigationScreen03State extends State<NavigationScreen03> {
@@ -15,11 +15,11 @@ class _NavigationScreen03State extends State<NavigationScreen03> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Main"),
+        title: const Text("Main"),
       ),
       body: IndexedStack(
         index: _currentIndex,
-        children: [
+        children: const [
           Page1(),
           Page2(),
           Page3(),
@@ -31,7 +31,7 @@ class _NavigationScreen03State extends State<NavigationScreen03> {
           children: [
             Stack(
               children: [
-                Container(
+                SizedBox(
                   height: 200,
                   child: Image.asset(
                     "assets/images/placeholder.png",
@@ -43,14 +43,14 @@ class _NavigationScreen03State extends State<NavigationScreen03> {
                   alignment: Alignment.center,
                   child: Column(
                     children: [
-                      Spacer(),
-                      CircleAvatar(
+                      const Spacer(),
+                      const CircleAvatar(
                         radius: 50,
                         backgroundImage: AssetImage("assets/images/avatar.png"),
                       ),
                       Container(
-                        padding: EdgeInsets.all(8.0),
-                        child: Text(
+                        padding: const EdgeInsets.all(8.0),
+                        child: const Text(
                           "John Doe",
                           style: TextStyle(
                               fontSize: 22, fontWeight: FontWeight.w500),
@@ -65,7 +65,7 @@ class _NavigationScreen03State extends State<NavigationScreen03> {
               child: ListView.builder(
                 itemCount: 4,
                 itemBuilder: (context, index) => ListTile(
-                  leading: Icon(Icons.book),
+                  leading: const Icon(Icons.book),
                   title: Text(
                     'Menu ${index + 1}',
                     style: TextStyle(
@@ -87,7 +87,7 @@ class _NavigationScreen03State extends State<NavigationScreen03> {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        items: [
+        items: const [
           BottomNavigationBarItem(icon: Icon(Icons.book), label: 'Page 1'),
           BottomNavigationBarItem(icon: Icon(Icons.book), label: 'Page 2'),
           BottomNavigationBarItem(icon: Icon(Icons.book), label: 'Page 3'),

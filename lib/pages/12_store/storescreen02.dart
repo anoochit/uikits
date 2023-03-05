@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class StoreScreen02 extends StatefulWidget {
-  StoreScreen02({Key? key}) : super(key: key);
+  const StoreScreen02({super.key});
 
   @override
-  _StoreScreen02State createState() => _StoreScreen02State();
+  State<StoreScreen02> createState() => _StoreScreen02State();
 }
 
 class _StoreScreen02State extends State<StoreScreen02> {
@@ -13,10 +13,10 @@ class _StoreScreen02State extends State<StoreScreen02> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Store"),
+        title: const Text("Store"),
         actions: [
           IconButton(
-            icon: Icon(Icons.shopping_cart),
+            icon: const Icon(Icons.shopping_cart),
             onPressed: () {
               // place save function here
             },
@@ -37,7 +37,7 @@ class _StoreScreen02State extends State<StoreScreen02> {
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: TextFormField(
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     hintText: 'Search',
                     prefixIcon:
                         Icon(FontAwesomeIcons.magnifyingGlass, size: 20),
@@ -51,15 +51,14 @@ class _StoreScreen02State extends State<StoreScreen02> {
             ),
             GridView.builder(
               shrinkWrap: true,
-              physics: ScrollPhysics(),
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              physics: const ScrollPhysics(),
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 mainAxisSpacing: 2,
-                crossAxisSpacing: 2,
               ),
               itemCount: 10,
               itemBuilder: (BuildContext context, int index) {
-                return GridItem();
+                return const GridItem();
               },
             ),
           ],
@@ -77,53 +76,60 @@ class GridItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
-      builder: (context, constraints) => Container(
-        child: Stack(
-          children: [
-            Container(
-              width: constraints.maxWidth,
-              height: constraints.maxWidth,
-              child: Image.asset(
-                'assets/images/placeholder.png',
-                fit: BoxFit.cover,
+      builder: (context, constraints) => Card(
+        clipBehavior: Clip.antiAliasWithSaveLayer,
+        child: GridTile(
+          child: Stack(
+            children: [
+              SizedBox(
+                width: constraints.maxWidth,
+                height: constraints.maxWidth,
+                child: Image.asset(
+                  'assets/images/placeholder.png',
+                  fit: BoxFit.cover,
+                ),
               ),
-            ),
-            Positioned(
-              left: 1,
-              bottom: 1,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    width: constraints.maxWidth,
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 4.0, vertical: 4.0),
-                    child: Text(
-                      "Product Name",
-                      style: TextStyle(fontWeight: FontWeight.w500),
+              Positioned(
+                left: 1,
+                bottom: 1,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      width: constraints.maxWidth,
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 4.0, vertical: 4.0),
+                      child: const Text(
+                        "Product Name",
+                        style: TextStyle(
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
                     ),
-                  ),
-                  Container(
-                    width: constraints.maxWidth,
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 4.0, vertical: 4.0),
-                    child: Text(
-                      "Short Description",
+                    Container(
+                      width: constraints.maxWidth,
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 4.0, vertical: 4.0),
+                      child: const Text(
+                        "Short Description",
+                      ),
                     ),
-                  ),
-                  Container(
-                    width: constraints.maxWidth,
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 4.0, vertical: 2.0),
-                    child: Text(
-                      "\$12.0",
-                      style: TextStyle(fontWeight: FontWeight.w500),
+                    Container(
+                      width: constraints.maxWidth,
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 4.0, vertical: 2.0),
+                      child: const Text(
+                        "\$12.0",
+                        style: TextStyle(
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
                     ),
-                  ),
-                ],
-              ),
-            )
-          ],
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

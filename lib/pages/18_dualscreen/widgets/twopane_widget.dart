@@ -5,7 +5,7 @@ class TwoPaneWidget extends StatelessWidget {
   final Widget pane1;
   final Widget? pane2;
 
-  TwoPaneWidget({
+  const TwoPaneWidget({
     Key? key,
     required this.pane1,
     this.pane2,

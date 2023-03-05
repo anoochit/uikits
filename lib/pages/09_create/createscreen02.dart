@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class CreateScreen02 extends StatefulWidget {
-  CreateScreen02({Key? key}) : super(key: key);
+  const CreateScreen02({super.key});
 
   @override
-  _CreateScreen02State createState() => _CreateScreen02State();
+  State<CreateScreen02> createState() => _CreateScreen02State();
 }
 
 class _CreateScreen02State extends State<CreateScreen02> {
@@ -12,10 +12,10 @@ class _CreateScreen02State extends State<CreateScreen02> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Create"),
+        title: const Text("Create"),
         actions: [
           IconButton(
-            icon: Icon(Icons.save_outlined),
+            icon: const Icon(Icons.save_outlined),
             onPressed: () {
               // place save function here
             },
@@ -27,11 +27,11 @@ class _CreateScreen02State extends State<CreateScreen02> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              padding: EdgeInsets.all(8),
+              padding: const EdgeInsets.all(8),
               child: Column(
                 children: [
                   TextFormField(
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       border: InputBorder.none,
                       hintText: 'To',
                     ),
@@ -39,12 +39,12 @@ class _CreateScreen02State extends State<CreateScreen02> {
                       // place submit function here
                     },
                   ),
-                  Divider(
+                  const Divider(
                     height: 1,
                     thickness: 1,
                   ),
                   TextFormField(
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       border: InputBorder.none,
                       hintText: 'Subject',
                     ),
@@ -52,12 +52,12 @@ class _CreateScreen02State extends State<CreateScreen02> {
                       // place submit function here
                     },
                   ),
-                  Divider(
+                  const Divider(
                     height: 1,
                     thickness: 1,
                   ),
                   TextFormField(
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       border: InputBorder.none,
                       hintText: 'Message',
                     ),
@@ -66,15 +66,15 @@ class _CreateScreen02State extends State<CreateScreen02> {
                       // place submit function here
                     },
                   ),
-                  Divider(
+                  const Divider(
                     height: 1,
                     thickness: 1,
                   ),
                   Container(
-                    padding: EdgeInsets.symmetric(vertical: 8),
+                    padding: const EdgeInsets.symmetric(vertical: 8),
                     width: constraints.maxWidth,
                     child: ElevatedButton(
-                      child: Text("Publish"),
+                      child: const Text("Publish"),
                       onPressed: () {},
                     ),
                   ),

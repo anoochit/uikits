@@ -28,7 +28,7 @@ class BlankScreen extends StatelessWidget {
             Text(title),
             (isMainScreen)
                 ? ElevatedButton(
-                    child: Text("Open new screen"),
+                    child: const Text("Open new screen"),
                     onPressed: () {
                       controller.push(
                         widget: BlankScreen(
@@ -41,7 +41,7 @@ class BlankScreen extends StatelessWidget {
                 : Column(
                     children: [
                       ElevatedButton(
-                        child: Text("Open new screen"),
+                        child: const Text("Open new screen"),
                         onPressed: () {
                           controller.push(
                             widget: BlankScreen(
@@ -52,7 +52,7 @@ class BlankScreen extends StatelessWidget {
                         },
                       ),
                       ElevatedButton(
-                        child: Text("pop"),
+                        child: const Text("pop"),
                         onPressed: () {
                           controller.pop();
                         },

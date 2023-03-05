@@ -8,19 +8,19 @@ class MaterialUScreen02 extends StatelessWidget {
     return Scaffold(
       body: CustomScrollView(
         slivers: <Widget>[
-          SliverAppBar(
+          const SliverAppBar(
             pinned: true,
             floating: true,
             expandedHeight: 128.0,
-            flexibleSpace: const FlexibleSpaceBar(
+            flexibleSpace: FlexibleSpaceBar(
               title: Text('App Bar'),
               centerTitle: true,
               background: FlutterLogo(),
             ),
           ),
-          SliverToBoxAdapter(
+          const SliverToBoxAdapter(
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: EdgeInsets.all(8.0),
               child: Text("Title List"),
             ),
           ),
@@ -28,7 +28,7 @@ class MaterialUScreen02 extends StatelessWidget {
             delegate: SliverChildBuilderDelegate(
               (BuildContext context, int index) {
                 return ListTile(
-                  leading: CircleAvatar(
+                  leading: const CircleAvatar(
                     child: Text('A'),
                   ),
                   title: Text('Item ${index + 1}'),

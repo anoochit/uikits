@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class ProfileScreen03 extends StatefulWidget {
-  ProfileScreen03({Key? key}) : super(key: key);
+  const ProfileScreen03({super.key});
 
   @override
-  _ProfileScreen03State createState() => _ProfileScreen03State();
+  State<ProfileScreen03> createState() => _ProfileScreen03State();
 }
 
 class _ProfileScreen03State extends State<ProfileScreen03> {
@@ -17,18 +17,18 @@ class _ProfileScreen03State extends State<ProfileScreen03> {
             child: Column(
               children: [
                 Container(
-                  padding: EdgeInsets.only(top: 48.0),
+                  padding: const EdgeInsets.only(top: 48.0),
                   width: constraints.maxWidth,
                   child:
                       // replace avatar image here
                       Column(
                     children: [
-                      CircleAvatar(
+                      const CircleAvatar(
                         radius: 50,
                         backgroundImage: AssetImage('assets/images/avatar.png'),
                       ),
                       Container(
-                        padding: EdgeInsets.all(8.0),
+                        padding: const EdgeInsets.all(8.0),
                         // replace display name here
                         child: Text(
                           "John Doe",
@@ -36,9 +36,9 @@ class _ProfileScreen03State extends State<ProfileScreen03> {
                         ),
                       ),
                       Container(
-                        padding: EdgeInsets.all(8.0),
+                        padding: const EdgeInsets.all(8.0),
                         // replace display name here
-                        child: Text(
+                        child: const Text(
                           "@johndoe",
                           style: TextStyle(fontSize: 16.0),
                         ),
@@ -50,10 +50,10 @@ class _ProfileScreen03State extends State<ProfileScreen03> {
                   width: (constraints.maxWidth > 412)
                       ? (constraints.maxWidth * 0.6)
                       : constraints.maxWidth,
-                  padding: EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(8.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
+                    children: const [
                       // place statistic here
                       BlockText(title: "Posts", value: 200),
                       BlockText(title: "Followers", value: 200),
@@ -62,7 +62,7 @@ class _ProfileScreen03State extends State<ProfileScreen03> {
                   ),
                 ),
                 GridView.count(
-                  physics: ScrollPhysics(),
+                  physics: const ScrollPhysics(),
                   shrinkWrap: true,
                   crossAxisCount: (constraints.maxWidth > 412) ? 4 : 2,
                   children: List.generate(20, (index) {
