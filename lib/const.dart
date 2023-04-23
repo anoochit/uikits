@@ -70,6 +70,8 @@ import 'package:uikits2/pages/17_m3/material_u02.dart';
 import 'package:uikits2/pages/18_dualscreen/twopane_screen01.dart';
 import 'package:uikits2/pages/18_dualscreen/twopane_screen02.dart';
 
+import 'pages/02_signup/signupscreen06.dart';
+
 class Menu {
   String title;
   List<SubMenu> subMenu = [];
@@ -161,6 +163,7 @@ final listSignupMenu = [
   SubMenu("Signup screen 3", const SignUpScreen03()),
   SubMenu("Signup screen 4", const SignUpScreen04()),
   SubMenu("Signup screen 5", const SignUpScreen05()),
+  SubMenu("Signup screen 6", const SignUpScreen06()),
 ];
 
 final listWalkthroughMenu = [
