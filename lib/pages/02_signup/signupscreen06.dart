@@ -88,7 +88,7 @@ class _PinInputState extends State<PinInput> {
               children: _keypads.asMap().entries.map((e) {
                 return MaterialButton(
                   elevation: 0.0,
-                  color: Colors.blue.shade50,
+                  color: Theme.of(context).colorScheme.primaryContainer,
                   shape: const CircleBorder(),
                   onPressed: () {
                     // show only number
@@ -111,7 +111,9 @@ class _PinInputState extends State<PinInput> {
                             _textValue.length - 1,
                           );
                         });
-                      } else {
+                      }
+
+                      if (e.key == 10) {
                         // submit value
                         widget.onSubmit!.call(_textValue);
                       }
@@ -119,7 +121,9 @@ class _PinInputState extends State<PinInput> {
                   },
                   child: Text(
                     e.value,
-                    style: Theme.of(context).textTheme.titleLarge,
+                    style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                        color:
+                            Theme.of(context).colorScheme.onPrimaryContainer),
                   ),
                 );
               }).toList(),
