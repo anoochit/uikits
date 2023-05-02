@@ -71,6 +71,7 @@ import 'package:uikits2/pages/18_dualscreen/twopane_screen01.dart';
 import 'package:uikits2/pages/18_dualscreen/twopane_screen02.dart';
 
 import 'pages/02_signup/signupscreen06.dart';
+import 'pages/04_loading/loadingscreen05.dart';
 
 class Menu {
   String title;
@@ -179,6 +180,7 @@ final listLoadingMenu = [
   SubMenu("Loading screen 2", const LoadingScreen02()),
   SubMenu("Loading screen 3", const LoadingScreen03()),
   SubMenu("Loading screen 4", const LoadingScreen04()),
+  SubMenu("Loading screen 5", const LoadingScreen05()),
 ];
 
 final listProfileMenu = [

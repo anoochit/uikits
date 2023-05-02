@@ -24,6 +24,7 @@ dependencies:
   awesome_card: ^1.1.5
   badges: ^3.0.2
   carousel_slider: ^4.0.0-nullsafety.0
+  circular_countdown_timer: ^0.2.3
   cupertino_icons: ^1.0.2
   dynamic_color: ^1.6.2
   flutter:
@@ -42,8 +43,8 @@ dependencies:
   timelines: ^0.1.0
 
 dev_dependencies:
-  flutter_lints: ^2.0.0
   flutter_launcher_icons: ^0.11.0
+  flutter_lints: ^2.0.0
   flutter_test:
     sdk: flutter
 
