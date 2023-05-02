@@ -35,10 +35,14 @@ class _ContactScreen02State extends State<ContactScreen02> {
                   child: const Text("Groups"),
                 ),
                 SizedBox(
-                  height: 110,
-                  child: ListView.builder(
+                  height: 120,
+                  child: GridView.builder(
                     itemCount: 10,
                     scrollDirection: Axis.horizontal,
+                    shrinkWrap: true,
+                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 1,
+                    ),
                     itemBuilder: (context, index) {
                       return const ListGroupItem();
                     },
@@ -71,32 +75,31 @@ class ListGroupItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(8.0),
-      child: Column(
-        children: [
-          Container(
-            padding: const EdgeInsets.all(4.0),
-            child: const CircleAvatar(
-              backgroundImage: AssetImage('assets/images/avatar.png'),
-            ),
+    return Column(
+      children: [
+        const SizedBox(
+          height: 8.0,
+        ),
+        Container(
+          padding: const EdgeInsets.all(4.0),
+          child: const CircleAvatar(
+            backgroundImage: AssetImage('assets/images/avatar.png'),
           ),
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 4.0, vertical: 2.0),
-            child: const Text(
-              "Group Name",
-              style: TextStyle(fontWeight: FontWeight.w500),
-            ),
+        ),
+        Container(
+          padding: const EdgeInsets.all(2.0),
+          child: Text(
+            "Group Name",
+            style: Theme.of(context).textTheme.labelLarge,
           ),
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 4.0, vertical: 2.0),
-            child: const Text(
-              "Information",
-              style: TextStyle(fontSize: 12),
-            ),
+        ),
+        Container(
+          padding: const EdgeInsets.all(2.0),
+          child: const Text(
+            "Information",
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
@@ -108,38 +111,15 @@ class ListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(8),
-      child: Row(
-        children: [
-          Container(
-            padding: const EdgeInsets.all(4.0),
-            child: const CircleAvatar(
-              backgroundImage: AssetImage('assets/images/avatar.png'),
-            ),
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 4.0, vertical: 2.0),
-                child: const Text(
-                  "Display Name",
-                  style: TextStyle(fontWeight: FontWeight.w500),
-                ),
-              ),
-              Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 4.0, vertical: 2.0),
-                child: const Text(
-                  "Information",
-                  style: TextStyle(fontSize: 12),
-                ),
-              ),
-            ],
-          )
-        ],
+    return const ListTile(
+      leading: CircleAvatar(
+        backgroundImage: AssetImage('assets/images/avatar.png'),
+      ),
+      title: Text(
+        "Display Name",
+      ),
+      subtitle: Text(
+        "Information",
       ),
     );
   }

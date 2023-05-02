@@ -34,7 +34,7 @@ class _ContactScreen03State extends State<ContactScreen03> {
                   child: Container(
                     height: 48,
                     decoration: BoxDecoration(
-                      color: Colors.transparent,
+                      color: Colors.grey.shade100,
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: TextFormField(
@@ -69,49 +69,17 @@ class ListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(8),
-      child: Row(
-        children: [
-          Container(
-            padding: const EdgeInsets.all(4.0),
-            child: const CircleAvatar(
-              backgroundImage: AssetImage('assets/images/avatar.png'),
-            ),
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 4.0, vertical: 2.0),
-                child: const Text(
-                  "Display Name",
-                  style: TextStyle(fontWeight: FontWeight.w500),
-                ),
-              ),
-              Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 4.0, vertical: 2.0),
-                child: const Text(
-                  "Information",
-                  style: TextStyle(fontSize: 12),
-                ),
-              ),
-            ],
-          ),
-          const Spacer(),
-          SizedBox(
-            height: 28,
-            child: ElevatedButton(
-              child: const Text("Follow"),
-              onPressed: () {
-                // add follow function
-              },
-            ),
-          )
-        ],
+    return ListTile(
+      leading: const CircleAvatar(
+        backgroundImage: AssetImage('assets/images/avatar.png'),
       ),
+      title: const Text(
+        "Display Name",
+      ),
+      subtitle: const Text(
+        "Information",
+      ),
+      trailing: ElevatedButton(onPressed: () {}, child: const Text('Follow')),
     );
   }
 }

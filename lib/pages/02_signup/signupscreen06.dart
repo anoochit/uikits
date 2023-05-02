@@ -71,7 +71,7 @@ class _PinInputState extends State<PinInput> {
                 ),
                 style: Theme.of(context).textTheme.displayLarge,
                 textAlign: TextAlign.center,
-                obscureText: true,
+                obscureText: false,
               ),
             ),
 

@@ -132,7 +132,7 @@ class ListItem extends StatelessWidget {
       title: const Text("Veniam elit nisi est elit sint"),
       subtitle: const Text("Display Name"),
       trailing: Text(
-        timeago.format(fifteenAgo),
+        timeago.format(fifteenAgo, locale: 'en_short'),
         style: const TextStyle(fontSize: 12.0),
       ),
     );

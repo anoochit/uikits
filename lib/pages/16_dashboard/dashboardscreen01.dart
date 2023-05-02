@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class DashboardScreen01 extends StatefulWidget {
   const DashboardScreen01({super.key});
@@ -24,15 +25,42 @@ class _DashboardScreen01State extends State<DashboardScreen01> {
         child: Wrap(
           direction: Axis.horizontal,
           children: const [
-            GridItem(width: 1, height: 1, offset: 0),
-            GridItem(width: 1, height: 1, offset: 0),
-            GridItem(width: 1, height: 1, offset: 0),
-            GridItem(width: 1, height: 1, offset: 0),
-            GridItem(width: 2, height: 1, offset: 0),
-            GridItem(width: 2, height: 1, offset: 0),
-            GridItem(width: 1, height: 1, offset: 0),
-            GridItem(width: 1, height: 1, offset: 0),
-            GridItem(width: 2, height: 1, offset: 0),
+            GridItem(
+              width: 1,
+              height: 1,
+            ),
+            GridItem(
+              width: 1,
+              height: 1,
+            ),
+            GridItem(
+              width: 1,
+              height: 1,
+            ),
+            GridItem(
+              width: 1,
+              height: 1,
+            ),
+            GridItem(
+              width: 2,
+              height: 1,
+            ),
+            GridItem(
+              width: 2,
+              height: 1,
+            ),
+            GridItem(
+              width: 1,
+              height: 1,
+            ),
+            GridItem(
+              width: 1,
+              height: 1,
+            ),
+            GridItem(
+              width: 2,
+              height: 1,
+            ),
           ],
         ),
       ),
@@ -45,34 +73,24 @@ class GridItem extends StatelessWidget {
     Key? key,
     required this.width,
     required this.height,
-    required this.offset,
   }) : super(key: key);
 
   final int width;
   final int height;
-  final double offset;
   @override
   Widget build(BuildContext context) {
-    var width = MediaQuery.of(context).size.width - offset;
-    var height = MediaQuery.of(context).size.height;
-    var constrainWidth = width;
-
-    // if mobile overide width to 4 grid
-    if ((MediaQuery.of(context).size.width < 412)) {
-      constrainWidth = 4;
-    }
-
-    // Put something in this container
+    double scWidth = MediaQuery.of(context).size.width;
+    double scHeight = MediaQuery.of(context).size.height;
     return Container(
-      width: ((width * (0.25 * constrainWidth))),
-      height: ((height * (0.25 * height))),
+      width: (context.isPhone) ? (scWidth / 1) : ((scWidth / 4) * width),
+      height: (context.isPhone) ? (scWidth / 1) : ((scHeight / 4) * height),
       decoration: BoxDecoration(
         color: Colors.grey.shade50,
         border: Border.all(color: Colors.grey.shade200),
-        borderRadius: BorderRadius.circular(6),
+        borderRadius: BorderRadius.circular(16.0),
       ),
       clipBehavior: Clip.antiAliasWithSaveLayer,
-      child: const Text("Put widget here"),
+      child: const Center(child: Text("Put widget here")),
     );
   }
 }

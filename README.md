@@ -18,6 +18,8 @@ A complete UIs for mobile and tablet, which include 16 categories.
 - [Navigation](#navigation)
 - [Photos](#photos)
 - [Dashboard](#dashboard)
+- [M3](#dashboard)
+- [Dual Screen](#dual-screen)
 
 # Screenshots
 
@@ -29,9 +31,9 @@ A complete UIs for mobile and tablet, which include 16 categories.
 
 ## SignUp & Login
 
-| ![](/screenshots/02_signup/signup01.png) | ![](/screenshots/02_signup/signup02.png) | ![](/screenshots/02_signup/signup03.png) | ![](/screenshots/02_signup/signup04.png) | ![](/screenshots/02_signup/signup05.png) |
-| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| 01                                       | 02                                       | 03                                       | 04                                       | 05                                       |
+| ![](/screenshots/02_signup/signup01.png) | ![](/screenshots/02_signup/signup02.png) | ![](/screenshots/02_signup/signup03.png) | ![](/screenshots/02_signup/signup04.png) | ![](/screenshots/02_signup/signup05.png) | ![](/screenshots/02_signup/signup06.png) |
+| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
+| 01                                       | 02                                       | 03                                       | 04                                       | 05                                       | 06                                       |
 
 ## Walkthrough
 
@@ -77,45 +79,57 @@ A complete UIs for mobile and tablet, which include 16 categories.
 
 ## Chat
 
-|     |     |     |     |     |
-| --- | --- | --- | --- | --- |
-| 01  | 02  | 03  | 04  | 05  |
+| ![](/screenshots/10_chat/chat01.png) | ![](/screenshots/10_chat/chat02.png) | ![](/screenshots/10_chat/chat03.png) |     |     |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ | --- | --- |
+| 01                                   | 02                                   | 03                                   |     |     |
 
 ## Contact
 
-|     |     |     |     |     |
-| --- | --- | --- | --- | --- |
-| 01  | 02  | 03  | 04  | 05  |
+| ![](/screenshots/11_contact/contact01.png) | ![](/screenshots/11_contact/contact02.png) | ![](/screenshots/11_contact/contact03.png) |     |     |
+| ------------------------------------------ | ------------------------------------------ | ------------------------------------------ | --- | --- |
+| 01                                         | 02                                         | 03                                         |     |     |
 
 ## Store & Shop
 
-|     |     |     |     |     |
-| --- | --- | --- | --- | --- |
-| 01  | 02  | 03  | 04  | 05  |
+| ![](/screenshots/12_store/store01.png) | ![](/screenshots/12_store/store02.png) | ![](/screenshots/12_store/store03.png) | ![](/screenshots/12_store/store04.png) |     |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- | -------------------------------------- | --- |
+| 01                                     | 02                                     | 03                                     | 04                                     |     |
 
 ## Shopping Carts & Checkout
 
-|     |     |     |     |     |
-| --- | --- | --- | --- | --- |
-| 01  | 02  | 03  | 04  | 05  |
+| ![](/screenshots/13_shoppingcart/shopping01.png) | ![](/screenshots/13_shoppingcart/shopping02.png) | ![](/screenshots/13_shoppingcart/shopping03.png) | ![](/screenshots/13_shoppingcart/shopping04.png) |     |
+| ------------------------------------------------ | ------------------------------------------------ | ------------------------------------------------ | ------------------------------------------------ | --- |
+| 01                                               | 02                                               | 03                                               | 04                                               |     |
 
 ## Navigation
 
-|     |     |     |     |     |
-| --- | --- | --- | --- | --- |
-| 01  | 02  | 03  | 04  | 05  |
+| ![](/screenshots/14_navigation/navigation01.png) | ![](/screenshots/14_navigation/navigation02.png) | ![](/screenshots/14_navigation/navigation03.png) |     |     |
+| ------------------------------------------------ | ------------------------------------------------ | ------------------------------------------------ | --- | --- |
+| 01                                               | 02                                               | 03                                               |     |     |
 
 ## Photos
 
-|     |     |     |     |     |
-| --- | --- | --- | --- | --- |
-| 01  | 02  | 03  | 04  | 05  |
+| ![](/screenshots/15_photos/photo01.png) | ![](/screenshots/15_photos/photo02.png) | ![](/screenshots/15_photos/photo03.png) |     |     |
+| --------------------------------------- | --------------------------------------- | --------------------------------------- | --- | --- |
+| 01                                      | 02                                      | 03                                      |     |     |
 
 ## Dashboard
 
-|     |     |     |     |     |
-| --- | --- | --- | --- | --- |
-| 01  | 02  | 03  | 04  | 05  |
+| ![](/screenshots/16_dashboard/dashboard01.png) | ![](/screenshots/16_dashboard/dashboard02.png) |     |     |     |
+| ---------------------------------------------- | ---------------------------------------------- | --- | --- | --- |
+| 01                                             | 02                                             |     |     |     |
+
+## M3
+
+| ![](/screenshots/17_m3/m301.png) | ![](/screenshots/17_m3/m302.png) | ![](/screenshots/17_m3/m303.png) | ![](/screenshots/17_m3/m304.png) |     |
+| -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- | --- |
+| 01                               | 02                               | 03                               | 04                               |     |
+
+## Dual Screen
+
+| ![](/screenshots/18_dualscreen/twopane01.png) | ![](/screenshots/18_dualscreen/twopane02.png) |     |     |     |
+| --------------------------------------------- | --------------------------------------------- | --- | --- | --- |
+| 01                                            | 02                                            |     |     |     |
 
 # 3rd party plugins
 

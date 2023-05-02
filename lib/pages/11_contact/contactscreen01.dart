@@ -71,39 +71,12 @@ class ListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var time = DateTime.now().subtract(const Duration(minutes: 9));
-    return Container(
-      padding: const EdgeInsets.all(8),
-      child: Row(
-        children: [
-          Container(
-            padding: const EdgeInsets.all(4.0),
-            child: const CircleAvatar(
-              backgroundImage: AssetImage('assets/images/avatar.png'),
-            ),
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 4.0, vertical: 2.0),
-                child: const Text(
-                  "Display Name",
-                  style: TextStyle(fontWeight: FontWeight.w500),
-                ),
-              ),
-              Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 4.0, vertical: 2.0),
-                child: Text(
-                  "Last seen ${timeago.format(time)}",
-                  style: const TextStyle(fontSize: 12),
-                ),
-              ),
-            ],
-          )
-        ],
+    return ListTile(
+      leading: const CircleAvatar(
+        backgroundImage: AssetImage('assets/images/avatar.png'),
       ),
+      title: const Text("Display Name"),
+      subtitle: Text("Last seen ${timeago.format(time)}"),
     );
   }
 }

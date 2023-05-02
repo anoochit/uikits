@@ -37,8 +37,8 @@ dependencies:
   percent_indicator: ^4.0.0
   photo_view: ^0.14.0
   responsive_builder: ^0.6.0
-  syncfusion_flutter_charts: ^20.2.43
-  syncfusion_flutter_gauges: ^20.2.43
+  syncfusion_flutter_charts:
+  syncfusion_flutter_gauges:
   timeago: ^3.1.0
   timelines: ^0.1.0
 

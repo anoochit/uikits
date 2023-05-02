@@ -23,14 +23,17 @@ class _PhotoScreen01State extends State<PhotoScreen01> {
                 removeTop: true,
                 child: GridView.builder(
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: (constraints.maxWidth > 412) ? 4 : 3,
-                    mainAxisSpacing: 1,
-                    crossAxisSpacing: 1,
+                    crossAxisCount: (constraints.maxWidth > 412) ? 4 : 2,
                   ),
                   itemCount: 20,
                   itemBuilder: (context, index) {
-                    return Image.asset('assets/images/placeholder.png',
-                        fit: BoxFit.cover);
+                    return GridTile(
+                      child: Card(
+                        clipBehavior: Clip.antiAliasWithSaveLayer,
+                        child: Image.asset('assets/images/placeholder.png',
+                            fit: BoxFit.cover),
+                      ),
+                    );
                   },
                 ),
               ),
