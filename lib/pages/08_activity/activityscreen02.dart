@@ -31,9 +31,7 @@ class _ActivityScreen02State extends State<ActivityScreen02> {
                         backgroundImage: AssetImage(listActivity[index].avatar),
                       ),
                       title: Text(
-                        listActivity[index].displeName +
-                            " " +
-                            listActivity[index].action,
+                        "${listActivity[index].displeName} ${listActivity[index].action}",
                       ),
                       trailing: Text(timeago.format(
                           listActivity[index].timestamp,

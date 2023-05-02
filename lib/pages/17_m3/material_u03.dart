@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-class MaterialUScreen02 extends StatelessWidget {
-  const MaterialUScreen02({Key? key}) : super(key: key);
+class MaterialUScreen03 extends StatelessWidget {
+  const MaterialUScreen03({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: CustomScrollView(
         slivers: <Widget>[
-          SliverAppBar.large(
+          SliverAppBar.medium(
             foregroundColor: Theme.of(context).colorScheme.onPrimary,
             backgroundColor: Theme.of(context).colorScheme.primary,
             flexibleSpace: FlexibleSpaceBar(

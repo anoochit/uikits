@@ -67,6 +67,8 @@ import 'package:uikits2/pages/16_dashboard/dashboardscreen01.dart';
 import 'package:uikits2/pages/16_dashboard/dashboardscreen02.dart';
 import 'package:uikits2/pages/17_m3/material_u01.dart';
 import 'package:uikits2/pages/17_m3/material_u02.dart';
+import 'package:uikits2/pages/17_m3/material_u03.dart';
+import 'package:uikits2/pages/17_m3/material_u04.dart';
 import 'package:uikits2/pages/18_dualscreen/twopane_screen01.dart';
 import 'package:uikits2/pages/18_dualscreen/twopane_screen02.dart';
 
@@ -267,7 +269,9 @@ final listDashboardMenu = [
 
 final listM3Menu = [
   SubMenu("Navigation Rails", const MaterialUScreen01()),
-  SubMenu("Silver AppBar", const MaterialUScreen02()),
+  SubMenu("Silver AppBar Large", const MaterialUScreen02()),
+  SubMenu("Silver AppBar Medium", const MaterialUScreen03()),
+  SubMenu("Silver AppBar Small", const MaterialUScreen04()),
 ];
 
 final listTwoPaneMenu = [
