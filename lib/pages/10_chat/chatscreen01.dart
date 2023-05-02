@@ -12,63 +12,67 @@ class ChatScreen01 extends StatefulWidget {
 class _ChatScreen01State extends State<ChatScreen01> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Create"),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.add_box),
-            onPressed: () {
-              // place save function here
-            },
-          ),
-        ],
-      ),
-      body: SingleChildScrollView(
-        child: LayoutBuilder(
-          builder: (context, constraints) => Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                padding: const EdgeInsets.all(8),
-                child: Container(
-                  height: 48,
-                  decoration: BoxDecoration(
-                    color: Colors.grey.shade100,
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                      hintText: 'Search...',
-                      hintStyle: Theme.of(context).textTheme.bodyMedium,
-                      prefixIcon: const Icon(FontAwesomeIcons.magnifyingGlass),
-                      border: InputBorder.none,
+    return GestureDetector(
+      onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text("Chat"),
+          actions: [
+            IconButton(
+              icon: const Icon(Icons.add_box),
+              onPressed: () {
+                // place save function here
+              },
+            ),
+          ],
+        ),
+        body: SingleChildScrollView(
+          child: LayoutBuilder(
+            builder: (context, constraints) => Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  padding: const EdgeInsets.all(8),
+                  child: Container(
+                    height: 48,
+                    decoration: BoxDecoration(
+                      color: Colors.grey.shade100,
+                      borderRadius: BorderRadius.circular(20),
                     ),
-                    onFieldSubmitted: (value) {
-                      // place submit function here
+                    child: TextFormField(
+                      decoration: InputDecoration(
+                        hintText: 'Search...',
+                        hintStyle: Theme.of(context).textTheme.bodyMedium,
+                        prefixIcon:
+                            const Icon(FontAwesomeIcons.magnifyingGlass),
+                        border: InputBorder.none,
+                      ),
+                      onFieldSubmitted: (value) {
+                        // place submit function here
+                      },
+                    ),
+                  ),
+                ),
+                MediaQuery.removePadding(
+                  context: context,
+                  removeTop: true,
+                  child: ListView.builder(
+                    physics: const ScrollPhysics(),
+                    shrinkWrap: true,
+                    itemCount: 15,
+                    itemBuilder: (BuildContext context, int index) {
+                      // if index == 0 insert divider with title "Unread messages"
+                      // if index == 5 indert divider with title "All messages"
+                      if ((index == 0) || (index == 5)) {
+                        return ListDivider(
+                            constraints: constraints, index: index);
+                      }
+                      return ListItem(index: index);
                     },
                   ),
                 ),
-              ),
-              MediaQuery.removePadding(
-                context: context,
-                removeTop: true,
-                child: ListView.builder(
-                  physics: const ScrollPhysics(),
-                  shrinkWrap: true,
-                  itemCount: 15,
-                  itemBuilder: (BuildContext context, int index) {
-                    // if index == 0 insert divider with title "Unread messages"
-                    // if index == 5 indert divider with title "All messages"
-                    if ((index == 0) || (index == 5)) {
-                      return ListDivider(
-                          constraints: constraints, index: index);
-                    }
-                    return ListItem(index: index);
-                  },
-                ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
