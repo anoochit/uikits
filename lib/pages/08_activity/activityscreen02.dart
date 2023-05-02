@@ -26,35 +26,18 @@ class _ActivityScreen02State extends State<ActivityScreen02> {
                 child: ListView.builder(
                   itemCount: listActivity.length,
                   itemBuilder: (context, index) {
-                    return Column(
-                      children: [
-                        Row(
-                          children: [
-                            Container(
-                              padding: const EdgeInsets.all(8.0),
-                              child: CircleAvatar(
-                                backgroundImage:
-                                    AssetImage(listActivity[index].avatar),
-                              ),
-                            ),
-                            Text(
-                              listActivity[index].displeName,
-                              style:
-                                  const TextStyle(fontWeight: FontWeight.bold),
-                            ),
-                            Container(
-                              padding: const EdgeInsets.only(left: 8.0),
-                              child: Text(listActivity[index].action),
-                            ),
-                            const Spacer(),
-                            Container(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Text(timeago
-                                  .format(listActivity[index].timestamp)),
-                            ),
-                          ],
-                        ),
-                      ],
+                    return ListTile(
+                      leading: CircleAvatar(
+                        backgroundImage: AssetImage(listActivity[index].avatar),
+                      ),
+                      title: Text(
+                        listActivity[index].displeName +
+                            " " +
+                            listActivity[index].action,
+                      ),
+                      trailing: Text(timeago.format(
+                          listActivity[index].timestamp,
+                          locale: 'en_short')),
                     );
                   },
                 ),
