@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class StoreScreen01 extends StatefulWidget {
@@ -70,8 +71,8 @@ class _StoreScreen01State extends State<StoreScreen01> {
 
 class GridItem extends StatelessWidget {
   const GridItem({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -47,10 +47,10 @@ class _ProfileScreen04State extends State<ProfileScreen04> {
 
 class ListDivider extends StatelessWidget {
   const ListDivider({
-    Key? key,
+    super.key,
     required this.constraints,
     required this.index,
-  }) : super(key: key);
+  });
 
   final BoxConstraints constraints;
   final int index;
@@ -65,9 +65,9 @@ class ListDivider extends StatelessWidget {
 
 class ListItem extends StatelessWidget {
   const ListItem({
-    Key? key,
+    super.key,
     required this.index,
-  }) : super(key: key);
+  });
 
   final int index;
 

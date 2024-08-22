@@ -52,8 +52,8 @@ class _StoreScreen03State extends State<StoreScreen03> {
 
 class GridItem extends StatelessWidget {
   const GridItem({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -1,10 +1,12 @@
-// layout for mobile
 import 'package:flutter/material.dart';
+
 import 'package:uikits2/const.dart';
 import 'package:uikits2/detail.dart';
 
+// layout for mobile
+
 class HomeMobile extends StatelessWidget {
-  const HomeMobile({Key? key}) : super(key: key);
+  const HomeMobile({super.key});
 
   @override
   Widget build(BuildContext context) {

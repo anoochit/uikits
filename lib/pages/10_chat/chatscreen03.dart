@@ -1,8 +1,10 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:timeago/timeago.dart' as timeago;
+
 import 'package:uikits2/pages/10_chat/sample_data.dart';
 
 class ChatScreen03 extends StatefulWidget {

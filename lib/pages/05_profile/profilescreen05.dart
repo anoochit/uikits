@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:timeago/timeago.dart' as timeago;
 
@@ -67,9 +68,9 @@ class _ProfileScreen05State extends State<ProfileScreen05> {
                   width: (constraints.maxWidth > 412)
                       ? (constraints.maxWidth * 0.6)
                       : constraints.maxWidth,
-                  child: Row(
+                  child: const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: const [
+                    children: [
                       // place statistic here
                       BlockText(title: "Posts", value: 200),
                       BlockText(title: "Followers", value: 200),
@@ -96,8 +97,8 @@ class _ProfileScreen05State extends State<ProfileScreen05> {
 
 class PostItem extends StatelessWidget {
   const PostItem({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -159,10 +160,10 @@ class PostItem extends StatelessWidget {
 
 class BlockText extends StatelessWidget {
   const BlockText({
-    Key? key,
+    super.key,
     required this.title,
     required this.value,
-  }) : super(key: key);
+  });
 
   final String title;
   final int value;

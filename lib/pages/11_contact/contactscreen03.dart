@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class ContactScreen03 extends StatefulWidget {
@@ -64,8 +65,8 @@ class _ContactScreen03State extends State<ContactScreen03> {
 
 class ListItem extends StatelessWidget {
   const ListItem({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

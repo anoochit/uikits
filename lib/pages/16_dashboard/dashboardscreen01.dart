@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:get/get.dart';
 
 class DashboardScreen01 extends StatefulWidget {
@@ -21,10 +22,10 @@ class _DashboardScreen01State extends State<DashboardScreen01> {
           ),
         ],
       ),
-      body: SingleChildScrollView(
+      body: const SingleChildScrollView(
         child: Wrap(
           direction: Axis.horizontal,
-          children: const [
+          children: [
             GridItem(
               width: 1,
               height: 1,
@@ -70,10 +71,10 @@ class _DashboardScreen01State extends State<DashboardScreen01> {
 
 class GridItem extends StatelessWidget {
   const GridItem({
-    Key? key,
+    super.key,
     required this.width,
     required this.height,
-  }) : super(key: key);
+  });
 
   final int width;
   final int height;

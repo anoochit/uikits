@@ -1,9 +1,11 @@
-// potrait screen
 import 'package:flutter/material.dart';
+
 import 'package:uikits2/pages/17_m3/consts.dart';
 
+// potrait screen
+
 class PortraitScreen extends StatefulWidget {
-  const PortraitScreen({Key? key}) : super(key: key);
+  const PortraitScreen({super.key});
 
   @override
   State<PortraitScreen> createState() => _PortraitScreenState();

@@ -1,7 +1,10 @@
-// layout for tablet
 import 'package:flutter/material.dart';
+
 import 'package:ms_undraw/ms_undraw.dart';
+
 import 'package:uikits2/const.dart';
+
+// layout for tablet
 
 class HomeTablet extends StatefulWidget {
   const HomeTablet({super.key});

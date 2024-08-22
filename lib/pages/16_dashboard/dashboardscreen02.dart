@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:get/get.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
 
@@ -22,10 +23,10 @@ class _DashboardScreen02State extends State<DashboardScreen02> {
           ),
         ],
       ),
-      body: SingleChildScrollView(
+      body: const SingleChildScrollView(
         child: Wrap(
           direction: Axis.horizontal,
-          children: const [
+          children: [
             RadialGauge(
               width: 2,
               height: 2,
@@ -84,14 +85,14 @@ class _DashboardScreen02State extends State<DashboardScreen02> {
 // sample gauge
 class RadialGauge extends StatelessWidget {
   const RadialGauge({
-    Key? key,
+    super.key,
     required this.width,
     required this.height,
     required this.gaugeMin,
     required this.gaugeMax,
     required this.gaugeValue,
     required this.gaugeTitle,
-  }) : super(key: key);
+  });
 
   final int width;
   final int height;

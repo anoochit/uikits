@@ -47,8 +47,8 @@ class _FeedScreen04State extends State<FeedScreen04> {
 
 class PostItem extends StatelessWidget {
   const PostItem({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

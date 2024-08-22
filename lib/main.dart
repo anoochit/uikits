@@ -1,5 +1,7 @@
-import 'package:dynamic_color/dynamic_color.dart';
 import 'package:flutter/material.dart';
+
+import 'package:dynamic_color/dynamic_color.dart';
+
 import 'package:uikits2/home.dart';
 
 void main() {

@@ -51,9 +51,9 @@ class _ProfileScreen03State extends State<ProfileScreen03> {
                       ? (constraints.maxWidth * 0.6)
                       : constraints.maxWidth,
                   padding: const EdgeInsets.all(8.0),
-                  child: Row(
+                  child: const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: const [
+                    children: [
                       // place statistic here
                       BlockText(title: "Posts", value: 200),
                       BlockText(title: "Followers", value: 200),
@@ -86,10 +86,10 @@ class _ProfileScreen03State extends State<ProfileScreen03> {
 
 class BlockText extends StatelessWidget {
   const BlockText({
-    Key? key,
+    super.key,
     required this.title,
     required this.value,
-  }) : super(key: key);
+  });
 
   final String title;
   final int value;

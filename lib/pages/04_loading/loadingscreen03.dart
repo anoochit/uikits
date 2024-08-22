@@ -28,8 +28,8 @@ class _LoadingScreen03State extends State<LoadingScreen03> {
                   fit: BoxFit.cover,
                 ),
               ),
-              Column(
-                children: const [
+              const Column(
+                children: [
                   Padding(
                     padding: EdgeInsets.all(16.0),
                     child: Text("Title", style: TextStyle(fontSize: 32)),

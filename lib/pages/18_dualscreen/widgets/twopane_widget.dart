@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:responsive_builder/responsive_builder.dart';
 
 class TwoPaneWidget extends StatelessWidget {
@@ -6,10 +7,10 @@ class TwoPaneWidget extends StatelessWidget {
   final Widget? pane2;
 
   const TwoPaneWidget({
-    Key? key,
+    super.key,
     required this.pane1,
     this.pane2,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

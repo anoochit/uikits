@@ -1,6 +1,8 @@
-// lanscape screen
 import 'package:flutter/material.dart';
+
 import 'package:uikits2/pages/17_m3/consts.dart';
+
+// lanscape screen
 
 class LandscapeScreen extends StatefulWidget {
   const LandscapeScreen({super.key});

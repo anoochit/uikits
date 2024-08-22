@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+
 import 'package:get/get.dart';
+
 import 'package:uikits2/pages/18_dualscreen/controller/twopane_controller.dart';
 
 class BlankScreen extends StatelessWidget {
@@ -7,10 +9,10 @@ class BlankScreen extends StatelessWidget {
   final bool isMainScreen;
 
   BlankScreen({
-    Key? key,
+    super.key,
     required this.title,
     required this.isMainScreen,
-  }) : super(key: key);
+  });
 
   final TwoPaneController controller = Get.find<TwoPaneController>();
 

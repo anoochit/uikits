@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+
 import 'package:uikits2/pages/17_m3/landscape_screen.dart';
 import 'package:uikits2/pages/17_m3/portrait_screen.dart';
 
 class MaterialUScreen01 extends StatefulWidget {
-  const MaterialUScreen01({Key? key}) : super(key: key);
+  const MaterialUScreen01({super.key});
 
   @override
   State<MaterialUScreen01> createState() => _MaterialUScreen01State();

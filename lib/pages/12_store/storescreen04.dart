@@ -1,7 +1,9 @@
 import 'dart:developer';
 
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+
+import 'package:carousel_slider/carousel_slider.dart';
+
 import 'package:uikits2/pages/12_store/sample_data.dart';
 
 class StoreScreen04 extends StatefulWidget {
@@ -120,8 +122,8 @@ class _StoreScreen04State extends State<StoreScreen04> {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         InkWell(
-                          child: Column(
-                            children: const [
+                          child: const Column(
+                            children: [
                               Icon(
                                 Icons.chat_bubble_outline,
                                 color: Colors.white,
@@ -140,8 +142,8 @@ class _StoreScreen04State extends State<StoreScreen04> {
                           },
                         ),
                         InkWell(
-                          child: Column(
-                            children: const [
+                          child: const Column(
+                            children: [
                               Icon(
                                 Icons.add_shopping_cart,
                                 color: Colors.white,
@@ -160,8 +162,8 @@ class _StoreScreen04State extends State<StoreScreen04> {
                           },
                         ),
                         InkWell(
-                          child: Column(
-                            children: const [
+                          child: const Column(
+                            children: [
                               Icon(
                                 Icons.money,
                                 color: Colors.white,

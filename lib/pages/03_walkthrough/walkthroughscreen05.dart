@@ -1,5 +1,6 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+
+import 'package:carousel_slider/carousel_slider.dart';
 
 class WalkthroughScreen05 extends StatefulWidget {
   const WalkthroughScreen05({super.key});
@@ -125,11 +126,11 @@ class _WalkthroughScreen05State extends State<WalkthroughScreen05> {
 
 class CarouselPage extends StatelessWidget {
   const CarouselPage({
-    Key? key,
+    super.key,
     required this.image,
     required this.title,
     required this.subtitle,
-  }) : super(key: key);
+  });
 
   final Image image;
   final String title;

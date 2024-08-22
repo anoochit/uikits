@@ -40,7 +40,8 @@ class _ContactScreen02State extends State<ContactScreen02> {
                     itemCount: 10,
                     scrollDirection: Axis.horizontal,
                     shrinkWrap: true,
-                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 1,
                     ),
                     itemBuilder: (context, index) {
@@ -70,8 +71,8 @@ class _ContactScreen02State extends State<ContactScreen02> {
 
 class ListGroupItem extends StatelessWidget {
   const ListGroupItem({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -106,8 +107,8 @@ class ListGroupItem extends StatelessWidget {
 
 class ListItem extends StatelessWidget {
   const ListItem({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

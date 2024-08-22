@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class FeedScreen02 extends StatefulWidget {
@@ -74,8 +75,8 @@ class _FeedScreen02State extends State<FeedScreen02> {
 
 class PostItem extends StatelessWidget {
   const PostItem({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

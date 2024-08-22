@@ -19,9 +19,9 @@ class BlankScreen extends StatelessWidget {
   final String text;
 
   const BlankScreen({
-    Key? key,
+    super.key,
     required this.text,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

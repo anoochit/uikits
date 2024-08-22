@@ -22,9 +22,9 @@ class _ProfileScreen02State extends State<ProfileScreen02> {
                       : constraints.maxWidth,
                   padding: const EdgeInsets.only(
                       top: 48, bottom: 16, left: 16.0, right: 16.0),
-                  child: Row(
+                  child: const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: const [
+                    children: [
                       // replace avatar image here
                       CircleAvatar(
                         radius: 48,
@@ -91,10 +91,10 @@ class _ProfileScreen02State extends State<ProfileScreen02> {
 
 class BlockText extends StatelessWidget {
   const BlockText({
-    Key? key,
+    super.key,
     required this.title,
     required this.value,
-  }) : super(key: key);
+  });
 
   final String title;
   final int value;

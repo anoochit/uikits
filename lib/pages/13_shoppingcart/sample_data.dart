@@ -8,7 +8,8 @@ class Product {
   final String description;
   final List<String> productImage;
 
-  Product(this.id, this.name, this.price, this.salePrice, this.description, this.productImage);
+  Product(this.id, this.name, this.price, this.salePrice, this.description,
+      this.productImage);
 }
 
 final listProduct = [

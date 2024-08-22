@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:timeago/timeago.dart' as timeago;
 
@@ -82,10 +83,10 @@ class _ChatScreen01State extends State<ChatScreen01> {
 
 class ListDivider extends StatelessWidget {
   const ListDivider({
-    Key? key,
+    super.key,
     required this.constraints,
     required this.index,
-  }) : super(key: key);
+  });
 
   final BoxConstraints constraints;
   final int index;
@@ -114,9 +115,9 @@ class ListDivider extends StatelessWidget {
 
 class ListItem extends StatelessWidget {
   const ListItem({
-    Key? key,
+    super.key,
     required this.index,
-  }) : super(key: key);
+  });
 
   final int index;
 
