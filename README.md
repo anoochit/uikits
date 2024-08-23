@@ -121,15 +121,15 @@ A complete UIs for mobile and tablet, which include 16 categories.
 
 ## M3
 
-| ![](/screenshots/17_m3/m301.png) | ![](/screenshots/17_m3/m302.png) | ![](/screenshots/17_m3/m303.png) | ![](/screenshots/17_m3/m304.png) |     |
-| -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- | --- |
-| 01                               | 02                               | 03                               | 04                               |     |
+| ![](/screenshots/17_materialu/materialu01.png) | ![](/screenshots/17_materialu/materialu02.png) | ![](/screenshots/17_materialu/materialu03.png) | ![](/screenshots/17_materialu/materialu04.png) |     |
+| ---------------------------------------------- | ---------------------------------------------- | ---------------------------------------------- | ---------------------------------------------- | --- |
+| 01                                             | 02                                             | 03                                             | 04                                             |     |
 
 ## Dual Screen
 
-| ![](/screenshots/18_dualscreen/twopane01.png) | ![](/screenshots/18_dualscreen/twopane02.png) |     |     |     |
-| --------------------------------------------- | --------------------------------------------- | --- | --- | --- |
-| 01                                            | 02                                            |     |     |     |
+| ![](/screenshots/18_twopane/twopane01.png) | ![](/screenshots/18_twopane/twopane02.png) |     |     |     |
+| ------------------------------------------ | ------------------------------------------ | --- | --- | --- |
+| 01                                         | 02                                         |     |     |     |
 
 # 3rd party plugins
 

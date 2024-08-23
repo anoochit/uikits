@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:uikits2/pages/17_m3/consts.dart';
+import 'package:uikits2/pages/17_materialu/consts.dart';
 
 // potrait screen
 
