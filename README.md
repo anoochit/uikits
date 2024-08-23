@@ -109,9 +109,9 @@ A complete UIs for mobile and tablet, which include 16 categories.
 
 ## Photos
 
-| ![](/screenshots/15_photos/photo01.png) | ![](/screenshots/15_photos/photo02.png) | ![](/screenshots/15_photos/photo03.png) |     |     |
-| --------------------------------------- | --------------------------------------- | --------------------------------------- | --- | --- |
-| 01                                      | 02                                      | 03                                      |     |     |
+| ![](/screenshots/15_photos/photos01.png) | ![](/screenshots/15_photos/photos02.png) | ![](/screenshots/15_photos/photos03.png) |     |     |
+| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- | --- | --- |
+| 01                                       | 02                                       | 03                                       |     |     |
 
 ## Dashboard
 
