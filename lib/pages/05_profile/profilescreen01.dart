@@ -21,12 +21,16 @@ class _ProfileScreen01State extends State<ProfileScreen01> {
               Stack(
                 children: [
                   // replace background image here
-                  SizedBox(
+                  Container(
                     width: constraints.maxWidth,
                     height: constraints.maxWidth * 0.5,
-                    child: Image.asset(
-                      'assets/images/placeholder.png',
-                      fit: BoxFit.cover,
+                    decoration: const BoxDecoration(
+                      image: DecorationImage(
+                        image: NetworkImage(
+                          'https://picsum.photos/seed/picsum/300/300',
+                        ),
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                   Positioned.fill(
@@ -39,8 +43,9 @@ class _ProfileScreen01State extends State<ProfileScreen01> {
                             // avatar
                             const CircleAvatar(
                               radius: 32,
-                              backgroundImage:
-                                  AssetImage('assets/images/avatar.png'),
+                              backgroundImage: NetworkImage(
+                                'https://avatars.githubusercontent.com/u/1182518?v=4',
+                              ),
                             ),
 
                             // name
@@ -52,9 +57,12 @@ class _ProfileScreen01State extends State<ProfileScreen01> {
                                 Text(
                                   "John Doe",
                                   style:
-                                      Theme.of(context).textTheme.headlineSmall,
+                                      Theme.of(context).textTheme.headlineLarge,
                                 ),
-                                const Text("@johndoe"),
+                                Text(
+                                  "@johndoe",
+                                  style: Theme.of(context).textTheme.bodyLarge,
+                                ),
                               ],
                             )
                           ],
@@ -64,14 +72,15 @@ class _ProfileScreen01State extends State<ProfileScreen01> {
                   ),
                 ],
               ),
-              Column(
-                children: List.generate(
-                  10,
-                  (index) {
-                    return const PostItem();
-                  },
+              GridView.builder(
+                itemCount: 10,
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 1,
                 ),
-              )
+                itemBuilder: (context, index) => const PostItem(),
+              ),
             ],
           ),
         );
@@ -87,58 +96,58 @@ class PostItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final fifteenAgo = DateTime.now().subtract(const Duration(minutes: 15));
+    final fifteenAgo = DateTime.now().subtract(
+      const Duration(
+        minutes: 15,
+      ),
+    );
 
-    return LayoutBuilder(
-      builder: (context, constraints) => Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Container(
-          decoration: BoxDecoration(
-            border: Border.all(color: Colors.grey.shade200),
-            borderRadius: BorderRadius.circular(16.0),
+    return Card(
+      clipBehavior: Clip.antiAliasWithSaveLayer,
+      child: Stack(
+        children: [
+          // image
+          Container(
+            alignment: Alignment.topCenter,
+            child: Image.network(
+              'https://picsum.photos/id/870/600/600',
+              fit: BoxFit.cover,
+            ),
           ),
-          clipBehavior: Clip.antiAliasWithSaveLayer,
-          child: Column(
-            children: [
-              SizedBox(
-                width: constraints.maxWidth,
-                height: constraints.maxWidth,
 
-                // replace image
-                child: Image.asset(
-                  'assets/images/placeholder.png',
-                  fit: BoxFit.cover,
-                ),
+          // tool bar
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Container(
+              color: Theme.of(context).colorScheme.surface,
+              child: Row(
+                children: [
+                  TextButton.icon(
+                    icon: const Icon(FontAwesomeIcons.thumbsUp),
+                    onPressed: () {
+                      // place link function here
+                    },
+                    label: const Text("Like"),
+                  ),
+                  TextButton.icon(
+                    icon: const Icon(FontAwesomeIcons.comment),
+                    onPressed: () {
+                      // place comment function here
+                    },
+                    label: const Text("Comment"),
+                  ),
+                  const Spacer(),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      timeago.format(fifteenAgo),
+                    ),
+                  )
+                ],
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                child: Row(
-                  children: [
-                    TextButton.icon(
-                      icon: const Icon(FontAwesomeIcons.thumbsUp),
-                      onPressed: () {
-                        // place link function here
-                      },
-                      label: const Text("Like"),
-                    ),
-                    TextButton.icon(
-                      icon: const Icon(FontAwesomeIcons.comment),
-                      onPressed: () {
-                        // place comment function here
-                      },
-                      label: const Text("Comment"),
-                    ),
-                    const Spacer(),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text(timeago.format(fifteenAgo)),
-                    )
-                  ],
-                ),
-              )
-            ],
-          ),
-        ),
+            ),
+          )
+        ],
       ),
     );
   }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ms_undraw/ms_undraw.dart';
 
 class LoadingScreen03 extends StatefulWidget {
   const LoadingScreen03({super.key});
@@ -23,18 +24,24 @@ class _LoadingScreen03State extends State<LoadingScreen03> {
                 height: (constraints.maxWidth > 412)
                     ? 400
                     : (constraints.maxWidth * 0.8),
-                child: Image.asset(
-                  'assets/images/placeholder.png',
-                  fit: BoxFit.cover,
+                child: UnDraw(
+                  illustration: UnDrawIllustration.teacher,
+                  color: Theme.of(context).colorScheme.primary,
                 ),
               ),
-              const Column(
+              Column(
                 children: [
                   Padding(
-                    padding: EdgeInsets.all(16.0),
-                    child: Text("Title", style: TextStyle(fontSize: 32)),
+                    padding: const EdgeInsets.all(16.0),
+                    child: Text(
+                      "Title",
+                      style: Theme.of(context).textTheme.headlineLarge,
+                    ),
                   ),
-                  Text("Sub Title", style: TextStyle(fontSize: 16)),
+                  Text(
+                    "Sub Title",
+                    style: Theme.of(context).textTheme.headlineSmall,
+                  ),
                 ],
               ),
               const Spacer(),

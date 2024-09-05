@@ -14,82 +14,91 @@ class _ProfileScreen05State extends State<ProfileScreen05> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: LayoutBuilder(
-        builder: (context, constraints) {
-          return SingleChildScrollView(
-            child: Column(
-              children: [
-                Stack(
-                  children: [
-                    SizedBox(
-                      width: constraints.maxWidth,
-                      height: 220,
-                      child: Image.asset(
-                        'assets/images/placeholder.png',
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    Positioned.fill(
-                      child: Center(
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            // replace avatar image here
-                            const CircleAvatar(
-                              radius: 48,
-                              backgroundImage:
-                                  AssetImage('assets/images/avatar.png'),
-                            ),
-                            Container(
-                              padding: const EdgeInsets.all(8.0),
-                              // replace display name here
-                              child: Text(
-                                "John Doe",
-                                style:
-                                    Theme.of(context).textTheme.headlineMedium,
-                              ),
-                            ),
-                            Container(
-                              padding: const EdgeInsets.all(4.0),
-                              // replace display name here
-                              child: Text(
-                                "@johndoe",
-                                style: Theme.of(context).textTheme.labelLarge,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
+              width: MediaQuery.sizeOf(context).width,
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image:
+                      NetworkImage('https://picsum.photos/1080/600?grayscale'),
                 ),
-                Container(
-                  padding: const EdgeInsets.all(8.0),
-                  width: (constraints.maxWidth > 412)
-                      ? (constraints.maxWidth * 0.6)
-                      : constraints.maxWidth,
-                  child: const Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              ),
+              child: Column(
+                children: [
+                  const SizedBox(
+                    height: kToolbarHeight,
+                  ),
+                  // profile avatar
+                  Stack(
                     children: [
-                      // place statistic here
-                      BlockText(title: "Posts", value: 200),
-                      BlockText(title: "Followers", value: 200),
-                      BlockText(title: "Following", value: 200),
+                      Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          // replace avatar image here
+                          const CircleAvatar(
+                            radius: 48,
+                            backgroundImage: NetworkImage(
+                              'https://avatars.githubusercontent.com/u/1182518?v=4',
+                            ),
+                          ),
+                          Text(
+                            "John Doe",
+                            style: Theme.of(context).textTheme.headlineMedium,
+                          ),
+                          const SizedBox(height: 8.0),
+                          Text(
+                            "@johndoe",
+                            style: Theme.of(context).textTheme.labelLarge,
+                          ),
+                          const SizedBox(height: 16.0),
+                        ],
+                      ),
                     ],
                   ),
-                ),
-                ListView.builder(
-                  physics: const ScrollPhysics(),
-                  shrinkWrap: true,
-                  itemCount: 20,
-                  itemBuilder: (context, index) {
-                    return const PostItem();
-                  },
-                )
-              ],
+                ],
+              ),
             ),
-          );
-        },
+
+            // statistic
+            Container(
+              padding: const EdgeInsets.all(8.0),
+              child: const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  // place statistic here
+                  BlockText(
+                    title: "Posts",
+                    value: 200,
+                  ),
+                  BlockText(
+                    title: "Followers",
+                    value: 200,
+                  ),
+                  BlockText(
+                    title: "Following",
+                    value: 200,
+                  ),
+                ],
+              ),
+            ),
+
+            // gridview
+            GridView.builder(
+              padding: const EdgeInsets.only(top: 0),
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 1,
+              ),
+              itemCount: 10,
+              itemBuilder: (BuildContext context, int index) {
+                return const PostItem();
+              },
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -104,55 +113,48 @@ class PostItem extends StatelessWidget {
   Widget build(BuildContext context) {
     final fifteenAgo = DateTime.now().subtract(const Duration(minutes: 15));
 
-    return LayoutBuilder(
-      builder: (context, constraints) => Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Container(
-          decoration: BoxDecoration(
-            border: Border.all(color: Colors.grey.shade200),
-            borderRadius: BorderRadius.circular(16.0),
+    return Card(
+      clipBehavior: Clip.antiAlias,
+      child: Stack(
+        children: [
+          SizedBox(
+            // replace image
+            child: Image.network(
+              'https://picsum.photos/seed/picsum/600/600',
+              fit: BoxFit.cover,
+            ),
           ),
-          clipBehavior: Clip.antiAliasWithSaveLayer,
-          child: Column(
-            children: [
-              SizedBox(
-                width: constraints.maxWidth,
-                height: constraints.maxWidth,
-                // replace image
-                child: Image.asset(
-                  'assets/images/placeholder.png',
-                  fit: BoxFit.cover,
-                ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Container(
+              color: Theme.of(context).colorScheme.surface,
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              child: Row(
+                children: [
+                  TextButton.icon(
+                    icon: const Icon(FontAwesomeIcons.thumbsUp),
+                    onPressed: () {
+                      // place link function here
+                    },
+                    label: const Text("Like"),
+                  ),
+                  TextButton.icon(
+                    icon: const Icon(FontAwesomeIcons.comment),
+                    onPressed: () {
+                      // place comment function here
+                    },
+                    label: const Text("Comment"),
+                  ),
+                  const Spacer(),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(timeago.format(fifteenAgo)),
+                  )
+                ],
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                child: Row(
-                  children: [
-                    TextButton.icon(
-                      icon: const Icon(FontAwesomeIcons.thumbsUp),
-                      onPressed: () {
-                        // place link function here
-                      },
-                      label: const Text("Like"),
-                    ),
-                    TextButton.icon(
-                      icon: const Icon(FontAwesomeIcons.comment),
-                      onPressed: () {
-                        // place comment function here
-                      },
-                      label: const Text("Comment"),
-                    ),
-                    const Spacer(),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text(timeago.format(fifteenAgo)),
-                    )
-                  ],
-                ),
-              )
-            ],
-          ),
-        ),
+            ),
+          )
+        ],
       ),
     );
   }
@@ -177,9 +179,12 @@ class BlockText extends StatelessWidget {
         children: [
           Text(
             '$value',
-            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+            style: Theme.of(context).textTheme.headlineSmall,
           ),
-          Text(title),
+          Text(
+            title,
+            style: Theme.of(context).textTheme.bodySmall,
+          ),
         ],
       ),
     );

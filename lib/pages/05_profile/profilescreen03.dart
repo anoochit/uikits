@@ -25,22 +25,24 @@ class _ProfileScreen03State extends State<ProfileScreen03> {
                     children: [
                       const CircleAvatar(
                         radius: 50,
-                        backgroundImage: AssetImage('assets/images/avatar.png'),
+                        backgroundImage: NetworkImage(
+                          'https://avatars.githubusercontent.com/u/1182518?v=4',
+                        ),
                       ),
                       Container(
                         padding: const EdgeInsets.all(8.0),
                         // replace display name here
                         child: Text(
                           "John Doe",
-                          style: Theme.of(context).textTheme.headlineMedium,
+                          style: Theme.of(context).textTheme.headlineLarge,
                         ),
                       ),
                       Container(
                         padding: const EdgeInsets.all(8.0),
                         // replace display name here
-                        child: const Text(
+                        child: Text(
                           "@johndoe",
-                          style: TextStyle(fontSize: 16.0),
+                          style: Theme.of(context).textTheme.headlineSmall,
                         ),
                       ),
                     ],
@@ -61,19 +63,20 @@ class _ProfileScreen03State extends State<ProfileScreen03> {
                     ],
                   ),
                 ),
-                GridView.count(
-                  physics: const ScrollPhysics(),
+                GridView.builder(
+                  itemCount: 10,
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                  ),
+                  physics: const NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
-                  crossAxisCount: (constraints.maxWidth > 412) ? 4 : 2,
-                  children: List.generate(20, (index) {
-                    return Card(
-                      clipBehavior: Clip.antiAliasWithSaveLayer,
-                      child: Image.asset(
-                        'assets/images/placeholder.png',
-                        fit: BoxFit.cover,
-                      ),
-                    );
-                  }),
+                  itemBuilder: (context, index) => Card(
+                    clipBehavior: Clip.antiAliasWithSaveLayer,
+                    child: Image.network(
+                      'https://picsum.photos/seed/picsum/300/300',
+                      fit: BoxFit.cover,
+                    ),
+                  ),
                 )
               ],
             ),
@@ -103,9 +106,12 @@ class BlockText extends StatelessWidget {
         children: [
           Text(
             '$value',
-            style: Theme.of(context).textTheme.titleMedium,
+            style: Theme.of(context).textTheme.bodyLarge,
           ),
-          Text(title),
+          Text(
+            title,
+            style: Theme.of(context).textTheme.labelMedium,
+          ),
         ],
       ),
     );

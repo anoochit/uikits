@@ -35,13 +35,14 @@ class _LoadingScreen01State extends State<LoadingScreen01> {
             Container(
               alignment: Alignment.bottomCenter,
               padding: const EdgeInsets.all(32.0),
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
+              child: FilledButton(
+                style: FilledButton.styleFrom(
                   minimumSize: Size(
-                      (constraints.maxWidth > 412)
-                          ? (constraints.maxWidth * 0.5)
-                          : constraints.maxWidth,
-                      50),
+                    (constraints.maxWidth > 412)
+                        ? (constraints.maxWidth * 0.5)
+                        : constraints.maxWidth,
+                    50,
+                  ),
                 ),
                 child: const Text("Go Back"),
                 onPressed: () {

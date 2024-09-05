@@ -20,7 +20,7 @@ class _LoadingScreen02State extends State<LoadingScreen02> {
                 width: 100,
                 height: 100,
                 child: CircularProgressIndicator(
-                  backgroundColor: Colors.grey.shade200,
+                  backgroundColor: Theme.of(context).colorScheme.inversePrimary,
                 ),
               ),
               Container(

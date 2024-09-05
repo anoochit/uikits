@@ -13,6 +13,7 @@ class _ProfileScreen04State extends State<ProfileScreen04> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Profile"),
+        automaticallyImplyLeading: false,
       ),
       body: LayoutBuilder(
         builder: (context, constraints) => Column(
@@ -76,7 +77,9 @@ class ListItem extends StatelessWidget {
     return ListTile(
       leading: const CircleAvatar(
         radius: 24,
-        backgroundImage: AssetImage('assets/images/avatar.png'),
+        backgroundImage: NetworkImage(
+          'https://avatars.githubusercontent.com/u/1182518?v=4',
+        ),
       ),
       title: Text('item $index'),
     );

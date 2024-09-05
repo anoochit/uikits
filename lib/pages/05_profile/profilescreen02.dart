@@ -21,19 +21,34 @@ class _ProfileScreen02State extends State<ProfileScreen02> {
                       ? (constraints.maxWidth * 0.6)
                       : constraints.maxWidth,
                   padding: const EdgeInsets.only(
-                      top: 48, bottom: 16, left: 16.0, right: 16.0),
+                    top: kToolbarHeight,
+                    bottom: 16.0,
+                    left: 16.0,
+                    right: 16.0,
+                  ),
                   child: const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       // replace avatar image here
                       CircleAvatar(
                         radius: 48,
-                        backgroundImage: AssetImage('assets/images/avatar.png'),
+                        backgroundImage: NetworkImage(
+                          'https://avatars.githubusercontent.com/u/1182518?v=4',
+                        ),
                       ),
                       // place statistic here
-                      BlockText(title: "Posts", value: 200),
-                      BlockText(title: "Followers", value: 200),
-                      BlockText(title: "Following", value: 200),
+                      BlockText(
+                        title: "Posts",
+                        value: 200,
+                      ),
+                      BlockText(
+                        title: "Followers",
+                        value: 200,
+                      ),
+                      BlockText(
+                        title: "Following",
+                        value: 200,
+                      ),
                     ],
                   ),
                 ),
@@ -63,21 +78,19 @@ class _ProfileScreen02State extends State<ProfileScreen02> {
                     ],
                   ),
                 ),
-                GridView.count(
-                  physics: const ScrollPhysics(),
+                GridView.builder(
+                  itemCount: 10,
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                  ),
+                  physics: const NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
-                  crossAxisCount: (constraints.maxWidth > 412) ? 4 : 2,
-                  children: List.generate(
-                    20,
-                    (index) {
-                      return Card(
-                        clipBehavior: Clip.antiAliasWithSaveLayer,
-                        child: Image.asset(
-                          'assets/images/placeholder.png',
-                          fit: BoxFit.cover,
-                        ),
-                      );
-                    },
+                  itemBuilder: (context, index) => Card(
+                    clipBehavior: Clip.antiAliasWithSaveLayer,
+                    child: Image.network(
+                      'https://picsum.photos/seed/picsum/300/300',
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 )
               ],
@@ -108,11 +121,12 @@ class BlockText extends StatelessWidget {
         children: [
           Text(
             '$value',
-            style: const TextStyle(
-              fontWeight: FontWeight.bold,
-            ),
+            style: Theme.of(context).textTheme.bodyLarge,
           ),
-          Text(title),
+          Text(
+            title,
+            style: Theme.of(context).textTheme.labelMedium,
+          ),
         ],
       ),
     );

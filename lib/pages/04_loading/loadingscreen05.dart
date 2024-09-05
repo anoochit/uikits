@@ -23,6 +23,7 @@ class LoadingScreen05 extends StatelessWidget {
           height: 120,
           width: 120,
           strokeWidth: 12,
+          strokeCap: StrokeCap.round,
           onStart: () {
             // timer start
           },
