@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:ms_undraw/ms_undraw.dart';
 
 class WalkthroughScreen03 extends StatefulWidget {
   const WalkthroughScreen03({super.key});
@@ -14,36 +15,36 @@ class _WalkthroughScreen03State extends State<WalkthroughScreen03> {
   List<Widget> listCarousel(BuildContext context) {
     return [
       CarouselPage(
-        image: Image.asset(
-          'assets/images/placeholder.png',
-          fit: BoxFit.cover,
+        image: UnDraw(
+          illustration: UnDrawIllustration.mobile,
+          color: Theme.of(context).colorScheme.primary,
         ),
         title: "Instruction Page 1",
-        subtitle: "Instruction 1 Description",
+        subtitle: "Sit Lorem reprehenderit sint veniam anim duis.",
       ),
       CarouselPage(
-        image: Image.asset(
-          'assets/images/placeholder.png',
-          fit: BoxFit.cover,
+        image: UnDraw(
+          illustration: UnDrawIllustration.mobile_analytics,
+          color: Theme.of(context).colorScheme.primary,
         ),
         title: "Instruction Page 2",
-        subtitle: "Instruction 2 Description",
+        subtitle: "Sit Lorem reprehenderit sint veniam anim duis.",
       ),
       CarouselPage(
-        image: Image.asset(
-          'assets/images/placeholder.png',
-          fit: BoxFit.cover,
+        image: UnDraw(
+          illustration: UnDrawIllustration.mobile_application,
+          color: Theme.of(context).colorScheme.primary,
         ),
         title: "Instruction Page 3",
-        subtitle: "Instruction 3 Description",
+        subtitle: "Sit Lorem reprehenderit sint veniam anim duis.",
       ),
       CarouselPage(
-        image: Image.asset(
-          'assets/images/placeholder.png',
-          fit: BoxFit.cover,
+        image: UnDraw(
+          illustration: UnDrawIllustration.mobile_browsers,
+          color: Theme.of(context).colorScheme.primary,
         ),
         title: "Instruction Page 4",
-        subtitle: "Instruction 4 Description",
+        subtitle: "Sit Lorem reprehenderit sint veniam anim duis.",
       ),
     ];
   }
@@ -65,7 +66,7 @@ class _WalkthroughScreen03State extends State<WalkthroughScreen03> {
                 items: listCarouselPage,
                 options: CarouselOptions(
                   height: constraints.maxHeight * 0.6,
-                  viewportFraction: 0.8,
+                  viewportFraction: 0.9,
                   enlargeCenterPage: true,
                   scrollDirection: Axis.horizontal,
                   enableInfiniteScroll: false,
@@ -84,15 +85,12 @@ class _WalkthroughScreen03State extends State<WalkthroughScreen03> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: listCarouselPage.map((item) {
                   int index = listCarouselPage.indexOf(item);
-                  return Container(
-                    width: _current == index ? 12.0 : 8.0,
-                    height: _current == index ? 12.0 : 8.0,
-                    margin: const EdgeInsets.symmetric(
-                        vertical: 10.0, horizontal: 2.0),
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: _current == index ? Colors.grey : Colors.grey[300],
-                    ),
+                  return Icon(
+                    Icons.circle,
+                    size: _current == index ? 16 : 12,
+                    color: _current == index
+                        ? Theme.of(context).colorScheme.primary
+                        : Theme.of(context).colorScheme.inversePrimary,
                   );
                 }).toList(),
               ),
@@ -103,7 +101,7 @@ class _WalkthroughScreen03State extends State<WalkthroughScreen03> {
               child: TextButton(
                 child: const Text("Skip"),
                 onPressed: () {
-                  // place skip function
+                  // TODO : place skip function
                 },
               ),
             )
@@ -122,35 +120,25 @@ class CarouselPage extends StatelessWidget {
     required this.subtitle,
   });
 
-  final Image image;
+  final Widget image;
   final String title;
   final String subtitle;
 
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
-      builder: (context, constraints) => Stack(
+      builder: (context, constraints) => Column(
         children: [
           SizedBox(
             width: constraints.maxWidth,
-            height: constraints.maxHeight,
+            height: constraints.maxHeight * 0.8,
             child: image,
           ),
-          SizedBox(
-            width: constraints.maxWidth,
-            height: constraints.maxHeight,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  title,
-                  style: Theme.of(context).textTheme.headlineLarge,
-                ),
-                Text(subtitle),
-              ],
-            ),
-          )
+          Text(
+            title,
+            style: Theme.of(context).textTheme.headlineLarge,
+          ),
+          Text(subtitle),
         ],
       ),
     );

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:ms_undraw/ms_undraw.dart';
 
 class WalkthroughScreen01 extends StatefulWidget {
   const WalkthroughScreen01({super.key});
@@ -14,36 +15,28 @@ class _WalkthroughScreen01State extends State<WalkthroughScreen01> {
   List<Widget> listCarousel(BuildContext context) {
     return [
       CarouselPage(
-        image: Image.asset(
-          'assets/images/placeholder.png',
-          fit: BoxFit.cover,
+        image: UnDraw(
+          illustration: UnDrawIllustration.mobile,
+          color: Theme.of(context).colorScheme.primary,
         ),
-        title: "Instruction Page 1",
-        subtitle: "Instruction 1 Description",
       ),
       CarouselPage(
-        image: Image.asset(
-          'assets/images/placeholder.png',
-          fit: BoxFit.cover,
+        image: UnDraw(
+          illustration: UnDrawIllustration.mobile_analytics,
+          color: Theme.of(context).colorScheme.primary,
         ),
-        title: "Instruction Page 2",
-        subtitle: "Instruction 2 Description",
       ),
       CarouselPage(
-        image: Image.asset(
-          'assets/images/placeholder.png',
-          fit: BoxFit.cover,
+        image: UnDraw(
+          illustration: UnDrawIllustration.mobile_application,
+          color: Theme.of(context).colorScheme.primary,
         ),
-        title: "Instruction Page 3",
-        subtitle: "Instruction 3 Description",
       ),
       CarouselPage(
-        image: Image.asset(
-          'assets/images/placeholder.png',
-          fit: BoxFit.cover,
+        image: UnDraw(
+          illustration: UnDrawIllustration.mobile_browsers,
+          color: Theme.of(context).colorScheme.primary,
         ),
-        title: "Instruction Page 4",
-        subtitle: "Instruction 4 Description",
       ),
     ];
   }
@@ -58,23 +51,18 @@ class _WalkthroughScreen01State extends State<WalkthroughScreen01> {
       body: LayoutBuilder(
         builder: (context, constraints) => Stack(
           children: [
-            SizedBox(
-              width: constraints.maxWidth,
-              height: constraints.maxHeight,
-              child: CarouselSlider(
-                items: listCarouselPage,
-                options: CarouselOptions(
-                  height: constraints.maxHeight,
-                  viewportFraction: 1.0,
-                  //enlargeCenterPage: true,
-                  scrollDirection: Axis.horizontal,
-                  enableInfiniteScroll: false,
-                  onPageChanged: (index, reason) {
-                    setState(() {
-                      _current = index;
-                    });
-                  },
-                ),
+            CarouselSlider(
+              items: listCarouselPage,
+              options: CarouselOptions(
+                height: constraints.maxHeight,
+                viewportFraction: 1.0,
+                scrollDirection: Axis.horizontal,
+                enableInfiniteScroll: false,
+                onPageChanged: (index, reason) {
+                  setState(() {
+                    _current = index;
+                  });
+                },
               ),
             ),
             Container(
@@ -84,26 +72,26 @@ class _WalkthroughScreen01State extends State<WalkthroughScreen01> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: listCarouselPage.map((item) {
                   int index = listCarouselPage.indexOf(item);
-                  return Container(
-                    width: _current == index ? 12.0 : 8.0,
-                    height: _current == index ? 12.0 : 8.0,
-                    margin: const EdgeInsets.symmetric(
-                        vertical: 10.0, horizontal: 2.0),
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: _current == index ? Colors.grey : Colors.grey[300],
-                    ),
+                  return Icon(
+                    Icons.circle,
+                    size: _current == index ? 16 : 12,
+                    color: _current == index
+                        ? Theme.of(context).colorScheme.primary
+                        : Theme.of(context).colorScheme.inversePrimary,
                   );
                 }).toList(),
               ),
             ),
             Container(
               alignment: Alignment.bottomRight,
-              padding: const EdgeInsets.only(bottom: 24.0, right: 16.0),
+              padding: const EdgeInsets.only(
+                bottom: 24.0,
+                right: 16.0,
+              ),
               child: TextButton(
                 child: const Text("Skip"),
                 onPressed: () {
-                  // place skip function
+                  // TODO : place skip function
                 },
               ),
             )
@@ -118,40 +106,17 @@ class CarouselPage extends StatelessWidget {
   const CarouselPage({
     super.key,
     required this.image,
-    required this.title,
-    required this.subtitle,
   });
 
-  final Image image;
-  final String title;
-  final String subtitle;
+  final Widget image;
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints) => Stack(
-        children: [
-          SizedBox(
-              width: constraints.maxWidth,
-              height: constraints.maxHeight,
-              child: image),
-          SizedBox(
-            width: constraints.maxWidth,
-            height: constraints.maxHeight,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  title,
-                  style: Theme.of(context).textTheme.headlineLarge,
-                ),
-                Text(subtitle),
-              ],
-            ),
-          )
-        ],
+    return Padding(
+      padding: const EdgeInsetsDirectional.symmetric(
+        horizontal: 16.0,
       ),
+      child: image,
     );
   }
 }

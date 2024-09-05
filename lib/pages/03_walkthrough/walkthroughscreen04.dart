@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:ms_undraw/ms_undraw.dart';
 
 class WalkthroughScreen04 extends StatefulWidget {
   const WalkthroughScreen04({super.key});
@@ -14,25 +15,37 @@ class _WalkthroughScreen04State extends State<WalkthroughScreen04> {
   List<Widget> listCarousel(BuildContext context) {
     return [
       CarouselPage(
-          image:
-              Image.asset('assets/images/placeholder.png', fit: BoxFit.cover),
-          title: "Instruction Page 1",
-          subtitle: "Instruction 1 Description"),
+        image: UnDraw(
+          illustration: UnDrawIllustration.mobile,
+          color: Theme.of(context).colorScheme.primary,
+        ),
+        title: "Instruction Page 1",
+        subtitle: "Sit Lorem reprehenderit sint veniam anim duis.",
+      ),
       CarouselPage(
-          image:
-              Image.asset('assets/images/placeholder.png', fit: BoxFit.cover),
-          title: "Instruction Page 2",
-          subtitle: "Instruction 2 Description"),
+        image: UnDraw(
+          illustration: UnDrawIllustration.mobile_analytics,
+          color: Theme.of(context).colorScheme.primary,
+        ),
+        title: "Instruction Page 2",
+        subtitle: "Sit Lorem reprehenderit sint veniam anim duis.",
+      ),
       CarouselPage(
-          image:
-              Image.asset('assets/images/placeholder.png', fit: BoxFit.cover),
-          title: "Instruction Page 3",
-          subtitle: "Instruction 3 Description"),
+        image: UnDraw(
+          illustration: UnDrawIllustration.mobile_application,
+          color: Theme.of(context).colorScheme.primary,
+        ),
+        title: "Instruction Page 3",
+        subtitle: "Sit Lorem reprehenderit sint veniam anim duis.",
+      ),
       CarouselPage(
-          image:
-              Image.asset('assets/images/placeholder.png', fit: BoxFit.cover),
-          title: "Instruction Page 4",
-          subtitle: "Instruction 4 Description"),
+        image: UnDraw(
+          illustration: UnDrawIllustration.mobile_browsers,
+          color: Theme.of(context).colorScheme.primary,
+        ),
+        title: "Instruction Page 4",
+        subtitle: "Sit Lorem reprehenderit sint veniam anim duis.",
+      ),
     ];
   }
 
@@ -44,64 +57,56 @@ class _WalkthroughScreen04State extends State<WalkthroughScreen04> {
 
     return Scaffold(
       body: LayoutBuilder(
-        builder: (context, constraints) => Stack(
+        builder: (context, constraints) => Column(
           children: [
-            Positioned(
-              top: 64,
-              child: SizedBox(
-                width: constraints.maxWidth,
-                height: constraints.maxHeight,
-                child: CarouselSlider(
-                  items: listCarouselPage,
-                  options: CarouselOptions(
-                    height: constraints.maxHeight,
-                    viewportFraction: 1,
-                    enlargeCenterPage: true,
-                    scrollDirection: Axis.horizontal,
-                    enableInfiniteScroll: false,
-                    onPageChanged: (index, reason) {
-                      setState(() {
-                        _current = index;
-                      });
-                    },
-                  ),
+            Expanded(
+              child: CarouselSlider(
+                items: listCarouselPage,
+                options: CarouselOptions(
+                  height: constraints.maxHeight,
+                  viewportFraction: 1,
+                  enlargeCenterPage: true,
+                  scrollDirection: Axis.horizontal,
+                  enableInfiniteScroll: false,
+                  onPageChanged: (index, reason) {
+                    setState(() {
+                      _current = index;
+                    });
+                  },
                 ),
               ),
             ),
             Container(
-              alignment: Alignment.bottomCenter,
-              padding: const EdgeInsets.only(bottom: 120.0),
+              padding: const EdgeInsets.symmetric(vertical: 16.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: listCarouselPage.map((item) {
                   int index = listCarouselPage.indexOf(item);
-                  return Container(
-                    width: _current == index ? 12.0 : 8.0,
-                    height: _current == index ? 12.0 : 8.0,
-                    margin: const EdgeInsets.symmetric(
-                        vertical: 10.0, horizontal: 2.0),
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: _current == index ? Colors.grey : Colors.grey[300],
-                    ),
+                  return Icon(
+                    Icons.circle,
+                    size: _current == index ? 16 : 12,
+                    color: _current == index
+                        ? Theme.of(context).colorScheme.primary
+                        : Theme.of(context).colorScheme.inversePrimary,
                   );
                 }).toList(),
               ),
             ),
             Container(
-              alignment: Alignment.bottomCenter,
-              padding: const EdgeInsets.all(32.0),
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 32.0, vertical: 16.0),
+              child: FilledButton(
+                style: FilledButton.styleFrom(
                   minimumSize: Size(
-                      (constraints.maxWidth > 412)
-                          ? (constraints.maxWidth * 0.5)
-                          : constraints.maxWidth,
-                      50),
+                    (constraints.maxWidth > 412)
+                        ? (constraints.maxWidth * 0.5)
+                        : constraints.maxWidth,
+                    50,
+                  ),
                 ),
                 child: const Text("Continue"),
                 onPressed: () {
-                  // place sign up function here
+                  // TODO : place sign up function here
                 },
               ),
             ),
@@ -120,45 +125,35 @@ class CarouselPage extends StatelessWidget {
     required this.subtitle,
   });
 
-  final Image image;
+  final Widget image;
   final String title;
   final String subtitle;
 
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
-      builder: (context, constraints) => Stack(
-        children: [
-          SizedBox(
-            width: (constraints.maxWidth > 412)
-                ? (constraints.maxWidth * 0.3)
-                : constraints.maxWidth,
-            height: (constraints.maxWidth > 412)
-                ? (constraints.maxWidth * 0.3)
-                : constraints.maxWidth,
-            child: ClipOval(child: image),
-          ),
-          SizedBox(
-            width: (constraints.maxWidth > 412)
-                ? (constraints.maxWidth * 0.3)
-                : constraints.maxWidth,
-            height: constraints.maxHeight,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SizedBox(
-                  height: constraints.maxHeight * 0.15,
-                ),
-                Text(
-                  title,
-                  style: Theme.of(context).textTheme.headlineMedium,
-                ),
-                Text(subtitle),
-              ],
+      builder: (context, constraints) => Center(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            SizedBox(
+              width: constraints.maxWidth - 16,
+              height: constraints.maxWidth - 16,
+              child: ClipOval(
+                child: Container(
+                    padding: const EdgeInsets.all(16.0),
+                    color: Theme.of(context).colorScheme.onInverseSurface,
+                    child: image),
+              ),
             ),
-          )
-        ],
+            const SizedBox(height: 16.0),
+            Text(
+              title,
+              style: Theme.of(context).textTheme.headlineMedium,
+            ),
+            Text(subtitle)
+          ],
+        ),
       ),
     );
   }
