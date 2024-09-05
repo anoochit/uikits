@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-
 import 'package:responsive_builder/responsive_builder.dart';
-
 import 'package:uikits2/home_mobile.dart';
 import 'package:uikits2/home_tablet.dart';
 

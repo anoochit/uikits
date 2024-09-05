@@ -30,10 +30,12 @@ class _StartScreen02State extends State<StartScreen02> {
               ),
               const Spacer(),
               Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 32.0, vertical: 8.0),
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 32.0,
+                  vertical: 8.0,
+                ),
+                child: FilledButton(
+                  style: FilledButton.styleFrom(
                     minimumSize: Size(
                         (constraints.maxWidth > 412)
                             ? (constraints.maxWidth * 0.5)
@@ -42,15 +44,17 @@ class _StartScreen02State extends State<StartScreen02> {
                   ),
                   child: const Text("Sign up with Email"),
                   onPressed: () {
-                    // place sign up function here
+                    // TODO : place sign up function here
                   },
                 ),
               ),
               Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 32.0, vertical: 8.0),
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 32.0,
+                  vertical: 8.0,
+                ),
+                child: FilledButton(
+                  style: FilledButton.styleFrom(
                     minimumSize: Size(
                         (constraints.maxWidth > 412)
                             ? (constraints.maxWidth * 0.5)
@@ -59,7 +63,7 @@ class _StartScreen02State extends State<StartScreen02> {
                   ),
                   child: const Text("Sign In"),
                   onPressed: () {
-                    // place sign up function here
+                    // TODO : place sign up function here
                   },
                 ),
               ),

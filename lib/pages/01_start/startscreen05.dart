@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ms_undraw/ms_undraw.dart';
 
 class StartScreen05 extends StatefulWidget {
   const StartScreen05({super.key});
@@ -15,14 +16,12 @@ class _StartScreen05State extends State<StartScreen05> {
         builder: (context, constraints) => Stack(
           children: [
             Positioned.fill(
-              child: Container(
-                width: constraints.maxWidth,
-                height: constraints.maxHeight,
-                decoration:
-                    BoxDecoration(borderRadius: BorderRadius.circular(60)),
-                // place background image here
-                child: Image.asset('assets/images/placeholder.png',
-                    fit: BoxFit.cover),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                child: UnDraw(
+                  illustration: UnDrawIllustration.absorbed_in,
+                  color: Theme.of(context).primaryColor,
+                ),
               ),
             ),
             Container(
@@ -37,15 +36,15 @@ class _StartScreen05State extends State<StartScreen05> {
                   const Spacer(),
                   Container(
                     padding: const EdgeInsets.all(8.0),
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
+                    child: FilledButton(
+                      style: FilledButton.styleFrom(
                         minimumSize: Size(
                             (constraints.maxWidth > 412)
                                 ? ((constraints.maxWidth * 0.5) * 0.45)
                                 : (constraints.maxWidth * 0.40),
                             50),
                       ),
-                      child: const Text("Sign up"),
+                      child: const Text("Sign Up"),
                       onPressed: () {
                         // place sign up function here
                       },
@@ -53,15 +52,15 @@ class _StartScreen05State extends State<StartScreen05> {
                   ),
                   Container(
                     padding: const EdgeInsets.all(8.0),
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
+                    child: FilledButton(
+                      style: FilledButton.styleFrom(
                         minimumSize: Size(
                             (constraints.maxWidth > 412)
                                 ? ((constraints.maxWidth * 0.5) * 0.45)
                                 : (constraints.maxWidth * 0.40),
                             50),
                       ),
-                      child: const Text("Sign in"),
+                      child: const Text("Sign In"),
                       onPressed: () {
                         // place sign in function here
                       },

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ms_undraw/ms_undraw.dart';
 
 class StartScreen03 extends StatefulWidget {
   const StartScreen03({super.key});
@@ -14,13 +15,16 @@ class _StartScreen03State extends State<StartScreen03> {
       body: LayoutBuilder(
         builder: (context, constraints) => Column(
           children: [
+            const Spacer(),
             SizedBox(
               width: (constraints.maxWidth > 412)
                   ? (constraints.maxWidth * 0.5)
-                  : constraints.maxWidth,
+                  : (constraints.maxWidth - 16),
               height: constraints.maxHeight * 0.6,
-              child: Image.asset('assets/images/placeholder.png',
-                  fit: BoxFit.cover),
+              child: UnDraw(
+                illustration: UnDrawIllustration.social_bio,
+                color: Theme.of(context).colorScheme.primary,
+              ),
             ),
             const Spacer(),
             Container(
@@ -28,8 +32,8 @@ class _StartScreen03State extends State<StartScreen03> {
               padding: const EdgeInsets.symmetric(vertical: 8.0),
               child: Column(
                 children: [
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
+                  FilledButton(
+                    style: FilledButton.styleFrom(
                       minimumSize: Size(
                         (constraints.maxWidth > 412)
                             ? (constraints.maxWidth * 0.5)
@@ -39,7 +43,7 @@ class _StartScreen03State extends State<StartScreen03> {
                     ),
                     child: const Text("Sign up with Facebook"),
                     onPressed: () {
-                      // place sign up function here
+                      // TODO : place sign up function here
                     },
                   ),
                 ],
@@ -50,8 +54,8 @@ class _StartScreen03State extends State<StartScreen03> {
               padding: const EdgeInsets.symmetric(vertical: 8.0),
               child: Column(
                 children: [
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
+                  FilledButton(
+                    style: FilledButton.styleFrom(
                       minimumSize: Size(
                         (constraints.maxWidth > 412)
                             ? (constraints.maxWidth * 0.5)
@@ -61,7 +65,7 @@ class _StartScreen03State extends State<StartScreen03> {
                     ),
                     child: const Text("Sign up with Email"),
                     onPressed: () {
-                      // place sign up function here
+                      // TODO : place sign up function here
                     },
                   ),
                 ],

@@ -24,16 +24,18 @@ class _StartScreen04State extends State<StartScreen04> {
                     height: 160,
                     decoration:
                         BoxDecoration(borderRadius: BorderRadius.circular(60)),
-                    // place background image here
-                    child: ClipOval(
-                        child: Image.asset('assets/images/avatar.png',
-                            fit: BoxFit.cover)),
+                    // TODO : place background image here
+                    child: const CircleAvatar(
+                      backgroundImage: NetworkImage(
+                        'https://avatars.githubusercontent.com/u/1182518?v=4',
+                      ),
+                    ),
                   ),
                   const Padding(
                     padding: EdgeInsets.all(16.0),
                     // replace username here
                     child: Text(
-                      "John Doe",
+                      "Anuchit Chalothorn",
                       style: TextStyle(fontSize: 32.0),
                     ),
                   ),
@@ -48,8 +50,8 @@ class _StartScreen04State extends State<StartScreen04> {
                   Container(
                     padding: const EdgeInsets.symmetric(
                         horizontal: 32.0, vertical: 8.0),
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
+                    child: FilledButton(
+                      style: FilledButton.styleFrom(
                         minimumSize: Size(
                             (constraints.maxWidth > 412)
                                 ? (constraints.maxWidth * 0.5)
@@ -58,15 +60,15 @@ class _StartScreen04State extends State<StartScreen04> {
                       ),
                       child: const Text("Continue"),
                       onPressed: () {
-                        // place sign up function here
+                        // TODO : place sign up function here
                       },
                     ),
                   ),
                   Container(
                     padding: const EdgeInsets.only(
                         left: 32.0, right: 32, top: 8.0, bottom: 32),
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
+                    child: FilledButton(
+                      style: FilledButton.styleFrom(
                         minimumSize: Size(
                             (constraints.maxWidth > 412)
                                 ? (constraints.maxWidth * 0.5)
@@ -75,7 +77,7 @@ class _StartScreen04State extends State<StartScreen04> {
                       ),
                       child: const Text("Sign in with another account"),
                       onPressed: () {
-                        // place sign up function here
+                        // TODO : place sign up function here
                       },
                     ),
                   ),
