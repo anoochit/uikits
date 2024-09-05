@@ -48,8 +48,8 @@ class _SignUpScreen04State extends State<SignUpScreen04> {
                     ),
                     Container(
                       padding: const EdgeInsets.symmetric(vertical: 16.0),
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
+                      child: FilledButton(
+                        style: FilledButton.styleFrom(
                           minimumSize: Size(
                               (constraints.maxWidth > 412)
                                   ? ((constraints.maxWidth * 0.5))
@@ -58,18 +58,18 @@ class _SignUpScreen04State extends State<SignUpScreen04> {
                         ),
                         child: const Text("Sign up"),
                         onPressed: () {
-                          // place sign in function here
+                          // TODO : place sign in function here
                         },
                       ),
                     ),
                     const Spacer(),
                     Container(
                       padding: const EdgeInsets.all(16.0),
-                      child: GestureDetector(
+                      child: TextButton(
                         child: const Text(
                             "Don't have an Invitation Code ? Get one"),
-                        onTap: () {
-                          // place signup function here
+                        onPressed: () {
+                          // TODO : place signup function here
                         },
                       ),
                     ),

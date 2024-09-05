@@ -52,31 +52,26 @@ class _SignUpScreen03State extends State<SignUpScreen03> {
                         ),
                       ),
                     ),
-                    Container(
-                      padding: const EdgeInsets.symmetric(vertical: 16.0),
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          minimumSize: Size(
-                              (constraints.maxWidth > 412)
-                                  ? ((constraints.maxWidth * 0.5))
-                                  : (constraints.maxWidth),
-                              50),
-                        ),
-                        child: const Text("Reset Password"),
-                        onPressed: () {
-                          // place sign in function here
-                        },
+                    const SizedBox(height: 16.0),
+                    FilledButton(
+                      style: ElevatedButton.styleFrom(
+                        minimumSize: Size(
+                            (constraints.maxWidth > 412)
+                                ? ((constraints.maxWidth * 0.5))
+                                : (constraints.maxWidth),
+                            50),
                       ),
+                      child: const Text("Reset Password"),
+                      onPressed: () {
+                        // TODO : place sign in function here
+                      },
                     ),
                     const Spacer(),
-                    Container(
-                      padding: const EdgeInsets.all(16.0),
-                      child: GestureDetector(
-                        child: const Text("Don't have an account ? Signup"),
-                        onTap: () {
-                          // place signup function here
-                        },
-                      ),
+                    TextButton(
+                      child: const Text("Don't have an account ? Signup"),
+                      onPressed: () {
+                        // TODO : place signup function here
+                      },
                     ),
                     const SizedBox(height: 16.0),
                   ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ms_undraw/ms_undraw.dart';
 
 class SignUpScreen01 extends StatefulWidget {
   const SignUpScreen01({super.key});
@@ -14,12 +15,13 @@ class _SignUpScreen01State extends State<SignUpScreen01> {
       body: LayoutBuilder(
         builder: (context, constraints) => Stack(
           children: [
-            SizedBox(
-              width: constraints.maxWidth,
-              height: constraints.maxHeight,
-              child: Image.asset(
-                'assets/images/placeholder.png',
-                fit: BoxFit.cover,
+            Positioned.fill(
+              child: Container(
+                color: Theme.of(context).colorScheme.onInverseSurface,
+                child: UnDraw(
+                  illustration: UnDrawIllustration.eiffel_tower,
+                  color: Theme.of(context).primaryColor,
+                ),
               ),
             ),
             Center(
@@ -32,7 +34,6 @@ class _SignUpScreen01State extends State<SignUpScreen01> {
                     const Spacer(),
                     Container(
                       padding: const EdgeInsets.symmetric(
-                        horizontal: 16,
                         vertical: 8.0,
                       ),
                       child: Text(
@@ -42,7 +43,6 @@ class _SignUpScreen01State extends State<SignUpScreen01> {
                     ),
                     Container(
                       padding: const EdgeInsets.symmetric(
-                        horizontal: 16,
                         vertical: 8.0,
                       ),
                       child: const Text("Please enter your Email and password"),
@@ -84,30 +84,25 @@ class _SignUpScreen01State extends State<SignUpScreen01> {
                         ),
                       ),
                     ),
-                    Container(
-                      padding: const EdgeInsets.symmetric(vertical: 16.0),
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          minimumSize: Size(
-                              (constraints.maxWidth > 412)
-                                  ? (constraints.maxWidth * 0.5)
-                                  : (constraints.maxWidth),
-                              50),
-                        ),
-                        child: const Text("Sign in"),
-                        onPressed: () {
-                          // place sign in function here
-                        },
+                    const SizedBox(height: 8.0),
+                    FilledButton(
+                      style: FilledButton.styleFrom(
+                        minimumSize: Size(
+                            (constraints.maxWidth > 412)
+                                ? (constraints.maxWidth * 0.5)
+                                : (constraints.maxWidth),
+                            48),
                       ),
+                      child: const Text("Sign in"),
+                      onPressed: () {
+                        // TODO : place sign in function here
+                      },
                     ),
-                    Container(
-                      padding: const EdgeInsets.all(16.0),
-                      child: GestureDetector(
-                        child: const Text("Don't have an account ? Signup"),
-                        onTap: () {
-                          // place signup function here
-                        },
-                      ),
+                    TextButton(
+                      child: const Text("Don't have an account ? Signup"),
+                      onPressed: () {
+                        // TODO : place signup function here
+                      },
                     ),
                     const SizedBox(height: 16.0),
                   ],

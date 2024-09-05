@@ -9,7 +9,8 @@ class SignUpScreen06 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Pin Code'),
+        // title: const Text('Pin Code'),
+        automaticallyImplyLeading: false,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -48,8 +49,8 @@ class _PinInputState extends State<PinInput> {
     "7", // 6
     "8", // 7
     "9", // 8
-    "ลบ", // 8
-    "ยืนยัน", // 10
+    "Del", // 8
+    "OK", // 10
     "0" // 11
   ];
 
@@ -60,36 +61,34 @@ class _PinInputState extends State<PinInput> {
       padding: const EdgeInsets.all(16.0),
       child: SizedBox(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             // display input box
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextFormField(
-                controller: _textController,
-                readOnly: true,
-                decoration: const InputDecoration(
-                  border: InputBorder.none,
-                ),
-                style: Theme.of(context).textTheme.displayLarge,
-                textAlign: TextAlign.center,
-                obscureText: false,
+            TextFormField(
+              controller: _textController,
+              readOnly: true,
+              decoration: const InputDecoration(
+                border: InputBorder.none,
               ),
-            ),
-
-            const SizedBox(
-              height: 16.0,
+              style: Theme.of(context).textTheme.displayLarge!.apply(
+                    fontSizeDelta: 20.0,
+                    fontWeightDelta: 1,
+                  ),
+              textAlign: TextAlign.center,
+              // change to show a obsecure text
+              obscureText: false,
             ),
 
             // visual keypad
             GridView.count(
               crossAxisCount: 3,
-              mainAxisSpacing: 18.0,
-              crossAxisSpacing: 18.0,
+              mainAxisSpacing: 16.0,
+              crossAxisSpacing: 16.0,
               shrinkWrap: true,
               children: _keypads.asMap().entries.map((e) {
                 return MaterialButton(
                   elevation: 0.0,
-                  color: Theme.of(context).colorScheme.primaryContainer,
+                  color: Theme.of(context).colorScheme.primary,
                   shape: const CircleBorder(),
                   onPressed: () {
                     // show only number
@@ -123,8 +122,8 @@ class _PinInputState extends State<PinInput> {
                   child: Text(
                     e.value,
                     style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                        color:
-                            Theme.of(context).colorScheme.onPrimaryContainer),
+                          color: Theme.of(context).colorScheme.onInverseSurface,
+                        ),
                   ),
                 );
               }).toList(),

@@ -77,10 +77,10 @@ packages:
     dependency: "direct main"
     description:
       name: circular_countdown_timer
-      sha256: "9ba5fbc076cedbcbf6190ed86762e679f43d7c67cdd903ea34df059dabdc08d4"
+      sha256: "608d166c8c659af5740ffec8859e1429a4849b706675a529dc381ef40784697b"
       url: "https://pub.dev"
     source: hosted
-    version: "0.2.3"
+    version: "0.2.4"
   cli_util:
     dependency: transitive
     description:
@@ -420,26 +420,26 @@ packages:
     dependency: "direct main"
     description:
       name: syncfusion_flutter_charts
-      sha256: b5b48d8eb6a1482ebbf4d6bfc69345462377e161e076b4ec4e69496e2d234dc2
+      sha256: "5245afd7b60bcbb99f5b9815a15bb2b1c05cb57e9cf91fe4092c48d8791c2b0f"
       url: "https://pub.dev"
     source: hosted
-    version: "26.2.10"
+    version: "26.2.12"
   syncfusion_flutter_core:
     dependency: transitive
     description:
       name: syncfusion_flutter_core
-      sha256: ca34210d70dd7ecb77489c21c8131a7f5546dea47780cd5f510326348091cb42
+      sha256: "038390d6f633368dc306c250877f93d2e3932de58a781945a3b7ed10c4df5171"
       url: "https://pub.dev"
     source: hosted
-    version: "26.2.10"
+    version: "26.2.12"
   syncfusion_flutter_gauges:
     dependency: "direct main"
     description:
       name: syncfusion_flutter_gauges
-      sha256: "9de7f312c3f1e7ff4ee0d7de11c6f1e15a35403de5bac8c951303f4a0e43650b"
+      sha256: "0de2acfe56ada8af66bdada42c649f4d71486e17e5d6dfbc73a63417b21b2dad"
       url: "https://pub.dev"
     source: hosted
-    version: "26.2.10"
+    version: "26.2.12"
   term_glyph:
     dependency: transitive
     description:
@@ -513,5 +513,5 @@ packages:
     source: hosted
     version: "3.1.2"
 sdks:
-  dart: ">=3.4.0 <4.0.0"
+  dart: ">=3.4.4 <4.0.0"
   flutter: ">=3.18.0-18.0.pre.54"
